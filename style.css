@@ -70,121 +70,12 @@ h2 {
     font-weight: 500;
 }
 
-/* 1. HERO SECTION */
+/* 1. HERO SECTION - עם מעבר צבע וצל בולט */
 .hero {
-    background-color: #F9F9F9; 
+    /* מעבר צבע עדין מלמעלה למטה */
+    background: linear-gradient(180deg, #F9F9F9 0%, #E8E8E8 100%); 
     padding: 80px 0 50px 0; 
     text-align: right; 
     border-bottom: 10px solid #D4D4D4; 
-}
-.hero p {
-    font-size: 1.4em; 
-    color: #5A5A5A;
-    margin-top: 15px;
-    margin-bottom: 40px;
-    font-weight: 500; 
-}
-
-/* כפתור CTA - זהב חזק */
-.cta-button {
-    background-color: #FFC04D; 
-    color: #002D5B; 
-    padding: 22px 50px; 
-    text-decoration: none;
-    border-radius: 4px; 
-    font-size: 1.5em; 
-    font-weight: bold;
-    display: block;
-    margin: 40px auto;
-    max-width: 500px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); 
-    transition: background-color 0.3s, transform 0.2s;
-}
-.cta-button:hover {
-    background-color: #FFB32E;
-    transform: translateY(-2px); 
-}
-
-/* 2. יצירת כרטיסים (Cards) - מראה מודרני יותר */
-.content-section {
-    padding: 30px 0;
-}
-.card {
-    background-color: white;
-    border-radius: 8px;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* צל עדין ויוקרתי */
-}
-
-/* תמונה - נטולת מסגרת גסה */
-.image-placeholder {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    margin: 30px auto;
-    display: block;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* רשימות - דגש על ירוק חזק למדידה */
-.list-item {
-    margin-bottom: 20px;
-    font-size: 1.1em;
-    font-weight: 500;
-}
-.list-item span {
-    color: #38761D; /* ירוק חזק */
-    margin-left: 10px;
-    font-weight: bold;
-}
-.check-list li {
-    font-size: 1.1em;
-    color: #38761D; /* צבע ה-וי חזק */
-    font-weight: 500;
-}
-.check-list {
-    list-style: none;
-    padding-right: 0;
-}
-.check-list li {
-    margin-bottom: 10px;
-}
-
-/* אזור התמחור (Pricing) */
-.pricing-section {
-    background-color: #E8E8E8; 
-    padding: 50px 0;
-}
-.pricing-box {
-    border: 3px solid #002D5B; 
-    padding: 30px;
-    border-radius: 8px;
-    text-align: center;
-    background-color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
-    max-width: 500px;
-    margin: 20px auto;
-}
-
-/* תחתית הדף (Footer) */
-.footer-section {
-    text-align: center; 
-    padding: 30px 0; 
-    font-size: 0.9em; 
-    color: #5A5A5A;
-    border-top: 1px solid #D4D4D4;
-}
-
-/* רספונסיביות */
-@media (max-width: 600px) {
-    body { padding-top: 50px; }
-    .main-header { padding: 5px 0; }
-    .nav-links a { display: none; } 
-    .hero { padding: 40px 0 30px 0; }
-    h1 { font-size: 2em; }
-    h2 { font-size: 1.6em; }
-    .cta-button { font-size: 1.3em; padding: 18px 25px; }
-}
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* צל עמוק יותר */
+    border-radius: 0 0 10px 10px; /* קי
