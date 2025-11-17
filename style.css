@@ -187,9 +187,9 @@ h2 {
     .cta-button { font-size: 1.1em; padding: 12px 25px; }
 }
 
-/* סגנון לתמונת הלוגו עצמה */
+/* סגנון לתמונת הלוגו עצמה - שינוי גודל */
 .logo-image {
-    height: 40px; /* גובה קבוע - ניתן לשנות בהתאם לגודל הרצוי */
+    height: 55px; /* הגדלה מ-40px ל-55px */
     width: auto;
     display: block;
 }
