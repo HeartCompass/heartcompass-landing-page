@@ -1,12 +1,12 @@
-/* הגדרות כלליות */
+/* הגדרות כלליות - פונט נקי ורקע חם */
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.7;
-    color: #333;
-    background-color: #F8F8F8; /* רקע בהיר ומרגיע */
+    font-family: 'Verdana', Tahoma, sans-serif; /* פונט נקי וקל לקריאה */
+    line-height: 1.6;
+    color: #333333;
+    background-color: #FAF9F6; /* קרם-לבן חם */
     margin: 0;
     padding: 0;
-    text-align: right; /* יישור הטקסט הכללי לימין - קריטי לעברית */
+    text-align: right; 
     direction: rtl;
 }
 
@@ -16,67 +16,70 @@ body {
     padding: 0 20px;
 }
 
-/* כותרות וטיפוגרפיה (תיקון היררכיה ויזואלית) */
+/* כותרות וטיפוגרפיה - דגש על רוגע ויציבות */
 h1, h2, h3 {
-    color: #36454F; /* אפור פחם עמוק */
-    font-weight: 700; /* כותרות מודגשות וחזקות */
+    color: #2F4F4F; /* אפור-כחול עמוק - משדר אמון */
+    font-weight: 600; /* מודגש, אך לא צועק */
     margin-top: 0;
 }
 h1 { 
-    font-size: 2.8em; /* הגדלה משמעותית */
-    line-height: 1.2; 
-    margin-bottom: 20px;
+    font-size: 2.5em; /* הוגדל שוב */
+    line-height: 1.15; 
+    margin-bottom: 15px;
 }
 h2 { 
-    font-size: 1.8em; /* כותרת סקשן */
-    border-bottom: 1px solid #E0E0E0; 
+    font-size: 1.7em; 
+    border-bottom: 1px solid #D4D4D4; /* קו הפרדה עדין */
     padding-bottom: 10px; 
     margin-bottom: 25px; 
 }
 
-/* רווחים וסקשנים */
-.content-section {
-    padding: 40px 0;
-}
+/* פס עליון (HERO) - עיצוב מכיל ומרווח */
 .hero {
-    background-color: #E6EDE6; /* ירוק מנטה בהיר - רוגע */
-    padding: 60px 0;
-    /* הסרת המרכוז לטובת יישור ימין */
+    background-color: #F4F7F2; /* ירוק אפרפר עדין מאוד */
+    padding: 80px 0; /* הגדלת הרווחים מעל ומתחת לטקסט! */
     text-align: right; 
-    border-bottom: 10px solid #D4D4D4; 
+    border-bottom: 10px solid #E0E0E0; 
 }
 .hero p {
-    font-size: 1.3em; /* הגדלת גוף הטקסט הראשי */
+    font-size: 1.25em; /* גדול וברור */
     color: #5A5A5A;
     margin-top: 15px;
     margin-bottom: 30px;
-    font-weight: 500; /* קריאות קלה יותר */
+    font-weight: 400; 
 }
 
-/* תמונה - פידבק ויזואלי חם */
-.image-placeholder {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    margin: 30px auto;
+/* כפתור CTA - זהב מט יוקרתי (שומרים על הצבע המרכזי) */
+.cta-button {
+    background-color: #A67C00; 
+    color: white;
+    padding: 20px 45px; /* הגדלת הכפתור */
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 1.4em; /* פונט חזק */
+    font-weight: bold;
     display: block;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); 
+    transition: background-color 0.3s;
+}
+.cta-button:hover {
+    background-color: #8C6A00;
 }
 
-/* רשימות (List Items) - נקיון ורווחים */
+/* רשימות - תיקון הריבוע עם הויים (היה הכשל הקודם) */
 .list-item {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     display: flex;
     align-items: flex-start;
-    font-size: 1.1em;
+    font-size: 1.05em;
 }
-.list-item span {
-    font-size: 1.5em;
-    color: #6B8E23; /* ירוק זית - הדגשה מרגיעה */
+.list-item span, .check-list li {
+    color: #4CAF50; /* ירוק כהה יותר - ויזואלי חזק יותר */
+    font-weight: bold;
     margin-left: 10px;
-    margin-top: 3px;
-    line-height: 1;
 }
 .check-list {
     text-align: right; 
@@ -84,54 +87,23 @@ h2 {
     padding-right: 0;
 }
 .check-list li {
-    margin-bottom: 8px;
-    color: #36454F;
+    margin-bottom: 10px;
+    color: #2F4F4F;
 }
 
-/* כפתור CTA - זהב מט יוקרתי (Premium) */
-.cta-button {
-    background-color: #A67C00; /* זהב עמוק */
-    color: white;
-    padding: 18px 40px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.3em;
-    font-weight: bold;
-    display: block;
-    margin: 40px auto;
-    max-width: 450px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    transition: background-color 0.3s;
-}
-.cta-button:hover {
-    background-color: #8C6A00;
-}
-
-/* אזור התמחור (Pricing) - רקע שונה להדגשה */
+/* שאר הסקשנים */
 .pricing-section {
-    background-color: #F0F5F0; 
-    padding: 40px 0;
+    background-color: #F0F5F0; /* בז' בהיר מאוד */
+    padding: 50px 0;
 }
 .pricing-box {
-    border: 2px solid #6B8E23; 
-    padding: 20px;
+    border: 2px solid #D4D4D4; 
+    padding: 25px;
     border-radius: 10px;
     text-align: center;
     background-color: white;
-    margin: 20px auto;
-    max-width: 500px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
-.pricing-box h3 {
-    color: #A67C00; 
-}
-.subscription-note {
-    margin-top: 20px; 
-    font-size: 0.9em; 
-    color: #5A5A5A;
-}
-
-/* תחתית הדף (Footer) */
 .footer-section {
     text-align: center; 
     padding: 30px 0; 
@@ -139,9 +111,9 @@ h2 {
     color: #888;
 }
 
-/* רספונסיביות בסיסית */
+/* רספונסיביות */
 @media (max-width: 600px) {
     h1 { font-size: 1.8em; }
-    h2 { font-size: 1.4em; }
-    .cta-button { font-size: 1.1em; padding: 15px 20px; }
+    .hero { padding: 50px 0; }
+    .cta-button { font-size: 1.2em; padding: 15px 25px; }
 }
