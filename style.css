@@ -1,58 +1,70 @@
-/* הגדרות כלליות (Body padding מתוקן לגובה החדש) */
+/* הגדרות כלליות - פלטה חמה, קריאות גבוהה */
 body {
-    /* ...שאר הסגנון נשמר... */
-    padding-top: 100px; /* הוספת רווח גדול יותר בחלק העליון לגובה ה-Header החדש */
+    font-family: 'Assistant', sans-serif;
+    line-height: 1.65;
+    color: #333333; 
+    background-color: #FFFFFF; /* לבן נקי וחזק */
+    margin: 0;
+    padding-top: 65px; 
+    text-align: right; 
+    direction: rtl;
 }
 
-/* 0. HEADER ותפריט ניווט - הדגשת גובה, רקע, ולוגו */
+.container {
+    max-width: 960px; 
+    margin: 0 auto;
+    padding: 0 40px; /* הגדלת הריווח מהשוליים (לפתרון ה'דבוק') */
+}
+
+/* 0. HEADER ותפריט ניווט - תיקון שבירה ורוחב */
 .main-header {
-    background-color: #5A3B33; /* צבע גיבוי חום עמוק */
-    
-    /* קוד לטעינת תמונת רקע: להפעיל לאחר העלאת הקובץ */
-    /* background-image: url('images/header_wood.jpg'); 
-    background-size: cover;
-    background-position: center; */
-    
-    padding: 20px 0; /* הגדלת הפדינג ליצירת גובה Header גדול יותר */
+    background-color: #5A3B33; /* חום-קפה עמוק */
+    color: white;
+    padding: 8px 0; 
     position: fixed; 
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
 }
-
-/* תיקון: הגדלת הלוגו והטקסט כדי שיהיה דומיננטי */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px; 
+}
+.logo-link {
+    display: flex; 
+    align-items: center; 
+    text-decoration: none;
+    color: #D4AF37; 
+}
 .logo-image {
-    height: 70px; /* הגדלה סופית ל-70px */
+    height: 70px; /* גודל הלוגו */
     width: auto;
     display: block;
-    margin-left: 15px; /* רווח גדול יותר בין הלוגו לטקסט */
+    margin-left: 15px; /* רווח בין הלוגו לטקסט */
 }
 .logo-text {
-    font-size: 2.2em; /* הגדלת גודל הטקסט של הלוגו */
+    font-size: 2.2em; /* גודל הטקסט של הלוגו */
     font-weight: 700;
     color: #D4AF37; 
-    white-space: nowrap;
-}
-
-/* ... שאר קוד ה-CSS נשאר כפי שהיה ... */
-.logo-text {
-    font-size: 1.8em; 
-    font-weight: 700;
-    color: #D4AF37; 
-    white-space: nowrap;
 }
 .nav-links {
-    flex-grow: 1; 
-    text-align: left; 
-    margin-left: 20px; 
-    white-space: nowrap; 
+    /* ביטול flex-grow ו-white-space - פשוט יותר, פחות נשבר */
+    display: flex;
+    justify-content: flex-end;
 }
 .nav-links a {
     color: #F0F0F0;
     text-decoration: none;
-    margin-right: 15px; 
+    margin-left: 15px; 
     font-weight: 500;
     transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #D4AF37;
 }
 
 /* כותרות וטיפוגרפיה */
@@ -76,11 +88,11 @@ h2 {
 
 /* 1. HERO SECTION */
 .hero {
-    background-color: white; 
-    padding: 50px 30px 40px 30px; 
+    background-color: #FFFFFF; 
+    padding: 50px 40px 40px 40px; /* תיקון ריווח פנימי חזק יותר */
     text-align: right; 
     border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
     margin-bottom: 30px;
     border: 3px solid #D4AF37; 
 }
@@ -92,9 +104,9 @@ h2 {
     font-weight: 500; 
 }
 
-/* כפתור CTA */
+/* כפתור CTA - זהב שזוף (Burnt Gold) */
 .cta-button {
-    background-color: #A3712E; 
+    background-color: #A3712E; /* גוון זהב עמוק ויוקרתי */
     color: white; 
     padding: 18px 40px; 
     border-radius: 4px; 
@@ -112,116 +124,55 @@ h2 {
     transform: translateY(-2px); 
 }
 
-/* 2. יצירת כרטיסים (Cards) - תיקון שבירה ורווחים */
+/* 2. יצירת כרטיסים (Cards) - FIX: CSS GRID */
 .content-section {
     padding: 30px 0;
 }
 .card {
     background-color: white;
     border-radius: 8px;
-    padding: 35px; /* הגדלת הריווח הפנימי */
+    padding: 35px; 
     margin-bottom: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
     border: 1px solid #E0E0E0; 
     
-    /* ה-GRID וחלוקה */
+    /* הפעלת GRID לחלוקה יציבה */
     display: grid;
     grid-template-columns: 2fr 1.5fr; 
     gap: 30px; 
     align-items: start;
 }
 
-/* ********** תיקון הרווחים העודפים בתוך ה-Card ********** */
-.card h2, .card h3, .card p, .card .list-item, .card .image-placeholder {
-    /* איפוס המרווחים העליונים והתחתונים למינימום יציב */
+/* תיקון הרווחים העודפים בתוך ה-Card */
+.card h2, .card h3, .card p, .card .list-item, .image-placeholder {
     margin-top: 0 !important; 
-    margin-bottom: 5px !important; 
+    margin-bottom: 0 !important; 
     padding-top: 0 !important;
     padding-bottom: 0;
 }
-
-/* הגדרת מיקום ספציפי לאחר האיפוס */
 .card h2 {
-    grid-column: 1 / 3;
-    margin-bottom: 10px !important; /* רווח נדרש מתחת לכותרת הראשית */
+    margin-bottom: 15px !important; /* רווח נדרש מתחת לכותרת הראשית */
+    grid-column: 1 / 3; 
 }
 .card h3 {
-    grid-column: 1 / 2;
-    margin-top: 15px !important; /* רווח קטן וקבוע מעל הכותרת */
+    margin-top: 15px !important; /* רווח נדרש מעל הכותרת */
     margin-bottom: 5px !important;
+    grid-column: 1 / 2;
 }
 .card p {
+    margin-bottom: 8px !important; 
+    grid-column: 1 / 2;
+}
+.card .list-item {
+    margin-bottom: 8px !important; 
     grid-column: 1 / 2;
 }
 
-/* תמונה: מיקום בטור הימני */
+/* מיקום התמונה בטור הימני */
 .image-placeholder {
     grid-column: 2 / 3; 
     max-width: 100%; 
     height: auto;
     border-radius: 12px; 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
-    border: 1px solid #E0E0E0; 
-}
-
-
-/* 3. אזור התמחור (Pricing) */
-.pricing-section {
-    background-color: #F8F5F0; 
-    padding: 40px 0; 
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-.pricing-box {
-    border: 3px solid #5A3B33; 
-    padding: 20px;
-    border-radius: 8px;
-    background-color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
-    max-width: 400px; 
-    margin: 15px auto;
-}
-
-/* רשימות */
-.list-item span, .check-list li {
-    color: #D4AF37; 
-    font-weight: bold;
-}
-.check-list {
-    list-style: none;
-    padding-right: 0;
-    font-size: 0.95em;
-}
-
-/* תחתית הדף (Footer) */
-.footer-section {
-    color: #5A3B33; 
-    text-align: center; 
-    padding: 20px 0; 
-    font-size: 0.85em; 
-    border-top: 1px solid #D4D4D4;
-}
-
-/* רספונסיביות לנייד */
-@media (max-width: 768px) {
-    .card {
-        grid-template-columns: 1fr; /* בנייד: עמודה אחת */
-        gap: 15px;
-        padding: 25px;
-    }
-    .card h2, .card h3, .card p, .card .list-item, .image-placeholder {
-        grid-column: 1 / 2; /* הכל נפרס על עמודה אחת */
-        max-width: 100%; 
-    }
-    .image-placeholder {
-        margin: 15px auto; /* מרכוז התמונה בנייד */
-    }
-}
-@media (max-width: 600px) {
-    body { padding-top: 50px; }
-    h1 { font-size: 1.8em; }
-    h2 { font-size: 1.4em; }
-    .hero p { font-size: 1em; }
-    .cta-button { font-size: 1.1em; padding: 12px 25px; }
-}
+    border: 1px solid #E0E0E0;
