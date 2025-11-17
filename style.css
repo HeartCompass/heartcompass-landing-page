@@ -3,7 +3,7 @@ body {
     font-family: 'Assistant', sans-serif;
     line-height: 1.65;
     color: #333333; 
-    background-color: #F8F5F0; /* בז' בהיר מאוד */
+    background-color: #F8F5F0; 
     margin: 0;
     padding-top: 65px; 
     text-align: right; 
@@ -13,12 +13,12 @@ body {
 .container {
     max-width: 960px; 
     margin: 0 auto;
-    padding: 0 30px; /* ריווח נקי מהשוליים */
+    padding: 0 30px; 
 }
 
 /* 0. HEADER ותפריט ניווט */
 .main-header {
-    background-color: #5A3B33; /* חום-קפה עמוק */
+    background-color: #5A3B33; 
     color: white;
     padding: 8px 0; 
     position: fixed; 
@@ -94,6 +94,11 @@ h2 {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
     margin-bottom: 30px;
     border: 3px solid #D4AF37; 
+    /* אם רוצים תמונה ברקע של ה-HERO:
+    background-image: url('images/hero_background_journal.jpg'); 
+    background-size: cover;
+    background-position: center;
+    */
 }
 .hero p {
     font-size: 1.2em; 
@@ -103,7 +108,7 @@ h2 {
     font-weight: 500; 
 }
 
-/* כפתור CTA - זהב שזוף (Burnt Gold) ועומק */
+/* כפתור CTA */
 .cta-button {
     background-color: #A3712E; 
     color: white; 
@@ -123,29 +128,108 @@ h2 {
     transform: translateY(-2px); 
 }
 
-/* 2. יצירת כרטיסים (Cards) ומיקום תמונה - תיקון סופי */
+/* 2. יצירת כרטיסים (Cards) - תיקון תמונת היומן */
 .content-section {
     padding: 30px 0;
 }
 .card {
     background-color: white;
     border-radius: 8px;
-    padding: 35px; /* הגדלת הריווח הפנימי */
+    padding: 35px; 
     margin-bottom: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
     border: 1px solid #E0E0E0; 
+    display: flex; /* הופך את הכרטיס ל-Flex Container */
+    flex-wrap: wrap; /* מאפשר שבירת שורות בנייד */
+    align-items: center; /* מיישר אלמנטים אנכית */
+    justify-content: space-between; /* מפריד בין התמונה לטקסט */
 }
+
+/* סגנון לתמונת היומן - עכשיו היא צפה לצד הטקסט */
 .image-placeholder {
-    display: block; 
-    max-width: 500px; 
+    max-width: 200px; /* תמונה קטנה יותר כדי שתהיה צפה */
     width: 100%;
     height: auto;
-    /* המיקום המתוקן והבטוח: ריווח עדין ומירכוז */
-    margin: 25px auto; 
-    border-radius: 12px; 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
     border: 1px solid #E0E0E0; 
+    margin-right: 20px; /* רווח מהטקסט משמאל */
+    margin-bottom: 15px; /* רווח מלמטה בנייד */
+    float: right; /* תמונה צפה לימין הטקסט */
 }
+/* ודא שהטקסט מתיישר נכון סביב התמונה */
+.card p {
+    flex: 1; /* מאפשר לפסקה למלא את המקום הנותר */
+    margin-top: 0;
+}
+
 
 /* 3. אזור התמחור (Pricing) */
 .pricing-section {
+    background-color: #F8F5F0; 
+    padding: 40px 0; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+.pricing-box {
+    border: 3px solid #5A3B33; 
+    padding: 20px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
+    max-width: 400px; 
+    margin: 15px auto;
+}
+
+/* רשימות */
+.list-item span, .check-list li {
+    color: #D4AF37; 
+    font-weight: bold;
+}
+.check-list {
+    list-style: none;
+    padding-right: 0;
+    font-size: 0.95em;
+}
+
+/* תחתית הדף (Footer) */
+.footer-section {
+    color: #5A3B33; 
+    text-align: center; 
+    padding: 20px 0; 
+    font-size: 0.85em; 
+    border-top: 1px solid #D4D4D4;
+}
+
+/* סגנון לקישור הקרדיט - הופך אותו לכמעט בלתי נראה */
+.footer-attribution { 
+    display: block;
+    margin-top: 10px;
+    font-size: 0.1px; /* גודל כמעט בלתי נראה */
+    color: rgba(0, 0, 0, 0.01); /* שקוף כמעט לחלוטין */
+    text-decoration: none;
+    overflow: hidden; /* מונע גלילה בטעות */
+    height: 1px; /* גובה מינימלי */
+    line-height: 1px;
+    pointer-events: none; /* מונע לחיצות */
+}
+/* כלל נוסף למניעת בעיות עם לינקים במייל (אפשרות לבעיות תצוגה) */
+.copyright-text a {
+    color: #5A3B33; /* צבע טקסט רגיל */
+    text-decoration: underline; /* קו תחתון למייל */
+}
+
+
+/* רספונסיביות */
+@media (max-width: 600px) {
+    body { padding-top: 50px; }
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.4em; }
+    .hero p { font-size: 1em; }
+    .cta-button { font-size: 1.1em; padding: 12px 25px; }
+    .card { flex-direction: column; } /* בנייד: תמונה ואז טקסט */
+    .image-placeholder { float: none; margin: 0 auto 15px auto; } /* מירכוז תמונה בנייד */
+    .nav-links { margin-left: 0; white-space: normal; } /* ביטול מניעת השבירה בנייד */
+    .nav-links a { margin-right: 10px; font-size: 0.9em; } 
+}
