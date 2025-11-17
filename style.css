@@ -40,11 +40,12 @@ body {
     text-decoration: none;
     color: #D4AF37; 
 }
+/* סגנון לתמונת הלוגו עצמה - עדכון גודל */
 .logo-image {
-    height: 55px; 
-    width: auto;
+    height: 75px; /* הגדלה מ-55px ל-75px */
+    width: auto; /* שומר על פרופורציות */
     display: block;
-    margin-left: 10px; 
+    margin-left: 15px; 
 }
 .logo-text {
     font-size: 1.8em; 
