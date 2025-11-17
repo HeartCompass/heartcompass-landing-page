@@ -3,20 +3,23 @@ body {
     font-family: 'Assistant', sans-serif;
     line-height: 1.65;
     color: #333333; 
-    background-color: #F8F5F0; /* בז' בהיר מאוד */
+    background-color: #F8F5F0; /* בז' בהיר מאוד - בסיס חם */
     margin: 0;
     padding-top: 65px;
     text-align: right; 
     direction: rtl;
-    /* אם יש תמונה של טקסטורת עץ, יש להוסיף כאן: */
-    /* background-image: url('images/wood_texture_light.png'); 
-    background-repeat: repeat; */
+    
+    /* הוספת טקסטורת עץ:
+       כדי להשתמש בתמונה שהורדת, שמרי אותה בתיקייה images/ ועדכני את השם:
+       background-image: url('images/wood_texture_light.png'); 
+       background-repeat: repeat; 
+    */
 }
 
 .container {
     max-width: 960px; 
     margin: 0 auto;
-    padding: 0 30px; 
+    padding: 0 30px; /* תיקון: הגדלת הריווח מהשוליים */
 }
 
 /* 0. HEADER ותפריט ניווט - צבע חום עמוק */
@@ -31,11 +34,23 @@ body {
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
 }
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px; 
+}
 .logo-link {
     font-size: 1.4em;
     font-weight: 700;
     color: #D4AF37; /* זהב עשיר */
     text-decoration: none;
+}
+.nav-links {
+    flex-grow: 1; 
+    text-align: left; 
+    margin-left: 20px; 
+    white-space: nowrap; /* מונע מעבר שורה */
 }
 .nav-links a {
     color: #F0F0F0;
@@ -48,12 +63,15 @@ body {
     color: #D4AF37;
 }
 
-/* כותרות וטיפוגרפיה - הטון הקלאסי */
+/* כותרות וטיפוגרפיה */
 h1, h2, h3 {
     color: #5A3B33; /* חום עמוק */
     font-weight: 700; 
-    /* גודל פונט נשאר מכובד כפי שתוקן לאחרונה */
-    font-size: 2.2em; 
+}
+h1 { 
+    font-size: 2.2em;
+    line-height: 1.1; 
+    margin-bottom: 15px;
 }
 h2 { 
     font-size: 1.5em; 
@@ -63,13 +81,13 @@ h2 {
     font-weight: 600;
 }
 
-/* 1. HERO SECTION - עם מסגרת עץ מודגשת */
+/* 1. HERO SECTION - יוקרה */
 .hero {
-    background-color: white; /* לבן נקי כדי להבליט את התוכן */
+    background-color: white; 
     padding: 50px 30px 40px 30px; 
     text-align: right; 
     border-radius: 8px;
-    /* צל חם ובולט - כמו אלבום חתונה יוקרתי */
+    /* צל חם ובולט (כמו אלבום יוקרה) */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
     margin-bottom: 30px;
     border: 3px solid #D4AF37; /* מסגרת זהב דקה חיצונית */
@@ -82,9 +100,9 @@ h2 {
     font-weight: 500; 
 }
 
-/* כפתור CTA - זהב שזוף (Burnt Gold) עם עומק */
+/* כפתור CTA - זהב שזוף (Burnt Gold) */
 .cta-button {
-    background-color: #A3712E; /* גוון זהב שזוף */
+    background-color: #A3712E; 
     color: white; 
     padding: 18px 40px; 
     border-radius: 4px; 
@@ -94,5 +112,74 @@ h2 {
     margin: 25px auto;
     max-width: 450px; 
     text-align: center;
-    box-shadow: 0 6px 15px rgba(163, 113, 46, 0.7); /* צל חזק שמשדר יוקרה */
-    transition: background-color 0.3s
+    box-shadow: 0 6px 15px rgba(163, 113, 46, 0.7); 
+    transition: background-color 0.3s, transform 0.2s;
+}
+.cta-button:hover {
+    background-color: #8D5D25; 
+    transform: translateY(-2px); 
+}
+
+/* 2. יצירת כרטיסים (Cards) */
+.content-section {
+    padding: 30px 0;
+}
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px; 
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
+    border: 1px solid #E0E0E0; 
+}
+
+/* רשימות */
+.list-item span, .check-list li {
+    color: #D4AF37; /* צבע הזהב העשיר */
+    font-weight: bold;
+}
+
+/* 3. אזור התמחור (Pricing) */
+.pricing-section {
+    background-color: #F8F5F0; 
+    padding: 40px 0; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+.pricing-box {
+    border: 3px solid #5A3B33; 
+    padding: 20px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
+    max-width: 400px; 
+    margin: 15px auto;
+}
+
+/* תחתית הדף (Footer) */
+.footer-section {
+    color: #5A3B33; 
+    text-align: center; 
+    padding: 20px 0; 
+    font-size: 0.85em; 
+    border-top: 1px solid #D4D4D4;
+}
+
+/* סגנון לקישור הקרדיט (כדי שיהיה קטן ודיסקרטי) */
+.footer-attribution { 
+    display: block;
+    margin-top: 10px;
+    font-size: 0.75em;
+    color: #999999; /* אפור עדין */
+    text-decoration: none;
+}
+
+/* רספונסיביות */
+@media (max-width: 600px) {
+    body { padding-top: 50px; }
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.4em; }
+    .hero p { font-size: 1em; }
+    .cta-button { font-size: 1.1em; padding: 12px 25px; }
+}
