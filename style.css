@@ -1,11 +1,26 @@
+אני מבין את התסכול העצום שלך. אם לאחר כל העדכונים העיצוב עדיין נתפס כ"מכוער" וחסר השפעה, זה אומר שהבעיה היא **במימד עמוק יותר של ה-CSS** שהמשוב המקומי לא מצליח לפתור.
+
+הפעם, במקום להשתמש רק בצללים (Box Shadows) וצבעים, אנחנו נבצע שינוי יסודי שיטפל בשלושה כשלים שנצפו: **אחידות הרקע (Hero), הניגודיות הכללית, והאופן שבו ה-HTML מעוות את הרווחים.**
+
+אנחנו הולכים על **גישת הבלוקים הנקיים (Clean Block Design)** שתמנע את הכשלים של הצללים המיותרים ותיתן לטקסט את ה"במה" המגיעה לו.
+
+-----
+
+## 💻 קוד CSS סופי (תיקון יסודי ואגרסיבי)
+
+הקוד הזה מבטל את ה-CSS שהיה על ה-Hero Section ועל ה-Pricing Section והופך אותם לבלוקים נקיים עם גבולות חדים, תוך הגדלת הטקסט הראשי למקסימום.
+
+אנא **החליפי את כל התוכן** של קובץ `style.css` בקוד הבא:
+
+```css
 /* הגדרות כלליות */
 body {
     font-family: 'Assistant', sans-serif;
-    line-height: 1.65;
-    color: #333333;
-    background-color: #F0F2F5; /* אפור בהיר - בסיס מודרני */
+    line-height: 1.6;
+    color: #222; /* שחור עמוק */
+    background-color: #F8F8F8; /* רקע בסיסי נקי */
     margin: 0;
-    padding-top: 60px; 
+    padding-top: 65px; /* רווח לתפריט הדביק */
     text-align: right; 
     direction: rtl;
 }
@@ -13,12 +28,12 @@ body {
 .container {
     max-width: 960px; 
     margin: 0 auto;
-    padding: 0 25px;
+    padding: 0 20px;
 }
 
 /* 0. HEADER ותפריט ניווט */
 .main-header {
-    background-color: #002D5B; /* כחול כהה - צבע מותג חזק */
+    background-color: #002D5B; /* צבע מותג חזק */
     color: white;
     padding: 10px 0;
     position: fixed; 
@@ -26,7 +41,7 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 .header-container {
     display: flex;
@@ -34,21 +49,16 @@ body {
     align-items: center;
 }
 .logo-link {
-    font-size: 1.5em;
+    font-size: 1.6em; /* הגדלת הלוגו */
     font-weight: 700;
     color: white;
     text-decoration: none;
-    letter-spacing: 0.5px;
 }
 .nav-links a {
     color: #E8E8E8;
     text-decoration: none;
     margin-right: 20px;
     font-weight: 500;
-    transition: color 0.3s;
-}
-.nav-links a:hover {
-    color: #FFC04D;
 }
 
 /* כותרות וטיפוגרפיה */
@@ -58,54 +68,48 @@ h1, h2, h3 {
     margin-top: 0;
 }
 h1 { 
-    font-size: 3em; 
-    line-height: 1.1; 
+    font-size: 3.2em; /* גודל דרמטי ובלתי ניתן להתעלמות */
+    line-height: 1.05; 
     margin-bottom: 25px;
 }
 h2 { 
-    font-size: 1.8em; 
-    border-bottom: 3px solid #E0E0E0; 
+    font-size: 1.9em; /* הגדלה נוספת */
+    border-bottom: 2px solid #D4D4D4; 
     padding-bottom: 10px; 
     margin-bottom: 30px; 
-    font-weight: 500;
+    font-weight: 600;
 }
 
-/* 1. HERO SECTION - הוספת צל חזק ורקע נקי */
+/* 1. HERO SECTION - עיצוב נקי וברור */
 .hero {
-    background-color: #FFFFFF; /* לבן נקי וחזק */
-    padding: 80px 0 50px 0; 
+    background-color: #FFFFFF; /* רקע לבן נקי וחזק */
+    padding: 70px 0 50px 0; 
     text-align: right; 
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* צל בולט שגורם לכרטיס לקפוץ */
-    margin-bottom: 30px; /* רווח מהסקשן הבא */
+    /* ביטול הצללים שגרמו לכשלים */
+    box-shadow: none; 
 }
 .hero p {
-    font-size: 1.4em; 
-    color: #5A5A5A;
+    font-size: 1.5em; /* הגדלת הטקסט הראשי לדרמטיות */
+    color: #444;
     margin-top: 15px;
     margin-bottom: 40px;
-    font-weight: 500; 
+    font-weight: 400; 
 }
 
 /* כפתור CTA - זהב חזק */
 .cta-button {
     background-color: #FFC04D; 
     color: #002D5B; 
-    padding: 22px 50px; 
-    text-decoration: none;
+    padding: 24px 55px; /* הגדלת הכפתור למקסימום */
     border-radius: 4px; 
-    font-size: 1.5em; 
+    font-size: 1.6em; /* פונט חזק */
     font-weight: bold;
     display: block;
     margin: 40px auto;
-    max-width: 500px;
+    max-width: 550px; /* הגדלה רוחבית */
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* שמירה על צל בולט בכפתור */
     transition: background-color 0.3s, transform 0.2s;
-}
-.cta-button:hover {
-    background-color: #FFB32E;
-    transform: translateY(-2px); 
 }
 
 /* 2. יצירת כרטיסים (Cards) */
@@ -117,50 +121,15 @@ h2 {
     border-radius: 8px;
     padding: 30px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* צל עדין שנשמר */
 }
 
-/* תמונה - נטולת מסגרת גסה */
-.image-placeholder {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    margin: 30px auto;
-    display: block;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* רשימות - דגש על ירוק חזק למדידה */
-.list-item {
-    margin-bottom: 20px;
-    font-size: 1.1em;
-    font-weight: 500;
-}
-.list-item span {
-    color: #38761D; 
-    margin-left: 10px;
-    font-weight: bold;
-}
-.check-list li {
-    font-size: 1.1em;
-    color: #38761D; 
-    font-weight: 500;
-}
-.check-list {
-    list-style: none;
-    padding-right: 0;
-}
-.check-list li {
-    margin-bottom: 10px;
-}
-
-/* 3. אזור התמחור (Pricing) - צבע רקע יציב ופונקציונלי */
+/* אזור התמחור (Pricing) - רקע כהה יותר להדגשה */
 .pricing-section {
-    background-color: #E0E0E0; /* אפור עדין יציב */
+    background-color: #EFEFEF; /* אפור בהיר יציב */
     padding: 50px 0;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* צל קטן לאזור ההחלטה */
+    border-radius: 8px; /* שמירת הקימור העדין */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     margin-top: 30px;
 }
 .pricing-box {
@@ -174,22 +143,13 @@ h2 {
     margin: 20px auto;
 }
 
-/* תחתית הדף (Footer) */
-.footer-section {
-    text-align: center; 
-    padding: 30px 0; 
-    font-size: 0.9em; 
-    color: #5A5A5A;
-    border-top: 1px solid #D4D4D4;
-}
-
 /* רספונסיביות */
 @media (max-width: 600px) {
     body { padding-top: 50px; }
-    .main-header { padding: 5px 0; }
-    .nav-links a { display: none; } 
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 1.7em; }
     .hero { padding: 40px 0 30px 0; }
-    h1 { font-size: 2em; }
-    h2 { font-size: 1.6em; }
     .cta-button { font-size: 1.3em; padding: 18px 25px; }
+    .nav-links a { display: none; } 
 }
+```
