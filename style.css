@@ -1,11 +1,11 @@
-/* הגדרות כלליות */
+/* הגדרות כלליות - FIX: הגדלת הריווח העליון */
 body {
     font-family: 'Assistant', sans-serif;
     line-height: 1.65;
     color: #333333; 
-    background-color: #F8F5F0; /* בז' בהיר מאוד */
+    background-color: #F8F5F0; 
     margin: 0;
-    padding-top: 65px; 
+    padding-top: 100px; /* FIX: הגדלה ל-100px כדי להתאים ל-Header הגבוה */
     text-align: right; 
     direction: rtl;
 }
@@ -13,14 +13,14 @@ body {
 .container {
     max-width: 960px; 
     margin: 0 auto;
-    padding: 0 30px; /* ריווח נקי מהשוליים */
+    padding: 0 30px; 
 }
 
 /* 0. HEADER ותפריט ניווט */
 .main-header {
     background-color: #5A3B33; 
     color: white;
-    padding: 15px 0; /* הגדלה מ-8px ל-15px כדי להגביה את ה-Header */
+    padding: 15px 0; /* הגובה החדש */
     position: fixed; 
     top: 0;
     left: 0;
@@ -40,20 +40,21 @@ body {
     text-decoration: none;
     color: #D4AF37; 
 }
-/* סגנון לתמונת הלוגו עצמה - עדכון גודל */
 .logo-image {
-    height: 75px; /* הגדלה מ-55px ל-75px */
-    width: auto; /* שומר על פרופורציות */
+    height: 75px; /* הגובה המוגדל */
+    width: auto;
     display: block;
     margin-left: 15px; 
 }
 .logo-text {
-    font-size: 1.8em; 
+    font-size: 2.2em; 
     font-weight: 700;
     color: #D4AF37; 
     white-space: nowrap;
 }
 .nav-links {
+    display: flex;
+    justify-content: flex-end;
     flex-grow: 1; 
     text-align: left; 
     margin-left: 20px; 
@@ -92,7 +93,7 @@ h2 {
     padding: 50px 30px 40px 30px; 
     text-align: right; 
     border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
     margin-bottom: 30px;
     border: 3px solid #D4AF37; 
 }
@@ -104,7 +105,7 @@ h2 {
     font-weight: 500; 
 }
 
-/* כפתור CTA - זהב שזוף (Burnt Gold) ועומק */
+/* כפתור CTA */
 .cta-button {
     background-color: #A3712E; 
     color: white; 
@@ -124,28 +125,56 @@ h2 {
     transform: translateY(-2px); 
 }
 
-/* 2. יצירת כרטיסים (Cards) ומיקום תמונה - תיקון סופי */
+/* 2. יצירת כרטיסים (Cards) ומיקום תמונה */
 .content-section {
     padding: 30px 0;
 }
 .card {
     background-color: white;
     border-radius: 8px;
-    padding: 35px; /* הגדלת הריווח הפנימי */
+    padding: 35px; 
     margin-bottom: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
     border: 1px solid #E0E0E0; 
+    
+    display: grid;
+    grid-template-columns: 2fr 1.5fr; 
+    gap: 30px; 
+    align-items: start;
+}
+
+/* תיקון הרווחים העודפים בתוך ה-Card (פתרון סופי) */
+.card h2, .card h3, .card p, .card .list-item, .image-placeholder {
+    margin-top: 0 !important; 
+    margin-bottom: 0 !important; 
+    padding-top: 0 !important;
+    padding-bottom: 0;
+}
+.card h2 {
+    margin-bottom: 15px !important; 
+    grid-column: 1 / 3; 
+}
+.card h3 {
+    margin-top: 15px !important; 
+    margin-bottom: 5px !important;
+    grid-column: 1 / 2;
+}
+.card p {
+    margin-bottom: 8px !important; 
+    grid-column: 1 / 2;
+}
+.card .list-item {
+    margin-bottom: 8px !important; 
+    grid-column: 1 / 2;
 }
 .image-placeholder {
-    display: block; 
-    max-width: 500px; 
-    width: 100%;
+    grid-column: 2 / 3; 
+    max-width: 100%; 
     height: auto;
-    /* המיקום המתוקן והבטוח: ריווח עדין ומירכוז */
-    margin: 25px auto; 
     border-radius: 12px; 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
     border: 1px solid #E0E0E0; 
+    margin: 0 auto; 
 }
 
 /* 3. אזור התמחור (Pricing) */
@@ -166,17 +195,6 @@ h2 {
     margin: 15px auto;
 }
 
-/* רשימות */
-.list-item span, .check-list li {
-    color: #D4AF37; 
-    font-weight: bold;
-}
-.check-list {
-    list-style: none;
-    padding-right: 0;
-    font-size: 0.95em;
-}
-
 /* תחתית הדף (Footer) */
 .footer-section {
     color: #5A3B33; 
@@ -185,12 +203,15 @@ h2 {
     font-size: 0.85em; 
     border-top: 1px solid #D4D4D4;
 }
+.footer-attribution { 
+    display: block;
+    margin-top: 10px;
+    font-size: 0.75em;
+    color: #999999; 
+    text-decoration: none;
+}
 
 /* רספונסיביות */
-@media (max-width: 600px) {
-    body { padding-top: 50px; }
-    h1 { font-size: 1.8em; }
-    h2 { font-size: 1.4em; }
-    .hero p { font-size: 1em; }
-    .cta-button { font-size: 1.1em; padding: 12px 25px; }
-}
+@media (max-width: 768px) {
+    .card {
+        grid-template-columns: 1fr;
