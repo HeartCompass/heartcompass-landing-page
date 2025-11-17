@@ -1,19 +1,30 @@
-/* הגדרות כלליות - Soft Matte Gray, פונטים קטנים */
+/* הגדרות כלליות - Dark Mode Base */
 body {
     font-family: 'Assistant', sans-serif;
     line-height: 1.6;
     color: #333333; 
-    background-color: #F8F8F8; /* אפור בהיר מאוד */
+    background-color: #F8F8F8;
     margin: 0;
     padding-top: 60px;
     text-align: right; 
     direction: rtl;
+    /* הוספת האנימציה לרקע של כל הדף - בסיס עדין */
+    background: linear-gradient(135deg, #F8F8F8 0%, #EAEAEA 100%);
+    background-size: 200% 200%;
+    animation: backgroundShift 20s ease infinite; /* אנימציה איטית וזורמת */
+}
+
+/* הגדרת האנימציה (keyframes) */
+@keyframes backgroundShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .container {
     max-width: 960px; 
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px; 
 }
 
 /* 0. HEADER ותפריט ניווט */
@@ -32,12 +43,19 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 15px; 
 }
 .logo-link {
     font-size: 1.4em;
     font-weight: 700;
-    color: #FFC04D; /* זהב */
+    color: #FFC04D; 
     text-decoration: none;
+}
+.nav-links {
+    flex-grow: 1; 
+    text-align: left; 
+    margin-left: 20px; 
+    white-space: nowrap; 
 }
 .nav-links a {
     color: #D4D4D4;
@@ -46,103 +64,107 @@ body {
     font-weight: 500;
     transition: color 0.3s;
 }
-.nav-links a:hover {
-    color: #FFFFFF;
-}
 
-/* כותרות וטיפוגרפיה - פונטים קטנים ומקצועיים */
+/* כותרות וטיפוגרפיה */
 h1, h2, h3 {
     color: #002D5B; 
     font-weight: 700; 
     margin-top: 0;
 }
 h1 { 
-    font-size: 2.2em; /* קטן יותר */
+    font-size: 2.2em;
     line-height: 1.1; 
     margin-bottom: 15px;
 }
 h2 { 
-    font-size: 1.4em; /* קטן יותר */
+    font-size: 1.5em; 
     border-bottom: 3px solid #E0E0E0; 
     padding-bottom: 8px; 
-    margin-bottom: 20px; 
+    margin-bottom: 25px; 
     font-weight: 600;
 }
 
-/* 1. HERO SECTION */
+/* 1. HERO SECTION - הרקע משתנה, מוסיף עומק */
 .hero {
-    background-color: #FFFFFF; /* לבן נקי */
-    padding: 40px 0 30px 0; 
+    background-color: #FFFFFF; 
+    padding: 50px 30px 40px 30px; 
     text-align: right; 
-    border-radius: 0 0 10px 10px;
+    border-radius: 8px; /* קימור עדין לכרטיס Hero */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
-    margin-bottom: 30px;
+    margin-top: 30px; /* רווח מהתפריט העליון */
 }
 .hero p {
-    font-size: 1.1em; 
+    font-size: 1.2em; 
     color: #5A5A5A;
     margin-top: 15px;
     margin-bottom: 30px;
     font-weight: 500; 
 }
 
-/* כפתור CTA - זהב חזק */
+/* כפתור CTA - תיקון צבע זהב (Burnt Gold) ועומק */
 .cta-button {
-    background-color: #FFC04D; 
-    color: #002D5B; 
-    padding: 15px 35px; 
+    background-color: #C08A37; /* גוון זהב עמוק ויוקרתי */
+    color: white; 
+    padding: 18px 40px; 
     border-radius: 4px; 
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: bold;
     display: block;
     margin: 25px auto;
-    max-width: 400px; 
+    max-width: 450px; 
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
-    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 6px 15px rgba(192, 138, 55, 0.5); 
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 .cta-button:hover {
-    background-color: #FFB32E;
-    transform: translateY(-2px);
+    background-color: #A3712E; 
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 20px rgba(192, 138, 55, 0.7);
 }
 
 /* 2. יצירת כרטיסים (Cards) */
 .content-section {
-    padding: 20px 0;
+    padding: 30px 0;
 }
 .card {
     background-color: white;
     border-radius: 8px;
-    padding: 20px; 
+    padding: 25px; 
     margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); 
-    border: 1px solid #E0E0E0; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
+    border: 1px solid #EAEAEA; 
 }
 
-/* תמונה */
-.image-placeholder {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    margin: 20px auto;
-    display: block;
+/* 3. אזור התמחור (Pricing) */
+.pricing-section {
+    background-color: #E8E8E8; 
+    padding: 40px 0; 
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+.pricing-box {
+    border: 3px solid #002D5B; 
+    padding: 20px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
+    max-width: 400px; 
+    margin: 15px auto;
 }
 
-/* רשימות */
-.list-item {
-    margin-bottom: 15px;
-    font-size: 0.95em;
-    font-weight: 500;
+/* תחתית הדף (Footer) */
+.footer-section {
+    text-align: center; 
+    padding: 20px 0; 
+    font-size: 0.85em; 
+    color: #5A5A5A;
+    border-top: 1px solid #D4D4D4;
 }
-.list-item span {
-    color: #002D5B; /* כחול כהה */
-    margin-left: 10px;
-    font-weight: bold;
-}
-.check-list {
-    list-style: none;
-    padding-right: 0;
-    font-size: 0.95em;
-}
+
+/* רספונסיביות לנייד */
+@media (max-width: 600px) {
+    body { padding-top: 50px; }
+    .main-header { padding: 5px 0; }
+    .hero { padding: 40px 15px 30px 15px; }
+    h1 { font-
