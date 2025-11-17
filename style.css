@@ -1,26 +1,11 @@
-אני מבין את התסכול העצום שלך. אם לאחר כל העדכונים העיצוב עדיין נתפס כ"מכוער" וחסר השפעה, זה אומר שהבעיה היא **במימד עמוק יותר של ה-CSS** שהמשוב המקומי לא מצליח לפתור.
-
-הפעם, במקום להשתמש רק בצללים (Box Shadows) וצבעים, אנחנו נבצע שינוי יסודי שיטפל בשלושה כשלים שנצפו: **אחידות הרקע (Hero), הניגודיות הכללית, והאופן שבו ה-HTML מעוות את הרווחים.**
-
-אנחנו הולכים על **גישת הבלוקים הנקיים (Clean Block Design)** שתמנע את הכשלים של הצללים המיותרים ותיתן לטקסט את ה"במה" המגיעה לו.
-
------
-
-## 💻 קוד CSS סופי (תיקון יסודי ואגרסיבי)
-
-הקוד הזה מבטל את ה-CSS שהיה על ה-Hero Section ועל ה-Pricing Section והופך אותם לבלוקים נקיים עם גבולות חדים, תוך הגדלת הטקסט הראשי למקסימום.
-
-אנא **החליפי את כל התוכן** של קובץ `style.css` בקוד הבא:
-
-```css
-/* הגדרות כלליות */
+/* הגדרות כלליות - Dark Mode Base */
 body {
     font-family: 'Assistant', sans-serif;
-    line-height: 1.6;
-    color: #222; /* שחור עמוק */
-    background-color: #F8F8F8; /* רקע בסיסי נקי */
+    line-height: 1.65;
+    color: #E8E8E8; /* טקסט לבן-בהיר */
+    background-color: #111111; /* רקע כהה מאוד (מעט יותר כהה מהקודם) */
     margin: 0;
-    padding-top: 65px; /* רווח לתפריט הדביק */
+    padding-top: 65px; 
     text-align: right; 
     direction: rtl;
 }
@@ -33,7 +18,7 @@ body {
 
 /* 0. HEADER ותפריט ניווט */
 .main-header {
-    background-color: #002D5B; /* צבע מותג חזק */
+    background-color: #000000; /* שחור מוחלט - מסתורין */
     color: white;
     padding: 10px 0;
     position: fixed; 
@@ -41,115 +26,144 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
-}
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.08); /* צל בהיר עדין */
 }
 .logo-link {
-    font-size: 1.6em; /* הגדלת הלוגו */
+    font-size: 1.6em; 
     font-weight: 700;
-    color: white;
+    color: #4CAF50; /* ירוק-סקרנות (היי-טק) */
     text-decoration: none;
+    letter-spacing: 0.5px;
 }
 .nav-links a {
-    color: #E8E8E8;
+    color: #B0B0B0;
     text-decoration: none;
     margin-right: 20px;
     font-weight: 500;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #4CAF50; /* זוהר קל */
 }
 
 /* כותרות וטיפוגרפיה */
 h1, h2, h3 {
-    color: #002D5B; 
+    color: #4CAF50; /* ירוק-סקרנות - אור המסתורין */
     font-weight: 700; 
-    margin-top: 0;
 }
 h1 { 
-    font-size: 3.2em; /* גודל דרמטי ובלתי ניתן להתעלמות */
+    font-size: 3.2em; 
     line-height: 1.05; 
     margin-bottom: 25px;
 }
 h2 { 
-    font-size: 1.9em; /* הגדלה נוספת */
-    border-bottom: 2px solid #D4D4D4; 
+    font-size: 1.9em; 
+    border-bottom: 2px solid #333333; 
     padding-bottom: 10px; 
     margin-bottom: 30px; 
     font-weight: 600;
 }
 
-/* 1. HERO SECTION - עיצוב נקי וברור */
+/* 1. HERO SECTION - דגש על עומק ופנימיות */
 .hero {
-    background-color: #FFFFFF; /* רקע לבן נקי וחזק */
+    background-color: #1A1A1A; /* אפור כהה עשיר */
     padding: 70px 0 50px 0; 
     text-align: right; 
-    /* ביטול הצללים שגרמו לכשלים */
-    box-shadow: none; 
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6); /* צל עמוק מאוד */
 }
 .hero p {
-    font-size: 1.5em; /* הגדלת הטקסט הראשי לדרמטיות */
-    color: #444;
+    font-size: 1.5em; 
+    color: #CCCCCC; 
     margin-top: 15px;
     margin-bottom: 40px;
     font-weight: 400; 
 }
 
-/* כפתור CTA - זהב חזק */
+/* כפתור CTA - זהב חזק עם זוהר קל */
 .cta-button {
     background-color: #FFC04D; 
-    color: #002D5B; 
-    padding: 24px 55px; /* הגדלת הכפתור למקסימום */
+    color: #000000; /* טקסט שחור על הזהב */
+    padding: 24px 55px; 
     border-radius: 4px; 
-    font-size: 1.6em; /* פונט חזק */
+    font-size: 1.6em; 
     font-weight: bold;
     display: block;
     margin: 40px auto;
-    max-width: 550px; /* הגדלה רוחבית */
+    max-width: 550px; 
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* שמירה על צל בולט בכפתור */
+    box-shadow: 0 0 15px rgba(255, 192, 77, 0.6); /* זוהר קל שמשדר סקרנות */
     transition: background-color 0.3s, transform 0.2s;
 }
+.cta-button:hover {
+    background-color: #FFB32E;
+    transform: translateY(-2px); 
+}
 
-/* 2. יצירת כרטיסים (Cards) */
+/* 2. יצירת כרטיסים (Cards) - בולטים מהרקע */
 .content-section {
     padding: 30px 0;
 }
 .card {
-    background-color: white;
+    background-color: #222222; /* כרטיסים כהים יותר */
     border-radius: 8px;
     padding: 30px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* צל עדין שנשמר */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* צל עמוק */
+    border: 1px solid #333333; /* גבול עדין */
 }
 
-/* אזור התמחור (Pricing) - רקע כהה יותר להדגשה */
+/* תמונה ורשימות - שמירה על ניגודיות */
+.image-placeholder {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 30px auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+.list-item span, .check-list li {
+    color: #7FFF00; /* ירוק זרחני - היי-טק/מסתורי */
+    font-weight: bold;
+}
+.check-list {
+    list-style: none;
+    padding-right: 0;
+}
+
+/* אזור התמחור (Pricing) */
 .pricing-section {
-    background-color: #EFEFEF; /* אפור בהיר יציב */
+    background-color: #1A1A1A; 
     padding: 50px 0;
-    border-radius: 8px; /* שמירת הקימור העדין */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     margin-top: 30px;
 }
 .pricing-box {
-    border: 3px solid #002D5B; 
+    border: 3px solid #4CAF50; /* גבול בצבע המסתורין */
     padding: 30px;
     border-radius: 8px;
     text-align: center;
-    background-color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
+    background-color: #222222; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
     max-width: 500px;
     margin: 20px auto;
+}
+
+/* תחתית הדף (Footer) */
+.footer-section {
+    text-align: center; 
+    padding: 30px 0; 
+    font-size: 0.9em; 
+    color: #AAAAAA;
+    border-top: 1px solid #333333;
 }
 
 /* רספונסיביות */
 @media (max-width: 600px) {
     body { padding-top: 50px; }
     h1 { font-size: 2.5em; }
-    h2 { font-size: 1.7em; }
     .hero { padding: 40px 0 30px 0; }
     .cta-button { font-size: 1.3em; padding: 18px 25px; }
-    .nav-links a { display: none; } 
 }
-```
