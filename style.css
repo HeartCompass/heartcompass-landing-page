@@ -1,31 +1,22 @@
-/* הגדרות כלליות - בסיס חם */
+/* הגדרות כלליות - בסיס חם ומקצועי */
 body {
-    /* ... שאר הסגנון ... */
-    background-image: url('images/wood_texture_light.png'); /* החלף בשם קובץ הרקע שלך */
-    background-repeat: repeat;
     font-family: 'Assistant', sans-serif;
-    line-height: 1.65;
+    line-height: 1.6;
     color: #333333; 
-    background-color: #F8F5F0; /* בז' בהיר מאוד - בסיס חם */
+    background-color: #F8F5F0; /* בז' בהיר מאוד */
     margin: 0;
-    padding-top: 65px;
+    padding-top: 65px; /* רווח לתפריט הדביק */
     text-align: right; 
     direction: rtl;
-    
-    /* הוספת טקסטורת עץ:
-       כדי להשתמש בתמונה שהורדת, שמרי אותה בתיקייה images/ ועדכני את השם:
-       background-image: url('images/wood_texture_light.png'); 
-       background-repeat: repeat; 
-    */
 }
 
 .container {
     max-width: 960px; 
     margin: 0 auto;
-    padding: 0 30px; /* תיקון: הגדלת הריווח מהשוליים */
+    padding: 0 30px; /* ריווח מהשוליים */
 }
 
-/* 0. HEADER ותפריט ניווט - צבע חום עמוק */
+/* 0. HEADER ותפריט ניווט - תיקון שבירה */
 .main-header {
     background-color: #5A3B33; /* חום-קפה עמוק */
     color: white;
@@ -43,11 +34,24 @@ body {
     align-items: center;
     padding: 0 15px; 
 }
+/* סגנון לקישור הלוגו */
 .logo-link {
-    font-size: 1.4em;
-    font-weight: 700;
-    color: #D4AF37; /* זהב עשיר */
+    display: flex; 
+    align-items: center; 
     text-decoration: none;
+    color: #D4AF37; 
+}
+.logo-image {
+    height: 55px; /* גודל הלוגו */
+    width: auto;
+    display: block;
+    margin-left: 10px; /* רווח בין הלוגו לטקסט */
+}
+.logo-text {
+    font-size: 1.8em; 
+    font-weight: 700;
+    color: #D4AF37; 
+    white-space: nowrap;
 }
 .nav-links {
     flex-grow: 1; 
@@ -55,161 +59,4 @@ body {
     margin-left: 20px; 
     white-space: nowrap; /* מונע מעבר שורה */
 }
-.nav-links a {
-    color: #F0F0F0;
-    text-decoration: none;
-    margin-right: 15px; 
-    font-weight: 500;
-    transition: color 0.3s;
-}
-.nav-links a:hover {
-    color: #D4AF37;
-}
-
-/* כותרות וטיפוגרפיה */
-h1, h2, h3 {
-    color: #5A3B33; /* חום עמוק */
-    font-weight: 700; 
-}
-h1 { 
-    font-size: 2.2em;
-    line-height: 1.1; 
-    margin-bottom: 15px;
-}
-h2 { 
-    font-size: 1.5em; 
-    border-bottom: 3px solid #D4AF37; /* קו הפרדה בצבע זהב */
-    padding-bottom: 8px; 
-    margin-bottom: 25px; 
-    font-weight: 600;
-}
-
-/* 1. HERO SECTION - יוקרה */
-.hero {
-    background-color: white; 
-    padding: 50px 30px 40px 30px; 
-    text-align: right; 
-    border-radius: 8px;
-    /* צל חם ובולט (כמו אלבום יוקרה) */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
-    margin-bottom: 30px;
-    border: 3px solid #D4AF37; /* מסגרת זהב דקה חיצונית */
-}
-.hero p {
-    font-size: 1.2em; 
-    color: #5A5A5A;
-    margin-top: 15px;
-    margin-bottom: 30px;
-    font-weight: 500; 
-}
-
-/* כפתור CTA - זהב שזוף (Burnt Gold) */
-.cta-button {
-    background-color: #A3712E; 
-    color: white; 
-    padding: 18px 40px; 
-    border-radius: 4px; 
-    font-size: 1.3em;
-    font-weight: bold;
-    display: block;
-    margin: 25px auto;
-    max-width: 450px; 
-    text-align: center;
-    box-shadow: 0 6px 15px rgba(163, 113, 46, 0.7); 
-    transition: background-color 0.3s, transform 0.2s;
-}
-.cta-button:hover {
-    background-color: #8D5D25; 
-    transform: translateY(-2px); 
-}
-
-/* 2. יצירת כרטיסים (Cards) */
-.content-section {
-    padding: 30px 0;
-}
-.card {
-    background-color: white;
-    border-radius: 8px;
-    padding: 25px; 
-    margin-bottom: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
-    border: 1px solid #E0E0E0; 
-}
-
-/* רשימות */
-.list-item span, .check-list li {
-    color: #D4AF37; /* צבע הזהב העשיר */
-    font-weight: bold;
-}
-
-/* 3. אזור התמחור (Pricing) */
-.pricing-section {
-    background-color: #F8F5F0; 
-    padding: 40px 0; 
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-.pricing-box {
-    border: 3px solid #5A3B33; 
-    padding: 20px;
-    border-radius: 8px;
-    background-color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
-    max-width: 400px; 
-    margin: 15px auto;
-}
-
-/* תחתית הדף (Footer) */
-.footer-section {
-    color: #5A3B33; 
-    text-align: center; 
-    padding: 20px 0; 
-    font-size: 0.85em; 
-    border-top: 1px solid #D4D4D4;
-}
-
-/* סגנון לקישור הקרדיט (כדי שיהיה קטן ודיסקרטי) */
-.footer-attribution { 
-    display: block;
-    margin-top: 10px;
-    font-size: 0.75em;
-    color: #999999; /* אפור עדין */
-    text-decoration: none;
-}
-
-/* רספונסיביות */
-@media (max-width: 600px) {
-    body { padding-top: 50px; }
-    h1 { font-size: 1.8em; }
-    h2 { font-size: 1.4em; }
-    .hero p { font-size: 1em; }
-    .cta-button { font-size: 1.1em; padding: 12px 25px; }
-}
-
-/* סגנון לתמונת הלוגו עצמה - שינוי גודל */
-.logo-image {
-    height: 55px; /* הגדלה מ-40px ל-55px */
-    width: auto;
-    display: block;
-}
-
-/* סגנון לתמונת היומן - מיקום, גודל וצללים */
-.image-placeholder {
-    display: block; /* הופך את התמונה לאלמנט בלוק נפרד */
-    max-width: 600px; /* הגדלה קלה של הרוחב המקסימלי */
-    width: 100%; /* התאמה לרוחב המקסימלי */
-    height: auto; /* שמירה על פרופורציות */
-    margin: 40px auto; /* מרווחים גדולים יותר מלמעלה ולמטה, ומרכוז */
-    border-radius: 12px; /* קימור עדין יותר לפינת התמונה */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* צל עמוק יותר כדי לתת עומק */
-    border: 1px solid #E0E0E0; /* גבול עדין להבלטה */
-}
-
-/* ודא שהלינק עצמו לא יוצר רווחים מיותרים */
-.logo-link {
-    /* הוסף/י את הכללים הקיימים כאן, אך עדכן/י את גודל הפונט */
-    display: flex; /* כדי ליישר את התמונה כראוי אם נדרש */
-    align-items: center;
-    /*... שאר הכללים הקיימים ...*/
-}
+.nav
