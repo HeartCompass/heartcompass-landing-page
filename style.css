@@ -2,34 +2,26 @@
 body {
     font-family: 'Assistant', sans-serif;
     line-height: 1.6;
-    color: #333333; 
-    background-color: #F8F8F8;
+    color: #E8E8E8; /* טקסט לבן-בהיר */
+    background-color: #111111; /* רקע כהה מאוד (המסתוריות) */
     margin: 0;
-    padding-top: 60px;
+    padding-top: 65px; 
     text-align: right; 
     direction: rtl;
-    /* הוספת האנימציה לרקע של כל הדף - בסיס עדין */
-    background: linear-gradient(135deg, #F8F8F8 0%, #EAEAEA 100%);
+    /* אנימציה עדינה ברקע - אם נדרשת תנועה */
     background-size: 200% 200%;
-    animation: backgroundShift 20s ease infinite; /* אנימציה איטית וזורמת */
-}
-
-/* הגדרת האנימציה (keyframes) */
-@keyframes backgroundShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    /* אם ה-HTML תומך, ניתן להפעיל אנימציה כאן */
 }
 
 .container {
     max-width: 960px; 
     margin: 0 auto;
-    padding: 0 30px; 
+    padding: 0 30px; /* הגדלת הריווח מהשוליים - פתרון הצפיפות */
 }
 
-/* 0. HEADER ותפריט ניווט */
+/* 0. HEADER ותפריט ניווט - תיקון שבירה */
 .main-header {
-    background-color: #002D5B; /* כחול כהה (Navy) - סמכותי */
+    background-color: #000000; /* שחור מוחלט */
     color: white;
     padding: 8px 0; 
     position: fixed; 
@@ -37,7 +29,7 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); 
 }
 .header-container {
     display: flex;
@@ -46,65 +38,69 @@ body {
     padding: 0 15px; 
 }
 .logo-link {
-    font-size: 1.4em;
+    font-size: 1.4em; 
     font-weight: 700;
-    color: #FFC04D; 
+    color: #4CAF50; /* ירוק-סקרנות */
     text-decoration: none;
 }
 .nav-links {
+    /* התיקון הקריטי למניעת שבירה ורוחב */
     flex-grow: 1; 
     text-align: left; 
     margin-left: 20px; 
-    white-space: nowrap; 
+    white-space: nowrap; /* מונע מעבר שורה */
 }
 .nav-links a {
-    color: #D4D4D4;
+    color: #B0B0B0;
     text-decoration: none;
     margin-right: 15px; 
     font-weight: 500;
     transition: color 0.3s;
 }
+.nav-links a:hover {
+    color: #7FFF00; /* זוהר חזק יותר */
+}
 
 /* כותרות וטיפוגרפיה */
 h1, h2, h3 {
-    color: #002D5B; 
+    color: #7FFF00; /* ירוק זרחני - אור המסתורין */
     font-weight: 700; 
-    margin-top: 0;
 }
 h1 { 
     font-size: 2.2em;
     line-height: 1.1; 
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 h2 { 
     font-size: 1.5em; 
-    border-bottom: 3px solid #E0E0E0; 
+    border-bottom: 2px solid #333333; /* קו הפרדה כהה */
     padding-bottom: 8px; 
     margin-bottom: 25px; 
     font-weight: 600;
 }
 
-/* 1. HERO SECTION - הרקע משתנה, מוסיף עומק */
+/* 1. HERO SECTION - עיצוב סודי ויוקרתי */
 .hero {
-    background-color: #FFFFFF; 
-    padding: 50px 30px 40px 30px; 
+    background-color: #1A1A1A; /* כהה מאוד */
+    padding: 50px 30px 40px 30px; /* תיקון ריווח פנימי */
     text-align: right; 
-    border-radius: 8px; /* קימור עדין לכרטיס Hero */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
-    margin-top: 30px; /* רווח מהתפריט העליון */
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7); /* צל עמוק ודרמטי */
+    margin-bottom: 30px;
+    border: 1px solid #333; /* גבול עדין */
 }
 .hero p {
     font-size: 1.2em; 
-    color: #5A5A5A;
+    color: #CCCCCC; /* אפור בהיר */
     margin-top: 15px;
     margin-bottom: 30px;
-    font-weight: 500; 
+    font-weight: 400; 
 }
 
-/* כפתור CTA - תיקון צבע זהב (Burnt Gold) ועומק */
+/* כפתור CTA - זהב חזק עם זוהר הייטק */
 .cta-button {
-    background-color: #C08A37; /* גוון זהב עמוק ויוקרתי */
-    color: white; 
+    background-color: #FFC04D; 
+    color: #000000; 
     padding: 18px 40px; 
     border-radius: 4px; 
     font-size: 1.3em;
@@ -113,13 +109,13 @@ h2 {
     margin: 25px auto;
     max-width: 450px; 
     text-align: center;
-    box-shadow: 0 6px 15px rgba(192, 138, 55, 0.5); 
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 0 15px rgba(127, 255, 0, 0.8); /* זוהר ירוק חזק */
+    transition: background-color 0.3s, transform 0.2s;
 }
 .cta-button:hover {
-    background-color: #A3712E; 
-    transform: translateY(-2px); 
-    box-shadow: 0 8px 20px rgba(192, 138, 55, 0.7);
+    background-color: #FFB32E;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(127, 255, 0, 1);
 }
 
 /* 2. יצירת כרטיסים (Cards) */
@@ -127,28 +123,41 @@ h2 {
     padding: 30px 0;
 }
 .card {
-    background-color: white;
+    background-color: #222222; /* כרטיסים כהים */
     border-radius: 8px;
     padding: 25px; 
     margin-bottom: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
-    border: 1px solid #EAEAEA; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
+    border: 1px solid #333333; 
+}
+
+/* רשימות - דגש על ירוק זרחני */
+.list-item span, .check-list li {
+    color: #7FFF00; /* ירוק זרחני */
+    font-weight: bold;
+}
+.check-list {
+    list-style: none;
+    padding-right: 0;
+}
+.check-list li {
+    margin-bottom: 10px;
 }
 
 /* 3. אזור התמחור (Pricing) */
 .pricing-section {
-    background-color: #E8E8E8; 
+    background-color: #1A1A1A; 
     padding: 40px 0; 
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
 }
 .pricing-box {
-    border: 3px solid #002D5B; 
+    border: 3px solid #4CAF50; /* גבול ירוק חזק */
     padding: 20px;
     border-radius: 8px;
-    background-color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
+    background-color: #222222; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); 
     max-width: 400px; 
     margin: 15px auto;
 }
@@ -158,13 +167,16 @@ h2 {
     text-align: center; 
     padding: 20px 0; 
     font-size: 0.85em; 
-    color: #5A5A5A;
-    border-top: 1px solid #D4D4D4;
+    color: #AAAAAA;
+    border-top: 1px solid #333333;
 }
 
-/* רספונסיביות לנייד */
+/* רספונסיביות */
 @media (max-width: 600px) {
     body { padding-top: 50px; }
     .main-header { padding: 5px 0; }
+    h1 { font-size: 1.8em; }
     .hero { padding: 40px 15px 30px 15px; }
-    h1 { font-
+    .cta-button { font-size: 1.1em; padding: 12px 25px; }
+}
+```
