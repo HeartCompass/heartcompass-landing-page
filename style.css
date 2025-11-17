@@ -1,5 +1,8 @@
 /* הגדרות כלליות - בסיס חם */
 body {
+    /* ... שאר הסגנון ... */
+    background-image: url('images/wood_texture_light.png'); /* החלף בשם קובץ הרקע שלך */
+    background-repeat: repeat;
     font-family: 'Assistant', sans-serif;
     line-height: 1.65;
     color: #333333; 
