@@ -1,27 +1,27 @@
-/* הגדרות כלליות - Dark Mode Base */
+/* הגדרות כלליות - בסיס חם */
 body {
     font-family: 'Assistant', sans-serif;
-    line-height: 1.6;
-    color: #E8E8E8; /* טקסט לבן-בהיר */
-    background-color: #111111; /* רקע כהה מאוד (המסתוריות) */
+    line-height: 1.65;
+    color: #333333; 
+    background-color: #F8F5F0; /* בז' בהיר מאוד */
     margin: 0;
-    padding-top: 65px; 
+    padding-top: 65px;
     text-align: right; 
     direction: rtl;
-    /* אנימציה עדינה ברקע - אם נדרשת תנועה */
-    background-size: 200% 200%;
-    /* אם ה-HTML תומך, ניתן להפעיל אנימציה כאן */
+    /* אם יש תמונה של טקסטורת עץ, יש להוסיף כאן: */
+    /* background-image: url('images/wood_texture_light.png'); 
+    background-repeat: repeat; */
 }
 
 .container {
     max-width: 960px; 
     margin: 0 auto;
-    padding: 0 30px; /* הגדלת הריווח מהשוליים - פתרון הצפיפות */
+    padding: 0 30px; 
 }
 
-/* 0. HEADER ותפריט ניווט - תיקון שבירה */
+/* 0. HEADER ותפריט ניווט - צבע חום עמוק */
 .main-header {
-    background-color: #000000; /* שחור מוחלט */
+    background-color: #5A3B33; /* חום-קפה עמוק */
     color: white;
     padding: 8px 0; 
     position: fixed; 
@@ -29,78 +29,63 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); 
-}
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
 }
 .logo-link {
-    font-size: 1.4em; 
+    font-size: 1.4em;
     font-weight: 700;
-    color: #4CAF50; /* ירוק-סקרנות */
+    color: #D4AF37; /* זהב עשיר */
     text-decoration: none;
 }
-.nav-links {
-    /* התיקון הקריטי למניעת שבירה ורוחב */
-    flex-grow: 1; 
-    text-align: left; 
-    margin-left: 20px; 
-    white-space: nowrap; /* מונע מעבר שורה */
-}
 .nav-links a {
-    color: #B0B0B0;
+    color: #F0F0F0;
     text-decoration: none;
     margin-right: 15px; 
     font-weight: 500;
     transition: color 0.3s;
 }
 .nav-links a:hover {
-    color: #7FFF00; /* זוהר חזק יותר */
+    color: #D4AF37;
 }
 
-/* כותרות וטיפוגרפיה */
+/* כותרות וטיפוגרפיה - הטון הקלאסי */
 h1, h2, h3 {
-    color: #7FFF00; /* ירוק זרחני - אור המסתורין */
+    color: #5A3B33; /* חום עמוק */
     font-weight: 700; 
-}
-h1 { 
-    font-size: 2.2em;
-    line-height: 1.1; 
-    margin-bottom: 20px;
+    /* גודל פונט נשאר מכובד כפי שתוקן לאחרונה */
+    font-size: 2.2em; 
 }
 h2 { 
     font-size: 1.5em; 
-    border-bottom: 2px solid #333333; /* קו הפרדה כהה */
+    border-bottom: 3px solid #D4AF37; /* קו הפרדה בצבע זהב */
     padding-bottom: 8px; 
     margin-bottom: 25px; 
     font-weight: 600;
 }
 
-/* 1. HERO SECTION - עיצוב סודי ויוקרתי */
+/* 1. HERO SECTION - עם מסגרת עץ מודגשת */
 .hero {
-    background-color: #1A1A1A; /* כהה מאוד */
-    padding: 50px 30px 40px 30px; /* תיקון ריווח פנימי */
+    background-color: white; /* לבן נקי כדי להבליט את התוכן */
+    padding: 50px 30px 40px 30px; 
     text-align: right; 
     border-radius: 8px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7); /* צל עמוק ודרמטי */
+    /* צל חם ובולט - כמו אלבום חתונה יוקרתי */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
     margin-bottom: 30px;
-    border: 1px solid #333; /* גבול עדין */
+    border: 3px solid #D4AF37; /* מסגרת זהב דקה חיצונית */
 }
 .hero p {
     font-size: 1.2em; 
-    color: #CCCCCC; /* אפור בהיר */
+    color: #5A5A5A;
     margin-top: 15px;
     margin-bottom: 30px;
-    font-weight: 400; 
+    font-weight: 500; 
 }
 
-/* כפתור CTA - זהב חזק עם זוהר הייטק */
+/* כפתור CTA - זהב שזוף (Burnt Gold) עם עומק */
 .cta-button {
-    background-color: #FFC04D; 
-    color: #000000; 
+    background-color: #A3712E; /* גוון זהב שזוף */
+    color: white; 
     padding: 18px 40px; 
     border-radius: 4px; 
     font-size: 1.3em;
@@ -109,74 +94,5 @@ h2 {
     margin: 25px auto;
     max-width: 450px; 
     text-align: center;
-    box-shadow: 0 0 15px rgba(127, 255, 0, 0.8); /* זוהר ירוק חזק */
-    transition: background-color 0.3s, transform 0.2s;
-}
-.cta-button:hover {
-    background-color: #FFB32E;
-    transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(127, 255, 0, 1);
-}
-
-/* 2. יצירת כרטיסים (Cards) */
-.content-section {
-    padding: 30px 0;
-}
-.card {
-    background-color: #222222; /* כרטיסים כהים */
-    border-radius: 8px;
-    padding: 25px; 
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
-    border: 1px solid #333333; 
-}
-
-/* רשימות - דגש על ירוק זרחני */
-.list-item span, .check-list li {
-    color: #7FFF00; /* ירוק זרחני */
-    font-weight: bold;
-}
-.check-list {
-    list-style: none;
-    padding-right: 0;
-}
-.check-list li {
-    margin-bottom: 10px;
-}
-
-/* 3. אזור התמחור (Pricing) */
-.pricing-section {
-    background-color: #1A1A1A; 
-    padding: 40px 0; 
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    margin-top: 30px;
-}
-.pricing-box {
-    border: 3px solid #4CAF50; /* גבול ירוק חזק */
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #222222; 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); 
-    max-width: 400px; 
-    margin: 15px auto;
-}
-
-/* תחתית הדף (Footer) */
-.footer-section {
-    text-align: center; 
-    padding: 20px 0; 
-    font-size: 0.85em; 
-    color: #AAAAAA;
-    border-top: 1px solid #333333;
-}
-
-/* רספונסיביות */
-@media (max-width: 600px) {
-    body { padding-top: 50px; }
-    .main-header { padding: 5px 0; }
-    h1 { font-size: 1.8em; }
-    .hero { padding: 40px 15px 30px 15px; }
-    .cta-button { font-size: 1.1em; padding: 12px 25px; }
-}
-```
+    box-shadow: 0 6px 15px rgba(163, 113, 46, 0.7); /* צל חזק שמשדר יוקרה */
+    transition: background-color 0.3s
