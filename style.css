@@ -3,9 +3,9 @@ body {
     font-family: 'Assistant', sans-serif;
     line-height: 1.65;
     color: #333333;
-    background-color: #F7F7F7; /* רקע נקי, קל ומרגיע */
+    background-color: #F0F2F5; /* אפור בהיר מאוד - בסיס מודרני */
     margin: 0;
-    padding-top: 60px; /* רווח לתפריט הדביק (Sticky Header) */
+    padding-top: 60px;
     text-align: right; 
     direction: rtl;
 }
@@ -16,44 +16,39 @@ body {
     padding: 0 25px;
 }
 
-/* 0. HEADER ותפריט ניווט (הדגשת מקצועיות) */
+/* 0. HEADER ותפריט ניווט (יוקרה ומקצועיות) */
 .main-header {
-    background-color: #003366; /* כחול כהה (Navy) - צבע אמינות ומקצועיות */
+    background-color: #002D5B; /* כחול כהה - צבע מותג חזק */
     color: white;
     padding: 10px 0;
-    position: fixed; /* תפריט נדבק למעלה */
+    position: fixed; 
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-}
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* צל עדין */
 }
 .logo-link {
     font-size: 1.5em;
     font-weight: 700;
     color: white;
     text-decoration: none;
-    /* מקום להטמעת לוגו קטן אם יש */
     letter-spacing: 0.5px;
 }
 .nav-links a {
-    color: white;
+    color: #E8E8E8;
     text-decoration: none;
     margin-right: 20px;
     font-weight: 500;
     transition: color 0.3s;
 }
 .nav-links a:hover {
-    color: #B8860B; /* הדגשה בצבע הזהב */
+    color: #FFC04D; /* זהב בהיר */
 }
 
 /* כותרות וטיפוגרפיה */
 h1, h2, h3 {
-    color: #003366; /* כחול כהה - צבע המותג */
+    color: #002D5B; 
     font-weight: 700; 
     margin-top: 0;
 }
@@ -70,12 +65,12 @@ h2 {
     font-weight: 500;
 }
 
-/* 1. HERO SECTION */
+/* 1. HERO SECTION - עם רקע חם יותר */
 .hero {
-    background-color: #EBF3F7; /* כחול-אפור בהיר מאוד */
-    padding: 80px 0 50px 0; /* רווחים נכונים */
+    background-color: #F9F9F9; /* רקע קרוב ללבן */
+    padding: 80px 0 50px 0; 
     text-align: right; 
-    border-bottom: 15px solid #003366; 
+    border-bottom: 10px solid #D4D4D4; /* קו הפרדה קלאסי */
 }
 .hero p {
     font-size: 1.4em; 
@@ -87,8 +82,8 @@ h2 {
 
 /* כפתור CTA - זהב חזק */
 .cta-button {
-    background-color: #B8860B; 
-    color: white;
+    background-color: #FFC04D; /* זהב בהיר וחזק */
+    color: #002D5B; /* טקסט כחול כהה */
     padding: 22px 50px; 
     text-decoration: none;
     border-radius: 4px; 
@@ -98,71 +93,4 @@ h2 {
     margin: 40px auto;
     max-width: 500px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
-    transition: background-color 0.3s;
-}
-.cta-button:hover {
-    background-color: #997000;
-}
-
-/* אלמנטים כלליים */
-.content-section {
-    padding: 50px 0;
-}
-.image-placeholder {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    margin: 30px auto;
-    display: block;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* רשימות - דגש על ירוק חזק למדידה */
-.list-item {
-    margin-bottom: 20px;
-    font-size: 1.1em;
-    font-weight: 500;
-}
-.list-item span {
-    color: #38761D; 
-    margin-left: 10px;
-    font-weight: bold;
-}
-
-/* אזור התמחור (Pricing) */
-.pricing-section {
-    background-color: #E8E8E8; 
-    padding: 50px 0;
-}
-.pricing-box {
-    border: 3px solid #003366; 
-    padding: 30px;
-    border-radius: 6px;
-    text-align: center;
-    background-color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: 20px auto;
-}
-
-/* תחתית הדף (Footer) */
-.footer-section {
-    text-align: center; 
-    padding: 30px 0; 
-    font-size: 0.9em; 
-    color: #5A5A5A;
-    border-top: 1px solid #D4D4D4;
-}
-
-/* רספונסיביות */
-@media (max-width: 600px) {
-    body { padding-top: 50px; }
-    .main-header { padding: 5px 0; }
-    .nav-links a { display: none; } /* הסתרת הניווט בנייד לטובת המטרה העיקרית */
-    .hero { padding: 40px 0 30px 0; }
-    h1 { font-size: 2em; }
-    h2 { font-size: 1.6em; }
-    .cta-button { font-size: 1.2em; padding: 15px 25px; }
-}
+    box-shadow: 0 4px 15px rgba(0, 0,
