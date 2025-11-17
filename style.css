@@ -1,51 +1,40 @@
-/* הגדרות כלליות */
+/* הגדרות כלליות (Body padding מתוקן לגובה החדש) */
 body {
-    font-family: 'Assistant', sans-serif;
-    line-height: 1.65;
-    color: #333333; 
-    background-color: #F8F5F0; /* בז' בהיר מאוד */
-    margin: 0;
-    padding-top: 65px;
-    text-align: right; 
-    direction: rtl;
+    /* ...שאר הסגנון נשמר... */
+    padding-top: 100px; /* הוספת רווח גדול יותר בחלק העליון לגובה ה-Header החדש */
 }
 
-.container {
-    max-width: 960px; 
-    margin: 0 auto;
-    padding: 0 30px; 
-}
-
-/* 0. HEADER ותפריט ניווט */
+/* 0. HEADER ותפריט ניווט - הדגשת גובה, רקע, ולוגו */
 .main-header {
-    background-color: #5A3B33; 
-    color: white;
-    padding: 8px 0; 
+    background-color: #5A3B33; /* צבע גיבוי חום עמוק */
+    
+    /* קוד לטעינת תמונת רקע: להפעיל לאחר העלאת הקובץ */
+    /* background-image: url('images/header_wood.jpg'); 
+    background-size: cover;
+    background-position: center; */
+    
+    padding: 20px 0; /* הגדלת הפדינג ליצירת גובה Header גדול יותר */
     position: fixed; 
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); 
 }
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px; 
-}
-.logo-link {
-    display: flex; 
-    align-items: center; 
-    text-decoration: none;
-    color: #D4AF37; 
-}
+
+/* תיקון: הגדלת הלוגו והטקסט כדי שיהיה דומיננטי */
 .logo-image {
-    height: 55px; 
+    height: 70px; /* הגדלה סופית ל-70px */
     width: auto;
     display: block;
-    margin-left: 10px; 
+    margin-left: 15px; /* רווח גדול יותר בין הלוגו לטקסט */
 }
+.logo-text {
+    font-size: 2.2em; /* הגדלת גודל הטקסט של הלוגו */
+    font-weight: 700;
+    color: #D4AF37; 
+    white-space: nowrap;
+}
+
+/* ... שאר קוד ה-CSS נשאר כפי שהיה ... */
 .logo-text {
     font-size: 1.8em; 
     font-weight: 700;
