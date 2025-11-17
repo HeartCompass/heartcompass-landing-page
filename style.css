@@ -18,9 +18,9 @@ body {
 
 /* 0. HEADER ותפריט ניווט */
 .main-header {
-    background-color: #5A3B33; /* חום-קפה עמוק */
+    background-color: #5A3B33; 
     color: white;
-    padding: 8px 0; 
+    padding: 15px 0; /* הגדלה מ-8px ל-15px כדי להגביה את ה-Header */
     position: fixed; 
     top: 0;
     left: 0;
