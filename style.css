@@ -1,11 +1,11 @@
-/* הגדרות כלליות - בסיס חם ומקצועי */
+/* הגדרות כלליות */
 body {
     font-family: 'Assistant', sans-serif;
-    line-height: 1.6;
+    line-height: 1.65;
     color: #333333; 
     background-color: #F8F5F0; /* בז' בהיר מאוד */
     margin: 0;
-    padding-top: 65px; /* רווח לתפריט הדביק */
+    padding-top: 65px; 
     text-align: right; 
     direction: rtl;
 }
@@ -13,10 +13,10 @@ body {
 .container {
     max-width: 960px; 
     margin: 0 auto;
-    padding: 0 30px; /* ריווח מהשוליים */
+    padding: 0 30px; /* ריווח נקי מהשוליים */
 }
 
-/* 0. HEADER ותפריט ניווט - תיקון שבירה */
+/* 0. HEADER ותפריט ניווט */
 .main-header {
     background-color: #5A3B33; /* חום-קפה עמוק */
     color: white;
@@ -34,7 +34,6 @@ body {
     align-items: center;
     padding: 0 15px; 
 }
-/* סגנון לקישור הלוגו */
 .logo-link {
     display: flex; 
     align-items: center; 
@@ -42,10 +41,10 @@ body {
     color: #D4AF37; 
 }
 .logo-image {
-    height: 55px; /* גודל הלוגו */
+    height: 55px; 
     width: auto;
     display: block;
-    margin-left: 10px; /* רווח בין הלוגו לטקסט */
+    margin-left: 10px; 
 }
 .logo-text {
     font-size: 1.8em; 
@@ -57,6 +56,96 @@ body {
     flex-grow: 1; 
     text-align: left; 
     margin-left: 20px; 
-    white-space: nowrap; /* מונע מעבר שורה */
+    white-space: nowrap; 
 }
-.nav
+.nav-links a {
+    color: #F0F0F0;
+    text-decoration: none;
+    margin-right: 15px; 
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+/* כותרות וטיפוגרפיה */
+h1, h2, h3 {
+    color: #5A3B33; 
+    font-weight: 700; 
+    margin-top: 0;
+}
+h1 { 
+    font-size: 2.2em;
+    line-height: 1.1; 
+    margin-bottom: 15px;
+}
+h2 { 
+    font-size: 1.5em; 
+    border-bottom: 3px solid #D4AF37; 
+    padding-bottom: 8px; 
+    margin-bottom: 25px; 
+    font-weight: 600;
+}
+
+/* 1. HERO SECTION */
+.hero {
+    background-color: white; 
+    padding: 50px 30px 40px 30px; 
+    text-align: right; 
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+    margin-bottom: 30px;
+    border: 3px solid #D4AF37; 
+}
+.hero p {
+    font-size: 1.2em; 
+    color: #5A5A5A;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    font-weight: 500; 
+}
+
+/* כפתור CTA - זהב שזוף (Burnt Gold) ועומק */
+.cta-button {
+    background-color: #A3712E; 
+    color: white; 
+    padding: 18px 40px; 
+    border-radius: 4px; 
+    font-size: 1.3em;
+    font-weight: bold;
+    display: block;
+    margin: 25px auto;
+    max-width: 450px; 
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(163, 113, 46, 0.7); 
+    transition: background-color 0.3s, transform 0.2s;
+}
+.cta-button:hover {
+    background-color: #8D5D25; 
+    transform: translateY(-2px); 
+}
+
+/* 2. יצירת כרטיסים (Cards) ומיקום תמונה - תיקון סופי */
+.content-section {
+    padding: 30px 0;
+}
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 35px; /* הגדלת הריווח הפנימי */
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
+    border: 1px solid #E0E0E0; 
+}
+.image-placeholder {
+    display: block; 
+    max-width: 500px; 
+    width: 100%;
+    height: auto;
+    /* המיקום המתוקן והבטוח: ריווח עדין ומירכוז */
+    margin: 25px auto; 
+    border-radius: 12px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #E0E0E0; 
+}
+
+/* 3. אזור התמחור (Pricing) */
+.pricing-section {
