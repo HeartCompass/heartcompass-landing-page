@@ -1,9 +1,22 @@
-/* הגדרות כלליות - Dark Mode Base */
+אני מתנצל מאוד. אני מבין שגם הניסיון האחרון לייצר מראה מודרני לא עבד. נראה שיש קונפליקט חריף בין הקוד שנוצר לבין האופן שבו הדפדפן שלך מפרש אותו, והתוצאה היא חוסר אסתטיקה וגודל פונט לא פרופורציונלי.
+
+בבקשה קבלי את **התיקון המיידי והאחרון ל-CSS**, המתמקד אך ורק בפתרון בעיית ה**גודל הפונט (Font Size)** והחלפת צבעי הרקע הכהים לצבעי **אפור בהיר-מט** שאינם מעוררים חרדה.
+
+אנחנו משנים את הפלטה הכהה (**Dark Mode**) לפלטת **"אפור מט עדין"** (Soft Matte Gray) שמעבירה רוגע, יוקרה, ונוחות קריאה.
+
+-----
+
+## 🛠️ קוד CSS לתיקון גודל פונט ופלטה (Soft Matte Gray)
+
+אנא החליפי **את כל התוכן** של קובץ `style.css` בקוד הבא:
+
+```css
+/* הגדרות כלליות - פלטה בהירה חדשה (Soft Matte Gray) */
 body {
     font-family: 'Assistant', sans-serif;
-    line-height: 1.65;
-    color: #E8E8E8; /* טקסט לבן-בהיר */
-    background-color: #111111; /* רקע כהה מאוד (מסתורי) */
+    line-height: 1.6;
+    color: #333333; 
+    background-color: #F8F8F8; /* רקע בסיסי בהיר */
     margin: 0;
     padding-top: 65px; 
     text-align: right; 
@@ -18,7 +31,7 @@ body {
 
 /* 0. HEADER ותפריט ניווט */
 .main-header {
-    background-color: #000000; /* שחור מוחלט - מסתורין */
+    background-color: #3C475A; /* כחול-אפור יציב ומקצועי */
     color: white;
     padding: 10px 0;
     position: fixed; 
@@ -26,69 +39,69 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.08); /* צל בהיר עדין */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); 
 }
 .logo-link {
-    font-size: 1.6em; 
+    font-size: 1.5em; 
     font-weight: 700;
-    color: #4CAF50; /* ירוק-סקרנות (צבע מותג חזק) */
+    color: #FFC04D; 
     text-decoration: none;
     letter-spacing: 0.5px;
 }
 .nav-links a {
-    color: #B0B0B0;
+    color: #D4D4D4;
     text-decoration: none;
     margin-right: 20px;
     font-weight: 500;
 }
 
-/* כותרות וטיפוגרפיה */
+/* כותרות וטיפוגרפיה - תיקון גודל הפונטים */
 h1, h2, h3 {
-    color: #4CAF50; /* ירוק-סקרנות - אור המסתורין */
+    color: #3C475A; /* צבע המותג הראשי */
     font-weight: 700; 
 }
 h1 { 
-    font-size: 3.2em; 
-    line-height: 1.05; 
-    margin-bottom: 25px;
+    font-size: 2.4em; /* הקטנה משמעותית */
+    line-height: 1.1; 
+    margin-bottom: 20px;
 }
 h2 { 
-    font-size: 1.9em; 
-    border-bottom: 2px solid #333333; 
+    font-size: 1.6em; /* הקטנה */
+    border-bottom: 3px solid #E0E0E0; 
     padding-bottom: 10px; 
-    margin-bottom: 30px; 
+    margin-bottom: 25px; 
     font-weight: 600;
 }
 
-/* 1. HERO SECTION - דגש על עומק ופנימיות */
+/* 1. HERO SECTION - רקע בהיר ונקי */
 .hero {
-    background-color: #1A1A1A; /* אפור כהה עשיר */
-    padding: 70px 0 50px 0; 
+    background-color: #FFFFFF; 
+    padding: 60px 0 40px 0; 
     text-align: right; 
     border-radius: 0 0 10px 10px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6); /* צל עמוק מאוד */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 30px;
 }
 .hero p {
-    font-size: 1.5em; 
-    color: #CCCCCC; 
+    font-size: 1.2em; /* הקטנה לגודל נוח לקריאה */
+    color: #5A5A5A;
     margin-top: 15px;
-    margin-bottom: 40px;
-    font-weight: 400; 
+    margin-bottom: 30px;
+    font-weight: 500; 
 }
 
-/* כפתור CTA - זהב חזק עם זוהר קל */
+/* כפתור CTA - זהב חזק */
 .cta-button {
     background-color: #FFC04D; 
-    color: #000000; 
-    padding: 24px 55px; 
+    color: #3C475A; /* טקסט בצבע המותג הראשי */
+    padding: 20px 45px; 
     border-radius: 4px; 
-    font-size: 1.6em; 
+    font-size: 1.4em; /* הקטנה לגודל נקי */
     font-weight: bold;
     display: block;
-    margin: 40px auto;
-    max-width: 550px; 
-    text-align: center;
-    box-shadow: 0 0 15px rgba(255, 192, 77, 0.6); 
+    margin: 30px auto;
+    max-width: 450px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
     transition: background-color 0.3s, transform 0.2s;
 }
 
@@ -97,12 +110,30 @@ h2 {
     padding: 30px 0;
 }
 .card {
-    background-color: #222222; 
+    background-color: white;
     border-radius: 8px;
     padding: 30px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
-    border: 1px solid #333333; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+    border: 1px solid #E0E0E0; /* גבול עדין להפרדה */
+}
+
+/* 3. אזור התמחור (Pricing) */
+.pricing-section {
+    background-color: #E8E8E8; /* אפור בהיר יציב */
+    padding: 50px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+.pricing-box {
+    border: 3px solid #3C475A; /* גבול בצבע המותג הראשי */
+    padding: 30px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
+    max-width: 500px;
+    margin: 20px auto;
 }
 
 /* תחתית הדף (Footer) */
@@ -110,10 +141,16 @@ h2 {
     text-align: center; 
     padding: 30px 0; 
     font-size: 0.9em; 
-    color: #AAAAAA;
-    border-top: 1px solid #333333;
+    color: #5A5A5A;
+    border-top: 1px solid #D4D4D4;
 }
 
-/* [שאר קוד ה-CSS נמצא בקובץ המלא שסופק בעבר] */
-/* ... כללי CSS נוספים לבדיקות ורשימות ... */
-/* כללים אלו אינם מודבקים כאן שוב למניעת חזרתיות, אך וודאי שכל הקוד המלא מועתק! */
+/* רספונסיביות */
+@media (max-width: 600px) {
+    body { padding-top: 50px; }
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.5em; }
+    .hero p { font-size: 1.1em; }
+    .cta-button { font-size: 1.2em; padding: 15px 25px; }
+}
+```
