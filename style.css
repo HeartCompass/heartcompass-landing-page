@@ -94,11 +94,6 @@ h2 {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
     margin-bottom: 30px;
     border: 3px solid #D4AF37; 
-    /* אם רוצים תמונה ברקע של ה-HERO:
-    background-image: url('images/hero_background_journal.jpg'); 
-    background-size: cover;
-    background-position: center;
-    */
 }
 .hero p {
     font-size: 1.2em; 
@@ -128,39 +123,41 @@ h2 {
     transform: translateY(-2px); 
 }
 
-/* 2. יצירת כרטיסים (Cards) - תיקון תמונת היומן */
+/* 2. יצירת כרטיסים (Cards) - FIX: CSS GRID */
 .content-section {
     padding: 30px 0;
 }
 .card {
     background-color: white;
     border-radius: 8px;
-    padding: 35px; 
+    padding: 35px; /* הגדלת הריווח הפנימי */
     margin-bottom: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
     border: 1px solid #E0E0E0; 
-    display: flex; /* הופך את הכרטיס ל-Flex Container */
-    flex-wrap: wrap; /* מאפשר שבירת שורות בנייד */
-    align-items: center; /* מיישר אלמנטים אנכית */
-    justify-content: space-between; /* מפריד בין התמונה לטקסט */
+
+    /* התיקון הסופי: הפעלת GRID לחלוקה יציבה */
+    display: grid;
+    /* 1.5 חלקים לתמונה (ימין), 1 חלקים לטקסט (שמאל). רווח של 30px */
+    grid-template-columns: 2fr 1.5fr; 
+    gap: 30px; 
+    align-items: start;
 }
 
-/* סגנון לתמונת היומן - עכשיו היא צפה לצד הטקסט */
-.image-placeholder {
-    max-width: 200px; /* תמונה קטנה יותר כדי שתהיה צפה */
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
-    border: 1px solid #E0E0E0; 
-    margin-right: 20px; /* רווח מהטקסט משמאל */
-    margin-bottom: 15px; /* רווח מלמטה בנייד */
-    float: right; /* תמונה צפה לימין הטקסט */
+/* מיקום כותרות וטקסט בטור השמאלי (החלק המורחב) */
+.card h2, .card h3, .card p, .card .list-item {
+    grid-column: 1 / 2; 
+    width: 100%; /* שימוש בכל רוחב הטור */
 }
-/* ודא שהטקסט מתיישר נכון סביב התמונה */
-.card p {
-    flex: 1; /* מאפשר לפסקה למלא את המקום הנותר */
-    margin-top: 0;
+
+/* מיקום התמונה בטור הימני (החלק הצר יותר) */
+.image-placeholder {
+    grid-column: 2 / 3; 
+    max-width: 100%; /* התאמה לרוחב הטור */
+    height: auto;
+    margin: 0; /* ביטול מרווחים פנימיים מיותרים */
+    border-radius: 12px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #E0E0E0; 
 }
 
 
@@ -202,34 +199,22 @@ h2 {
     border-top: 1px solid #D4D4D4;
 }
 
-/* סגנון לקישור הקרדיט - הופך אותו לכמעט בלתי נראה */
-.footer-attribution { 
-    display: block;
-    margin-top: 10px;
-    font-size: 0.1px; /* גודל כמעט בלתי נראה */
-    color: rgba(0, 0, 0, 0.01); /* שקוף כמעט לחלוטין */
-    text-decoration: none;
-    overflow: hidden; /* מונע גלילה בטעות */
-    height: 1px; /* גובה מינימלי */
-    line-height: 1px;
-    pointer-events: none; /* מונע לחיצות */
+/* רספונסיביות לנייד - GRID הופך לעמודה אחת */
+@media (max-width: 768px) {
+    .card {
+        grid-template-columns: 1fr; /* בנייד: עמודה אחת */
+        gap: 15px;
+    }
+    /* כל האלמנטים נפרסים על עמודה אחת */
+    .card h2, .card h3, .card p, .card .list-item, .image-placeholder {
+        grid-column: 1 / 2; 
+        max-width: 100%; 
+    }
 }
-/* כלל נוסף למניעת בעיות עם לינקים במייל (אפשרות לבעיות תצוגה) */
-.copyright-text a {
-    color: #5A3B33; /* צבע טקסט רגיל */
-    text-decoration: underline; /* קו תחתון למייל */
-}
-
-
-/* רספונסיביות */
 @media (max-width: 600px) {
     body { padding-top: 50px; }
     h1 { font-size: 1.8em; }
     h2 { font-size: 1.4em; }
     .hero p { font-size: 1em; }
     .cta-button { font-size: 1.1em; padding: 12px 25px; }
-    .card { flex-direction: column; } /* בנייד: תמונה ואז טקסט */
-    .image-placeholder { float: none; margin: 0 auto 15px auto; } /* מירכוז תמונה בנייד */
-    .nav-links { margin-left: 0; white-space: normal; } /* ביטול מניעת השבירה בנייד */
-    .nav-links a { margin-right: 10px; font-size: 0.9em; } 
 }
