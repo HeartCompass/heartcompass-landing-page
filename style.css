@@ -79,4 +79,89 @@ header {
 }
 
 .hero-content {
-    position:
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    /* כרטיס 1 נשאר יישור לימין (לפי ה-design המקורי) */
+    text-align: right;
+    margin-right: 15%;
+    width: 60%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+/* יישור הטקסטים בכרטיסים 2 ומעלה למרכז */
+/* (How-To וכל סקשן טקסט כללי) */
+.how-to-content,
+.general-text-section {
+    /* FIX: יישור טקסט למרכז בכרטיסים הבאים */
+    text-align: center;
+}
+
+/* FIX: ריווח כפתורים - 2 שורות (כ-2em) מעל הכפתור */
+.primary-cta {
+    display: inline-block;
+    padding: 18px 40px; /* הגדלת הכפתור */
+    background-color: #A3712E;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.3em; /* הגדלת פונט הכפתור */
+    margin-top: 2.2em; /* ריווח של כ-2 שורות לפני הכפתור */
+    /* FIX: הוספת מחיר לכפתור (רק אם הוא מכיל טקסט מוגדר כמו "להזמין עכשיו") */
+    /* אם הכפתור הוא רק כפתור: */
+    /* content: 'הזמן עכשיו ב-149 ש"ח'; */
+}
+
+
+/* --- HOW-TO SECTION (Image Scaling Fix) --- */
+.how-to-section {
+    display: flex;
+    /* כדי שהטקסט והתמונה יהיו במרכז כאשר הטקסט מיושר למרכז */
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 60px 5%;
+    /* שינוי כיוון כדי שהתמונה תהיה מצד שמאל אם ה-direction הוא RTL */
+    flex-direction: row-reverse;
+    gap: 30px; /* הוספת רווח בין הרכיבים */
+}
+
+/* הוספת ריווח מתחת לכותרות הראשיות והמשניות לפני טקסט/כפתור */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5em; /* הוספת ריווח מתחת לכותרות */
+}
+
+/* הוספת ריווח מתחת לפסקאות לפני כפתור */
+p {
+    margin-bottom: 1.5em; /* ריווח מתחת לפסקאות */
+}
+
+.how-to-content {
+    width: 50%;
+}
+
+.album-open-mockup {
+    width: 45%; /* הגדלה קלה כדי להתאים לשינוי */
+    min-height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* הכלל הקריטי שמכווץ את התמונה לגודל הקארד */
+.album-open-mockup img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* --- שאר הסקשנים וה-FOOTER --- */
+.general-text-section {
+    padding: 60px 5%;
+    /* FIX: יישור טקסט למרכז בסקשנים אלו */
+    text-align: center;
+}
+.footer-content { padding: 0 5%; }
