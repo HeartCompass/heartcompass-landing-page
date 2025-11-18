@@ -19,13 +19,6 @@ h1 {
     margin-bottom: 0.5em;
     color: #333;
 }
-h2 {
-    font-size: 2rem; 
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 0.75em;
-    color: #333;
-}
 p {
     font-size: 1.15rem; 
     font-weight: 300; 
@@ -34,7 +27,7 @@ p {
     color: #444;
 }
 
-/* --- 1. Header (ניקוי סופי) --- */
+/* --- 1. Header (נשאר תקין) --- */
 header {
     display: flex;
     justify-content: space-between; 
@@ -52,16 +45,6 @@ header {
     color: #83b74e; 
     order: 1; 
 }
-
-/* העלמת הקוביות האפורות המדומות */
-.account-icon, .hamburger-icon, .cart-icon .bag-icon {
-    display: none !important; 
-}
-.menu-icons {
-    display: flex;
-    align-items: center;
-    gap: 15px; 
-}
 .header-right-side {
     display: flex;
     align-items: center;
@@ -75,9 +58,13 @@ header {
     font-weight: 500;
     font-size: 0.95rem;
 }
+/* העלמת הקוביות האפורות המדומות */
+.account-icon, .hamburger-icon, .cart-icon .bag-icon {
+    display: none !important; 
+}
 
 
-/* --- 2. Hero Section (תיקון פריסה וייצוב) --- */
+/* --- 2. Hero Section (ייצוב וכרטיסים) --- */
 .hero-section {
     display: flex;
     flex-direction: row-reverse; 
@@ -87,29 +74,28 @@ header {
     align-items: flex-start; 
 }
 
-.hero-image-container {
-    width: 60%; 
-    min-height: 480px;
-    order: 1; 
-}
-/* תיקון "כרטיס נעלם": ודואים שיש גובה מינימלי למילוי */
-.album-mockup-placeholder, .album-open-mockup {
+/* תיקון "הכרטיסים": גובה מוחלט כדי לוודא שהם מופיעים */
+.album-mockup-placeholder {
     width: 100%;
-    min-height: 400px; /* גובה מינימלי ברור */
+    height: 480px !important; /* גובה מוחלט */
     background-color: #e6e4e0; 
     border-radius: 5px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
 }
-
+.hero-image-container {
+    width: 60%; 
+    order: 1; 
+}
 .hero-content {
     width: 40%; 
     order: 2; 
     padding-top: 20px; 
 }
 
-/* --- CTA Button (מוודאים שמופיע ומוצג כבלוק) --- */
+
+/* --- CTA Button (תיקון אחרון: מבטיחים שהכפתור יופיע) --- */
 .primary-cta {
-    display: inline-flex;
+    display: inline-flex !important; /* לוודא שהוא מופיע כאלמנט Inline-Flex */
     align-items: center;
     justify-content: center;
     background-color: #83b74e; 
@@ -121,12 +107,13 @@ header {
     font-weight: 700;
     transition: background-color 0.3s;
     box-shadow: 0 3px 8px rgba(0,0,0,0.2); 
-    /* ודואים שהוא מוצג היטב: */
-    margin-bottom: 20px;
+    /* מוודאים שהוא לא נעלם בגלל שוליים */
+    margin-top: 20px;
 }
 .primary-cta:hover {
     background-color: #6d9a42; 
 }
+
 
 /* --- 3. General Text Section (מרכוז) --- */
 .general-text-section {
@@ -138,9 +125,13 @@ header {
     max-width: 800px; 
     margin: 0 auto; 
 }
+.secondary-section-cta {
+    margin-top: 30px; 
+    display: inline-block !important; /* מוודאים שהכפתור השני מופיע */
+}
 
 
-/* --- 4. How-To Section (ייצוב פריסה) --- */
+/* --- 4. How-To Section (ייצוב פריסה וכרטיס) --- */
 .how-to-section {
     display: flex;
     flex-direction: row; 
@@ -155,4 +146,32 @@ header {
 }
 .album-open-mockup {
     width: 55%; 
-    min-height: 4
+    height: 400px !important; /* גובה מוחלט לכרטיס השני */
+    background-color: #e6e4e0; 
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+
+/* --- 5. Footer --- */
+footer {
+    background-color: #333; 
+    color: #999;
+    padding: 20px 5%;
+    font-size: 0.9em;
+}
+.footer-content {
+    display: flex;
+    flex-direction: row-reverse; 
+    justify-content: space-between; 
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer-logo {
+    order: 3; 
+    color: #83b74e;
+}
+.copyright {
+    order: 1; 
+}
