@@ -1,114 +1,102 @@
-/* הגדרות כלליות - פלטה נקייה ורחבה */
+/* הגדרות כלליות - בסיס רחב, נקי ומודרני */
 body {
     font-family: 'Assistant', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 1.6;
     color: #333333; 
-    background-color: white; /* רקע לבן נקי כבסיס לופה */
+    background-color: white; /* רקע לבן נקי */
     margin: 0;
-    padding-top: 100px; /* ריווח נמוך יותר לתפריט הנקי */
+    padding-top: 100px; /* ריווח כללי לתפריט */
     text-align: right; 
     direction: rtl;
 }
 
+/* FIX: קונטיינר רחב - מראה יוקרתי של פריסה רחבה */
 .container {
-    max-width: 1200px; 
+    max-width: 1400px; 
     margin: 0 auto;
-    padding: 0 40px; 
+    padding: 0 60px; /* ריווח נקי וגדול מהשוליים */
 }
 
-/* 0. HEADER ותפריט ניווט */
+/* 0. HEADER ותפריט ניווט - FIX: לבן ונקי, עם צל עדין */
 .main-header {
     background-color: white; /* רקע לבן */
     color: #333;
-    padding: 15px 0; 
+    padding: 20px 0; 
     position: fixed; 
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* צל עדין מאוד */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* צל עדין מאוד - Lupa Style */
 }
 .header-container {
-    padding: 0 40px; 
+    padding: 0 60px; /* מתאים לריווח ה-container */
+    /* ... שאר ההגדרות נשמרות ... */
 }
 .logo-link {
-    /* נשאר כפי שהיה - לוגו בולט */
-    color: #5A3B33; 
-}
-.logo-image {
-    height: 70px; /* הגדלה סופית ל-70px */
-}
-.logo-text {
-    color: #5A3B33; /* טקסט הלוגו בצבע חום כהה */
-}
-.nav-links {
-    /* לינקים בצבע שחור/חום */
-    color: #5A3B33; 
+    color: #333; /* צבע טקסט שחור/אפור */
 }
 .nav-links a {
-    color: #5A3B33;
+    color: #555;
     font-weight: 500;
 }
 .nav-links a:hover {
-    color: #D4AF37;
+    color: #000;
 }
 
-/* 1. HERO SECTION - טקסט נקי */
+/* כותרות וטיפוגרפיה */
+h1, h2, h3 {
+    color: #333333; 
+    font-weight: 700; 
+    margin-top: 0;
+}
+h1 { 
+    font-size: 3em; /* דרמטיות */
+    line-height: 1.1; 
+    margin-bottom: 20px;
+}
+h2 { 
+    font-size: 2em; 
+    border-bottom: 1px solid #E0E0E0; /* קו הפרדה דק */
+    padding-bottom: 8px; 
+    margin-bottom: 30px; 
+    font-weight: 600;
+}
+
+/* 1. HERO SECTION */
 .hero {
     background-color: white; 
-    padding: 80px 0 40px 0; /* רווח פנימי גדול */
-    text-align: center; /* FIX: מרכוז טקסט ראשי */
-    border-bottom: 2px solid #E0E0E0;
+    padding: 60px 0; /* ריווח נקי */
+    text-align: center; /* כמו ב-Lupa */
+    margin-bottom: 50px;
 }
-.hero h1 { 
-    font-size: 3.5em; 
-    font-weight: 300; /* פונט דק ואלגנטי */
-    color: #5A3B33;
+.hero h1 {
+    color: #000; /* כותרת שחורה חזקה */
+    font-weight: 300; /* פונט דק ואלגנטי - Lupa Style */
 }
-
-/* 2. סקשן תוכן ראשי (Layout Grid Lupa) */
-.lupa-layout-card {
-    display: grid;
-    /* חלוקה סימטרית לתמונה וטקסט עם רווח גדול */
-    grid-template-columns: 1fr 1fr; 
-    gap: 80px; /* רווח דרמטי בין התמונה לטקסט */
-    padding: 80px 0;
-    align-items: center; /* יישור אנכי למרכז */
-}
-
-.lupa-image-side img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 4px;
-}
-.lupa-text-side h2 {
-    color: #5A3B33;
+.hero h2 {
     border-bottom: none;
-    font-size: 2.2em;
-    font-weight: 600;
-    margin-bottom: 25px;
-}
-.lupa-text-side p {
-    font-size: 1.1em;
-    color: #666;
-    margin-bottom: 30px;
+    font-size: 1.8em;
 }
 
-/* כפתור CTA - מעוגל ופרימיום (כמו ב-Lupa) */
-.cta-button {
-    background-color: #D4AF37; /* זהב עמוק כצבע הדגשה */
-    color: white; 
-    padding: 15px 40px; 
-    border-radius: 30px; /* עיגול מושלם */
-    font-size: 1.1em;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-    text-decoration: none;
-    transition: background-color 0.3s;
+/* 2. סקשן תוכן (Cards) - FIX: CSS GRID ללא צל */
+.content-section {
+    padding: 50px 0;
 }
-.cta-button:hover {
-    background-color: #A68A2E; 
+.card {
+    background-color: white;
+    border-radius: 4px;
+    padding: 0; /* מוריד פאדינג פנימי - הכל יהיה בתוך ה-grid */
+    margin-bottom: 40px;
+    box-shadow: none; /* ללא צל - מראה נקי */
+    border: none; /* ללא גבולות */
+    
+    display: grid;
+    /* חלוקה סימטרית לתמונה וטקסט (50/50) */
+    grid-template-columns: 1fr 1fr; 
+    gap: 100px; /* רווח דרמטי בין התמונה לטקסט */
+    align-items: center;
 }
 
-/* ... שאר הסקשנים (לא נדרשים שינויים דרמטיים כרגע) ... */
+/* סגנון חלקי ה-Card (התאמה למבנה החדש של ה-HTML) */
+.
