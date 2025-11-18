@@ -3,17 +3,19 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* השארת הפונט כפי שביקשת בהגדרות השמורות שלך */
     font-family: 'Assistant', sans-serif;
 }
 
 body {
     font-family: 'Assistant', sans-serif;
-    color: #333;    
-    line-height: 1.7;    
+    color: #333;
+    /* הגדלת הפונט הכללי */
+    line-height: 1.8;
     background-color: #ffffff;
     direction: rtl;
-    /* הופחת כדי להתאים ל-Header הקצר יותר */
-    padding-top: 65px; 
+    padding-top: 65px;
+    font-size: 1.1em; /* הגדלה כללית */
 }
 
 /* --- HEADER & NAVIGATION --- */
@@ -21,25 +23,24 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 5%; /* FIX: הופחת ה-Padding ל-Header קצר יותר */
+    padding: 8px 5%;
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    position: sticky; 
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-/* FIX: הלוגו מוקטן משמעותית (ל-35px) */
 .logo-image {
-    height: 35px; /* גודל לוגו מוקטן פי 10 (בערך) */
+    height: 35px;
     width: auto;
     margin-left: 10px;
 }
 
 .logo .lupa-logo {
-    font-size: 1.5em; /* גודל הטקסט מותאם ללוגו הקטן */
+    font-size: 1.7em; /* הגדלת גודל הטקסט */
     font-weight: 700;
-    color: #5A3B33;    
+    color: #5A3B33;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -47,20 +48,22 @@ header {
 .nav-links a {
     text-decoration: none;
     color: #5A3B33;
-    margin-left: 15px; 
-    font-weight: 500;
-    font-size: 1em; 
+    /* FIX: יישור תפריט לימין (margin-left הופך ל-margin-right) */
+    margin-right: 15px;
+    margin-left: 0; /* נטרול ה-margin-left הקודם */
+    font-weight: 600; /* הגדלת משקל */
+    font-size: 1.15em; /* הגדלת גודל פונט */
     transition: color 0.3s;
 }
 
 /* --- HERO SECTION (כרטיס 1) --- */
 .hero-section.wedding-hero {
-    background-image: url('images/diary.jpg'); 
-    background-size: cover;    
-    background-position: center center;    
-    min-height: 500px;    
+    background-image: url('images/diary.jpg');
+    background-size: cover;
+    background-position: center center;
+    min-height: 550px; /* הגדלה קלה של הכרטיס */
     display: flex;
-    align-items: center;    
+    align-items: center;
     position: relative;
 }
 
@@ -71,63 +74,9 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.35);    
+    background-color: rgba(0, 0, 0, 0.35);
     z-index: 1;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-    color: #ffffff;    
-    text-align: right;
-    margin-right: 15%;    
-    width: 60%;    
-    max-width: 600px;
-    padding: 20px;
-}
-
-.primary-cta {
-    display: inline-block;
-    padding: 15px 35px;
-    background-color: #A3712E; 
-    color: #fff;
-    text-decoration: none;
-    border-radius: 50px;    
-    font-weight: 600;
-    font-size: 1.1em;
-}
-
-/* --- HOW-TO SECTION (Image Scaling Fix) --- */
-.how-to-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f0f0f0;
-    padding: 60px 5%;
-}
-
-.how-to-content {
-    width: 50%;
-}
-
-.album-open-mockup {
-    width: 40%;
-    min-height: auto; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* FIX: הכלל הקריטי שמכווץ את התמונה לגודל הקארד */
-.album-open-mockup img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* --- שאר הסקשנים וה-FOOTER --- */
-.general-text-section { padding: 60px 5%; }
-.footer-content { padding: 0 5%; }
-
-/* [כל שאר ה-CSS הקודם נשמר כפי שהיה כדי למנוע שבירה] */
+    position:
