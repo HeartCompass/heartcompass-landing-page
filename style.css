@@ -1,59 +1,202 @@
-/* --- גלובלי ופונטים (מעבר ל-Heebo) --- */
+/* --- גלובלי ופונטים (Heebo) --- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Heebo', sans-serif; /* פונט Heebo המעודכן */
+    font-family: 'Heebo', sans-serif;
 }
 body {
     direction: rtl; 
-    color: #444; 
+    color: #333; /* צבע טקסט כהה */
     background-color: #fff; 
 }
 
-/* --- עדכון כותרות --- */
-h1, h2, h3 {
-    font-weight: 700; /* כותרות עבות יותר (Heebo) */
-    color: #2a2a2a;
+/* --- טיפוגרפיה (דיוק גודל ומשקל) --- */
+h1 {
+    font-size: 2.5rem; /* כותרת ראשית גדולה במיוחד */
+    font-weight: 800; /* משקל שחור/בולד */
+    line-height: 1.1;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+h2 {
+    font-size: 2rem; /* כותרות משנה */
+    font-weight: 700;
     line-height: 1.2;
+    margin-bottom: 0.75em;
+    color: #333;
 }
 p {
-    line-height: 1.6;
-    margin-bottom: 1em;
-    font-weight: 300; /* טקסט רגיל דק יותר ליצירת המראה הנקי */
+    font-size: 1.05rem; /* טקסט רגיל מעט גדול יותר */
+    font-weight: 300; /* טקסט דק כפי שנראה בצילום */
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #444;
 }
 
-/* --- Header (עדכון לוגו טקסט) --- */
-.lupa-logo-right .lupa-text, .logo .lupa-logo {
-    font-size: 1.4em;
-    font-weight: 800; /* הדגשת הלוגו שלך */
-    color: #4cd964; /* שימוש בצבע הירוק ללוגו הטקסט */
-    background-color: transparent; /* ביטול רקע מדומה אם היה */
+/* --- Header (ניקוי ודיוק לוגו) --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%; /* קטן יותר ופחות מודגש */
+    border-bottom: 1px solid #e7e7e7;
+    background-color: #fff;
+    position: sticky; /* נדבק למעלה כמו באתר המקורי */
+    top: 0;
+    z-index: 1000;
 }
-.logo { /* ביטול הרקע המדומה ללוגו הראשי */
-    background-color: transparent;
-    border-radius: 0;
+.logo { 
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #4cd964; /* ירוק לוגו */
+    order: 3; /* מיקום הלוגו שלך בצד ימין למעלה */
 }
-.logo::after {
-    content: none;
+.header-left {
+    order: 1; /* תיק וכו' בצד שמאל */
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
-.header-left { /* יישור הלוגו הקטן בצד שמאל-למעלה */
-    font-size: 1.2em;
-    font-weight: 700;
+.lupa-logo-right .lupa-text {
+    color: #4cd964; 
+    font-weight: 800;
+    font-size: 1.4rem;
+}
+nav {
+    order: 2;
+}
+.nav-links a {
+    font-weight: 500; /* משקל בינוני לקישורי ניווט */
+    font-size: 0.95rem;
+}
+
+
+/* --- 2. Hero Section (תיקון פריסה וגודל) --- */
+.hero-section {
+    display: flex;
+    flex-direction: row-reverse; /* התמונה משמאל, הטקסט מימין */
+    background-color: #fcfcfc; 
+    padding: 60px 5%; 
+    gap: 40px;
+    align-items: center; /* יישור אנכי טוב יותר */
+}
+
+.hero-image-container {
+    width: 60%; /* תמונה גדולה יותר */
+    min-height: 480px;
+    position: relative;
 }
 .album-mockup-placeholder {
-    /* הסרת טקסט ה-OUR DAY על ידי הסרת האלמנט שלו, אם היה */
+    width: 100%;
+    height: 100%;
+    background-color: #e6e4e0; 
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* צל בולט לתמונה הראשית */
 }
 
+.hero-content {
+    width: 40%; /* הטקסט קטן יותר ונקי */
+    padding-top: 0;
+}
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+    font-weight: 500; /* יותר מודגש */
+}
 
-/* --- 3. General Text Section (עיצוב הכפתור הנוסף) --- */
+/* --- CTA Button (ירוק זית) --- */
+.primary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4cd964; 
+    color: #333; 
+    padding: 16px 35px; /* מעט גדול יותר */
+    text-decoration: none;
+    border-radius: 6px; /* פינות פחות מעוגלות */
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* צל חזק יותר */
+}
+.primary-cta::before {
+    content: ""; /* ביטול החץ */
+    margin: 0;
+    transform: none;
+}
+/* הסגנון של לופה משתמש בכפתור קלאסי ללא חץ בולט */
+
+/* --- 3. General Text Section (פריסה ממורכזת) --- */
 .general-text-section {
     padding: 80px 5%;
     background-color: #fff;
     text-align: center;
 }
+.text-block {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.text-block h2 {
+    font-size: 2.5rem; /* כותרת מרכזית בולטת */
+}
+.text-block p {
+    font-size: 1.2rem; /* טקסט גדול יותר במרכז */
+    font-weight: 300;
+}
 .secondary-section-cta {
-    /* עיצוב זהה ל-primary-cta, רק כדי להדגיש שהוא ממוקם אחרת */
-    margin-top: 40px; 
-    /* שמירה על אותו סגנון ירוק */
+    margin-top: 30px; 
+    display: inline-block;
+}
+
+
+/* --- 4. How-To Section (פריסה) --- */
+.how-to-section {
+    display: flex;
+    flex-direction: row; /* תמונה מימין, טקסט משמאל */
+    padding: 60px 5%;
+    background-color: #f7f7f7;
+    align-items: flex-start;
+    gap: 40px;
+}
+.how-to-content {
+    width: 45%; 
+    padding-top: 30px;
+}
+.how-to-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.how-to-content p {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+.album-open-mockup {
+    width: 55%; 
+    min-height: 400px;
+    background-color: #e6e4e0; 
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* --- 5. Footer --- */
+footer {
+    background-color: #333; 
+    color: #999;
+    padding: 20px 5%;
+    font-size: 0.9em;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.copyright {
+    order: 3;
+}
+.footer-logo {
+    order: 1;
 }
