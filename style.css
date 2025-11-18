@@ -9,10 +9,10 @@ body {
     font-family: 'Rubik', sans-serif;
     color: #333; 
     line-height: 1.7; 
-    background-color: #ffffff; /* תיקון: לבן מלא */
+    background-color: #ffffff; /* רקע לבן מלא */
 }
 
-/* --- HEADER & NAVIGATION (תיקון גודל פונט וריווח) --- */
+/* --- HEADER & NAVIGATION --- */
 header {
     display: flex;
     justify-content: space-between;
@@ -36,9 +36,9 @@ header {
 .nav-links a {
     text-decoration: none;
     color: #333;
-    margin-left: 10px; /* הקטנת הרווח */
+    margin-left: 10px; /* ריווח מופחת */
     font-weight: 500;
-    font-size: 1.1em; /* הגדלת גודל הפונט */
+    font-size: 1.1em; /* גודל מוגדל */
     transition: color 0.3s;
 }
 
@@ -46,10 +46,10 @@ header {
     color: #ff5722;
 }
 
-/* --- HERO SECTION (הכרטיס הראשי) --- */
+/* --- HERO SECTION (כרטיס 1) --- */
 .hero-section.wedding-hero {
-    /* הגדרת הרקע */
-    background-image: url('images/diary.jpg'); /* ודא ששם הקובץ מעודכן! */
+    /* הגדרת הרקע - ודא ששם הקובץ מעודכן! */
+    background-image: url('images/diary.jpg'); 
     background-size: cover; 
     background-position: center center; 
     background-repeat: no-repeat;
@@ -61,6 +61,8 @@ header {
     align-items: center; 
     position: relative;
     padding: 0;
+    /* הופך את הכרטיס הראשון להיות ממוקם מיד מתחת לתפריט */
+    margin-top: 0;
 }
 
 /* שכבת צל (Overlay) לשיפור קריאות הטקסט הלבן */
@@ -71,7 +73,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* צל קל לשיפור הקריאות */
+    background-color: rgba(0, 0, 0, 0.3); 
     z-index: 1;
 }
 
@@ -82,17 +84,17 @@ header {
     color: #ffffff; 
     text-align: right;
     
-    margin-top: 30px; /* ריווח לפני השורה הראשונה (כותרת) */
-
-    /* מיקום לשמאל יותר */
-    margin-right: 10%; 
+    margin-top: 30px; 
+    
+    /* הזזת כל הבלוק שמאלה (יותר מרווח בצד ימין) */
+    margin-right: 15%; /* התיקון העיקרי למיקום הכפתור */
     width: 60%; 
     max-width: 600px;
 }
 
 .hero-title {
-    font-size: 3em; /* גודל כותרת מוגדל */
-    font-weight: 800; 
+    font-size: 3.2em; /* גודל כותרת מוגדל */
+    font-weight: 900; /* סוג גופן חזק יותר */
     margin-bottom: 20px;
     line-height: 1.1;
 }
@@ -107,7 +109,7 @@ header {
 .primary-cta {
     display: inline-block;
     padding: 15px 35px;
-    background-color: #4CAF50; /* ירוק */
+    background-color: #4CAF50; 
     color: #fff;
     text-decoration: none;
     border-radius: 50px; 
@@ -137,30 +139,30 @@ section {
 }
 
 .general-text-section h2 {
-    font-size: 2.2em;
+    font-size: 2.5em; /* הגדלנו את כותרת כרטיס 2 */
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .general-text-section p {
     margin-bottom: 15px;
     font-size: 1.1em;
-    text-align: right; /* הטקסט עצמו עדיין מיושר לימין */
+    text-align: center; /* הטקסט עצמו ממורכז */
 }
 
 .general-text-section .text-block a {
-    text-align: center; /* ממורכז יחד עם הטקסט */
+    text-align: center; 
 }
 
 .secondary-section-cta {
     margin-top: 25px;
-    background-color: #4CAF50; /* גם הכפתור השני ירוק */
+    background-color: #4CAF50; 
 }
 .secondary-section-cta:hover {
     background-color: #45a049;
 }
 
-/* --- HOW-TO SECTION --- */
+/* --- HOW-TO SECTION (כרטיס 3) --- */
 .how-to-section {
     display: flex;
     justify-content: space-between;
