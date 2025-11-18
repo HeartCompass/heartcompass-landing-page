@@ -1,262 +1,63 @@
-/* הגדרות בסיסיות ואיפוס */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Rubik', sans-serif;
-    color: #333; 
-    line-height: 1.7; 
-    background-color: #ffffff; /* רקע לבן מלא */
-}
-
-/* --- HEADER & NAVIGATION --- */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.logo .lupa-logo {
-    font-size: 1.8em;
-    font-weight: 700;
-    color: #ff5722; 
-}
-
-.header-right-side {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #333;
-    margin-left: 10px; /* ריווח מופחת */
-    font-weight: 500;
-    font-size: 1.1em; /* גודל מוגדל */
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #ff5722;
-}
-
-/* --- HERO SECTION (כרטיס 1) --- */
-.hero-section.wedding-hero {
-    /* הגדרת הרקע - ודא ששם הקובץ מעודכן! */
-    background-image: url('images/diary.jpg'); 
-    background-size: cover; 
-    background-position: center center; 
+/* Hero Section: תמונת קאבר מלאה וברורה (ללא מסיכה) */
+.hero-section {
+    position: relative;
+    background-image: url('images/diary_1200x400.jpg'); /* נתיב התמונה שלך */
+    background-size: cover; /* מכסה את כל שטח ה-Hero */
+    background-position: center top; /* מיקום מרכזי עם התמקדות בחלק העליון */
     background-repeat: no-repeat;
-
-    /* פריסה */
-    min-height: 500px; 
-    width: 100%;
-    display: flex;
-    align-items: center; 
-    position: relative;
-    padding: 0;
-    /* הופך את הכרטיס הראשון להיות ממוקם מיד מתחת לתפריט */
-    margin-top: 0;
-}
-
-/* שכבת צל (Overlay) לשיפור קריאות הטקסט הלבן */
-.hero-section.wedding-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); 
-    z-index: 1;
-}
-
-.hero-content {
-    /* מיקום ועיצוב הטקסט */
-    position: relative;
-    z-index: 2;
-    color: #ffffff; 
+    color: white; /* צבע טקסט בהיר מעל התמונה */
     text-align: right;
-    
-    margin-top: 30px; 
-    
-    /* הזזת כל הבלוק שמאלה (יותר מרווח בצד ימין) */
-    margin-right: 15%; /* התיקון העיקרי למיקום הכפתור */
-    width: 60%; 
-    max-width: 600px;
+    padding: 120px 0; /* ריווח פנימי יפה */
+    min-height: 400px; /* גובה מינימלי כדי שהתמונה תיראה טוב */
+    display: flex; /* למיקום התוכן */
+    align-items: center; /* יישור אנכי למרכז */
+    justify-content: flex-end; /* יישור אופקי לימין */
 }
 
-.hero-title {
-    font-size: 3.2em; /* גודל כותרת מוגדל */
-    font-weight: 900; /* סוג גופן חזק יותר */
-    margin-bottom: 20px;
-    line-height: 1.1;
+/* הסרת כל מסיכה או Overlay שיכולה להיות מעל התמונה */
+.hero-section::before {
+    content: none !important; /* מבטל כל פסאודו-אלמנט עם צבע */
+}
+.hero-section .hero-image-container {
+    display: none; /* מסתיר את תג התמונה אם קיים בתוך ה-Hero */
 }
 
-.hero-subtitle {
-    font-size: 1.4em;
-    font-weight: 400;
-    margin-bottom: 35px;
+.hero-section .hero-content {
+    max-width: 500px; /* הגבלת רוחב לטקסט מעל התמונה */
+    margin-right: 100px; /* ריווח מהצד הימני (כדי לא לכסות את היומן) */
+    background-color: rgba(0, 0, 0, 0.4); /* רקע כהה שקוף לטקסט לקריאות טובה יותר */
+    padding: 30px;
+    border-radius: 8px;
 }
 
-/* כפתור CTA ראשי - ירוק */
-.primary-cta {
-    display: inline-block;
-    padding: 15px 35px;
-    background-color: #4CAF50; 
-    color: #fff;
-    text-decoration: none;
-    border-radius: 50px; 
-    font-weight: 500;
-    font-size: 1.1em;
-    transition: background-color 0.3s;
-}
-
-.primary-cta:hover {
-    background-color: #45a049;
-}
-
-
-/* --- SECTIONS כלליות --- */
-section {
-    padding: 60px 5%;
-}
-
-.general-text-section {
-    background-color: #ffffff;
-}
-
-.general-text-section .text-block {
-    text-align: center; /* ממורכז */
-    max-width: 800px;
-    margin: 0 auto; 
-}
-
-.general-text-section h2 {
-    font-size: 2.5em; /* הגדלנו את כותרת כרטיס 2 */
+.hero-section .hero-title {
+    font-size: 3em;
     font-weight: 700;
-    margin-bottom: 25px;
-}
-
-.general-text-section p {
+    color: white;
     margin-bottom: 15px;
-    font-size: 1.1em;
-    text-align: center; /* הטקסט עצמו ממורכז */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* צל לטקסט לקריאות משופרת */
 }
 
-.general-text-section .text-block a {
-    text-align: center; 
+.hero-section .hero-subtitle {
+    font-size: 1.4em;
+    font-weight: 300;
+    color: #f0f0f0;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-.secondary-section-cta {
-    margin-top: 25px;
-    background-color: #4CAF50; 
-}
-.secondary-section-cta:hover {
-    background-color: #45a049;
-}
-
-/* --- HOW-TO SECTION (כרטיס 3) --- */
-.how-to-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f0f0f0;
-    text-align: right;
-}
-
-.how-to-content {
-    width: 50%;
-}
-
-.how-to-title {
-    font-size: 2em;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.album-open-mockup {
-    width: 40%;
-    min-height: 300px;
-    background-color: #ccc; 
+/* עיצוב כפתור ה-CTA בתוך ה-Hero */
+.hero-section .primary-cta {
+    background-color: #D4AF37; /* צבע כפתור זהב/אמבר */
+    color: white;
+    padding: 15px 30px;
     border-radius: 5px;
-}
-
-
-/* --- FOOTER --- */
-footer {
-    background-color: #333;
-    color: #ccc;
-    padding: 30px 5%;
-    text-align: center;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-logo .lupa-logo {
-    font-size: 1.2em;
-    font-weight: 500;
-    color: #ff5722;
-}
-
-.footer-links a {
-    color: #ccc;
     text-decoration: none;
-    margin: 0 10px;
-    font-size: 0.9em;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
 }
 
-.copyright p {
-    font-size: 0.9em;
-}
-
-/* התאמה למובייל */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none; 
-    }
-    
-    .hero-content {
-        width: 90%;
-        margin-right: 0;
-        padding: 0 5%;
-        text-align: center;
-        max-width: none;
-    }
-    
-    .hero-title {
-        font-size: 2em;
-    }
-
-    .hero-section.wedding-hero {
-        justify-content: center; 
-        align-items: center;
-        min-height: 400px;
-    }
-
-    .how-to-section {
-        flex-direction: column;
-    }
-
-    .how-to-content, .album-open-mockup {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        gap: 15px;
-    }
+.hero-section .primary-cta:hover {
+    background-color: #A68A2E;
 }
