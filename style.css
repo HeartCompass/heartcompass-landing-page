@@ -3,21 +3,20 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* FIX: סנכרון הפונט עם ה-HTML האחרון (Rubik) */
+    /* FIX: סנכרון הפונט ל-Rubik */
     font-family: 'Rubik', sans-serif;
 }
 
 body {
-    font-family: 'Rubik', sans-serif; /* FIX: סנכרון הפונט */
+    font-family: 'Rubik', sans-serif;
     color: #333;
     line-height: 1.7;
     background-color: #ffffff;
     direction: rtl;
-    /* FIX: ריווח בטוח מתחת ל-Header (כדי למנוע כיסוי) */
-    padding-top: 80px; 
+    padding-top: 80px; /* ריווח מתחת ל-Header המקובע */
 }
 
-/* --- HEADER & NAVIGATION (תיקון יישור וצבע) --- */
+/* --- HEADER & NAVIGATION (תפריט עליון) --- */
 header {
     display: flex;
     justify-content: space-between;
@@ -25,44 +24,38 @@ header {
     padding: 8px 5%;
     background-color: #5A3B33; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    position: fixed; /* Header נשאר מקובע למעלה */
+    position: fixed; 
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
 }
 
-/* FIX: יישור אלמנטים יחד בתפריט */
 .logo, .header-right-side {
     display: flex;
     align-items: center;
 }
 
-/* FIX: הלוגו ב-HTML החדש הוא DIV ולא LINK, אבל משאירים את ה-CSS מוכן */
 .logo a, .lupa-logo { 
     display: flex;  
     align-items: center; 
     text-decoration: none;
 }
 
-/* הערה: .logo-image אינו קיים ב-HTML האחרון ("מצפן הלב") */
-/* אם נשאר ב-CSS, הוא לא ישפיע על קוד HTML זה */
 .logo-image {
-    height: 35px; /* הופחת בחזרה לגודל הגיוני ללוגו קטן */
+    height: 35px;
     margin-left: 10px;
 }
 
-/* .logo-text אינו קיים ב-HTML האחרון, אבל נתאים את ה-lupa-logo */
 .logo .lupa-logo {
     font-size: 1.5em; 
     font-weight: 700;
     color: #D4AF37; 
 }
 
-/* FIX: ניווט - יישור לימין הלוגו */
 .nav-links {
     display: flex;
-    /* הלינקים מיושרים לימין הלוגו */
+    /* FIX: יישור לימין - נשמר (flex-start ב-RTL) */
     justify-content: flex-start; 
     align-items: center;
     margin-right: 20px;
@@ -71,7 +64,7 @@ header {
 .nav-links a {
     text-decoration: none;
     color: #F0F0F0;
-    /* FIX: משאירים את ה-margin-right כדי ליישר את הקישורים לימין */
+    /* FIX: margin-right מזיז את הקישורים לימין */
     margin-right: 20px; 
     font-weight: 500;
     font-size: 1em;
@@ -83,13 +76,12 @@ header {
 }
 
 
-/* --- HERO SECTION (כרטיס 1) --- */
+/* --- HERO SECTION (כרטיס 1) וכללי סקשנים --- */
 section {
     padding: 60px 5%;
 }
 
-/* FIX: מתאים ל-HTML האחרון - wedding-hero הוחלף ל-focus-hero */
-.hero-section.focus-hero { /* יחליף את wedding-hero */
+.hero-section.focus-hero { /* מותאם ל-HTML של מצפן הלב */
     background-image: url('images/diary.jpg'); 
     background-size: cover;    
     background-position: center center;    
@@ -99,7 +91,7 @@ section {
     position: relative;
 }
 
-.hero-section.focus-hero::before { /* יחליף את wedding-hero */
+.hero-section.focus-hero::before { 
     content: '';
     position: absolute;
     top: 0;
@@ -115,7 +107,6 @@ section {
     z-index: 2;
     color: #ffffff;    
     text-align: right;
-    /* מוחקים את margin-right: 15% לטובת עיצוב נקי יותר ושימוש ב-max-width */
     margin-right: 0; 
     width: auto;    
     max-width: 600px;
@@ -123,7 +114,7 @@ section {
 }
 
 .hero-title {
-    font-size: 2.5em; /* FIX: הופחת מ-3em כדי לשפר קריאות בנייד */
+    font-size: 2.5em;
     font-weight: 900;     
     margin-bottom: 15px;
     line-height: 1.1;
@@ -131,7 +122,7 @@ section {
 }
 
 .hero-subtitle {
-    font-size: 1.2em; /* FIX: הופחת מ-1.4em לאיזון */
+    font-size: 1.2em;
     font-weight: 400;
     margin-bottom: 30px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
@@ -148,7 +139,6 @@ section {
     font-weight: 600;
     font-size: 1.1em;
     transition: background-color 0.3s;
-    /* FIX: עכשיו הכפתור יכיל ריווח מהטקסט שמעליו כפי שביקשת */
     margin-top: 1.5em; 
 }
 
@@ -157,9 +147,9 @@ section {
 }
 
 
-/* --- SECTIONS כלליות --- */
+/* --- GENERAL TEXT SECTION (כרטיס 2) --- */
 .general-text-section h2 {
-    font-size: 2em; /* FIX: הופחת קלות לאיזון */
+    font-size: 2em;
     font-weight: 700;
     margin-bottom: 25px;
     color: #5A3B33;
@@ -167,11 +157,11 @@ section {
 
 .general-text-section p {
     margin-bottom: 20px;
-    font-size: 1em; /* FIX: הופחת מ-1.1em לקריאה טובה יותר */
+    font-size: 1em;
     text-align: right;
 }
 
-/* רשימות (בולטים) - FIX: הסרת הבולטים המכוערים והוספת V */
+/* רשימות (בולטים) - FIX: הוחזר ה-V כפי שנדרש */
 .general-text-section ul {
     list-style: none;
     padding-right: 0;
@@ -183,7 +173,7 @@ section {
     margin-bottom: 12px;
 }
 .general-text-section li::before {
-    content: "✔️"; 
+    content: "✔️"; /* V הוחזר */
     color: #A3712E; 
     font-weight: bold;
     position: absolute;
@@ -191,7 +181,52 @@ section {
     top: 0;
 }
 
-/* --- FOOTER --- */
+
+/* --- PRICING/HOW-TO SECTION (כרטיס 3 - עם תמונה ואמצע) --- */
+.how-to-section {
+    /* FIX: מאפשר תמונה ליד הטקסט (ב-RTL תמונה תופיע משמאל אם היא השנייה) */
+    display: flex; 
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #f5f5f5;
+    padding: 60px 5%;
+    /* FIX: מיושר לימין כברירת מחדל, יישור פנימי משתנה */
+    text-align: right; 
+}
+
+.how-to-content {
+    /* נניח שתופס רוחב גדול יותר עבור הטקסט */
+    width: 55%; 
+    margin: 0;
+}
+
+.image-mockup-container {
+    /* FIX: זהו הקונטיינר לתמונה בצד שמאל של הסקשן */
+    width: 35%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-mockup-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-box {
+    border: 1px solid #ddd;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    /* FIX: יישור כל הטקסט בתוך התיבה למרכז כפי שנדרש */
+    text-align: center; 
+    margin-top: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* --- FOOTER (תפריט למטה) --- */
 footer {
     background-color: #333;
     color: #ccc;
@@ -207,11 +242,44 @@ footer {
     margin: 0 auto;
 }
 
-/* התאמה למובייל */
+.footer-links a {
+    /* FIX: הוסר הצבע הכחול (חזר לאפור בהיר) */
+    color: #ccc; 
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #FFC04D;
+}
+
+/* --- התאמה למובייל --- */
 @media (max-width: 768px) {
-    /* ה-Header יצטרך טיפול נוסף כדי להציג את התפריט כהמבורגר */
+    /* תצטרך לטפל ב-Hamburger Menu ב-HTML/JS */
     .nav-links {
         display: none;     
     }
     
     .hero-content {
+        width: 100%; 
+        margin-right: 0;
+        padding: 0 5%;
+        text-align: center;
+        max-width: none;
+    }
+    
+    .hero-title {
+        font-size: 2em;
+    }
+
+    /* כרטיס 3 במובייל */
+    .how-to-section {
+        flex-direction: column;
+    }
+
+    .how-to-content, .image-mockup-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
