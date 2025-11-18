@@ -1,34 +1,24 @@
-/* הגדרות גלובליות וכלל בטיחות קריטי לתמונות */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-img {
-    max-width: 100%; /* FIX: כלל בטיחות גלובלי למניעת גלישה */
-    height: auto;
-    display: block; /* כדי לוודא שכל תמונה נפרדת ויציבה */
-}
-
+/* הגדרות כלליות - בסיס יציב וקורא */
 body {
     font-family: 'Assistant', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    line-height: 1.65;
+    line-height: 1.6;
     color: #333333; 
-    background-color: #F8F5F0; 
+    background-color: #F8F5F0; /* רקע בהיר נקי */
     margin: 0;
-    padding-top: 130px; 
+    padding-top: 110px; /* ריווח בטוח מתחת ל-Header */
     text-align: right; 
     direction: rtl;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1200px; 
     margin: 0 auto;
     padding: 0 40px; 
 }
 
 /* 0. HEADER ותפריט ניווט */
-.main-header {
+header {
+    /* ה-header שלך אינו 'nav' - אנו מתייחסים אליו כאל 'header' */
     background-color: #5A3B33; 
     color: white;
     padding: 20px 0; 
@@ -38,13 +28,20 @@ body {
     right: 0;
     z-index: 1000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    display: flex; /* כדי לתקן את בעיית הפריסה */
+    justify-content: space-between;
+    align-items: center;
 }
-.header-container {
+
+/* FIX: יישור התוכן בתוך ה-header */
+header > div {
+    padding: 0 40px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px; 
 }
+
 .logo-link {
     display: flex; 
     align-items: center; 
@@ -52,31 +49,21 @@ body {
     color: #D4AF37; 
 }
 .logo-image {
-    height: 75px !important; /* גובה הלוגו הסופי */
-    width: auto !important;
+    height: 70px; /* גודל הלוגו סופי */
+    width: auto;
     display: block;
     margin-left: 15px; 
 }
 .logo-text {
-    font-size: 2.2em; 
+    font-size: 2em; 
     font-weight: 700;
     color: #D4AF37; 
-    white-space: nowrap;
-}
-.nav-links {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-grow: 1; 
-    padding-left: 30px; 
 }
 .nav-links a {
     color: #F0F0F0;
     text-decoration: none;
-    margin-left: 25px; 
-    font-weight: 600; 
-    font-size: 1.1em;
-    transition: color 0.3s;
+    margin-left: 20px; 
+    font-weight: 500;
 }
 
 /* כותרות וטיפוגרפיה */
@@ -86,12 +73,12 @@ h1, h2, h3 {
     margin-top: 0;
 }
 h1 { 
-    font-size: 2.6em; 
+    font-size: 2.4em; 
     line-height: 1.1; 
     margin-bottom: 20px;
 }
 h2 { 
-    font-size: 1.7em; 
+    font-size: 1.6em; 
     border-bottom: 3px solid #D4AF37; 
     padding-bottom: 8px; 
     margin-bottom: 25px; 
@@ -99,87 +86,49 @@ h2 {
 }
 
 /* 1. HERO SECTION */
-.hero {
+.hero-section.wedding-hero {
     background-color: white; 
-    padding: 60px 50px; 
-    text-align: right; 
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+    padding: 60px 0; /* ריווח פנימי נקי */
+    text-align: center;
     margin-bottom: 40px;
     border: 1px solid #E0E0E0; 
 }
-.hero p {
-    font-size: 1.3em; 
-    color: #5A5A5A;
-    margin-top: 15px;
-    margin-bottom: 35px;
-    font-weight: 500; 
+.hero-content {
+    max-width: 900px; 
+    margin: 0 auto;
+    padding: 0 30px;
 }
-
-/* כפתור CTA - זהב שזוף (Burnt Gold) */
-.cta-button {
-    background-color: #A3712E; 
-    color: white; 
-    padding: 18px 40px; 
-    border-radius: 50px; 
-    font-size: 1.4em;
-    font-weight: bold;
-    display: block;
-    margin: 30px auto;
-    max-width: 500px; 
-    text-align: center;
-    box-shadow: 0 6px 18px rgba(163, 113, 46, 0.7); 
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+.hero-title {
+    font-size: 3em; 
 }
-
-/* 2. יצירת כרטיסים (Cards) - FIX: CSS GRID */
-.content-section {
-    padding: 30px 0;
-}
-.card {
-    background-color: white;
-    border-radius: 8px;
-    padding: 40px; 
+.hero-subtitle {
+    font-size: 1.2em;
     margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
-    border: 1px solid #E0E0E0; 
-    
-    display: grid;
-    grid-template-columns: 2fr 1.5fr; 
-    gap: 40px; 
-    align-items: start;
 }
 
-/* תיקון רווחים ומיקום סופי */
-.card h2, .card h3, .card p, .card .list-item, .card .image-placeholder {
-    margin-top: 0 !important; 
-    margin-bottom: 0 !important; 
-    padding-top: 0 !important;
-    padding-bottom: 0;
+
+/* 2. סקשן תוכן כללי - פריסה בטוחה */
+.general-text-section, .how-to-section {
+    padding: 50px 0;
 }
-.card h2 {
-    margin-bottom: 15px !important; 
-    grid-column: 1 / 3; 
-}
-.card h3 {
-    margin-top: 15px !important; 
-    margin-bottom: 5px !important;
-    grid-column: 1 / 2;
-}
-.card p {
-    margin-bottom: 8px !important; 
-    grid-column: 1 / 2;
-}
-.card .list-item {
-    margin-bottom: 12px !important; 
-    grid-column: 1 / 2;
+.text-block {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: right;
 }
 
-/* מיקום התמונה בטור הימני */
-.image-placeholder {
-    grid-column: 2 / 3; 
-    max-width: 100%; 
-    height: auto;
-    border-radius: 12px; 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
-    border
+/* כפתור CTA - מעוגל ויציב */
+.primary-cta {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: #A3712E; 
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px; 
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+/* ... שאר הקוד (footer וכו') נשמר יציב ... */
