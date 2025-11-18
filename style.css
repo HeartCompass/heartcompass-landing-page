@@ -1,40 +1,67 @@
-/* --- 1. תיקון הלינקים בתפריט (צבע וניקוי) --- */
-.nav-links a {
-    text-decoration: none; /* הסרת קו תחתון או כחול */
-    color: #444; /* צבע אפור כהה ונקי (כמו שרצית, במקום כחול) */
-    margin-right: 20px;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.2s;
+/* --- גלובלי ופונטים (Rubik) --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
 }
-.nav-links a:hover {
-    color: #83b74e; /* ירוק מותג בהובר */
+body {
+    direction: rtl; 
+    color: #333; 
+    background-color: #fff; 
 }
 
-/* --- 2. תיקון צבע הכפתור (ירוק-זית מדויק: #83b74e) --- */
-.primary-cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #83b74e; /* <--- צבע הירוק המתוקן והמדויק יותר */
-    color: white; /* טקסט לבן על רקע כהה לניגודיות טובה */
-    padding: 16px 35px; 
-    text-decoration: none;
-    border-radius: 25px; /* הכפתור העגול כפי שתוקן */
-    font-size: 1.1rem;
+/* --- טיפוגרפיה --- */
+h1 {
+    font-size: 2.5rem; 
+    font-weight: 800; 
+    line-height: 1.1;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+h2 {
+    font-size: 2rem; 
     font-weight: 700;
-    transition: background-color 0.3s;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2); 
+    line-height: 1.2;
+    margin-bottom: 0.75em;
+    color: #333;
+}
+p {
+    font-size: 1.05rem; 
+    font-weight: 300; 
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #444;
 }
 
-.primary-cta:hover {
-    background-color: #6d9a42; /* כהה יותר בהובר */
+/* --- 1. Header (פריסה מדויקת) --- */
+header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 5%; 
+    border-bottom: 1px solid #e7e7e7;
+    background-color: #fff;
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
 }
 
-/* גם הלוגו שלך יעבור לשימוש בצבע הירוק המתוקן */
-.logo, .lupa-logo-right .lupa-text { 
+/* הלוגו הראשי (שמאל) - גודל וצבע מתוקן */
+.logo { 
     font-size: 1.6rem; 
     font-weight: 800;
-    color: #83b74e; /* <--- ירוק הלוגו המתוקן */
-    background-color: transparent;
+    color: #83b74e; /* צבע הלוגו המתוקן */
 }
+
+/* הצד הימני - כולל ניווט ואייקונים */
+.header-right-side {
+    display: flex;
+    align-items: center;
+    gap: 30px; 
+}
+
+/* --- ניווט (הלינקים הנקיים) --- */
+.nav-links a {
+    text-decoration: none;
+    color: #444; /* צבע אפור כהה ונקי, לא
