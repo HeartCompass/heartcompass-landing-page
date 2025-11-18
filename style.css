@@ -2,20 +2,21 @@
 
 .hero-section.wedding-hero {
     /* הגדרת הרקע */
-    background-image: url('images/diary.jpg'); /* נתיב התמונה שלך */
-    background-size: cover; 
-    background-position: right center; /* ממקם את התמונה כך שהצד הימני (הפנוי יותר) יכסה את הכרטיס */
+    background-image: url('images/your-new-image-name.jpg'); /* חשוב: עדכן את שם הקובץ לתמונה החדשה! */
+    background-size: cover; /* יכסה את כל השטח. עובד טוב יותר עם תמונה רחבה. */
+    background-position: center center; /* ימקם את התמונה במרכז */
     background-repeat: no-repeat;
-    
+
     /* מימדים ופריסה */
-    min-height: 400px; /* קובע גובה מינימלי לכרטיס */
+    min-height: 400px;
     width: 100%;
-    display: flex; /* משתמש ב-Flexbox למיקום התוכן */
-    align-items: center; /* ממקם את התוכן אנכית במרכז */
-    position: relative; 
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0; /* מומלץ לאפס ריפוד חיצוני */
 }
 
-/* שכבת צל (Overlay) לשיפור קריאות הטקסט */
+/* שכבת צל (Overlay) - חיונית לקריאות הטקסט הלבן */
 .hero-section.wedding-hero::before {
     content: '';
     position: absolute;
@@ -23,22 +24,22 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* צבע שחור עם 40% שקיפות */
-    z-index: 1; /* מוודא שהשכבה נמצאת מתחת לטקסט */
+    background-color: rgba(0, 0, 0, 0.4); /* צל קל לשיפור הקריאות */
+    z-index: 1;
 }
 
 .hero-content {
     /* מיקום ועיצוב הטקסט */
-    position: relative; /* חיוני כדי שהטקסט יהיה מעל שכבת הצל */
+    position: relative;
     z-index: 2;
     color: #fff; /* צבע טקסט לבן */
-    text-align: right; 
-    
-    /* מניעת הדבקות הטקסט לרקע ולשוליים */
-    padding-right: 5%; 
-    padding-left: 5%;
-    max-width: 500px; /* מגביל את רוחב הטקסט */
-    margin-right: 5%; /* דוחף את הטקסט מהקצה הימני */
+    text-align: right;
+
+    /* מיקום הטקסט בצד ימין */
+    margin-right: 5%; 
+    padding-right: 20px;
+    width: 50%; /* הטקסט יתפוס עד חצי מהרוחב */
+    max-width: 550px;
 }
 
 .hero-title {
