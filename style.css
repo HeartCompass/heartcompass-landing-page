@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-    max-width: 1200px; 
+    max-width: 1200px; /* רוחב רחב לווייב יוקרתי */
     margin: 0 auto;
     padding: 0 40px; 
 }
@@ -41,8 +41,8 @@ body {
     color: #D4AF37; 
 }
 .logo-image {
-    height: 75px !important; /* גובה הלוגו הסופי */
-    width: auto !important;
+    height: 75px; 
+    width: auto;
     display: block;
     margin-left: 15px; 
 }
@@ -65,6 +65,7 @@ body {
     margin-left: 25px; 
     font-weight: 600; 
     font-size: 1.1em;
+    transition: color 0.3s;
 }
 
 /* כותרות וטיפוגרפיה */
@@ -80,13 +81,51 @@ h1 {
 }
 h2 { 
     font-size: 1.7em; 
-    border-bottom: none; /* הסרת קווים מיותרים */
+    border-bottom: none; 
     padding-bottom: 0; 
     margin-bottom: 25px; 
     font-weight: 600;
 }
 
-/* 2. יצירת כרטיסים (Cards) - פריסת GRID יציבה */
+/* 1. HERO SECTION */
+.hero {
+    background-color: white; 
+    padding: 60px 50px; 
+    text-align: right; 
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 30px;
+    border: 3px solid #D4AF37; 
+}
+.hero p {
+    font-size: 1.3em; 
+    color: #5A5A5A;
+    margin-top: 15px;
+    margin-bottom: 35px;
+    font-weight: 500; 
+}
+
+/* כפתור CTA */
+.cta-button {
+    background-color: #FFA500; 
+    color: white; 
+    padding: 18px 40px; 
+    border-radius: 50px; 
+    font-size: 1.4em;
+    font-weight: bold;
+    display: block;
+    margin: 30px auto;
+    max-width: 500px; 
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(255, 165, 0, 0.5); 
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+.cta-button:hover {
+    background-color: #CC8400; 
+    transform: translateY(-2px); 
+}
+
+/* 2. יצירת כרטיסים (Cards) - FIX: CSS GRID */
 .content-section {
     padding: 30px 0;
 }
@@ -98,40 +137,93 @@ h2 {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
     border: 1px solid #E0E0E0; 
     
-    /* Grid סופי */
     display: grid;
     grid-template-columns: 2fr 1.5fr; 
     gap: 40px; 
     align-items: start;
 }
 
-/* תיקון הרווחים העודפים בתוך ה-Card */
-.card-content-wrapper h2 {
-    grid-column: 1 / 3; /* כותרת ראשית על שני טורים */
-    margin-bottom: 15px !important;
-}
-.card-content-wrapper h3 {
-    margin-top: 15px !important; 
-    margin-bottom: 5px !important;
-}
-.card-content-wrapper p, .card-content-wrapper .list-item {
-    margin-bottom: 8px !important; 
+/* *** תיקון רווחים ומיקום סופי (הפותר את הבעיה) *** */
+
+/* הכלל הזה מאפס מרווחים לכל הצאצאים ב-Card */
+.card h2, .card h3, .card p, .card .list-item, .card .image-placeholder {
+    margin-top: 0 !important; 
+    margin-bottom: 0 !important; 
+    padding-top: 0 !important;
+    padding-bottom: 0;
 }
 
-/* מיקום התמונה והתאמה ל-Grid */
-.card-image-wrapper {
-    grid-column: 2 / 3; 
-    align-self: center; /* מרכוז אנכי */
-    margin: 0 auto; 
+/* מיקום עוטף התוכן והתמונה ב-Grid */
+.card-content-wrapper {
+    grid-column: 1 / 2; /* הטקסט בטור השמאלי */
 }
+.card-image-wrapper {
+    grid-column: 2 / 3; /* התמונה בטור הימני */
+    align-self: center; 
+}
+
+/* הגדרות ספציפיות לאחר האיפוס */
+.card h2 {
+    margin-bottom: 15px !important; 
+    grid-column: 1 / 3; /* כותרת ראשית על שני טורים */
+}
+.card h3 {
+    margin-top: 15px !important; 
+    margin-bottom: 5px !important;
+    grid-column: 1 / 2;
+}
+.card p {
+    margin-bottom: 8px !important; 
+    grid-column: 1 / 2;
+}
+.card .list-item {
+    margin-bottom: 12px !important; 
+    grid-column: 1 / 2;
+}
+
+/* מיקום התמונה בטור הימני */
 .image-placeholder {
     max-width: 100%; 
     height: auto;
     border-radius: 12px; 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
     border: 1px solid #E0E0E0; 
-    display: block; 
     margin: 0 auto;
 }
 
+/* 3. אזור התמחור (Pricing) */
+.pricing-section {
+    background-color: #F0F0F0; 
+    padding: 50px 0; 
+    border-radius: 0;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+.pricing-box {
+    border: 3px solid #5A3B33; 
+    padding: 25px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); 
+    max-width: 450px; 
+    margin: 20px auto;
+}
+
+/* רשימות */
+.check-list li {
+    color: #333333; 
+    padding-right: 25px; 
+    position: relative;
+    margin-bottom: 12px; 
+    line-height: 1.4;
+}
+.check-list li::before {
+    content: "\2713"; 
+    color: #A3712E; 
+    font-weight: bold;
+    font-size: 1.2em;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
 /* ... שאר הקוד נשמר כפי שהיה ... */
