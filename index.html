@@ -4,91 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>מצפן הלב | ויסות רגשי מדויק ב-120 שניות</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     
-    <header>
-        <div class="logo">
-            <div class="lupa-logo">🧭 מצפן הלב</div> 
-        </div>
-        
-        <div class="header-right-side">
-            <nav>
-                <div class="nav-links">
-                    <a href="#solution">הפרוטוקול</a>
-                    <a href="#how-to">איך זה עובד?</a>
-                    <a href="#pricing">תמחור</a>
-                    <a href="#about">אודות</a>
-                </div>
-            </nav>
-            <div class="menu-icons">
-                <span class="account-icon"></span>
-                <div class="cart-icon">
-                    <div class="bag-icon"></div>
-                </div>
+    <nav class="main-header">
+        <div class="container header-container">
+            <div class="logo-placeholder">
+                <a href="#hero" class="logo-link">
+                    <img src="images/logo.png" alt="לוגו מצפן הלב" class="logo-image">
+                    <span class="logo-text">מצפן הלב</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#solution">הפרוטוקול</a>
+                <a href="#pricing">תמחור</a>
+                <a href="#about">אודות</a>
             </div>
         </div>
-    </header>
+    </nav>
 
     <main>
-        <section class="hero-section wedding-hero">
-            <div class="hero-content">
-                <h1 class="hero-title">עצור את הדימום האנרגטי. הפעל את המצפן המנטלי שלך.</h1>
-                <p class="hero-subtitle">מצפן הלב: ויסות רגשי מדויק ב-120 שניות. הכלי האנלוגי שמעניק לכם את הבהירות שאתם צריכים לקבל החלטות מובילות.</p>
-                
-                <a href="#pricing" class="primary-cta large-cta">✅ אני משקיע בראש שלי: רוכש ערכת התחלה (149 ₪)</a>
+        <header class="hero" id="hero">
+            <div class="container">
+                <h1>עצור את הדימום האנרגטי. הפעל את המצפן המנטלי שלך.</h1>
+                <h2>מצפן הלב: ויסות רגשי מדויק ב-120 שניות. הכלי האנלוגי שמעניק לכם את הבהירות שאתם צריכים לקבל החלטות מובילות.</h2>
+                <p>ב-120 שניות ביום בלבד, נקה את ה"רעש המנטלי" שמפריע לכם לקבל החלטות של מיליוני שקלים.</p>
+                <a href="#buy" class="cta-button">
+                    ✅ אני משקיע בראש שלי: רוכש ערכת התחלה (149 ₪)
+                </a>
             </div>
-        </section>
+        </header>
 
-        <section class="general-text-section" id="solution">
-            <div class="text-block">
-                <h2>חוסר פוקוס עולה לכם כסף. כמה עולה לכם הרעש המנטלי?</h2>
-                <p>אתם מנהלים חיים הישגיים, אבל ה-IQ התפעולי שלכם יורד בגלל רעש קוגניטיבי. הגיע הזמן להפסיק לנסות אפליקציות שנכשלות ולעבור לעוגן פיזי, בר מדידה.</p>
+        <div class="container">
+            
+            <section class="content-section" id="solution">
+                <div class="card">
+                    <div class="card-content-wrapper">
+                        <h2>חוסר פוקוס עולה לכם כסף. כמה עולה לכם הרעש המנטלי?</h2>
+                        <p>כל דחייה קטנה, כל בלבול רגשי, מורידים את ה-IQ התפעולי שלכם. הגיע הזמן להפסיק לנסות אפליקציות שנכשלות ולעבור לעוגן פיזי, בר מדידה.</p>
+                        
+                        <h3>מצפן הלב: פרוטוקול 2 דקות. אפס דחיינות.</h3>
+                        
+                        <p>זו לא תרפיה, זו אופטימיזציית ביצועים. במקום לשבת שעה ביום, אתם מקבלים מנגנון אכיפה פשוט שמעביר את הסטרס מהמוח – ישירות ליד המרגיעה:</p>
 
-                <h3 id="how-to">מצפן הלב: פרוטוקול 2 דקות. אפס דחיינות.</h3>
+                        <ul class="check-list" style="margin-top: 15px;">
+                            <li>✔️ <strong>רצועת ההצלחה (הפטנט שלנו):</strong> 7 משימות מיקרו-כתיבה, מכווננות במדויק. אנחנו מבטיחים שהמשימה היא הכי קצרה שאפשר כדי שתמיד תצליח.</li>
+                            <li>✔️ <strong>חותם "העבודה בוצעה":</strong> הגמול הפיזי המיידי. אתם סוגרים את המעגל הרגשי ומחזירים את הפוקוס לאן שהוא צריך להיות.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-image-wrapper">
+                        <img src="images/diary.png" alt="תקריב של יומן מצפן הלב והחותם" class="image-placeholder">
+                    </div>
+                </div>
+            </section>
 
-                <p>זו לא תרפיה, זו אופטימיזציית ביצועים. במקום לשבת שעה ביום, אתם מקבלים מנגנון אכיפה פשוט שמעביר את הסטרס מהמוח – ישירות ליד המרגיעה:</p>
-
-                <ul>
-                    <li><strong>רצועת ההצלחה (הפטנט שלנו):</strong> 7 משימות מיקרו-כתיבה, מכווננות במדויק. אנחנו מבטיחים שהמשימה היא הכי קצרה שאפשר כדי שתמיד תצליח.</li>
-                    <li><strong>חותם "העבודה בוצעה":</strong> הגמול הפיזי המיידי. אתם סוגרים את המעגל הרגשי ומחזירים את הפוקוס לאן שהוא צריך להיות.</li>
-                </ul>
-                
-                <a href="#pricing" class="primary-cta secondary-section-cta">לפרטי התמחור המלאים</a>
-            </div>
-        </section>
-
-        <section class="how-to-section" id="pricing">
-            <div class="how-to-content">
-                <h2 class="how-to-title">השקיעו בעצמכם: ערכת "העוגן היומי"</h2>
+            <section class="content-section pricing-section" id="pricing">
+                <h2>השקיעו בעצמכם: ערכת "העוגן היומי"</h2>
                 <p>הפסיקו לדחות את הדבר החשוב באמת. זו ההשקעה הרגשית היחידה שאתם יכולים להתמיד בה.</p>
                 
-                <div class="pricing-box">
-                    <h3 class="pricing-title">ערכת התחלה מלאה: 149 ₪</h3>
-                    <p class="pricing-details">המחיר כולל את יומן הפרימיום הפיזי, חותם "העבודה בוצעה", ו-4 רצועות שבועיות.</p>
-                    <a href="#" class="primary-cta large-cta pricing-cta">✅ אני משקיע בראש שלי: רוכש ערכה (149 ₪)</a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-    
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <div class="lupa-logo">🧭 מצפן הלב</div> 
-            </div>
-            <div class="footer-links">
-                <a href="#">תקנון ומדיניות פרטיות</a>
-                <a href="#">הצהרת נגישות</a>
-                <a href="mailto:heartcompass@gmail.com">צור קשר</a> 
-            </div>
-            <div class="copyright">
-                <p>מצפן הלב | ניתוב רגשי, התבוננות פנימה | © כל הזכויות שמורות</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+                <div class="pricing-box" id="buy">
+                    <h3>ערכת התחלה מלאה: 149 ₪</h3>
+                    <p class="pricing-details">המחיר כולל את יומן הפרי
