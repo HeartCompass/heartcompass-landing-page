@@ -90,7 +90,7 @@ h2 {
 /* Hero Section: תמונת קאבר מלאה וברורה (ללא מסיכה) */
 .hero-section {
     position: relative;
-    background-image: url('images/diary_1200x400.jpg'); /* נתיב התמונה שלך */
+    background-image: url('images/diarycover.jpg'); /* נתיב התמונה שלך */
     background-size: cover; /* מכסה את כל שטח ה-Hero */
     background-position: center top; /* מיקום מרכזי עם התמקדות בחלק העליון */
     background-repeat: no-repeat;
