@@ -1,277 +1,59 @@
-/* --- גלובלי ופונטים --- */
+/* --- גלובלי ופונטים (מעבר ל-Heebo) --- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Heebo', sans-serif; /* פונט Heebo המעודכן */
 }
 body {
     direction: rtl; 
     color: #444; 
     background-color: #fff; 
 }
+
+/* --- עדכון כותרות --- */
 h1, h2, h3 {
-    font-weight: 700; 
+    font-weight: 700; /* כותרות עבות יותר (Heebo) */
     color: #2a2a2a;
     line-height: 1.2;
 }
 p {
     line-height: 1.6;
     margin-bottom: 1em;
-    font-weight: 400; /* טקסט רגיל דק יותר */
+    font-weight: 300; /* טקסט רגיל דק יותר ליצירת המראה הנקי */
 }
 
-/* --- 1. Header (שורה עליונה) --- */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    border-bottom: 1px solid #eee;
-    background-color: #fff;
-    font-size: 0.9em;
+/* --- Header (עדכון לוגו טקסט) --- */
+.lupa-logo-right .lupa-text, .logo .lupa-logo {
+    font-size: 1.4em;
+    font-weight: 800; /* הדגשת הלוגו שלך */
+    color: #4cd964; /* שימוש בצבע הירוק ללוגו הטקסט */
+    background-color: transparent; /* ביטול רקע מדומה אם היה */
 }
-.header-left {
-    display: flex;
-    align-items: center;
-    order: 3; /* משמאל לימין */
-}
-.header-left .lupa-logo-right { /* הלוגו הקטן בצד שמאל-למעלה */
-    margin-right: 20px;
-    font-size: 1.2em;
-    font-weight: 700;
-}
-.logo { /* הלוגו הגדול של לופה בצד ימין */
-    order: 1; 
-    width: 65px;
-    height: 30px;
-    background-color: #4cd964; /* צבע ירוק-זית לוגו */
-    border-radius: 5px;
-    position: relative;
+.logo { /* ביטול הרקע המדומה ללוגו הראשי */
+    background-color: transparent;
+    border-radius: 0;
 }
 .logo::after {
-    content: "lupa";
-    position: absolute;
-    color: white;
-    font-weight: 700;
+    content: none;
+}
+.header-left { /* יישור הלוגו הקטן בצד שמאל-למעלה */
     font-size: 1.2em;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-nav {
-    order: 2;
-    display: flex;
-    align-items: center;
-}
-.nav-links a {
-    text-decoration: none;
-    color: #444;
-    margin: 0 15px;
-    font-weight: 500;
-}
-.menu-icons {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-}
-.account-icon, .hamburger-icon {
-    display: block;
-    width: 20px;
-    height: 20px;
-    background-color: #777;
-    border-radius: 3px;
-    margin-left: 15px;
-}
-
-/* --- 2. Hero Section --- */
-.hero-section {
-    display: flex;
-    background-color: #fcfcfc; /* רקע בהיר מאוד */
-    padding: 50px 5% 0;
-    gap: 30px;
-    align-items: flex-start;
-}
-.hero-image-container {
-    width: 55%;
-    min-height: 450px;
-    position: relative;
+    font-weight: 700;
 }
 .album-mockup-placeholder {
-    width: 100%;
-    height: 100%;
-    background-color: #e6e4e0; /* Placeholder לתמונה הגדולה */
-    border-radius: 5px;
-}
-.our-day-text {
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    padding: 5px 10px;
-    background-color: white;
-    font-weight: 600;
-    font-size: 0.9em;
-}
-
-.hero-content {
-    width: 45%;
-    padding-top: 40px;
-}
-.hero-title {
-    font-size: 2.3em;
-    font-weight: 700;
-    max-width: 400px;
-    margin-bottom: 20px;
-}
-.hero-subtitle {
-    font-size: 1.1em;
-    color: #666;
-    margin-bottom: 30px;
-    font-weight: 300;
-}
-
-/* --- CTA Button (ירוק זית מדויק מהצילום) --- */
-.primary-cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #4cd964; /* ירוק זית מדוייק */
-    color: #333; /* טקסט כהה על ירוק בהיר */
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 8px; 
-    font-size: 1.1em;
-    font-weight: 700;
-    transition: background-color 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-.primary-cta::before {
-    content: "〉"; /* דמוי חץ ימינה */
-    font-size: 1.5em;
-    margin-left: 10px;
-    display: inline-block;
-    transform: rotate(180deg); /* היפוך החץ */
-}
-
-.primary-cta:hover {
-    background-color: #34aa49; /* כהה יותר בהובר */
+    /* הסרת טקסט ה-OUR DAY על ידי הסרת האלמנט שלו, אם היה */
 }
 
 
-/* --- 3. General Text Section (סעיף 3 בצילום) --- */
+/* --- 3. General Text Section (עיצוב הכפתור הנוסף) --- */
 .general-text-section {
     padding: 80px 5%;
     background-color: #fff;
     text-align: center;
 }
-.text-block {
-    max-width: 750px;
-    margin: 0 auto;
-}
-.text-block h2 {
-    font-size: 2.2em;
-    margin-bottom: 30px;
-}
-.text-block p {
-    font-size: 1.15em;
-    font-weight: 300; /* דק יותר */
-    color: #4a4a4a;
-    line-height: 1.7;
-}
-.final-line {
-    font-weight: 500;
-    margin-top: 30px;
-}
-
-
-/* --- 4. How-To Section (סעיף 4 בצילום) --- */
-.how-to-section {
-    display: flex;
-    padding: 60px 5%;
-    background-color: #f7f7f7;
-    align-items: flex-start;
-    gap: 40px;
-}
-.how-to-content {
-    width: 50%;
-    padding-top: 30px;
-}
-.how-to-title {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-.how-to-content p {
-    font-size: 1.1em;
-    font-weight: 300;
-}
-.album-open-mockup {
-    width: 50%;
-    min-height: 350px;
-    background-color: #e6e4e0; /* Placeholder לתמונה */
-    border-radius: 5px;
-}
-
-/* --- 5. Footer (סעיף 2 בצילום) --- */
-footer {
-    background-color: #333; /* אפור כהה מאוד */
-    color: #999;
-    padding: 20px 5%;
-    font-size: 0.9em;
-}
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.footer-links a {
-    color: #999;
-    text-decoration: none;
-    margin-right: 20px;
-}
-.copyright {
-    order: 3;
-}
-.footer-logo {
-    order: 1;
-    width: 65px;
-    height: 30px;
-    background-color: #4cd964; 
-    border-radius: 5px;
-}
-/* הטקסט הקטן בתוך הלוגו (אם נרצה לשכפל אותו) */
-.footer-logo::after {
-    content: "lupa";
-    /* שינוי גודל ומיקום קל ללוגו בפוּטר */
-}
-
-/* מדיה קוורייס בסיסי לרספונסיביות */
-@media (max-width: 900px) {
-    .hero-section, .how-to-section {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .hero-image-container, .hero-content, .how-to-content, .album-open-mockup {
-        width: 100%;
-        min-height: 300px;
-    }
-    .hero-title {
-        max-width: none;
-    }
-    .hero-image-container {
-        order: -1;
-    }
-    .footer-content {
-        flex-direction: column;
-    }
-    .footer-links {
-        order: 2;
-        margin: 15px 0;
-    }
-    .copyright {
-        order: 3;
-    }
+.secondary-section-cta {
+    /* עיצוב זהה ל-primary-cta, רק כדי להדגיש שהוא ממוקם אחרת */
+    margin-top: 40px; 
+    /* שמירה על אותו סגנון ירוק */
 }
