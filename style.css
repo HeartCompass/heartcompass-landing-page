@@ -1,26 +1,31 @@
-/* הגדרות כלליות - בסיס בהיר ונקי (כמו Lupa) */
+/* הגדרות כלליות - פלטה חמה, קריאות גבוהה */
 body {
     font-family: 'Assistant', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 1.65;
     color: #333333; 
-    background-color: #F8F8F8; /* רקע בהיר ונקי */
+    background-color: #F8F5F0; /* בז' בהיר מאוד */
     margin: 0;
-    padding-top: 130px; 
+    
+    /* FIX: ריווח עליון מותאם ללוגו הענק (300px) */
+    padding-top: 400px; 
+    
     text-align: right; 
     direction: rtl;
 }
 
+/* FIX: הרחבת העמוד לרוחב לופה */
 .container {
-    max-width: 1200px; /* רוחב רחב */
+    max-width: 1200px; 
     margin: 0 auto;
     padding: 0 40px; 
 }
 
-/* 0. HEADER ותפריט ניווט - FIX: פאדינג נמוך יותר, צבע עמוק */
+/* 0. HEADER ותפריט ניווט - FIX: תפריט Lupa מדויק */
 .main-header {
-    background-color: #5A3B33; /* צבע מותג חזק */
+    background-color: #5A3B33; /* חום-קפה עמוק */
     color: white;
-    padding: 15px 0; /* הקטנת הריווח כדי למנוע כיסוי */
+    /* FIX: פאדינג מוגדל כדי להכיל את הלוגו הענק */
+    padding: 40px 0; 
     position: fixed; 
     top: 0;
     left: 0;
@@ -32,25 +37,44 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px; /* ריווח צדדי נכון */
+    padding: 0 40px; 
+}
+.logo-link {
+    display: flex; 
+    align-items: center; 
+    text-decoration: none;
+    color: #D4AF37; 
 }
 .logo-image {
-    height: 65px; /* FIX: גודל הלוגו הופחת מעט כדי למנוע שבירה */
+    /* FIX: הגדלה פי 4 ל-300px - חובה לוודא שיש מספיק מקום ב-Header */
+    height: 300px !important; 
     width: auto;
     display: block;
     margin-left: 15px; 
 }
 .logo-text {
-    font-size: 1.8em; /* הקטנה ליציבות */
+    font-size: 2.2em; 
     font-weight: 700;
     color: #D4AF37; 
+    white-space: nowrap;
 }
 .nav-links {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: center; /* יישור אנכי של הלינקים */
     flex-grow: 1; 
     padding-left: 30px; 
+}
+.nav-links a {
+    color: #F0F0F0;
+    text-decoration: none; /* FIX: הסרת קו תחתון כחול */
+    margin-left: 25px; /* הגדלת הרווח בין קישורים */
+    font-weight: 600; /* מודגש יותר */
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #D4AF37; /* צבע זהב בריחוף */
 }
 
 /* כותרות וטיפוגרפיה */
@@ -60,14 +84,15 @@ h1, h2, h3 {
     margin-top: 0;
 }
 h1 { 
-    font-size: 2.6em; /* גודל מכובד */
+    font-size: 2.6em;
     line-height: 1.1; 
     margin-bottom: 20px;
 }
 h2 { 
     font-size: 1.7em; 
-    border-bottom: 3px solid #D4AF37; /* השארת קו הזהב לכותרת */
-    padding-bottom: 8px; 
+    /* FIX: הסרת הקו המוזהב - רק ה-Hero ישמור על הקו */
+    border-bottom: none; 
+    padding-bottom: 0; 
     margin-bottom: 25px; 
     font-weight: 600;
 }
@@ -78,52 +103,9 @@ h2 {
     padding: 60px 50px; 
     text-align: right; 
     border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
-    margin-bottom: 40px;
-    border: 1px solid #D4D4D4; /* מסגרת עדינה */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 30px;
+    /* FIX: השארת מסגרת הזהב ב-Hero כאלמנט עיצובי יחיד */
+    border: 3px solid #D4AF37; 
 }
 .hero p {
-    font-size: 1.3em; 
-    color: #5A5A5A;
-    margin-top: 15px;
-    margin-bottom: 35px;
-    font-weight: 500; 
-}
-
-/* 2. יצירת כרטיסים (Cards) - FIX: ביטול GRID והחזרת FLEX */
-.content-section {
-    padding: 30px 0;
-}
-.card {
-    background-color: white;
-    border-radius: 8px;
-    padding: 40px; 
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
-    border: 1px solid #E0E0E0; 
-    
-    /* התיקון הסופי: Flexbox יציב במקום Grid הבעייתי */
-    display: flex;
-    gap: 40px; 
-    align-items: flex-start;
-}
-
-/* FIX: התמונה כעת צפה ליד הטקסט (Text Wrapping) */
-.image-placeholder {
-    max-width: 350px; /* רוחב קבוע לתמונה בצד */
-    height: auto;
-    flex-shrink: 0; /* מונע מהתמונה להתכווץ */
-    border-radius: 12px; 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
-    border: 1px solid #E0E0E0; 
-    margin-top: 10px;
-    order: 2; /* מיקום התמונה לימין (אם לא משנים את ה-HTML) */
-}
-
-/* ⚠️ הטקסט ב-Card (התוכן) ממלא את שאר המקום */
-.card-content-wrapper {
-    flex-grow: 1;
-    order: 1;
-}
-
-/* ... שאר הכללים נשמרים ... */
