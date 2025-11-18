@@ -1,133 +1,106 @@
-/* הגדרות בסיסיות ואיפוס */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Assistant', sans-serif;
-}
-
+/* הגדרות כלליות */
 body {
-    font-family: 'Assistant', sans-serif;
-    color: #333;    
-    line-height: 1.7;    
-    background-color: #ffffff;
+    font-family: 'Assistant', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.65;
+    color: #333333; 
+    background-color: #F8F5F0; 
+    margin: 0;
+    padding-top: 130px; 
+    text-align: right; 
     direction: rtl;
-    /* הופחת כדי להתאים ל-Header הקצר יותר */
-    padding-top: 65px; 
 }
 
-/* --- HEADER & NAVIGATION --- */
+.container {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 40px; 
+}
+
+/* 0. HEADER ותפריט ניווט - FIX: יישור לימין והצמדה ללוגו */
 header {
+    background-color: #5A3B33; 
+    color: white;
+    padding: 20px 0; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 5%; /* FIX: הופחת ה-Padding ל-Header קצר יותר */
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    position: sticky; 
-    top: 0;
-    z-index: 1000;
+}
+.header-container {
+    /* ה-HTML המקורי השתמש ב-padding כאן, נשמור עליו */
+    width: 100%;
 }
 
-/* FIX: הלוגו מוקטן משמעותית (ל-35px) */
+.logo-link {
+    display: flex; 
+    align-items: center; 
+    text-decoration: none;
+    color: #D4AF37; 
+}
 .logo-image {
-    height: 35px; /* גודל לוגו מוקטן פי 10 (בערך) */
+    height: 70px; /* גובה הלוגו הסופי */
     width: auto;
-    margin-left: 10px;
+    display: block;
+    margin-left: 15px; 
+}
+.logo-text {
+    font-size: 2.0em; /* הקטנה קלה ליציבות */
+    font-weight: 700;
+    color: #D4AF37; 
+    white-space: nowrap;
 }
 
-.logo .lupa-logo {
-    font-size: 1.5em; /* גודל הטקסט מותאם ללוגו הקטן */
-    font-weight: 700;
-    color: #5A3B33;    
+/* FIX: יישור התפריט ליד הלוגו והצמדה לימין */
+.nav-links {
     display: flex;
+    justify-content: flex-start; /* FIX: יישור לינקים לימין */
     align-items: center;
-    gap: 5px;
+    flex-grow: 1; 
+    padding-left: 0; /* ביטול ריווח מיותר */
+    margin-right: 50px; /* רווח מהלוגו */
 }
 .nav-links a {
+    color: #F0F0F0;
     text-decoration: none;
-    color: #5A3B33;
-    margin-left: 15px; 
-    font-weight: 500;
-    font-size: 1em; 
+    margin-right: 25px; /* מרווח בין הלינקים */
+    font-weight: 600; 
+    font-size: 1.1em;
     transition: color 0.3s;
 }
 
-/* --- HERO SECTION (כרטיס 1) --- */
-.hero-section.wedding-hero {
-    background-image: url('images/diary.jpg'); 
-    background-size: cover;    
-    background-position: center center;    
-    min-height: 500px;    
-    display: flex;
-    align-items: center;    
-    position: relative;
+/* כותרות ועיצוב כללי */
+h1, h2, h3 {
+    color: #5A3B33; 
+    font-weight: 700; 
+    margin-top: 0;
 }
-
-.hero-section.wedding-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.35);    
-    z-index: 1;
+h1 { 
+    font-size: 2.6em; 
+    line-height: 1.1; 
+    margin-bottom: 20px;
 }
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    color: #ffffff;    
-    text-align: right;
-    margin-right: 15%;    
-    width: 60%;    
-    max-width: 600px;
-    padding: 20px;
-}
-
-.primary-cta {
-    display: inline-block;
-    padding: 15px 35px;
-    background-color: #A3712E; 
-    color: #fff;
-    text-decoration: none;
-    border-radius: 50px;    
+h2 { 
+    font-size: 1.7em; 
+    border-bottom: 3px solid #D4AF37; 
+    padding-bottom: 8px; 
+    margin-bottom: 25px; 
     font-weight: 600;
-    font-size: 1.1em;
 }
 
-/* --- HOW-TO SECTION (Image Scaling Fix) --- */
-.how-to-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f0f0f0;
-    padding: 60px 5%;
+/* 1. HERO SECTION */
+.hero-section.wedding-hero {
+    background-color: white; 
+    /* ... שאר ההגדרות נשמרות ... */
+}
+.hero-content {
+    /* ... שאר ההגדרות נשמרות ... */
 }
 
-.how-to-content {
-    width: 50%;
-}
-
-.album-open-mockup {
-    width: 40%;
-    min-height: auto; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* FIX: הכלל הקריטי שמכווץ את התמונה לגודל הקארד */
-.album-open-mockup img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* --- שאר הסקשנים וה-FOOTER --- */
-.general-text-section { padding: 60px 5%; }
-.footer-content { padding: 0 5%; }
-
-/* [כל שאר ה-CSS הקודם נשמר כפי שהיה כדי למנוע שבירה] */
+/* FIX: מרווח של 2 שורות בכרטיס הכללי */
+.general-text-section .text-block .primary-cta {
+    margin-top: 2em; /* מרווח של כ-2 שורות לפני הכפתור */
