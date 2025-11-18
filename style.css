@@ -6,13 +6,13 @@
 }
 
 body {
-    font-family: 'Rubik', sans-serif; /* גופן שהגדרת ב-HTML */
-    color: #333; /* צבע טקסט כללי */
-    line-height: 1.6;
-    background-color: #f5f5f5; /* רקע עדין לגוף הדף */
+    font-family: 'Rubik', sans-serif;
+    color: #333; 
+    line-height: 1.7; 
+    background-color: #ffffff; /* תיקון: לבן מלא */
 }
 
-/* --- HEADR & NAVIGATION --- */
+/* --- HEADER & NAVIGATION (תיקון גודל פונט וריווח) --- */
 header {
     display: flex;
     justify-content: space-between;
@@ -25,7 +25,7 @@ header {
 .logo .lupa-logo {
     font-size: 1.8em;
     font-weight: 700;
-    color: #ff5722; /* צבע הדגשה */
+    color: #ff5722; 
 }
 
 .header-right-side {
@@ -36,8 +36,9 @@ header {
 .nav-links a {
     text-decoration: none;
     color: #333;
-    margin-left: 20px;
+    margin-left: 10px; /* הקטנת הרווח */
     font-weight: 500;
+    font-size: 1.1em; /* הגדלת גודל הפונט */
     transition: color 0.3s;
 }
 
@@ -45,19 +46,19 @@ header {
     color: #ff5722;
 }
 
-/* --- HERO SECTION (הכרטיס הראשי עם תמונת הרקע) --- */
+/* --- HERO SECTION (הכרטיס הראשי) --- */
 .hero-section.wedding-hero {
     /* הגדרת הרקע */
-    background-image: url('images/diary.jpg'); /* אנא ודא שהתמונה הרוחבית החדשה נמצאת בנתיב זה! */
+    background-image: url('images/diary.jpg'); /* ודא ששם הקובץ מעודכן! */
     background-size: cover; 
     background-position: center center; 
     background-repeat: no-repeat;
 
     /* פריסה */
-    min-height: 450px; /* גובה מינימלי חזק יותר */
+    min-height: 500px; 
     width: 100%;
     display: flex;
-    align-items: center; /* ממקם את הטקסט אנכית במרכז */
+    align-items: center; 
     position: relative;
     padding: 0;
 }
@@ -70,7 +71,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.45); /* צל כהה יותר - 45% שקיפות */
+    background-color: rgba(0, 0, 0, 0.3); /* צל קל לשיפור הקריאות */
     z-index: 1;
 }
 
@@ -78,44 +79,45 @@ header {
     /* מיקום ועיצוב הטקסט */
     position: relative;
     z-index: 2;
-    color: #ffffff; /* טקסט לבן */
+    color: #ffffff; 
     text-align: right;
+    
+    margin-top: 30px; /* ריווח לפני השורה הראשונה (כותרת) */
 
-    /* מיקום הטקסט בצד ימין ומרכוז */
-    margin-right: 5%; 
-    padding-right: 20px;
-    width: 50%; 
-    max-width: 550px;
+    /* מיקום לשמאל יותר */
+    margin-right: 10%; 
+    width: 60%; 
+    max-width: 600px;
 }
 
 .hero-title {
-    font-size: 2.5em;
-    font-weight: 700;
-    margin-bottom: 15px;
-    line-height: 1.2;
+    font-size: 3em; /* גודל כותרת מוגדל */
+    font-weight: 800; 
+    margin-bottom: 20px;
+    line-height: 1.1;
 }
 
 .hero-subtitle {
-    font-size: 1.2em;
+    font-size: 1.4em;
     font-weight: 400;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
-/* כפתור CTA ראשי */
+/* כפתור CTA ראשי - ירוק */
 .primary-cta {
     display: inline-block;
     padding: 15px 35px;
-    background-color: #ff5722; /* צבע הדגשה חזק */
+    background-color: #4CAF50; /* ירוק */
     color: #fff;
     text-decoration: none;
-    border-radius: 50px; /* כפתור עגול יותר */
+    border-radius: 50px; 
     font-weight: 500;
     font-size: 1.1em;
     transition: background-color 0.3s;
 }
 
 .primary-cta:hover {
-    background-color: #e64a19;
+    background-color: #45a049;
 }
 
 
@@ -126,11 +128,16 @@ section {
 
 .general-text-section {
     background-color: #ffffff;
-    text-align: right;
+}
+
+.general-text-section .text-block {
+    text-align: center; /* ממורכז */
+    max-width: 800px;
+    margin: 0 auto; 
 }
 
 .general-text-section h2 {
-    font-size: 2em;
+    font-size: 2.2em;
     font-weight: 700;
     margin-bottom: 20px;
 }
@@ -138,14 +145,19 @@ section {
 .general-text-section p {
     margin-bottom: 15px;
     font-size: 1.1em;
+    text-align: right; /* הטקסט עצמו עדיין מיושר לימין */
+}
+
+.general-text-section .text-block a {
+    text-align: center; /* ממורכז יחד עם הטקסט */
 }
 
 .secondary-section-cta {
-    margin-top: 20px;
-    background-color: #333;
+    margin-top: 25px;
+    background-color: #4CAF50; /* גם הכפתור השני ירוק */
 }
 .secondary-section-cta:hover {
-    background-color: #555;
+    background-color: #45a049;
 }
 
 /* --- HOW-TO SECTION --- */
@@ -154,11 +166,11 @@ section {
     justify-content: space-between;
     align-items: center;
     background-color: #f0f0f0;
+    text-align: right;
 }
 
 .how-to-content {
     width: 50%;
-    text-align: right;
 }
 
 .how-to-title {
@@ -168,7 +180,6 @@ section {
 }
 
 .album-open-mockup {
-    /*Placeholder לתמונת מוקאפ פתוח*/
     width: 40%;
     min-height: 300px;
     background-color: #ccc; 
@@ -209,10 +220,10 @@ footer {
     font-size: 0.9em;
 }
 
-/* התאמה למובייל (ניתן להרחיב בהמשך) */
+/* התאמה למובייל */
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* מסתיר את הניווט הראשי במובייל */
+        display: none; 
     }
     
     .hero-content {
@@ -222,11 +233,15 @@ footer {
         text-align: center;
         max-width: none;
     }
+    
+    .hero-title {
+        font-size: 2em;
+    }
 
     .hero-section.wedding-hero {
-        justify-content: center; /* ממקם את התוכן במרכז */
-        align-items: flex-end; /* הטקסט בתחתית הרקע */
-        min-height: 300px;
+        justify-content: center; 
+        align-items: center;
+        min-height: 400px;
     }
 
     .how-to-section {
