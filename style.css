@@ -1,34 +1,34 @@
-/* --- גלובלי ופונטים (Heebo) --- */
+/* --- גלובלי ופונטים (מעבר ל-Rubik) --- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Heebo', sans-serif;
+    font-family: 'Rubik', sans-serif; /* פונט Rubik המעודכן */
 }
 body {
     direction: rtl; 
-    color: #333; /* צבע טקסט כהה */
+    color: #333; 
     background-color: #fff; 
 }
 
-/* --- טיפוגרפיה (דיוק גודל ומשקל) --- */
+/* --- טיפוגרפיה --- */
 h1 {
-    font-size: 2.5rem; /* כותרת ראשית גדולה במיוחד */
-    font-weight: 800; /* משקל שחור/בולד */
+    font-size: 2.5rem; 
+    font-weight: 800; 
     line-height: 1.1;
     margin-bottom: 0.5em;
     color: #333;
 }
 h2 {
-    font-size: 2rem; /* כותרות משנה */
+    font-size: 2rem; 
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 0.75em;
     color: #333;
 }
 p {
-    font-size: 1.05rem; /* טקסט רגיל מעט גדול יותר */
-    font-weight: 300; /* טקסט דק כפי שנראה בצילום */
+    font-size: 1.05rem; 
+    font-weight: 300; 
     line-height: 1.7;
     margin-bottom: 1.5rem;
     color: #444;
@@ -39,51 +39,35 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 5%; /* קטן יותר ופחות מודגש */
+    padding: 10px 5%; 
     border-bottom: 1px solid #e7e7e7;
     background-color: #fff;
-    position: sticky; /* נדבק למעלה כמו באתר המקורי */
+    position: sticky; 
     top: 0;
     z-index: 1000;
 }
-.logo { 
+.logo, .lupa-logo-right .lupa-text { 
     font-size: 1.4rem;
     font-weight: 800;
     color: #4cd964; /* ירוק לוגו */
-    order: 3; /* מיקום הלוגו שלך בצד ימין למעלה */
+    background-color: transparent;
 }
-.header-left {
-    order: 1; /* תיק וכו' בצד שמאל */
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-.lupa-logo-right .lupa-text {
-    color: #4cd964; 
-    font-weight: 800;
-    font-size: 1.4rem;
-}
-nav {
-    order: 2;
-}
-.nav-links a {
-    font-weight: 500; /* משקל בינוני לקישורי ניווט */
-    font-size: 0.95rem;
-}
+.logo { order: 3; }
+.header-left { order: 1; }
+.nav-links a { font-weight: 500; font-size: 0.95rem; }
 
 
-/* --- 2. Hero Section (תיקון פריסה וגודל) --- */
+/* --- Hero Section --- */
 .hero-section {
     display: flex;
-    flex-direction: row-reverse; /* התמונה משמאל, הטקסט מימין */
+    flex-direction: row-reverse; 
     background-color: #fcfcfc; 
     padding: 60px 5%; 
     gap: 40px;
-    align-items: center; /* יישור אנכי טוב יותר */
+    align-items: center; 
 }
-
 .hero-image-container {
-    width: 60%; /* תמונה גדולה יותר */
+    width: 60%; 
     min-height: 480px;
     position: relative;
 }
@@ -92,43 +76,40 @@ nav {
     height: 100%;
     background-color: #e6e4e0; 
     border-radius: 5px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* צל בולט לתמונה הראשית */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
 }
-
 .hero-content {
-    width: 40%; /* הטקסט קטן יותר ונקי */
+    width: 40%; 
     padding-top: 0;
 }
 .hero-subtitle {
     font-size: 1.1rem;
     color: #666;
     margin-bottom: 40px;
-    font-weight: 500; /* יותר מודגש */
+    font-weight: 500; 
 }
 
-/* --- CTA Button (ירוק זית) --- */
+/* --- CTA Button (תיקון פינות - הופך לעגול יותר) --- */
 .primary-cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #4cd964; 
+    background-color: #4cd964; /* ירוק זית מדוייק */
     color: #333; 
-    padding: 16px 35px; /* מעט גדול יותר */
+    padding: 16px 35px; 
     text-decoration: none;
-    border-radius: 6px; /* פינות פחות מעוגלות */
+    border-radius: 25px; /* <--- התיקון שהופך את הכפתור לעגול יותר */
     font-size: 1.1rem;
     font-weight: 700;
     transition: background-color 0.3s;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* צל חזק יותר */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2); 
 }
-.primary-cta::before {
-    content: ""; /* ביטול החץ */
-    margin: 0;
-    transform: none;
+.primary-cta:hover {
+    background-color: #34aa49; 
 }
-/* הסגנון של לופה משתמש בכפתור קלאסי ללא חץ בולט */
 
-/* --- 3. General Text Section (פריסה ממורכזת) --- */
+
+/* --- 3. General Text Section --- */
 .general-text-section {
     padding: 80px 5%;
     background-color: #fff;
@@ -139,10 +120,10 @@ nav {
     margin: 0 auto;
 }
 .text-block h2 {
-    font-size: 2.5rem; /* כותרת מרכזית בולטת */
+    font-size: 2.5rem; 
 }
 .text-block p {
-    font-size: 1.2rem; /* טקסט גדול יותר במרכז */
+    font-size: 1.2rem; 
     font-weight: 300;
 }
 .secondary-section-cta {
@@ -151,10 +132,10 @@ nav {
 }
 
 
-/* --- 4. How-To Section (פריסה) --- */
+/* --- 4. How-To Section --- */
 .how-to-section {
     display: flex;
-    flex-direction: row; /* תמונה מימין, טקסט משמאל */
+    flex-direction: row; 
     padding: 60px 5%;
     background-color: #f7f7f7;
     align-items: flex-start;
