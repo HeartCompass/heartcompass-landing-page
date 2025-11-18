@@ -1,31 +1,26 @@
-/* הגדרות כלליות - פריסה רחבה ונקייה */
+/* הגדרות כלליות - בסיס בהיר ונקי (כמו Lupa) */
 body {
     font-family: 'Assistant', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 1.65;
     color: #333333; 
-    background-color: #F8F5F0; 
+    background-color: #F8F8F8; /* רקע בהיר ונקי */
     margin: 0;
-    
-    /* FIX: ריווח עליון מותאם ללוגו הגדול (300px) */
-    padding-top: 400px; 
-    
+    padding-top: 130px; 
     text-align: right; 
     direction: rtl;
 }
 
-/* FIX: הרחבת העמוד למקסימום קריאות */
 .container {
-    max-width: 1200px; /* רוחב רחב יותר לווייב יוקרתי */
+    max-width: 1200px; /* רוחב רחב */
     margin: 0 auto;
     padding: 0 40px; 
 }
 
-/* 0. HEADER ותפריט ניווט - FIX: תפריט לופה */
+/* 0. HEADER ותפריט ניווט - FIX: פאדינג נמוך יותר, צבע עמוק */
 .main-header {
-    background-color: #5A3B33; /* חום-קפה עמוק */
+    background-color: #5A3B33; /* צבע מותג חזק */
     color: white;
-    /* FIX: הגדלת ה-padding כדי להכיל את הלוגו הענק */
-    padding: 40px 0; 
+    padding: 15px 0; /* הקטנת הריווח כדי למנוע כיסוי */
     position: fixed; 
     top: 0;
     left: 0;
@@ -37,45 +32,25 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px; 
-}
-.logo-link {
-    display: flex; 
-    align-items: center; 
-    text-decoration: none;
-    color: #D4AF37; 
+    padding: 0 40px; /* ריווח צדדי נכון */
 }
 .logo-image {
-    /* FIX: הגדלה פי 4 ל-300px */
-    height: 300px !important; 
+    height: 65px; /* FIX: גודל הלוגו הופחת מעט כדי למנוע שבירה */
     width: auto;
     display: block;
     margin-left: 15px; 
 }
 .logo-text {
-    font-size: 2.2em; 
+    font-size: 1.8em; /* הקטנה ליציבות */
     font-weight: 700;
     color: #D4AF37; 
-    white-space: nowrap;
 }
 .nav-links {
-    /* FIX: פריסת לופה - מרווח מאוזן בין הקישורים */
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     flex-grow: 1; 
-    text-align: left; 
     padding-left: 30px; 
-}
-.nav-links a {
-    color: #F0F0F0;
-    text-decoration: none;
-    margin-left: 25px; /* הגדלת הרווח בין קישורים */
-    font-weight: 600; /* מודגש יותר */
-    font-size: 1.1em;
-    transition: color 0.3s;
-}
-.nav-links a:hover {
-    color: #D4AF37; /* צבע זהב בריחוף */
 }
 
 /* כותרות וטיפוגרפיה */
@@ -85,15 +60,14 @@ h1, h2, h3 {
     margin-top: 0;
 }
 h1 { 
-    font-size: 2.6em;
+    font-size: 2.6em; /* גודל מכובד */
     line-height: 1.1; 
     margin-bottom: 20px;
 }
 h2 { 
     font-size: 1.7em; 
-    /* FIX: הסרת הקו המוזהב */
-    border-bottom: none; 
-    padding-bottom: 0; 
+    border-bottom: 3px solid #D4AF37; /* השארת קו הזהב לכותרת */
+    padding-bottom: 8px; 
     margin-bottom: 25px; 
     font-weight: 600;
 }
@@ -104,34 +78,19 @@ h2 {
     padding: 60px 50px; 
     text-align: right; 
     border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
-    margin-bottom: 30px;
-    /* FIX: השארת מסגרת הזהב ב-Hero כאלמנט עיצובי יחיד */
-    border: 3px solid #D4AF37; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 40px;
+    border: 1px solid #D4D4D4; /* מסגרת עדינה */
+}
+.hero p {
+    font-size: 1.3em; 
+    color: #5A5A5A;
+    margin-top: 15px;
+    margin-bottom: 35px;
+    font-weight: 500; 
 }
 
-/* כפתור CTA - אמבר יוקרתי ומעוגל */
-.cta-button {
-    background-color: #FFA500; 
-    color: white; 
-    padding: 18px 40px; 
-    border-radius: 50px; /* FIX: עיגול מושלם */
-    font-size: 1.3em;
-    font-weight: bold;
-    display: block;
-    margin: 30px auto;
-    max-width: 500px; 
-    text-align: center;
-    box-shadow: 0 6px 18px rgba(255, 165, 0, 0.5); 
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-}
-.cta-button:hover {
-    background-color: #CC8400; 
-    transform: translateY(-2px); 
-    box-shadow: 0 8px 25px rgba(255, 165, 0, 0.8); 
-}
-
-/* 2. יצירת כרטיסים (Cards) - פריסה רחבה */
+/* 2. יצירת כרטיסים (Cards) - FIX: ביטול GRID והחזרת FLEX */
 .content-section {
     padding: 30px 0;
 }
@@ -143,24 +102,28 @@ h2 {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
     border: 1px solid #E0E0E0; 
     
-    display: grid;
-    grid-template-columns: 2fr 1.5fr; 
+    /* התיקון הסופי: Flexbox יציב במקום Grid הבעייתי */
+    display: flex;
     gap: 40px; 
-    align-items: start;
+    align-items: flex-start;
 }
 
-/* תיקון רווחים ומיקום סופי */
-.card h2, .card h3, .card p, .card .list-item, .card .image-placeholder {
-    margin-top: 0 !important; 
-    margin-bottom: 0 !important; 
-    padding-top: 0 !important;
-    padding-bottom: 0;
+/* FIX: התמונה כעת צפה ליד הטקסט (Text Wrapping) */
+.image-placeholder {
+    max-width: 350px; /* רוחב קבוע לתמונה בצד */
+    height: auto;
+    flex-shrink: 0; /* מונע מהתמונה להתכווץ */
+    border-radius: 12px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
+    border: 1px solid #E0E0E0; 
+    margin-top: 10px;
+    order: 2; /* מיקום התמונה לימין (אם לא משנים את ה-HTML) */
 }
-.card h2 {
-    margin-bottom: 15px !important; 
-    grid-column: 1 / 3; 
+
+/* ⚠️ הטקסט ב-Card (התוכן) ממלא את שאר המקום */
+.card-content-wrapper {
+    flex-grow: 1;
+    order: 1;
 }
-.card h3 {
-    margin-top: 15px !important; 
-    margin-bottom: 5px !important;
-    grid-column: 1 / 2
+
+/* ... שאר הכללים נשמרים ... */
