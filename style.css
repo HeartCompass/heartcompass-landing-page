@@ -87,22 +87,68 @@ h2 {
     font-weight: 600;
 }
 
-/* 1. HERO SECTION */
-.hero {
-    background-color: white; 
-    padding: 60px 50px; 
-    text-align: right; 
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
-    margin-bottom: 40px;
-    border: 1px solid #E0E0E0; /* מסגרת נקייה */
+/* Hero Section: תמונת קאבר מלאה וברורה (ללא מסיכה) */
+.hero-section {
+    position: relative;
+    background-image: url('images/diary_1200x400.jpg'); /* נתיב התמונה שלך */
+    background-size: cover; /* מכסה את כל שטח ה-Hero */
+    background-position: center top; /* מיקום מרכזי עם התמקדות בחלק העליון */
+    background-repeat: no-repeat;
+    color: white; /* צבע טקסט בהיר מעל התמונה */
+    text-align: right;
+    padding: 120px 0; /* ריווח פנימי יפה */
+    min-height: 400px; /* גובה מינימלי כדי שהתמונה תיראה טוב */
+    display: flex; /* למיקום התוכן */
+    align-items: center; /* יישור אנכי למרכז */
+    justify-content: flex-end; /* יישור אופקי לימין */
 }
-.hero p {
-    font-size: 1.3em; 
-    color: #5A5A5A;
-    margin-top: 15px;
-    margin-bottom: 35px;
-    font-weight: 500; 
+
+/* הסרת כל מסיכה או Overlay שיכולה להיות מעל התמונה */
+.hero-section::before {
+    content: none !important; /* מבטל כל פסאודו-אלמנט עם צבע */
+}
+.hero-section .hero-image-container {
+    display: none; /* מסתיר את תג התמונה אם קיים בתוך ה-Hero */
+}
+
+.hero-section .hero-content {
+    max-width: 500px; /* הגבלת רוחב לטקסט מעל התמונה */
+    margin-right: 100px; /* ריווח מהצד הימני (כדי לא לכסות את היומן) */
+    background-color: rgba(0, 0, 0, 0.4); /* רקע כהה שקוף לטקסט לקריאות טובה יותר */
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.hero-section .hero-title {
+    font-size: 3em;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* צל לטקסט לקריאות משופרת */
+}
+
+.hero-section .hero-subtitle {
+    font-size: 1.4em;
+    font-weight: 300;
+    color: #f0f0f0;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* עיצוב כפתור ה-CTA בתוך ה-Hero */
+.hero-section .primary-cta {
+    background-color: #D4AF37; /* צבע כפתור זהב/אמבר */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.hero-section .primary-cta:hover {
+    background-color: #A68A2E;
 }
 
 /* כפתור CTA - זהב שזוף (Burnt Gold) */
