@@ -75,13 +75,21 @@ header {
 }
 
 /* תיקון "הכרטיסים": גובה מוחלט כדי לוודא שהם מופיעים */
+/* תיקון קריטי לגודל תמונה ב-Hero Section */
 .album-mockup-placeholder {
+    max-width: 500px; /* הגודל המקסימלי הרצוי לתצוגה */
     width: 100%;
-    height: 480px !important; /* גובה מוחלט */
-    background-color: #e6e4e0; 
-    border-radius: 5px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+    margin: 0 auto; /* מרכוז התמונה אם ה-div רחב יותר */
 }
+
+/* ודא שהתמונה בפנים מתאימה את עצמה ל-100% מרוחב ה-Placeholder */
+.album-mockup-placeholder img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* שמירה על קימורים נקיים */
+}
+
 .hero-image-container {
     width: 60%; 
     order: 1; 
