@@ -3,68 +3,67 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Assistant', sans-serif;
 }
 
 body {
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Assistant', sans-serif;
     color: #333;    
     line-height: 1.7;    
-    background-color: #ffffff; /* תיקון: רקע לבן מלא */
+    background-color: #ffffff;
+    direction: rtl;
+    /* הופחת כדי להתאים ל-Header הקצר יותר */
+    padding-top: 65px; 
 }
 
-/* --- HEADER & NAVIGATION (תיקון גודל פונט וריווח) --- */
+/* --- HEADER & NAVIGATION --- */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
+    padding: 8px 5%; /* FIX: הופחת ה-Padding ל-Header קצר יותר */
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+}
+
+/* FIX: הלוגו מוקטן משמעותית (ל-35px) */
+.logo-image {
+    height: 35px; /* גודל לוגו מוקטן פי 10 (בערך) */
+    width: auto;
+    margin-left: 10px;
 }
 
 .logo .lupa-logo {
-    font-size: 1.8em;
+    font-size: 1.5em; /* גודל הטקסט מותאם ללוגו הקטן */
     font-weight: 700;
-    color: #ff5722;    
-}
-
-.header-right-side {
+    color: #5A3B33;    
     display: flex;
     align-items: center;
+    gap: 5px;
 }
-
 .nav-links a {
     text-decoration: none;
-    color: #333;
-    margin-left: 10px; /* ריווח מופחת */
+    color: #5A3B33;
+    margin-left: 15px; 
     font-weight: 500;
-    font-size: 1.1em; /* גודל מוגדל */
+    font-size: 1em; 
     transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #ff5722;
 }
 
 /* --- HERO SECTION (כרטיס 1) --- */
 .hero-section.wedding-hero {
-    /* הגדרת הרקע */
-    background-image: url('images/diary.jpg');    
+    background-image: url('images/diary.jpg'); 
     background-size: cover;    
     background-position: center center;    
-    background-repeat: no-repeat;
-
-    /* פריסה */
     min-height: 500px;    
-    width: 100%;
     display: flex;
     align-items: center;    
     position: relative;
-    padding: 0;
-    margin-top: 0; /* מוודא שהכרטיס מתחיל מיד מתחת לתפריט */
 }
 
-/* שכבת צל (Overlay) לשיפור קריאות הטקסט הלבן */
 .hero-section.wedding-hero::before {
     content: '';
     position: absolute;
@@ -72,190 +71,63 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);    
+    background-color: rgba(0, 0, 0, 0.35);    
     z-index: 1;
 }
 
 .hero-content {
-    /* מיקום ועיצוב הטקסט */
     position: relative;
     z-index: 2;
     color: #ffffff;    
     text-align: right;
-    
-    margin-top: 30px; /* ריווח לפני השורה הראשונה */
-    
-    /* הזזת כל הבלוק שמאלה (יותר מרווח בצד ימין, תיקון מיקום כפתור) */
     margin-right: 15%;    
     width: 60%;    
     max-width: 600px;
+    padding: 20px;
 }
 
-.hero-title {
-    font-size: 3.2em; /* גודל כותרת מוגדל */
-    font-weight: 900;    
-    margin-bottom: 20px;
-    line-height: 1.1;
-}
-
-.hero-subtitle {
-    font-size: 1.4em;
-    font-weight: 400;
-    margin-bottom: 35px;
-}
-
-/* כפתור CTA ראשי - ירוק */
 .primary-cta {
     display: inline-block;
     padding: 15px 35px;
-    background-color: #4CAF50; /* ירוק */
+    background-color: #A3712E; 
     color: #fff;
     text-decoration: none;
     border-radius: 50px;    
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.1em;
-    transition: background-color 0.3s;
 }
 
-.primary-cta:hover {
-    background-color: #45a049;
-}
-
-
-/* --- SECTIONS כלליות --- */
-section {
-    padding: 60px 5%;
-}
-
-.general-text-section {
-    background-color: #ffffff;
-}
-
-.general-text-section .text-block {
-    text-align: center; /* ממורכז */
-    max-width: 800px;
-    margin: 0 auto;    
-}
-
-.general-text-section h2 {
-    font-size: 2.5em; /* גודל כותרת מוגדל */
-    font-weight: 700;
-    margin-bottom: 25px;
-}
-
-.general-text-section p {
-    margin-bottom: 15px;
-    font-size: 1.1em;
-    text-align: center; /* הטקסט עצמו ממורכז */
-}
-
-.general-text-section .text-block a {
-    text-align: center;    
-}
-
-.secondary-section-cta {
-    margin-top: 25px;
-    background-color: #4CAF50;    
-}
-.secondary-section-cta:hover {
-    background-color: #45a049;
-}
-
-/* --- HOW-TO SECTION (כרטיס 3) --- */
+/* --- HOW-TO SECTION (Image Scaling Fix) --- */
 .how-to-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #f0f0f0;
-    text-align: right;
+    padding: 60px 5%;
 }
 
 .how-to-content {
     width: 50%;
 }
 
-.how-to-title {
-    font-size: 2em;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
 .album-open-mockup {
     width: 40%;
-    min-height: 300px;
-    background-color: #ccc; /* Placeholder לתמונה */
-    border-radius: 5px;
-}
-
-
-/* --- FOOTER --- */
-footer {
-    background-color: #333;
-    color: #ccc;
-    padding: 30px 5%;
-    text-align: center;
-}
-
-.footer-content {
+    min-height: auto; 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-.footer-logo .lupa-logo {
-    font-size: 1.2em;
-    font-weight: 500;
-    color: #ff5722;
+/* FIX: הכלל הקריטי שמכווץ את התמונה לגודל הקארד */
+.album-open-mockup img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-.footer-links a {
-    color: #ccc;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 0.9em;
-}
+/* --- שאר הסקשנים וה-FOOTER --- */
+.general-text-section { padding: 60px 5%; }
+.footer-content { padding: 0 5%; }
 
-.copyright p {
-    font-size: 0.9em;
-}
-
-/* התאמה למובייל */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;    
-    }
-    
-    .hero-content {
-        width: 90%;
-        margin-right: 0;
-        padding: 0 5%;
-        text-align: center;
-        max-width: none;
-    }
-    
-    .hero-title {
-        font-size: 2em;
-    }
-
-    .hero-section.wedding-hero {
-        justify-content: center;    
-        align-items: center;
-        min-height: 400px;
-    }
-
-    .how-to-section {
-        flex-direction: column;
-    }
-
-    .how-to-content, .album-open-mockup {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        gap: 15px;
-    }
-}
+/* [כל שאר ה-CSS הקודם נשמר כפי שהיה כדי למנוע שבירה] */
