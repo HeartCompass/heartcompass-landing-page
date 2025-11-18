@@ -1,11 +1,17 @@
-/* הגדרות כלליות - FIX: הגדלת הריווח העליון */
+/* הגדרות כלליות - הוספת כלל box-sizing גורף לתיקון בעיות רוחב וגובה */
+* {
+    box-sizing: border-box; 
+}
 body {
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Assistant', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 1.65;
     color: #333333; 
     background-color: #F8F5F0; 
     margin: 0;
-    padding-top: 100px; /* FIX: הגדלה ל-100px כדי להתאים ל-Header הגבוה */
+    
+    /* התיקון הקריטי: הגדלת הריווח הכללי ל-130px כדי למנוע כיסוי */
+    padding-top: 130px; 
+    
     text-align: right; 
     direction: rtl;
 }
@@ -13,14 +19,14 @@ body {
 .container {
     max-width: 960px; 
     margin: 0 auto;
-    padding: 0 30px; 
+    padding: 0 40px; 
 }
 
-/* 0. HEADER ותפריט ניווט */
+/* 0. HEADER ותפריט ניווט - הדגשת גובה הלוגו */
 .main-header {
-    background-color: #5A3B33; 
+    background-color: #5A3B33;
     color: white;
-    padding: 15px 0; /* הגובה החדש */
+    padding: 20px 0; /* הגדלת ה-padding כדי להכיל את הלוגו הגדול */
     position: fixed; 
     top: 0;
     left: 0;
@@ -41,8 +47,8 @@ body {
     color: #D4AF37; 
 }
 .logo-image {
-    height: 75px; /* הגובה המוגדל */
-    width: auto;
+    height: 85px !important; /* הגדלה כוחנית כפי שנדרש */
+    width: auto !important;
     display: block;
     margin-left: 15px; 
 }
@@ -50,20 +56,17 @@ body {
     font-size: 2.2em; 
     font-weight: 700;
     color: #D4AF37; 
-    white-space: nowrap;
 }
 .nav-links {
     display: flex;
     justify-content: flex-end;
     flex-grow: 1; 
     text-align: left; 
-    margin-left: 20px; 
-    white-space: nowrap; 
 }
 .nav-links a {
     color: #F0F0F0;
     text-decoration: none;
-    margin-right: 15px; 
+    margin-left: 15px; 
     font-weight: 500;
     transition: color 0.3s;
 }
@@ -87,10 +90,10 @@ h2 {
     font-weight: 600;
 }
 
-/* 1. HERO SECTION */
+/* 1. HERO SECTION - הריווח כעת יפעל נכון */
 .hero {
     background-color: white; 
-    padding: 50px 30px 40px 30px; 
+    padding: 50px 40px 40px 40px; 
     text-align: right; 
     border-radius: 8px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
@@ -105,7 +108,7 @@ h2 {
     font-weight: 500; 
 }
 
-/* כפתור CTA */
+/* כפתור CTA - זהב שזוף (Burnt Gold) */
 .cta-button {
     background-color: #A3712E; 
     color: white; 
@@ -125,7 +128,7 @@ h2 {
     transform: translateY(-2px); 
 }
 
-/* 2. יצירת כרטיסים (Cards) ומיקום תמונה */
+/* 2. יצירת כרטיסים (Cards) - FIX: CSS GRID */
 .content-section {
     padding: 30px 0;
 }
@@ -167,6 +170,8 @@ h2 {
     margin-bottom: 8px !important; 
     grid-column: 1 / 2;
 }
+
+/* מיקום התמונה בטור הימני */
 .image-placeholder {
     grid-column: 2 / 3; 
     max-width: 100%; 
@@ -203,15 +208,22 @@ h2 {
     font-size: 0.85em; 
     border-top: 1px solid #D4D4D4;
 }
-.footer-attribution { 
-    display: block;
-    margin-top: 10px;
-    font-size: 0.75em;
-    color: #999999; 
-    text-decoration: none;
-}
 
 /* רספונסיביות */
 @media (max-width: 768px) {
     .card {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; 
+        gap: 15px;
+        padding: 25px;
+    }
+    .card h2, .card h3, .card p, .card .list-item, .image-placeholder {
+        grid-column: 1 / 2; 
+        max-width: 100%; 
+    }
+    .image-placeholder {
+        margin: 15px auto; 
+    }
+}
+@media (max-width: 600px) {
+    body { padding-top: 100px; } /* תיקון ריווח בנייד */
+    h
