@@ -1,167 +1,231 @@
-/* הגדרות בסיסיות ואיפוס */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    /* השארת הפונט כפי שביקשת בהגדרות השמורות שלך */
-    font-family: 'Assistant', sans-serif;
-}
-
+/* הגדרות כלליות - FIX: פונט אמין עם גיבויים רבים */
 body {
-    font-family: 'Assistant', sans-serif;
-    color: #333;
-    /* הגדלת הפונט הכללי */
-    line-height: 1.8;
-    background-color: #ffffff;
+    font-family: 'Assistant', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.65;
+    color: #333333; 
+    background-color: #F8F5F0; 
+    margin: 0;
+    /* הגדלת הריווח העליון ל-120px כדי לכסות את הלוגו המוגדל */
+    padding-top: 120px; 
+    text-align: right; 
     direction: rtl;
-    padding-top: 65px;
-    font-size: 1.1em; /* הגדלה כללית */
 }
 
-/* --- HEADER & NAVIGATION --- */
-header {
+.container {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 40px; 
+}
+
+/* 0. HEADER ותפריט ניווט */
+.main-header {
+    background-color: #5A3B33; 
+    color: white;
+    padding: 15px 0; /* FIX: הגדלת גובה התפריט ליציבות */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 5%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    padding: 0 40px; 
+}
+.logo-link {
+    display: flex; 
+    align-items: center; 
+    text-decoration: none;
+    color: #D4AF37; 
 }
 
+/* FIX: הלוגו - הגדרה יציבה ללא !important */
 .logo-image {
-    height: 35px;
+    height: 75px; /* גודל סופי ללא !important */
     width: auto;
-    margin-left: 10px;
+    max-width: 100%; /* כלל בטיחות */
+    display: block;
+    margin-left: 15px; 
 }
-
-.logo .lupa-logo {
-    font-size: 1.7em; /* הגדלת גודל הטקסט */
+.logo-text {
+    font-size: 2.2em; 
     font-weight: 700;
-    color: #5A3B33;
+    color: #D4AF37; 
+    white-space: nowrap;
+}
+.nav-links {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    gap: 5px;
+    flex-grow: 1; 
+    padding-left: 30px; 
 }
 .nav-links a {
+    color: #F0F0F0;
     text-decoration: none;
-    color: #5A3B33;
-    /* FIX: יישור תפריט לימין (margin-left הופך ל-margin-right) */
-    margin-right: 15px;
-    margin-left: 0; /* נטרול ה-margin-left הקודם */
-    font-weight: 600; /* הגדלת משקל */
-    font-size: 1.15em; /* הגדלת גודל פונט */
+    margin-left: 25px; 
+    font-weight: 600; 
+    font-size: 1.1em;
     transition: color 0.3s;
 }
 
-/* --- HERO SECTION (כרטיס 1) --- */
-.hero-section.wedding-hero {
-    background-image: url('images/diary.jpg');
-    background-size: cover;
-    background-position: center center;
-    min-height: 550px; /* הגדלה קלה של הכרטיס */
-    display: flex;
-    align-items: center;
-    position: relative;
+/* כותרות וטיפוגרפיה */
+h1, h2, h3 {
+    color: #5A3B33; 
+    font-weight: 700; 
+    margin-top: 0;
+}
+h1 { 
+    font-size: 2.6em; 
+    line-height: 1.1; 
+    margin-bottom: 20px;
+}
+h2 { 
+    font-size: 1.7em; 
+    border-bottom: 3px solid #D4AF37; 
+    padding-bottom: 8px; 
+    margin-bottom: 25px; 
+    font-weight: 600;
 }
 
-.hero-section.wedding-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.35);
-    z-index: 1;
+/* 1. HERO SECTION */
+.hero {
+    background-color: white; 
+    padding: 60px 50px; 
+    text-align: right; 
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 40px;
+    border: 1px solid #E0E0E0; 
+}
+.hero p {
+    font-size: 1.3em; 
+    color: #5A5A5A;
+    margin-top: 15px;
+    margin-bottom: 35px;
+    font-weight: 500; 
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    color: #ffffff;
-    /* כרטיס 1 נשאר יישור לימין (לפי ה-design המקורי) */
-    text-align: right;
-    margin-right: 15%;
-    width: 60%;
-    max-width: 600px;
-    padding: 20px;
-}
-
-/* יישור הטקסטים בכרטיסים 2 ומעלה למרכז */
-/* (How-To וכל סקשן טקסט כללי) */
-.how-to-content,
-.general-text-section {
-    /* FIX: יישור טקסט למרכז בכרטיסים הבאים */
+/* כפתור CTA - זהב שזוף (Burnt Gold) */
+.cta-button {
+    background-color: #A3712E; 
+    color: white; 
+    padding: 18px 40px; 
+    border-radius: 50px; 
+    font-size: 1.4em;
+    font-weight: bold;
+    display: block;
+    margin: 30px auto;
+    max-width: 500px; 
     text-align: center;
+    box-shadow: 0 6px 18px rgba(163, 113, 46, 0.5); 
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
-/* FIX: ריווח כפתורים - 2 שורות (כ-2em) מעל הכפתור */
-.primary-cta {
-    display: inline-block;
-    padding: 18px 40px; /* הגדלת הכפתור */
-    background-color: #A3712E;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1.3em; /* הגדלת פונט הכפתור */
-    margin-top: 2.2em; /* ריווח של כ-2 שורות לפני הכפתור */
-    /* FIX: הוספת מחיר לכפתור (רק אם הוא מכיל טקסט מוגדר כמו "להזמין עכשיו") */
-    /* אם הכפתור הוא רק כפתור: */
-    /* content: 'הזמן עכשיו ב-149 ש"ח'; */
+/* 2. יצירת כרטיסים (Cards) - FIX: CSS GRID */
+.content-section {
+    padding: 30px 0;
+}
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 40px; 
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #E0E0E0; 
+    
+    display: grid;
+    grid-template-columns: 2fr 1.5fr; 
+    gap: 40px; 
+    align-items: start;
 }
 
-
-/* --- HOW-TO SECTION (Image Scaling Fix) --- */
-.how-to-section {
-    display: flex;
-    /* כדי שהטקסט והתמונה יהיו במרכז כאשר הטקסט מיושר למרכז */
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-    padding: 60px 5%;
-    /* שינוי כיוון כדי שהתמונה תהיה מצד שמאל אם ה-direction הוא RTL */
-    flex-direction: row-reverse;
-    gap: 30px; /* הוספת רווח בין הרכיבים */
+/* תיקון רווחים ומיקום סופי */
+.card h2, .card h3, .card p, .card .list-item, .card .image-placeholder {
+    margin-top: 0 !important; 
+    margin-bottom: 0 !important; 
+    padding-top: 0 !important;
+    padding-bottom: 0;
+}
+.card h2 {
+    margin-bottom: 15px !important; 
+    grid-column: 1 / 3; 
+}
+.card h3 {
+    margin-top: 15px !important; 
+    margin-bottom: 5px !important;
+    grid-column: 1 / 2;
+}
+.card p {
+    margin-bottom: 8px !important; 
+    grid-column: 1 / 2;
+}
+.card .list-item {
+    margin-bottom: 12px !important; 
+    grid-column: 1 / 2;
 }
 
-/* הוספת ריווח מתחת לכותרות הראשיות והמשניות לפני טקסט/כפתור */
-h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 0.5em; /* הוספת ריווח מתחת לכותרות */
-}
-
-/* הוספת ריווח מתחת לפסקאות לפני כפתור */
-p {
-    margin-bottom: 1.5em; /* ריווח מתחת לפסקאות */
-}
-
-.how-to-content {
-    width: 50%;
-}
-
-.album-open-mockup {
-    width: 45%; /* הגדלה קלה כדי להתאים לשינוי */
-    min-height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* הכלל הקריטי שמכווץ את התמונה לגודל הקארד */
-.album-open-mockup img {
-    max-width: 100%;
+/* מיקום התמונה בטור הימני */
+.image-placeholder {
+    grid-column: 2 / 3; 
+    max-width: 100%; 
     height: auto;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 12px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #E0E0E0; 
+    margin: 0 auto; 
 }
 
-/* --- שאר הסקשנים וה-FOOTER --- */
-.general-text-section {
-    padding: 60px 5%;
-    /* FIX: יישור טקסט למרכז בסקשנים אלו */
-    text-align: center;
+/* 3. אזור התמחור (Pricing) */
+.pricing-section {
+    background-color: #F0F0F0; 
+    padding: 50px 0; 
+    border-radius: 0;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
 }
-.footer-content { padding: 0 5%; }
+.pricing-box {
+    border: 3px solid #5A3B33; 
+    padding: 25px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); 
+    max-width: 450px; 
+    margin: 20px auto;
+}
+
+/* תחתית הדף (Footer) */
+.footer-section {
+    color: #5A3B33; 
+    text-align: center; 
+    padding: 30px 0; 
+    font-size: 0.85em; 
+    border-top: 1px solid #D4D4D4;
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+    .card {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+        padding: 30px;
+    }
+    .card h2, .card h3, .card p, .card .list-item, .image-placeholder {
+        grid-column: 1 / 2; 
+        max-width: 100%; 
+    }
+    .image-placeholder {
+        margin: 15px auto; 
+    }
+}
+@media (max-width: 600px) {
+    body { padding-top: 100px; }
+    .main-header { padding: 15px 0; }
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.4em; }
+    .hero p { font-size: 1em; }
+    .cta-button { font-size: 1.1em; padding: 12px 25px; }
+}
