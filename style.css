@@ -1,43 +1,7 @@
-/* --- גלובלי ופונטים (מעבר ל-Rubik) --- */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Rubik', sans-serif; /* פונט Rubik המעודכן */
-}
-body {
-    direction: rtl; 
-    color: #333; 
-    background-color: #fff; 
-}
-
-/* --- טיפוגרפיה --- */
-h1 {
-    font-size: 2.5rem; 
-    font-weight: 800; 
-    line-height: 1.1;
-    margin-bottom: 0.5em;
-    color: #333;
-}
-h2 {
-    font-size: 2rem; 
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 0.75em;
-    color: #333;
-}
-p {
-    font-size: 1.05rem; 
-    font-weight: 300; 
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-    color: #444;
-}
-
-/* --- Header (ניקוי ודיוק לוגו) --- */
+/* --- Header (פריסה מדויקת) --- */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* מרווח שווה בין הלוגו לצד השני */
     align-items: center;
     padding: 10px 5%; 
     border-bottom: 1px solid #e7e7e7;
@@ -46,138 +10,54 @@ header {
     top: 0;
     z-index: 1000;
 }
-.logo, .lupa-logo-right .lupa-text { 
-    font-size: 1.4rem;
+
+/* הלוגו הראשי (שמאל) - גודל וצבע מותג */
+.logo { 
+    font-size: 1.6rem; /* הופך את הלוגו לגדול ובולט יותר */
     font-weight: 800;
-    color: #4cd964; /* ירוק לוגו */
-    background-color: transparent;
+    color: #4cd964; /* ירוק הלוגו */
+    /* אין צורך ב-order כשיש רק שני צדדים */
 }
-.logo { order: 3; }
-.header-left { order: 1; }
-.nav-links a { font-weight: 500; font-size: 0.95rem; }
 
-
-/* --- Hero Section --- */
-.hero-section {
+/* הצד הימני - כולל ניווט ואייקונים */
+.header-right-side {
     display: flex;
-    flex-direction: row-reverse; 
-    background-color: #fcfcfc; 
-    padding: 60px 5%; 
-    gap: 40px;
-    align-items: center; 
-}
-.hero-image-container {
-    width: 60%; 
-    min-height: 480px;
-    position: relative;
-}
-.album-mockup-placeholder {
-    width: 100%;
-    height: 100%;
-    background-color: #e6e4e0; 
-    border-radius: 5px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
-}
-.hero-content {
-    width: 40%; 
-    padding-top: 0;
-}
-.hero-subtitle {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 40px;
-    font-weight: 500; 
+    align-items: center;
+    gap: 30px; /* מרווח בין התפריט לאייקונים */
 }
 
-/* --- CTA Button (תיקון פינות - הופך לעגול יותר) --- */
-.primary-cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #4cd964; /* ירוק זית מדוייק */
-    color: #333; 
-    padding: 16px 35px; 
+/* --- ניווט (הלינקים המכוערים) --- */
+nav {
+    /* נשאר במרכז בין הלוגו לאייקונים */
+}
+.nav-links a {
     text-decoration: none;
-    border-radius: 25px; /* <--- התיקון שהופך את הכפתור לעגול יותר */
-    font-size: 1.1rem;
-    font-weight: 700;
-    transition: background-color 0.3s;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2); 
+    color: #444; /* צבע אפור כהה ונקי, במקום כחול */
+    margin-right: 20px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
 }
-.primary-cta:hover {
-    background-color: #34aa49; 
-}
-
-
-/* --- 3. General Text Section --- */
-.general-text-section {
-    padding: 80px 5%;
-    background-color: #fff;
-    text-align: center;
-}
-.text-block {
-    max-width: 800px;
-    margin: 0 auto;
-}
-.text-block h2 {
-    font-size: 2.5rem; 
-}
-.text-block p {
-    font-size: 1.2rem; 
-    font-weight: 300;
-}
-.secondary-section-cta {
-    margin-top: 30px; 
-    display: inline-block;
+.nav-links a:hover {
+    color: #4cd964; /* ירוק מותג בריחוף */
 }
 
-
-/* --- 4. How-To Section --- */
-.how-to-section {
+/* --- אייקונים (ימין) --- */
+.menu-icons {
     display: flex;
-    flex-direction: row; 
-    padding: 60px 5%;
-    background-color: #f7f7f7;
-    align-items: flex-start;
-    gap: 40px;
-}
-.how-to-content {
-    width: 45%; 
-    padding-top: 30px;
-}
-.how-to-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-.how-to-content p {
-    font-size: 1.1rem;
-    font-weight: 300;
-}
-.album-open-mockup {
-    width: 55%; 
-    min-height: 400px;
-    background-color: #e6e4e0; 
-    border-radius: 5px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-/* --- 5. Footer --- */
-footer {
-    background-color: #333; 
-    color: #999;
-    padding: 20px 5%;
-    font-size: 0.9em;
-}
-.footer-content {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 15px; /* מרווח בין אייקונים */
 }
-.copyright {
-    order: 3;
+.account-icon, .hamburger-icon, .cart-icon .bag-icon {
+    display: block;
+    width: 24px; /* הגדלת אייקונים מעט */
+    height: 24px;
+    background-color: #777; /* גוון אפור לאייקונים */
+    border-radius: 3px;
+    /* במציאות, אלה יהיו אייקוני SVG או פונט */
 }
-.footer-logo {
-    order: 1;
+
+/* הסרת רכיבים מיותרים מה-HTML הקודם */
+.lupa-logo-right {
+    display: none; 
 }
