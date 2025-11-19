@@ -31,6 +31,20 @@ header {
     height: 65px; 
 }
 
+.logo {
+    display: flex;
+    flex-direction: column; /* התיקון הקריטי: מסדר את הילדים (לוגו+כיתוב) בעמודה */
+    align-items: flex-end; /* מיישר את הכל לימין */
+    justify-content: center; /* ממקם במרכז אנכית */
+}
+
+.logo-tagline {
+    font-size: 0.75em; 
+    color: #F0F0E0; 
+    margin-top: -5px; /* מקרב אותו ללוגו הראשי */
+    padding-right: 2px;
+}
+
 .logo, .header-right-side {
     display: flex;
     align-items: center;
@@ -186,19 +200,6 @@ section {
     position: absolute;
     right: 0; /* זה יצמיד את הוי לטקסט, בתוך ה-li */
     top: 0;
-}
-
-/* קוד זה יסדר את הלוגו והכיתוב המשני זה מתחת לזה */
-.logo {
-    display: flex;
-    flex-direction: column; /* מסדר את הילדים בעמודה (אחד מתחת לשני) */
-    align-items: flex-end; /* מיישר את הכל לימין */
-}
-
-.logo-tagline {
-    font-size: 0.75em; /* גודל קטן */
-    color: #F0F0E0; /* לבן/בהיר על הרקע החום */
-    margin-top: -5px; /* מקרב אותו ללוגו הראשי */
 }
 
 /* --- ABOUT SECTION (כרטיס 4) --- */
