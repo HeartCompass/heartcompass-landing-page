@@ -196,10 +196,10 @@ section {
 .how-to-section {
     display: flex;
     justify-content: space-between;
-    align-items: stretch; /* <--- התיקון העיקרי! גורם לאלמנטים לתפוס 100% מגובה הסקשן */
+    align-items: stretch; /* <--- המפתח: מותח את הילדים לגובה אחיד */
     background-color: #f0f0f0;
     text-align: right;
-    padding: 60px 5%; 
+    padding: 60px 5%;
 }
 
 .how-to-content {
@@ -212,21 +212,18 @@ section {
     margin-bottom: 20px;
 }
 
-/* ה-DIV שמכיל את התמונה */
 .album-open-mockup {
-    width: 40%; 
-    height: auto; /* מאפשר לו להימתח */
-    min-height: 400px; /* קובע גובה מינימלי משמעותי לסקשן */
-    border-radius: 0; /* מסיר את הרדיוס כדי לאפשר צמידה לפינות */
-    overflow: hidden; 
+    width: 40%; /* תופס 40% מהרוחב של הסקשן */
+    min-height: 400px; /* <--- קובע גובה מינימלי לכל הסקשן */
+    border-radius: 0;
+    overflow: hidden;
 }
 
-/* התמונה עצמה בתוך ה-DIV */
 .album-open-mockup img {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; /* <--- התיקון העיקרי: ממלא את כל המסגרת (יכול לחתוך מעט) */
-    display: block; 
+    width: 100%; /* התמונה ממלאת 100% מרוחב ה-DIV שלה */
+    height: 100%; /* התמונה ממלאת 100% מגובה ה-DIV שלה */
+    object-fit: cover; /* <--- חשוב מאוד: זה גורם לתמונה למלא את כל השטח */
+    display: block;
     border-radius: 0;
 }
 
