@@ -49,7 +49,7 @@ header {
 /* --- HERO SECTION (כרטיס 1) --- */
 .hero-section.wedding-hero {
     /* הגדרת הרקע */
-    background-image: url('images/diary_banner_new.jpg'); /* ודא ששם הקובץ מעודכן! */
+    background-image: url('images/diary_1200x400.png'); /* ודא ששם הקובץ מעודכן! */
     background-size: cover; 
     background-position: center center; 
     background-repeat: no-repeat;
