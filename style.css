@@ -146,13 +146,20 @@ section {
 /* --- GENERAL TEXT SECTION (כרטיס 2 - פרוטוקול) --- */
 .general-text-section {
     background-color: #ffffff;
-    padding: 60px 5%; /* הריווח הכללי של הסקשן */
-    
-    /* ***** הוספות למרכוז מלא (אנכי ואופקי) ***** */
+    padding: 0; /* <--- מאפסים את הריווח החיצוני! */
     display: flex;
-    justify-content: center; /* מרכז אופקי */
-    align-items: center; /* מרכז אנכי */
-    min-height: 400px; /* נותן גובה בסיסי למרכוז יעיל */
+    justify-content: center; 
+    align-items: center; 
+    min-height: 400px; 
+    width: 100%;
+}
+
+.general-text-section .text-block {
+    max-width: 950px; /* הרוחב המוגדל שרצית */
+    margin: 0 auto; 
+    
+    /* ***** מוסיף את הריווח הכללי חזרה לבלוק הפנימי ***** */
+    padding: 60px 5%; 
 }
 
 .general-text-section h2 {
@@ -163,10 +170,9 @@ section {
 }
 
 .general-text-section p {
-    /* התיקון העיקרי לטקסט */
-    margin-bottom: 25px; /* *** עריכה: הגדלנו מ-20px ל-25px לרווח נוסף *** */
+    margin-bottom: 25px; 
     font-size: 1em;
-    text-align: center; /* *** עריכה: שינוי ליישור למרכז! *** */
+    text-align: right; /* <--- שינוי ליישור ימין, אם זה רצוי */
 }
 
 /* רשימות (בולטים) - ה-V נשאר כפי שביקשת */
