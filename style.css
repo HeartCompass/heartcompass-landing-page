@@ -187,15 +187,17 @@ section {
 }
 
 /* --- HOW-TO SECTION (כרטיס 3) --- */
-.how-to-section {
-    /* ... הגדרות קיימות ... */
-    padding: 0; /* <--- חובה: מבטל את הריווח של 60px ו-5% */
+how-to-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: #f0f0f0;
+    text-align: right;
+    padding: 60px 5%;
 }
 
 .how-to-content {
     width: 50%;
-    /* ***** החזרת הריווח רק לתוכן הטקסט ***** */
-    padding: 60px 5%; 
 }
 .how-to-title {
     font-size: 2em;
