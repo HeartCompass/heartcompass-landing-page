@@ -31,19 +31,29 @@ header {
     height: 65px; 
 }
 
+/* --- HEADER & NAVIGATION (תיקון הלוגו) --- */
+
 .logo {
+    /* הופך את ה-DIV למיכל Flex פשוט, מחזיר אותו לשורה עם התפריט */
+    display: flex; 
+    align-items: center;
+}
+
+/* ה-DIV העוטף שמסדר את הלוגו והכיתוב אחד מתחת לשני */
+.logo-text-wrapper {
     display: flex;
-    flex-direction: column; /* התיקון הקריטי: מסדר את הילדים (לוגו+כיתוב) בעמודה */
-    align-items: flex-end; /* מיישר את הכל לימין */
-    justify-content: center; /* ממקם במרכז אנכית */
+    flex-direction: column; /* *** התיקון הקריטי: סידור בעמודה! *** */
+    align-items: flex-end; /* מיישר את הטקסט לימין */
+    justify-content: center; 
 }
 
 .logo-tagline {
-    font-size: 0.75em; 
-    color: #F0F0E0; 
-    margin-top: -5px; /* מקרב אותו ללוגו הראשי */
+    font-size: 0.75em;
+    color: #F0F0E0;
+    margin-top: -5px;
     padding-right: 2px;
 }
+/* ודא שגם ה-lupa-logo וה-logo מקבלים את הצבע והגודל הנכונים שלהם */
 
 .logo, .header-right-side {
     display: flex;
