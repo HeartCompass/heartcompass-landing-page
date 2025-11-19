@@ -25,7 +25,7 @@ header {
 .logo .lupa-logo {
     font-size: 1.8em;
     font-weight: 700;
-    color: #ff5722; 
+    color: #ff5722 !important; /* צבע הלוגו: כתום חזק */
 }
 
 .header-right-side {
@@ -49,7 +49,7 @@ header {
 /* --- HERO SECTION (כרטיס 1) --- */
 .hero-section.wedding-hero {
     /* הגדרת הרקע */
-    background-image: url('images/diary_1200x400.png'); /* ודא ששם הקובץ מעודכן! */
+    background-image: url('images/diary_1200x400.png'); 
     background-size: cover; 
     background-position: center center; 
     background-repeat: no-repeat;
@@ -64,7 +64,7 @@ header {
     margin-top: 0; 
 }
 
-/* שכבת צל (Overlay) לשיפור קריאות הטקסט הלבן */
+/* שכבת צל (Overlay) */
 .hero-section.wedding-hero::before {
     content: '';
     position: absolute;
@@ -77,15 +77,13 @@ header {
 }
 
 .hero-content {
-    /* מיקום ועיצוב הטקסט */
     position: relative;
     z-index: 2;
     color: #ffffff; 
     text-align: right;
-    
     margin-top: 30px; 
     
-    /* הזזת כל הבלוק שמאלה (תיקון מיקום כפתור) */
+    /* הזזת הבלוק שמאלה (יותר מרווח בצד ימין, תיקון מיקום כפתור) */
     margin-right: 15%; 
     width: 60%; 
     max-width: 600px;
@@ -104,11 +102,10 @@ header {
     margin-bottom: 35px;
 }
 
-/* כפתור CTA ראשי - ירוק */
 .primary-cta {
     display: inline-block;
     padding: 15px 35px;
-    background-color: #4CAF50; 
+    background-color: #4CAF50; /* ירוק */
     color: #fff;
     text-decoration: none;
     border-radius: 50px; 
@@ -165,10 +162,10 @@ section {
 .how-to-section {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* חזרנו ל-center */
+    align-items: center;
     background-color: #f0f0f0;
     text-align: right;
-    padding: 60px 5%; /* מחזירים ריווח פנימי */
+    padding: 60px 5%;
 }
 
 .how-to-content {
@@ -184,14 +181,12 @@ section {
 /* ה-DIV שמכיל את התמונה */
 .album-open-mockup {
     width: 40%;
-    /* הגדרות אלו עבדו על ה-div של תמונת ה-IMG המקורית */
     min-height: 300px; 
     border-radius: 5px;
 }
 
 /* התמונה עצמה בתוך ה-DIV */
 .album-open-mockup img {
-    /* ה-CSS שאמור לגרום לתמונה למלא את המסגרת בצורה טובה */
     width: 100%;
     height: auto; 
     object-fit: contain; 
