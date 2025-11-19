@@ -194,7 +194,6 @@ section {
 }
 
 /* --- HOW-TO SECTION (כרטיס 3) --- */
-/* --- HOW-TO SECTION (כרטיס 3 - תיקון הצמדה לשוליים) --- */
 .how-to-section {
     display: flex;
     justify-content: space-between;
@@ -202,15 +201,15 @@ section {
     background-color: #f0f0f0;
     text-align: right;
     
-    /* ***** עריכה: ביטול ריווח אנכי כללי ***** */
-    padding: 0 5%; /* משאיר רק ריווח אופקי של 5% */
-    min-height: auto; /* מאפשר גמישות גובה */
+    /* ***** עריכה חובה: איפוס הריווח כדי להצמיד לקצוות ***** */
+    padding: 0; 
+    min-height: auto; /* *** תיקון הגובה: מבטל גובה מינימלי כפוי *** */
 }
 
 .how-to-content {
     width: 50%;
-    /* ***** עריכה: הקטנת הריווח האנכי ***** */
-    padding: 30px 0; /* הקטנו את הריווח העליון והתחתון ל-30px */
+    /* ***** עריכה: מחזיר ריווח אנכי ואופקי לתוכן הטקסט ***** */
+    padding: 60px 5%; 
 }
 
 .how-to-title {
@@ -221,21 +220,22 @@ section {
 
 /* ה-DIV שמכיל את התמונה */
 .album-open-mockup {
-    width: 50%; /* <--- מגדילים ל-50% כדי לכסות חצי מהכרטיס */
-    min-height: 100%; 
+    width: 40%;
+    min-height: 100%;
     overflow: hidden;
     
-    /* מוחקים את ההגדרות הבעייתיות של position: relative; left: 5%; */
-    
-    /* מוודאים שהתמונה בתוכו ממלאת אותו */
+    /* ***** עריכה חובה: משיכת התמונה לשוליים ***** */
+    position: relative; 
+    left: 5%; /* מושך את התמונה שמאלה ב-5% */
+    margin-left: -5%; /* מבטל את הריווח הפנימי שנוצר */
 }
 
-/*... ושאר הקוד של התמונה נשאר כפי שהיה... */
 .album-open-mockup img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 0;
 }
 
 .pricing-box {
