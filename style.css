@@ -42,8 +42,7 @@ header {
     /* הלוגו עצמו */
     display: inline-block; 
     text-decoration: none;
-    /* הוחלף מ-1.5em ל-1em כי הלוגו הוא תמונה עכשיו */
-    font-size: 1em; 
+    font-size: 1em; /* הופחת כדי לא לדחוף את הלוגו */
     font-weight: 700;
     color: initial !important; 
 }
