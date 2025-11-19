@@ -42,10 +42,10 @@ header {
     /* הלוגו עצמו */
     display: inline-block; 
     text-decoration: none;
-    /* *** שינוי ממוקד: כיווץ גודל הגופן שהיה מיועד לאימוג'י *** */
+    /* הוחלף מ-1.5em ל-1em כי הלוגו הוא תמונה עכשיו */
     font-size: 1em; 
     font-weight: 700;
-    color: initial !important; /* מאפשר לטקסט/תמונה להשתמש בצבע ברירת המחדל */
+    color: initial !important; 
 }
 
 .logo-tagline { 
@@ -123,7 +123,7 @@ section {
 .hero-subtitle {
     font-size: 1.2em;
     font-weight: 400;
-    /* תיקון ריווח CTA: הגדלת מרווח תחתון לפסקה */
+    /* תיקון ריווח CTA: הגדרת מרווח תחתון לפסקה */
     margin-bottom: 40px; 
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
