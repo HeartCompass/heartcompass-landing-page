@@ -161,20 +161,18 @@ section {
     background-color: #45a049;
 }
 
-/* --- HOW-TO SECTION (כרטיס 3 - תיקון גודל תמונה ומילוי) --- */
+/* --- HOW-TO SECTION (כרטיס 3 - שיטת IMG) --- */
 .how-to-section {
     display: flex;
     justify-content: space-between;
-    align-items: stretch; /* <--- התיקון הקריטי: מתיחת האלמנטים לגובה הסקשן */
+    align-items: center; /* חזרנו ל-center */
     background-color: #f0f0f0;
     text-align: right;
-    padding: 0; /* נוריד ריווח כדי שהתמונה תגיע לפינות */
-    min-height: 400px; /* קובע גובה בסיסי לכרטיס */
+    padding: 60px 5%; /* מחזירים ריווח פנימי */
 }
 
 .how-to-content {
     width: 50%;
-    padding: 60px 5%; /* מחזירים ריווח פנימי רק לתוכן */
 }
 
 .how-to-title {
@@ -183,21 +181,24 @@ section {
     margin-bottom: 20px;
 }
 
-/* ה-DIV שמכיל את התמונה - כעת הוא הרקע והוא ימלא את כל החלק השמאלי */
+/* ה-DIV שמכיל את התמונה */
 .album-open-mockup {
-    width: 50%; /* תופס חצי מרוחב הסקשן */
-    
-    /* הופך את התמונה לרקע במקום לתג <img> (דורש עדכון ב-HTML) */
-    background-image: url('images/journal_open_mockup.jpg'); 
-    background-size: cover; /* ממלא את כל ה-DIV */
-    background-position: center center; 
-    background-repeat: no-repeat;
-    
-    /* מוחק הגדרות גובה מקסימליות כדי לאפשר ל-flexbox למתוח אותו */
-    min-height: 100%; 
-    border-radius: 0; 
-    overflow: hidden; 
+    width: 40%;
+    /* הגדרות אלו עבדו על ה-div של תמונת ה-IMG המקורית */
+    min-height: 300px; 
+    border-radius: 5px;
 }
+
+/* התמונה עצמה בתוך ה-DIV */
+.album-open-mockup img {
+    /* ה-CSS שאמור לגרום לתמונה למלא את המסגרת בצורה טובה */
+    width: 100%;
+    height: auto; 
+    object-fit: contain; 
+    display: block; 
+    border-radius: 5px;
+}
+
 
 /* --- FOOTER --- */
 footer {
@@ -258,18 +259,18 @@ footer {
 
     .how-to-section {
         flex-direction: column;
-        padding: 0; /* הורדת הריווח הכללי */
+        padding: 30px 5%; 
     }
 
     .how-to-content {
         width: 100%;
-        padding: 30px 5%; /* ריווח קטן יותר לתוכן */
+        padding: 0;
     }
 
     .album-open-mockup {
-        width: 100%; /* תופס את כל הרוחב במובייל */
+        width: 100%;
         min-height: 250px;
-        order: -1; /* מציב את התמונה מעל הטקסט במובייל */
+        margin-bottom: 20px;
     }
 
     .footer-content {
