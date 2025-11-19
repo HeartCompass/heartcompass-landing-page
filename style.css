@@ -142,10 +142,16 @@ section {
 
 /* --- GENERAL TEXT SECTION (כרטיס 2 - פרוטוקול) --- */
 .general-text-section .text-block {
-    text-align: center; /* *** ממקם את הכפתור והתוכן במרכז *** */
-    max-width: 900px; /* מגביל את הרוחב כדי שהטקסט לא יימתח מדי */
-    margin: 0 auto; /* ממקם את הבלוק במרכז העמוד אופקית */
-    padding: 0; /* מוודא שאין ריווח פנימי שדוחף את התוכן */
+    text-align: center; /* שומר על הכפתור במרכז */
+    max-width: 900px;
+    margin: 0 auto; 
+    padding: 0;
+}
+
+.general-text-section p {
+    text-align: center; /* שומר על הטקסט במרכז */
+    margin-bottom: 25px; 
+    font-size: 1em;
 }
 
 .general-text-section h2 {
@@ -155,32 +161,32 @@ section {
     color: #5A3B33;
 }
 
-.general-text-section p {
-    margin-bottom: 25px; /* *** הגדלת רווח לפני הכפתור *** */
-    font-size: 1em;
-    text-align: center; /* *** מחזיר את הטקסט להיות מיושר לימין *** */
-}
-
-/* רשימות (בולטים) - ה-V נשאר כפי שביקשת */
+/* רשימות (בולטים) - תיקון מיקום הוי */
 .general-text-section ul {
     list-style: none;
     padding-right: 0;
     margin-bottom: 30px;
+    
+    /* ממרכז את הרשימה כבלוק במרכז העמוד */
+    display: inline-block; /* הופך לבלוק שניתן למרכז */
+    text-align: right; /* מחזיר את יישור הטקסט בתוך הרשימה לימין */
 }
+
 .general-text-section li {
     position: relative;
     padding-right: 1.5em;
     margin-bottom: 12px;
 }
+
+/* מיקום הוי */
 .general-text-section li::before {
     content: "✔️";
     color: #A3712E;
     font-weight: bold;
     position: absolute;
-    right: 0;
+    right: 0; /* זה יצמיד את הוי לטקסט, בתוך ה-li */
     top: 0;
 }
-
 
 /* --- ABOUT SECTION (כרטיס 4) --- */
 #about {
