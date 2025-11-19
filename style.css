@@ -144,14 +144,11 @@ section {
 
 
 /* --- GENERAL TEXT SECTION (כרטיס 2 - פרוטוקול) --- */
-.general-text-section {
-    background-color: #ffffff;
-    padding: 0; /* <--- מאפסים את הריווח החיצוני! */
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    min-height: 400px; 
-    width: 100%;
+.general-text-section .text-block {
+    text-align: center; /* <-- זה ממקם את הכפתור במרכז */
+    max-width: 950px; 
+    margin: 0 auto; 
+    padding: 60px 5%; 
 }
 
 .general-text-section .text-block {
@@ -171,8 +168,8 @@ section {
 
 .general-text-section p {
     margin-bottom: 25px; 
-    font-size: 1em;
-    text-align: right; /* <--- שינוי ליישור ימין, אם זה רצוי */
+    font-size: 1.1em;
+    text-align: right; /* <-- שינוי: מחזיר את הטקסט לימין אם זה רצוי */
 }
 
 /* רשימות (בולטים) - ה-V נשאר כפי שביקשת */
@@ -195,6 +192,13 @@ section {
     top: 0;
 }
 
+.secondary-section-cta {
+    margin-top: 25px;
+    /* הופך את הכפתור לבלוק כדי שיהיה ניתן למרכזו עם margin: auto; */
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* --- ABOUT SECTION (כרטיס 4) --- */
 #about {
