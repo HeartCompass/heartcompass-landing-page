@@ -324,4 +324,19 @@ footer {
         width: 100%;
         margin-bottom: 20px;
     }
+
+    /* --- פתרון באג: מחיקת תוכן נסתר שנדחף מ-Metadata --- */
+
+header,
+.logo {
+    /* מבטל כל אפקט של content שמושך מידע מ-meta tags */
+    font-size: 0 !important;
+    line-height: 0 !important;
+}
+
+/* מאפשר ללוגו הראשי להופיע בגודל הנכון */
+.lupa-logo {
+    font-size: 1.5em !important; 
+    line-height: 1.2 !important;
+}
 }
