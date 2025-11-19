@@ -152,10 +152,9 @@ section {
 }
 
 .general-text-section .text-block {
-    max-width: 950px; /* הרוחב המוגדל שרצית */
+    text-align: center; /* <--- זה המפתח שמרכז את הכפתור */
+    max-width: 950px; 
     margin: 0 auto; 
-    
-    /* ***** מוסיף את הריווח הכללי חזרה לבלוק הפנימי ***** */
     padding: 60px 5%; 
 }
 
@@ -193,11 +192,11 @@ section {
 }
 
 .secondary-section-cta {
-    margin-top: 25px;
-    /* הופך את הכפתור לבלוק כדי שיהיה ניתן למרכזו עם margin: auto; */
-    display: block; 
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 25px; 
+    /* מבטל את display: block ו-margin: auto שגרמו למתיחה */
+    display: inline-block; 
+    margin-left: 0;
+    margin-right: 0;
 }
 
 /* --- ABOUT SECTION (כרטיס 4) --- */
