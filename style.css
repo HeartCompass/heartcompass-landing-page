@@ -33,7 +33,8 @@ header {
 
 /* מאחד את הלוגו והצד הימני למצב בטוח */
 .logo, .header-right-side {
-    display: block;
+    /* *** התיקון: הסרת הגדרות flex סותרות מהלוגו *** */
+    display: block; /* מחזיר את הלוגו למצב בלוק רגיל */
     align-items: center;
     margin: 0;
 }
@@ -42,13 +43,15 @@ header {
     /* הלוגו עצמו */
     display: inline-block; 
     text-decoration: none;
-    font-size: 1em; /* הופחת כדי לא לדחוף את הלוגו */
+    font-size: 1.5em;
     font-weight: 700;
-    color: initial !important; 
+    color: #D4AF37 !important; 
+    /* מבטל כל יישור שדחף את הלוגו שמאלה */
 }
 
+/* הוסף את הבלוק הזה לקובץ ה-CSS שלך: */
 .logo-tagline { 
-    display: none;
+    display: none; /* מסתיר את השורה המיותרת אם היא עדיין מופיעה */
 }
 
 .nav-links {
@@ -122,8 +125,7 @@ section {
 .hero-subtitle {
     font-size: 1.2em;
     font-weight: 400;
-    /* תיקון ריווח CTA: הגדרת מרווח תחתון לפסקה */
-    margin-bottom: 40px; 
+    margin-bottom: 30px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
@@ -138,8 +140,7 @@ section {
     font-weight: 600;
     font-size: 1.1em;
     transition: background-color 0.3s;
-    /* תיקון ריווח CTA: ביטול מוחלט של מרווח עליון מיותר */
-    margin-top: 0;
+    margin-top: 1.5em;
 }
 
 .primary-cta:hover {
@@ -149,14 +150,14 @@ section {
 
 /* --- GENERAL TEXT SECTION (כרטיס 2 - פרוטוקול) --- */
 .general-text-section .text-block {
-    text-align: center;
+    text-align: center; /* שומר על הכפתור במרכז */
     max-width: 900px;
     margin: 0 auto; 
     padding: 0;
 }
 
 .general-text-section p {
-    text-align: center;
+    text-align: center; /* שומר על הטקסט במרכז */
     margin-bottom: 25px; 
     font-size: 1em;
 }
@@ -173,8 +174,10 @@ section {
     list-style: none;
     padding-right: 0;
     margin-bottom: 30px;
-    display: inline-block;
-    text-align: right;
+    
+    /* ממרכז את הרשימה כבלוק במרכז העמוד */
+    display: inline-block; /* הופך לבלוק שניתן למרכז */
+    text-align: right; /* מחזיר את יישור הטקסט בתוך הרשימה לימין */
 }
 
 .general-text-section li {
@@ -189,7 +192,7 @@ section {
     color: #A3712E;
     font-weight: bold;
     position: absolute;
-    right: 0;
+    right: 0; /* זה יצמיד את הוי לטקסט, בתוך ה-li */
     top: 0;
 }
 
@@ -211,12 +214,15 @@ section {
     align-items: stretch;
     background-color: #f0f0f0;
     text-align: right;
+    
+    /* ***** עריכה חובה: איפוס הריווח כדי להצמיד לקצוות ***** */
     padding: 0; 
-    min-height: auto;
+    min-height: auto; /* *** תיקון הגובה: מבטל גובה מינימלי כפוי *** */
 }
 
 .how-to-content {
     width: 50%;
+    /* ***** עריכה: מחזיר ריווח אנכי ואופקי לתוכן הטקסט ***** */
     padding: 60px 5%; 
 }
 
@@ -231,9 +237,11 @@ section {
     width: 40%;
     min-height: 100%;
     overflow: hidden;
+    
+    /* ***** עריכה חובה: משיכת התמונה לשוליים ***** */
     position: relative; 
-    left: 5%;
-    margin-left: -5%;
+    left: 5%; /* מושך את התמונה שמאלה ב-5% */
+    margin-left: -5%; /* מבטל את הריווח הפנימי שנוצר */
 }
 
 .album-open-mockup img {
@@ -285,14 +293,6 @@ footer {
     color: #FFC04D;
 }
 
-/* --- CSS עבור לוגו תמונה חדש (header-logo) --- */
-.header-logo {
-    height: 20px; 
-    width: auto; 
-    display: block; 
-}
-
-
 /* --- התאמה למובייל --- */
 @media (max-width: 768px) {
     .nav-links {
@@ -311,6 +311,7 @@ footer {
         font-size: 2em;
     }
 
+    /* כרטיס 3 במובייל */
     .how-to-section {
         flex-direction: column;
     }
