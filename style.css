@@ -192,33 +192,44 @@ section {
 }
 
 
-/* --- PRICING/HOW-TO SECTION (כרטיס 3 - תמונה ואמצע) --- */
+/* --- HOW-TO SECTION (כרטיס 3) --- */
 .how-to-section {
-    display: flex; 
+    display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    background-color: #f5f5f5;
-    padding: 60px 5%;
-    text-align: right; 
+    align-items: center;
+    background-color: #f0f0f0;
+    text-align: right;
+    padding: 60px 5%; /* מוודא שיש ריווח חיצוני לסקשן */
 }
 
 .how-to-content {
-    width: 55%; 
-    margin: 0;
+    width: 50%;
 }
 
-.image-mockup-container {
-    width: 35%; 
-    display: flex;
+.how-to-title {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* ה-DIV שמכיל את התמונה */
+.album-open-mockup {
+    width: 40%; /* תופס 40% מרוחב הסקשן */
+    min-height: 300px; /* גובה מינימלי מסוים */
+    border-radius: 5px;
+    display: flex; /* כדי למרכז את התמונה בתוכו אם היא קטנה מ-100% */
     justify-content: center;
     align-items: center;
+    overflow: hidden; /* חותך כל מה שיוצא מגבולות ה-div */
 }
 
-.image-mockup-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+/* התמונה עצמה בתוך ה-DIV */
+.album-open-mockup img {
+    width: 100%; /* תופס 100% מרוחב ה-DIV */
+    height: 100%; /* תופס 100% מגובה ה-DIV */
+    object-fit: contain; /* <--- זה התיקון העיקרי! מכווץ את התמונה ללא חיתוך. */
+    display: block; /* מונע רווחים מיותרים מתחת לתמונה */
+    border-radius: 5px;
 }
 
 .pricing-box {
