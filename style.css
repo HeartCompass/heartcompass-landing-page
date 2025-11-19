@@ -215,20 +215,27 @@ section {
 /* ה-DIV שמכיל את התמונה */
 .album-open-mockup {
     width: 40%; /* תופס 40% מרוחב הסקשן */
-    min-height: 300px; /* גובה מינימלי מסוים */
+    
+    /* ***** התיקון העיקרי: הגדרת גובה מקסימלי ***** */
+    max-height: 300px; /* הגובה המקסימלי שה-div יכול להגיע אליו */
+    height: auto; /* מאפשר לו להתאים את עצמו בתוך המקסימום */
+    /* הסרנו את min-height: 300px; כי הוא עלול לדחוף */
+    
     border-radius: 5px;
-    display: flex; /* כדי למרכז את התמונה בתוכו אם היא קטנה מ-100% */
+    display: flex; 
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* חותך כל מה שיוצא מגבולות ה-div */
+    overflow: hidden; 
 }
 
 /* התמונה עצמה בתוך ה-DIV */
 .album-open-mockup img {
-    width: 100%; /* תופס 100% מרוחב ה-DIV */
-    height: 100%; /* תופס 100% מגובה ה-DIV */
-    object-fit: contain; /* <--- זה התיקון העיקרי! מכווץ את התמונה ללא חיתוך. */
-    display: block; /* מונע רווחים מיותרים מתחת לתמונה */
+    width: 100%; 
+    /* ***** גם כאן: גובה מקסימלי לתמונה עצמה ***** */
+    max-height: 300px; /* התמונה לא תעלה על גובה זה */
+    height: auto; /* חשוב לשמור על יחס הגובה-רוחב */
+    object-fit: contain; 
+    display: block; 
     border-radius: 5px;
 }
 
