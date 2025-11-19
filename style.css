@@ -33,35 +33,43 @@ header {
 
 /* --- HEADER & NAVIGATION (תיקון הלוגו) --- */
 
-.logo {
-    /* הופך את ה-DIV למיכל Flex פשוט, מחזיר אותו לשורה עם התפריט */
-    display: flex; 
-    align-items: center;
-}
+/* --- תיקון הלוגו והכיתוב המשני (הקוד הנקי) --- */
 
-/* ה-DIV העוטף שמסדר את הלוגו והכיתוב אחד מתחת לשני */
-.logo-text-wrapper {
-    display: flex;
-    flex-direction: column; /* *** התיקון הקריטי: סידור בעמודה! *** */
-    align-items: flex-end; /* מיישר את הטקסט לימין */
-    justify-content: center; 
-}
-
-.logo-tagline {
-    font-size: 0.75em;
-    color: #F0F0E0;
-    margin-top: -5px;
-    padding-right: 2px;
-}
-/* ודא שגם ה-lupa-logo וה-logo מקבלים את הצבע והגודל הנכונים שלהם */
-
+/* הגדרה כללית לבלוקים ב-HEADER */
 .logo, .header-right-side {
     display: flex;
     align-items: center;
     margin: 0;
 }
 
+/* הבלוק שמכיל את הלוגו והכיתוב (ה-DIV העוטף) */
+.logo-text-wrapper {
+    display: flex;
+    flex-direction: column; /* מסדר את הלוגו והכיתוב בעמודה */
+    align-items: flex-end; /* מיישר את הטקסטים לימין */
+    justify-content: center;
+}
+
+/* הקישור הראשי של הלוגו */
 .logo a, .lupa-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #D4AF37 !important; /* צבע הלוגו - זהב */
+}
+
+/* הכיתוב המשני (מתחת ללוגו) */
+.logo-tagline {
+    font-size: 0.75em;
+    color: #F0F0E0;
+    margin-top: -5px;
+    padding-right: 2px;
+}
+
+/* הקישור הראשי של הלוגו */
+.logo a, .lupa-logo { /* <--- זה מאחד את הכל! */
     display: flex;
     align-items: center;
     text-decoration: none;
