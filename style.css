@@ -205,7 +205,12 @@ section {
 
 .how-to-content {
     width: 50%;
-    padding: 60px 5%; /* <--- חדש: ריווח רק לתוכן הטקסט כדי שלא יידבק לקצוות */
+    padding: 60px 5%; 
+    /* ***** התיקון העיקרי כאן: מרכוז אנכי ***** */
+    display: flex; /* מפעיל Flexbox על ה-div של התוכן */
+    flex-direction: column; /* מסדר את התוכן בעמודות */
+    justify-content: center; /* ממקם את התוכן במרכז האנכי */
+    text-align: right; /* שומר על יישור הטקסט לימין (בתוך המרכוז האנכי) */
 }
 
 .how-to-title {
