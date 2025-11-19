@@ -203,8 +203,12 @@ section {
 
 
 /* --- ABOUT SECTION (כרטיס 4) --- */
+/* --- ABOUT SECTION (כרטיס 4 - שחזור למצב יציב) --- */
 #about {
+    /* מוודא שהסקשן פנוי מ-Flexbox */
+    display: block; 
     text-align: center;
+    background-color: #ffffff; /* מוודא שיש רקע */
 }
 #about h2, #about p {
     text-align: center;
@@ -213,9 +217,7 @@ section {
     max-width: 800px;
 }
 
-
 /* --- HOW-TO SECTION (כרטיס 3 - תיקון מילוי מלא) --- */
-/* --- HOW-TO SECTION (כרטיס 3 - תיקון החזרת תוכן) --- */
 .how-to-section {
     display: flex;
     justify-content: space-between;
