@@ -21,7 +21,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 8px 5%;
-    background-color: #5A3B33;
+    background-color: #5A3B33; /* חום כהה */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;
@@ -140,19 +140,24 @@ section {
 }
 
 
-/* --- GENERAL TEXT SECTION (כרטיס 2 - פרוטוקול) --- */
+/* --- GENERAL TEXT SECTION (כרטיס 2 - מרכוז מלא) --- */
 
 .general-text-section {
-    /* מבטל הגדרות Flexbox שהפריעו */
-    padding: 60px 5%;
-    min-height: auto;
+    background-color: #ffffff;
+    /* ***** התיקון למרכוז אנכי ואופקי: ***** */
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 400px; 
+    padding: 0; /* מאפס ריווח חיצוני */
+    width: 100%;
 }
 
 .general-text-section .text-block {
-    text-align: right; /* היישור הנדרש */
-    max-width: 950px; /* רוחב מוגדל */
-    margin: 0 auto;
-    padding: 0; 
+    text-align: center; /* מרכז אופקי */
+    max-width: 950px; 
+    margin: 0 auto; 
+    padding: 60px 5%; /* מחזיר ריווח חזרה לבלוק הפנימי */
 }
 
 .general-text-section h2 {
@@ -160,19 +165,21 @@ section {
     font-weight: 700;
     margin-bottom: 25px;
     color: #5A3B33;
+    text-align: center;
 }
 
 .general-text-section p {
     margin-bottom: 25px; /* רווח נוסף לפני הכפתור */
     font-size: 1em;
-    text-align: right; /* הטקסט מיושר לימין */
+    text-align: center; /* הטקסט מיושר למרכז */
 }
 
-/* רשימות (בולטים) */
+/* רשימות (בולטים) - ה-V נשאר כפי שביקשת */
 .general-text-section ul {
     list-style: none;
     padding-right: 0;
     margin-bottom: 30px;
+    text-align: center;
 }
 .general-text-section li {
     position: relative;
@@ -188,9 +195,22 @@ section {
     top: 0;
 }
 
-/* הכפתור בכרטיס 2 - מיושר יחד עם הטקסט לימין */
+/* הכפתור בכרטיס 2 */
 .secondary-section-cta {
-    margin-top: 10px; /* רווח נכון */
+    margin-top: 25px; 
+    display: inline-block; /* שומר על גודלו הטבעי */
+}
+
+
+/* --- ABOUT SECTION (כרטיס 4) --- */
+#about {
+    text-align: center;
+}
+#about h2, #about p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
 }
 
 
@@ -198,11 +218,11 @@ section {
 .how-to-section {
     display: flex;
     justify-content: space-between;
-    align-items: stretch; /* מותח את הילדים לגובה אחיד */
-    text-align: right;
+    align-items: stretch; /* מותח את התמונה והטקסט לגובה אחיד */
     background-color: #f0f0f0;
-
-    /* התיקונים למילוי קצוות: */
+    text-align: right;
+    
+    /* התיקון למילוי קצוות: */
     padding: 0; /* מוריד שוליים מהסקשן כולו */
     min-height: 400px;
 }
@@ -212,9 +232,15 @@ section {
     padding: 60px 5%; /* מחזיר ריווח רק לתוכן הטקסט */
 }
 
+.how-to-title {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
 .album-open-mockup {
     width: 40%;
-    min-height: 100%; /* מוודא שהדיב מותח את עצמו לגובה המקסימלי */
+    min-height: 100%; 
     overflow: hidden;
 }
 
