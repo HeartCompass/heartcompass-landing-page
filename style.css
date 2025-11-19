@@ -218,11 +218,9 @@ section {
 .how-to-section {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
-    background-color: #f0f0f0;
-    text-align: right;
-    padding: 0; /* <--- חדש: הסר את הריווח מכל הסקשן */
-    /* min-height נשאר כפי שהוא, או שנוכל להגדיר אותו ב-how-to-content אם תרצה שהטקסט יגדיר את הגובה */
+    align-items: stretch; /* מותח את התמונה והטקסט לגובה אחיד */
+    padding: 0; /* מוריד שוליים מהסקשן כולו */
+    min-height: 400px; 
 }
 
 .how-to-content {
@@ -250,12 +248,11 @@ section {
 
 .album-open-mockup img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 100%; /* מאפשר מתיחה אנכית */
+    object-fit: cover; /* ממלא את כל המסגרת (מונע שוליים לבנים) */
     display: block;
-    border-radius: 0; /* <--- ודא שזה 0 */
+    border-radius: 0;
 }
-
 .pricing-box {
     border: 1px solid #ddd;
     padding: 30px;
