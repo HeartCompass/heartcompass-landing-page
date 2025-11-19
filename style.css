@@ -35,19 +35,27 @@ header {
 
 /* --- תיקון הלוגו והכיתוב המשני (הקוד הנקי) --- */
 
+/* מאחד את הלוגו והצד הימני למצב בטוח */
 .logo, .header-right-side {
-    display: flex;
+    /* *** התיקון: הסרת הגדרות flex סותרות מהלוגו *** */
+    display: block; /* מחזיר את הלוגו למצב בלוק רגיל */
     align-items: center;
     margin: 0;
 }
 
 .logo a, .lupa-logo {
-    display: flex;
-    align-items: center;
+    /* הלוגו עצמו */
+    display: inline-block; 
     text-decoration: none;
     font-size: 1.5em;
     font-weight: 700;
-    color: #D4AF37 !important; /* צבע הלוגו - זהב */
+    color: #D4AF37 !important; 
+    /* מבטל כל יישור שדחף את הלוגו שמאלה */
+}
+
+/* הוסף את הבלוק הזה לקובץ ה-CSS שלך: */
+.logo-tagline { 
+    display: none; /* מסתיר את השורה המיותרת אם היא עדיין מופיעה */
 }
 
 .nav-links {
