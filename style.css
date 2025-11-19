@@ -71,7 +71,7 @@ header {
 
 /* --- HERO SECTION (כרטיס 1) וכללי סקשנים --- */
 section {
-    padding: 60px 5%; /* ריווח ברירת מחדל */
+    padding: 60px 5%;
 }
 
 .hero-section.focus-hero {
@@ -140,38 +140,18 @@ section {
 }
 
 
-/* --- GENERAL TEXT SECTION (כרטיס 2 - מרכוז מלא) --- */
-
-.general-text-section {
-    background-color: #ffffff;
-    /* ***** התיקון למרכוז אנכי ואופקי: ***** */
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    min-height: 400px; 
-    padding: 0; /* מאפס ריווח חיצוני */
-    width: 100%;
-}
-
-.general-text-section .text-block {
-    text-align: center; /* מרכז אופקי */
-    max-width: 950px; 
-    margin: 0 auto; 
-    padding: 60px 5%; /* מחזיר ריווח חזרה לבלוק הפנימי */
-}
-
+/* --- GENERAL TEXT SECTION (כרטיס 2 - פרוטוקול) --- */
 .general-text-section h2 {
     font-size: 2em;
     font-weight: 700;
     margin-bottom: 25px;
     color: #5A3B33;
-    text-align: center;
 }
 
 .general-text-section p {
-    margin-bottom: 25px; /* רווח נוסף לפני הכפתור */
+    margin-bottom: 20px;
     font-size: 1em;
-    text-align: center; /* הטקסט מיושר למרכז */
+    text-align: right;
 }
 
 /* רשימות (בולטים) - ה-V נשאר כפי שביקשת */
@@ -179,7 +159,6 @@ section {
     list-style: none;
     padding-right: 0;
     margin-bottom: 30px;
-    text-align: center;
 }
 .general-text-section li {
     position: relative;
@@ -193,129 +172,3 @@ section {
     position: absolute;
     right: 0;
     top: 0;
-}
-
-/* הכפתור בכרטיס 2 */
-.secondary-section-cta {
-    margin-top: 25px; 
-    display: inline-block; /* שומר על גודלו הטבעי */
-}
-
-
-/* --- ABOUT SECTION (כרטיס 4) --- */
-/* --- ABOUT SECTION (כרטיס 4 - שחזור למצב יציב) --- */
-#about {
-    /* מוודא שהסקשן פנוי מ-Flexbox */
-    display: block; 
-    text-align: center;
-    background-color: #ffffff; /* מוודא שיש רקע */
-}
-#about h2, #about p {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 800px;
-}
-
-/* --- HOW-TO SECTION (כרטיס 3 - תיקון מילוי מלא) --- */
-/* --- HOW-TO SECTION (כרטיס 3 - שחזור למצב יציב) --- */
-.how-to-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* חזרנו ל-center כדי למנוע מתיחת גובה לא נכונה */
-    background-color: #f0f0f0;
-    text-align: right;
-    
-    padding: 60px 5%; /* מחזירים את הריווח המקורי והבטוח */
-    min-height: auto; /* מאפשר גובה גמיש */
-}
-
-.how-to-content {
-    width: 50%;
-    /* מבטלים את כל ה-padding שהוספנו לו */
-    padding: 0; 
-}
-
-.how-to-title {
-    font-size: 2em;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-/* ה-DIV של התמונה יחזור למיקום יציב */
-.album-open-mockup {
-    width: 40%;
-    min-height: 300px;
-    /* מבטלים את ההגדרות הבעייתיות */
-    position: static; 
-    left: auto;
-    margin-left: 0;
-    overflow: hidden;
-}
-
-/* התמונה עצמה תישאר עם object-fit: cover */
-.album-open-mockup img {
-    width: 100%;
-    height: auto; /* מוודא שהיא לא נמתחת אנכית בצורה מוזרה */
-    object-fit: cover; 
-    display: block;
-}
-
-
-/* --- FOOTER --- */
-footer {
-    background-color: #333;
-    color: #ccc;
-    padding: 30px 5%;
-    text-align: center;
-}
-
-.footer-content {
-    display: block;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-links {
-    margin-bottom: 15px;
-}
-
-.footer-links a {
-    color: #ccc;
-    text-decoration: none;
-    margin-right: 15px;
-    margin-left: 0;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: #FFC04D;
-}
-
-/* --- התאמה למובייל --- */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .hero-content {
-        width: 100%;
-        margin-right: 0;
-        padding: 0 5%;
-        text-align: center;
-        max-width: none;
-    }
-    
-    .hero-title {
-        font-size: 2em;
-    }
-
-    .how-to-section {
-        flex-direction: column;
-    }
-
-    .how-to-content, .album-open-mockup {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-}
