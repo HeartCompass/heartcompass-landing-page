@@ -188,6 +188,19 @@ section {
     top: 0;
 }
 
+/* קוד זה יסדר את הלוגו והכיתוב המשני זה מתחת לזה */
+.logo {
+    display: flex;
+    flex-direction: column; /* מסדר את הילדים בעמודה (אחד מתחת לשני) */
+    align-items: flex-end; /* מיישר את הכל לימין */
+}
+
+.logo-tagline {
+    font-size: 0.75em; /* גודל קטן */
+    color: #F0F0E0; /* לבן/בהיר על הרקע החום */
+    margin-top: -5px; /* מקרב אותו ללוגו הראשי */
+}
+
 /* --- ABOUT SECTION (כרטיס 4) --- */
 #about {
     text-align: center;
