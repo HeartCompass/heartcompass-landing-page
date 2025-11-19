@@ -31,11 +31,14 @@ header {
     height: 65px; 
 }
 
+/* --- HEADER & NAVIGATION (תיקון הלוגו) --- */
+
 /* --- תיקון הלוגו והכיתוב המשני (הקוד הנקי) --- */
 
 /* מאחד את הלוגו והצד הימני למצב בטוח */
 .logo, .header-right-side {
-    display: block;
+    /* *** התיקון: הסרת הגדרות flex סותרות מהלוגו *** */
+    display: block; /* מחזיר את הלוגו למצב בלוק רגיל */
     align-items: center;
     margin: 0;
 }
@@ -47,6 +50,12 @@ header {
     font-size: 1.5em;
     font-weight: 700;
     color: #D4AF37 !important; 
+    /* מבטל כל יישור שדחף את הלוגו שמאלה */
+}
+
+/* הוסף את הבלוק הזה לקובץ ה-CSS שלך: */
+.logo-tagline { 
+    display: none; /* מסתיר את השורה המיותרת אם היא עדיין מופיעה */
 }
 
 .nav-links {
@@ -120,8 +129,7 @@ section {
 .hero-subtitle {
     font-size: 1.2em;
     font-weight: 400;
-    /* *** שינוי 1/2: ריווח תחתון לפסקה *** */
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
@@ -136,8 +144,7 @@ section {
     font-weight: 600;
     font-size: 1.1em;
     transition: background-color 0.3s;
-    /* *** שינוי 2/2: איפוס הריווח העליון (ניתן לשנות ל-5px אם עדיין חסר) *** */
-    margin-top: 0;
+    margin-top: 1.5em;
 }
 
 .primary-cta:hover {
@@ -212,14 +219,14 @@ section {
     background-color: #f0f0f0;
     text-align: right;
     
-    /* איפוס הריווח כדי להצמיד לקצוות */
+    /* ***** עריכה חובה: איפוס הריווח כדי להצמיד לקצוות ***** */
     padding: 0; 
-    min-height: auto;
+    min-height: auto; /* *** תיקון הגובה: מבטל גובה מינימלי כפוי *** */
 }
 
 .how-to-content {
     width: 50%;
-    /* מחזיר ריווח אנכי ואופקי לתוכן הטקסט */
+    /* ***** עריכה: מחזיר ריווח אנכי ואופקי לתוכן הטקסט ***** */
     padding: 60px 5%; 
 }
 
@@ -235,7 +242,7 @@ section {
     min-height: 100%;
     overflow: hidden;
     
-    /* משיכת התמונה לשוליים */
+    /* ***** עריכה חובה: משיכת התמונה לשוליים ***** */
     position: relative; 
     left: 5%; /* מושך את התמונה שמאלה ב-5% */
     margin-left: -5%; /* מבטל את הריווח הפנימי שנוצר */
