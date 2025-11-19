@@ -196,10 +196,10 @@ section {
 .how-to-section {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch; /* <--- התיקון העיקרי! גורם לאלמנטים לתפוס 100% מגובה הסקשן */
     background-color: #f0f0f0;
     text-align: right;
-    padding: 60px 5%; /* מוודא שיש ריווח חיצוני לסקשן */
+    padding: 60px 5%; 
 }
 
 .how-to-content {
@@ -214,29 +214,20 @@ section {
 
 /* ה-DIV שמכיל את התמונה */
 .album-open-mockup {
-    width: 40%; /* תופס 40% מרוחב הסקשן */
-    
-    /* ***** התיקון העיקרי: הגדרת גובה מקסימלי ***** */
-    max-height: 300px; /* הגובה המקסימלי שה-div יכול להגיע אליו */
-    height: auto; /* מאפשר לו להתאים את עצמו בתוך המקסימום */
-    /* הסרנו את min-height: 300px; כי הוא עלול לדחוף */
-    
-    border-radius: 5px;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
+    width: 40%; 
+    height: auto; /* מאפשר לו להימתח */
+    min-height: 400px; /* קובע גובה מינימלי משמעותי לסקשן */
+    border-radius: 0; /* מסיר את הרדיוס כדי לאפשר צמידה לפינות */
     overflow: hidden; 
 }
 
 /* התמונה עצמה בתוך ה-DIV */
 .album-open-mockup img {
     width: 100%; 
-    /* ***** גם כאן: גובה מקסימלי לתמונה עצמה ***** */
-    max-height: 300px; /* התמונה לא תעלה על גובה זה */
-    height: auto; /* חשוב לשמור על יחס הגובה-רוחב */
-    object-fit: contain; 
+    height: 100%; 
+    object-fit: cover; /* <--- התיקון העיקרי: ממלא את כל המסגרת (יכול לחתוך מעט) */
     display: block; 
-    border-radius: 5px;
+    border-radius: 0;
 }
 
 .pricing-box {
