@@ -1,9 +1,139 @@
+אני מבין את כל הנקודות. כדי לתקן את הבעיות שציינת, יש לעדכן גם את קוד ה-HTML (להסיר את הלוגו והכותרת מהפוטר, ולסדר את מבנה הקישור ל"תמחור") וגם את ה-CSS.
+
+להלן שני הקבצים, המתוקנים והמסונכרנים.
+
+## 📄 1. קוד HTML מלא ומתוקן
+
+תיקונים עיקריים ב-HTML:
+
+  * **Footer:** הוסר הלוגו והכותרת כפי שביקשת.
+  * **How-To Section:** מבנה ה-DIVs סודר כך שהטקסט מימין והתמונה (שתוסיף) תהיה משמאל.
+  * **Pricing:** ה-ID של התמחור הוגדר ב-`pricing-box` כ-$id="pricing-anchor"$ כדי לאפשר ניווט תקין.
+
+<!-- end list -->
+
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="מצפן הלב: ויסות רגשי מדויק ב-120 שניות. הכלי האנלוגי לבהירות וקבלת החלטות מובילות. רוכש ערכת התחלה (149 ₪).">
+    <title>מצפן הלב | ויסות רגשי מדויק ב-120 שניות</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <a href="#" class="lupa-logo">🧭 מצפן הלב</a>
+        </div>
+        
+        <div class="header-right-side">
+            <nav class="nav-links">
+                <a href="#solution">הפרוטוקול</a>
+                <a href="#how-to-section">איך זה עובד?</a>
+                <a href="#pricing-anchor">תמחור</a>
+                <a href="#about">אודות</a>
+            </nav>
+            
+            <div class="menu-icons">
+                <span class="account-icon" role="img" aria-label="איזור אישי"></span> 
+                <div class="cart-icon" role="img" aria-label="סל קניות">
+                    <div class="bag-icon"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section focus-hero">
+            <div class="hero-content">
+                <h1 class="hero-title">עצור את הדימום האנרגטי. הפעל את המצפן המנטלי שלך.</h1>
+                <p class="hero-subtitle">מצפן הלב: ויסות רגשי מדויק ב-120 שניות. הכלי האנלוגי שמעניק לכם את הבהירות שאתם צריכים לקבל החלטות מובילות.</p>
+                
+                <a href="#pricing-anchor" class="primary-cta large-cta">✅ אני משקיע בראש שלי: רוכש ערכת התחלה (149 ₪)</a>
+            </div>
+        </section>
+
+        <section class="general-text-section" id="solution">
+            <div class="text-block">
+                <h2>חוסר פוקוס עולה לכם כסף. כמה עולה לכם הרעש המנטלי?</h2>
+                <p>אתם מנהלים חיים הישגיים, אבל ה-IQ התפעולי שלכם יורד בגלל רעש קוגניטיבי. הגיע הזמן להפסיק לנסות אפליקציות שנכשלות ולעבור לעוגן פיזי, בר מדידה.</p>
+
+                <h3 id="protocol-details">מצפן הלב: פרוטוקול 2 דקות. אפס דחיינות.</h3>
+
+                <p>זו לא תרפיה, זו אופטימיזציית ביצועים. במקום לשבת שעה ביום, אתם מקבלים מנגנון אכיפה פשוט שמעביר את הסטרס מהמוח – ישירות ליד המרגיעה:</p>
+
+                <ul>
+                    <li><strong>רצועת ההצלחה (הפטנט שלנו):</strong> 7 משימות מיקרו-כתיבה, מכווננות במדויק. אנחנו מבטיחים שהמשימה היא הכי קצרה שאפשר כדי שתמיד תצליח.</li>
+                    <li><strong>חותם "העבודה בוצעה":</strong> הגמול הפיזי המיידי. אתם סוגרים את המעגל הרגשי ומחזירים את הפוקוס לאן שהוא צריך להיות.</li>
+                </ul>
+                
+                <a href="#pricing-anchor" class="primary-cta secondary-section-cta">לפרטי התמחור המלאים</a>
+            </div>
+        </section>
+
+        <section class="how-to-section" id="how-to-section">
+            <div class="how-to-content">
+                <h2 class="how-to-title">איך זה עובד? השקיעו בעצמכם: ערכת "העוגן היומי"</h2>
+                <p>הפסיקו לדחות את הדבר החשוב באמת. זו ההשקעה הרגשית היחידה שאתם יכולים להתמיד בה.</p>
+                
+                <div class="pricing-box" id="pricing-anchor">
+                    <h3 class="pricing-title">ערכת התחלה מלאה: 149 ₪</h3>
+                    <p class="pricing-details">המחיר כולל את יומן הפרימיום הפיזי, חותם "העבודה בוצעה", ו-4 רצועות שבועיות.</p>
+                    <a href="#" class="primary-cta large-cta pricing-cta">✅ אני משקיע בראש שלי: רוכש ערכה (149 ₪)</a>
+                </div>
+            </div>
+            
+            <div class="image-mockup-container">
+                <img src="images/your_product_mockup.jpg" alt="מוצר מצפן הלב פתוח">
+            </div>
+        </section>
+
+        <section id="about" class="general-text-section">
+            <h2>אודות השיטה והחברה</h2>
+            <p>מצפן הלב פותח על ידי יועצים פסיכולוגיים ואנשי ביצועים במטרה לגשר על הפער בין ידע לבין יישום. השיטה מבוססת על מדע ההרגלים ו-Cognitive Behavioral Therapy (CBT).</p>
+        </section>
+
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <nav class="footer-links">
+                <a href="#">תקנון ומדיניות פרטיות</a>
+                <a href="#">הצהרת נגישות</a>
+                <a href="mailto:heartcompass@gmail.com">צור קשר</a> 
+            </nav>
+            <div class="copyright">
+                <p>מצפן הלב | ניתוב רגשי, התבוננות פנימה | © כל הזכויות שמורות</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+```
+
+-----
+
+## 🎨 2. קוד CSS מלא ומתוקן
+
+תיקונים עיקריים ב-CSS:
+
+1.  **הסרת פס לבן:** הופחת $padding-top$ ב-$body$.
+2.  **יישור תפריט עליון:** ה-margins סודרו כדי להיות צמודים יותר ללוגו.
+3.  **אודות (About):** הוגדר $text-align: center$ לכל התוכן.
+4.  **Footer:** הוגדר $text-align: center$ והוסרה תצוגת ה-$flex$ כדי לפשט את היישור למרכז.
+
+<!-- end list -->
+
+```css
 /* הגדרות בסיסיות ואיפוס */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* FIX: סנכרון הפונט ל-Rubik */
     font-family: 'Rubik', sans-serif;
 }
 
@@ -13,13 +143,14 @@ body {
     line-height: 1.7;
     background-color: #ffffff;
     direction: rtl;
-    padding-top: 80px; /* ריווח מתחת ל-Header המקובע */
+    /* FIX: הפחתת הריווח למעלה כדי להסיר את הפס הלבן */
+    padding-top: 65px; 
 }
 
 /* --- HEADER & NAVIGATION (תפריט עליון) --- */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
     padding: 8px 5%;
     background-color: #5A3B33; 
@@ -29,25 +160,19 @@ header {
     left: 0;
     right: 0;
     z-index: 1000;
+    height: 65px; /* הגדרת גובה קבוע */
 }
 
 .logo, .header-right-side {
     display: flex;
     align-items: center;
+    margin: 0;
 }
 
 .logo a, .lupa-logo { 
     display: flex;  
     align-items: center; 
     text-decoration: none;
-}
-
-.logo-image {
-    height: 35px;
-    margin-left: 10px;
-}
-
-.logo .lupa-logo {
     font-size: 1.5em; 
     font-weight: 700;
     color: #D4AF37; 
@@ -55,17 +180,19 @@ header {
 
 .nav-links {
     display: flex;
-    /* FIX: יישור לימין - נשמר (flex-start ב-RTL) */
+    /* FIX: יישור לימין (ב-RTL) */
     justify-content: flex-start; 
     align-items: center;
-    margin-right: 20px;
+    margin-right: 0;
+    padding-right: 15px; /* ריווח קל בין הלוגו לתפריט */
 }
 
 .nav-links a {
     text-decoration: none;
     color: #F0F0F0;
-    /* FIX: margin-right מזיז את הקישורים לימין */
+    /* FIX: יישור לימין - מרווח כל קישור מהקישור שלפניו */
     margin-right: 20px; 
+    margin-left: 0;
     font-weight: 500;
     font-size: 1em;
     transition: color 0.3s;
@@ -81,7 +208,7 @@ section {
     padding: 60px 5%;
 }
 
-.hero-section.focus-hero { /* מותאם ל-HTML של מצפן הלב */
+.hero-section.focus-hero { 
     background-image: url('images/diary.jpg'); 
     background-size: cover;    
     background-position: center center;    
@@ -147,7 +274,7 @@ section {
 }
 
 
-/* --- GENERAL TEXT SECTION (כרטיס 2) --- */
+/* --- GENERAL TEXT SECTION (כרטיס 2 - פרוטוקול) --- */
 .general-text-section h2 {
     font-size: 2em;
     font-weight: 700;
@@ -161,7 +288,7 @@ section {
     text-align: right;
 }
 
-/* רשימות (בולטים) - FIX: הוחזר ה-V כפי שנדרש */
+/* רשימות (בולטים) - ה-V נשאר כפי שביקשת */
 .general-text-section ul {
     list-style: none;
     padding-right: 0;
@@ -173,7 +300,7 @@ section {
     margin-bottom: 12px;
 }
 .general-text-section li::before {
-    content: "✔️"; /* V הוחזר */
+    content: "✔️"; 
     color: #A3712E; 
     font-weight: bold;
     position: absolute;
@@ -182,26 +309,36 @@ section {
 }
 
 
-/* --- PRICING/HOW-TO SECTION (כרטיס 3 - עם תמונה ואמצע) --- */
+/* --- ABOUT SECTION (כרטיס 4) --- */
+#about {
+    /* FIX: יישור כל הטקסט למרכז כפי שנדרש */
+    text-align: center;
+}
+#about h2, #about p {
+    text-align: center;
+    /* מוודא שהבלוקים גם מיושרים באמצע */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+}
+
+
+/* --- PRICING/HOW-TO SECTION (כרטיס 3 - תמונה ואמצע) --- */
 .how-to-section {
-    /* FIX: מאפשר תמונה ליד הטקסט (ב-RTL תמונה תופיע משמאל אם היא השנייה) */
     display: flex; 
     justify-content: space-between;
     align-items: flex-start;
     background-color: #f5f5f5;
     padding: 60px 5%;
-    /* FIX: מיושר לימין כברירת מחדל, יישור פנימי משתנה */
     text-align: right; 
 }
 
 .how-to-content {
-    /* נניח שתופס רוחב גדול יותר עבור הטקסט */
     width: 55%; 
     margin: 0;
 }
 
 .image-mockup-container {
-    /* FIX: זהו הקונטיינר לתמונה בצד שמאל של הסקשן */
     width: 35%; 
     display: flex;
     justify-content: center;
@@ -220,33 +357,38 @@ section {
     padding: 30px;
     background-color: #ffffff;
     border-radius: 8px;
-    /* FIX: יישור כל הטקסט בתוך התיבה למרכז כפי שנדרש */
+    /* FIX: יישור כל הטקסט בתוך התיבה למרכז */
     text-align: center; 
     margin-top: 25px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
+
 
 /* --- FOOTER (תפריט למטה) --- */
 footer {
     background-color: #333;
     color: #ccc;
     padding: 30px 5%;
+    /* FIX: יישור הטקסט למרכז */
     text-align: center;
 }
 
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    /* FIX: שינוי ל-display: block כדי שכל הפריטים יתיישרו למרכז אחד מתחת לשני */
+    display: block; 
     max-width: 1200px;
     margin: 0 auto;
 }
 
+.footer-links {
+    margin-bottom: 15px;
+}
+
 .footer-links a {
-    /* FIX: הוסר הצבע הכחול (חזר לאפור בהיר) */
     color: #ccc; 
     text-decoration: none;
-    margin-left: 20px;
+    margin-right: 15px; 
+    margin-left: 0;
     transition: color 0.3s;
 }
 
@@ -256,7 +398,6 @@ footer {
 
 /* --- התאמה למובייל --- */
 @media (max-width: 768px) {
-    /* תצטרך לטפל ב-Hamburger Menu ב-HTML/JS */
     .nav-links {
         display: none;     
     }
@@ -283,3 +424,4 @@ footer {
         margin-bottom: 20px;
     }
 }
+```
