@@ -35,41 +35,13 @@ header {
 
 /* --- תיקון הלוגו והכיתוב המשני (הקוד הנקי) --- */
 
-/* הגדרה כללית לבלוקים ב-HEADER */
 .logo, .header-right-side {
     display: flex;
     align-items: center;
     margin: 0;
 }
 
-/* הבלוק שמכיל את הלוגו והכיתוב (ה-DIV העוטף) */
-.logo-text-wrapper {
-    display: flex;
-    flex-direction: column; /* מסדר את הלוגו והכיתוב בעמודה */
-    align-items: flex-end; /* מיישר את הטקסטים לימין */
-    justify-content: center;
-}
-
-/* הקישור הראשי של הלוגו */
 .logo a, .lupa-logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    font-size: 1.5em;
-    font-weight: 700;
-    color: #D4AF37 !important; /* צבע הלוגו - זהב */
-}
-
-/* הכיתוב המשני (מתחת ללוגו) */
-.logo-tagline {
-    font-size: 0.75em;
-    color: #F0F0E0;
-    margin-top: -5px;
-    padding-right: 2px;
-}
-
-/* הקישור הראשי של הלוגו */
-.logo a, .lupa-logo { /* <--- זה מאחד את הכל! */
     display: flex;
     align-items: center;
     text-decoration: none;
