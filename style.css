@@ -215,6 +215,7 @@ section {
 
 
 /* --- HOW-TO SECTION (כרטיס 3 - תיקון מילוי מלא) --- */
+/* --- HOW-TO SECTION (כרטיס 3 - תיקון החזרת תוכן) --- */
 .how-to-section {
     display: flex;
     justify-content: space-between;
@@ -222,14 +223,15 @@ section {
     background-color: #f0f0f0;
     text-align: right;
     
-    /* התיקון למילוי קצוות: */
-    padding: 0; /* מוריד שוליים מהסקשן כולו */
+    /* התיקון הקריטי: נחזיר את הריווח המקורי לסקשן, כפי שרצית */
+    padding: 60px 5%; 
     min-height: 400px;
 }
 
 .how-to-content {
     width: 50%;
-    padding: 60px 5%; /* מחזיר ריווח רק לתוכן הטקסט */
+    /* אין צורך ב-padding כאן, הוא כבר קיים בסקשן ההורה */
+    padding: 0; 
 }
 
 .how-to-title {
@@ -238,16 +240,23 @@ section {
     margin-bottom: 20px;
 }
 
+/* התיקון לתמונה - משיכת התמונה לקצה */
 .album-open-mockup {
     width: 40%;
     min-height: 100%; 
     overflow: hidden;
+    /* ***** תיקון קריטי ***** */
+    /* מושך את התמונה חזרה אל מחוץ לריווח של 5% שנוצר */
+    position: relative; 
+    left: 5%; 
+    margin-left: -5%; /* דוחף אותה עוד יותר כדי לכסות את כל השטח */
+    /* *********************** */
 }
 
 .album-open-mockup img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* מילוי מלא ללא שוליים */
+    object-fit: cover;
     display: block;
     border-radius: 0;
 }
