@@ -330,4 +330,40 @@ footer {
         width: 100%;
         margin-bottom: 20px;
     }
+
+    /* רשימת ה-Checklist - תיקון סופי לבעיית העיטוף/ריווח */
+.check-list {
+    list-style: none; /* חובה: מבטל את סימני הרשימה המובנים */
+    padding: 0;
+    margin: 0 auto 20px auto;
+    width: fit-content; /* מרכוז הרשימה כולה */
+    text-align: right;
+}
+
+.check-list li {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 8px;
+    text-align: right; 
+    position: relative; /* חובה למיקום ה-V */
+    
+    /* מזיז את כל הטקסט פנימה כדי לפנות מקום לבולט */
+    padding-right: 20px; 
+    padding-left: 0; 
+    
+    /* מוודא שהשורות העוטפות מתחילות מהמקום הנכון */
+    display: block; 
+}
+
+/* מוסיפים את הבולט (ה-V) באמצעות הפסאודו-אלמנט */
+.check-list li::before {
+    content: '✔️';
+    color: #A3712E;
+    font-weight: bold;
+    
+    /* מוציאים את הבולט מהזרימה וממקמים אותו בדיוק ב-right: 0 */
+    position: absolute; 
+    right: 0;
+    top: 0;
+}
 }
