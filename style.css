@@ -174,12 +174,12 @@ section {
     font-size: 1em;
 }
 
-/* רשימות (בולטים) - תיקון יישור לריכוז */
+/* רשימות (בולטים) - תיקון סופי לריכוז ולמניעת חפיפה */
 .general-text-section ul {
     list-style: none;
     padding-right: 0;
     margin-bottom: 30px;
-    /* מרכוז הבלוק של ה-UL עצמו */
+    /* מרכוז הבלוק של ה-UL עצמו נשאר כדי לרכז את הרשימה כולה */
     width: fit-content; 
     margin: 0 auto 30px auto; 
     text-align: right;
@@ -187,22 +187,26 @@ section {
 
 .general-text-section li {
     position: relative;
-    /* הוספת רווח פנימי שמאלי במקום ימני ב-RTL */
-    padding-left: 1.5em; 
+    padding-left: 0; 
     padding-right: 0;
     margin-bottom: 12px;
-    text-align: right; /* שומר על כיוון הטקסט בתוך הפריט */
+    text-align: right;
+    
+    /* הופך את הפריט למיכל Flex */
+    display: flex;
+    justify-content: flex-end; /* מיישר את התוכן לימין בתוך הפריט */
+    align-items: flex-start;
 }
 
 .general-text-section li::before {
     content: "✔️";
     color: #A3712E;
     font-weight: bold;
-    position: absolute;
-    /* מיקום הבולט בצד ימין כשהפריט מיושר ימינה */
-    right: 0;
-    left: auto;
-    top: 0;
+    /* ביטול position: absolute; - הופך אותו לחלק מה-Flex */
+    position: static; 
+    /* מוסיף רווח בצד שמאל של ה-V כדי להפריד מהטקסט */
+    margin-left: 5px;
+    margin-right: 0;
 }
 
 /* הכפתור בכרטיס 2 - יישור אוטומטי למרכז */
