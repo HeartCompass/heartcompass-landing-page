@@ -140,7 +140,7 @@ section {
 }
 
 
-/* --- GENERAL TEXT SECTION (כרטיס 2 - פרוטוקול) --- */
+/* --- GENERAL TEXT SECTION (כרטיס 2 - Pricing) --- */
 
 .general-text-section {
     padding: 60px 5%;
@@ -174,18 +174,42 @@ section {
     font-size: 1em;
 }
 
+/* הגדרות תיבת התמחור (pricing-box) */
+.pricing-box {
+    background-color: #ffffff;
+    border: 2px solid #A3712E;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 400px;
+    margin: 30px auto; /* מרכוז הריבוע בתוך הבלוק המרכזי */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-box h3 {
+    font-size: 1.8em;
+    color: #5A3B33;
+    margin-bottom: 15px;
+}
+
+.pricing-details {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
 /* רשימות (בולטים) - תיקון היישור הסופי והאמין (שיטת Position/Padding) */
-.general-text-section ul {
+.general-text-section ul,
+.check-list { /* הוספתי .check-list כדי לתמוך בסקשן 3 */
     list-style: none;
-    padding-right: 0;
-    margin-bottom: 30px;
-    /* מרכוז הבלוק של ה-UL עצמו נשאר */
-    width: fit-content; 
+    padding: 0;
     margin: 0 auto 30px auto; 
+    width: fit-content; 
     text-align: right;
 }
 
-.general-text-section li {
+.general-text-section li,
+.check-list li {
     /* הופך את הפריט לבסיס המיקום */
     position: relative;
     /* מזיז את כל הטקסט פנימה (כולל שורות העיטוף) כדי לפנות מקום לבולט */
@@ -196,6 +220,8 @@ section {
     /* ביטול כללים הקשורים ל-Flex שהיו קיימים */
     display: block; 
     text-align: right;
+    font-size: 1em; /* מוודא גודל גופן נכון אם משתמשים ב-.check-list */
+    color: #333;
 }
 
 .general-text-section li strong {
@@ -203,8 +229,9 @@ section {
     display: inline; 
 }
 
-.general-text-section li::before {
-    content: "✔️";
+.general-text-section li::before,
+.check-list li::before {
+    content: "✔️"; /* משתמשים ב-CSS בלבד לבולט */
     color: #A3712E;
     font-weight: bold;
     
@@ -217,10 +244,12 @@ section {
     align-self: auto;
 }
 
-/* הכפתור בכרטיס 2 - יישור אוטומטי למרכז */
+/* הכפתור בכרטיס 2 - מרכוז סופי */
 .secondary-section-cta {
-    margin-top: 10px;
+    display: block; /* הופך לבלוק כדי שיוכל להיות ממורכז */
+    margin: 10px auto 0 auto; /* ממקם את הבלוק במרכז */
 }
+
 
 /* --- HOW-TO SECTION (כרטיס 3 - תיקון מילוי מלא) --- */
 .how-to-section {
@@ -280,18 +309,6 @@ footer {
     margin-bottom: 0; /* מוריד את הריווח התחתון המיותר */
 }
 
-/* מוסיפים כלל כדי להבטיח שבמובייל זה יחזור לשתי שורות */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column; /* מחזיר אותם לעמודה */
-        align-items: center;
-    }
-    .footer-links {
-        margin-bottom: 15px; /* מחזיר את הרווח בין הקישורים לקופירייט */
-    }
-}
-/* כל שאר קוד ה-footer נשאר זהה */
-
 .footer-links a {
     color: #ccc;
     text-decoration: none;
@@ -331,39 +348,12 @@ footer {
         margin-bottom: 20px;
     }
 
-    /* רשימת ה-Checklist - תיקון סופי לבעיית העיטוף/ריווח */
-.check-list {
-    list-style: none; /* חובה: מבטל את סימני הרשימה המובנים */
-    padding: 0;
-    margin: 0 auto 20px auto;
-    width: fit-content; /* מרכוז הרשימה כולה */
-    text-align: right;
-}
-
-.check-list li {
-    font-size: 1em;
-    color: #333;
-    margin-bottom: 8px;
-    text-align: right; 
-    position: relative; /* חובה למיקום ה-V */
-    
-    /* מזיז את כל הטקסט פנימה כדי לפנות מקום לבולט */
-    padding-right: 20px; 
-    padding-left: 0; 
-    
-    /* מוודא שהשורות העוטפות מתחילות מהמקום הנכון */
-    display: block; 
-}
-
-/* מוסיפים את הבולט (ה-V) באמצעות הפסאודו-אלמנט */
-.check-list li::before {
-    content: '✔️';
-    color: #A3712E;
-    font-weight: bold;
-    
-    /* מוציאים את הבולט מהזרימה וממקמים אותו בדיוק ב-right: 0 */
-    position: absolute; 
-    right: 0;
-    top: 0;
-}
+    /* תיקון הפוטר למובייל */
+    .footer-content {
+        flex-direction: column; /* מחזיר אותם לעמודה */
+        align-items: center;
+    }
+    .footer-links {
+        margin-bottom: 15px; /* מחזיר את הרווח בין הקישורים לקופירייט */
+    }
 }
