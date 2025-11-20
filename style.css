@@ -141,7 +141,7 @@ section {
 
 /* תיקון קריטי: הקטנת גודל הכפתור בכרטיס 2 והמרכזתו (רוחב טקסט) */
 .secondary-section-cta {
-    display: inline-block; /* הופך ל-inline-block כדי שיתאים לרוחב הטקסט */
+    display: inline-block; /* *תיקון 2: הופך ל-inline-block כדי שיתאים לרוחב הטקסט* */
     margin-top: 10px; 
     margin-bottom: 0; 
     margin-right: auto; 
@@ -241,8 +241,8 @@ section {
 /* כלל הבולטים הסופי */
 .general-text-section li::before,
 .check-list li::before {
-    /* תיקון V סופי: הוספת תו רווח (unicode) לאחר ה-V */
-    content: "✔️\0020"; 
+    /* תיקון קריטי: הוספת תו רווח (unicode) לאחר ה-V */
+    content: "✔️\0020"; /* תיקון 1: הוספת רווח לאחר ה-V */
     color: #A3712E;
     font-weight: bold;
     
@@ -251,9 +251,7 @@ section {
     right: 0;
     top: 0;
     
-    /* מוחקים את margin-left כדי למנוע רווח נוסף אחרי ה-V */
     margin-left: 0; 
-    
     margin-right: 0;
     align-self: auto;
 }
@@ -268,21 +266,18 @@ section {
     background-color: #f0f0f0;
 
     /* התיקונים למילוי קצוות: */
-    padding: 0; /* מוריד שוליים מהסקשן כולו */
+    padding: 0; 
     min-height: 400px;
 }
 
 .how-to-content {
     width: 50%;
-    /* תיקון פריסה ומרכוז: מאפס את הרוחב למצב יציב ומזיז שמאלה */
+    /* תיקון 3: הזזה שמאלה (10%) ומרכוז הטקסט בתוך הבלוק */
     margin-left: 10%; /* הזזה שמאלה (3 טאבים) */
     padding: 60px 5%; 
     text-align: center; /* מרכוז הטקסט והכפתורים שבתוך הבלוק */
     
-    /* הופך לפלקס כדי למרכז אנכית */
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
+    display: block; 
 }
 
 /* מרכוז סופי של כל הטקסט בתוך HOW-TO-CONTENT */
