@@ -174,39 +174,47 @@ section {
     font-size: 1em;
 }
 
-/* רשימות (בולטים) - תיקון סופי לריכוז ולמניעת חפיפה */
+/* רשימות (בולטים) - תיקון סופי לעיטוף שורה והצמדה לטקסט */
 .general-text-section ul {
     list-style: none;
     padding-right: 0;
     margin-bottom: 30px;
-    /* מרכוז הבלוק של ה-UL עצמו נשאר כדי לרכז את הרשימה כולה */
+    /* מרכוז הבלוק של ה-UL עצמו נשאר */
     width: fit-content; 
     margin: 0 auto 30px auto; 
     text-align: right;
 }
 
 .general-text-section li {
-    position: relative;
+    /* הופך את הפריט למיכל Flex */
+    display: flex;
+    /* יישור מימין לשמאל */
+    direction: rtl; 
+    
     padding-left: 0; 
     padding-right: 0;
     margin-bottom: 12px;
-    text-align: right;
     
-    /* הופך את הפריט למיכל Flex */
-    display: flex;
-    justify-content: flex-end; /* מיישר את התוכן לימין בתוך הפריט */
-    align-items: flex-start;
+    /* מונע מהטקסט הראשי להשפיע על היישור */
+    text-align: initial;
+}
+
+.general-text-section li strong {
+    /* מוודא שהכותרת של הפריט מתיישרת נכון */
+    display: inline; 
 }
 
 .general-text-section li::before {
     content: "✔️";
     color: #A3712E;
     font-weight: bold;
-    /* ביטול position: absolute; - הופך אותו לחלק מה-Flex */
-    position: static; 
-    /* מוסיף רווח בצד שמאל של ה-V כדי להפריד מהטקסט */
-    margin-left: 5px;
-    margin-right: 0;
+    /* ביטול Position: absolute והפיכה לפריט Flex */
+    flex-shrink: 0; /* מונע מה-V להתכווץ */
+    margin-left: 5px; /* רווח קבוע בין ה-V לטקסט */
+    margin-right: 0; 
+    
+    /* מוודא שה-V נשאר בראש הטור */
+    align-self: flex-start; 
 }
 
 /* הכפתור בכרטיס 2 - יישור אוטומטי למרכז */
