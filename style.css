@@ -220,7 +220,7 @@ section {
     /* ביטול כללים הקשורים ל-Flex שהיו קיימים */
     display: block; 
     text-align: right;
-    font-size: 1em; /* מוודא גודל גופן נכון אם משתמשים ב-.check-list */
+    font-size: 1em; 
     color: #333;
 }
 
@@ -229,9 +229,14 @@ section {
     display: inline; 
 }
 
+/* מנטרל כללי בולטים ישנים */
+.general-text-section li::before {
+    content: none;
+}
+/* כלל הבולטים הסופי */
 .general-text-section li::before,
 .check-list li::before {
-    content: "✔️"; /* משתמשים ב-CSS בלבד לבולט */
+    content: "✔️"; 
     color: #A3712E;
     font-weight: bold;
     
@@ -239,7 +244,10 @@ section {
     position: absolute; 
     right: 0;
     top: 0;
-    margin-left: 0; 
+    
+    /* התיקון הנדרש: מוסיף רווח קטן בצד שמאל של ה-V */
+    margin-left: 5px; 
+    
     margin-right: 0;
     align-self: auto;
 }
