@@ -130,13 +130,22 @@ section {
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
-    font-size: 1.1em;
+    font-size: 1.1em; /* גודל ברירת מחדל */
     transition: background-color 0.3s;
     margin-top: 1.5em;
 }
 
 .primary-cta:hover {
     background-color: #8D5D25;
+}
+
+/* הקטנת גודל הכפתור בכרטיס 2 */
+.primary-cta.secondary-section-cta { 
+    font-size: 1em; /* תיקון 1: הקטנה לגודל הטקסט הרגיל */
+    padding: 10px 25px;
+    /* מרכוז סופי */
+    display: block; 
+    margin: 10px auto 0 auto; 
 }
 
 
@@ -200,7 +209,7 @@ section {
 
 /* רשימות (בולטים) - תיקון היישור הסופי והאמין (שיטת Position/Padding) */
 .general-text-section ul,
-.check-list { /* הוספתי .check-list כדי לתמוך בסקשן 3 */
+.check-list { 
     list-style: none;
     padding: 0;
     margin: 0 auto 30px auto; 
@@ -210,14 +219,10 @@ section {
 
 .general-text-section li,
 .check-list li {
-    /* הופך את הפריט לבסיס המיקום */
     position: relative;
-    /* מזיז את כל הטקסט פנימה (כולל שורות העיטוף) כדי לפנות מקום לבולט */
     padding-right: 20px; 
     padding-left: 0; 
-    
     margin-bottom: 12px;
-    /* ביטול כללים הקשורים ל-Flex שהיו קיימים */
     display: block; 
     text-align: right;
     font-size: 1em; 
@@ -225,37 +230,24 @@ section {
 }
 
 .general-text-section li strong {
-    /* מוודא שהכותרת של הפריט מתיישרת נכון */
     display: inline; 
 }
 
-/* מנטרל כללי בולטים ישנים */
+/* מנטרל כללי בולטים ישנים ומיישם את ה-V */
 .general-text-section li::before {
     content: none;
 }
-/* כלל הבולטים הסופי */
 .general-text-section li::before,
 .check-list li::before {
     content: "✔️"; 
     color: #A3712E;
     font-weight: bold;
-    
-    /* מוציאים את הבולט מהזרימה וממקמים אותו בדיוק ב-right: 0 */
     position: absolute; 
     right: 0;
     top: 0;
-    
-    /* התיקון הנדרש: מוסיף רווח קטן בצד שמאל של ה-V */
-    margin-left: 5px; 
-    
+    margin-left: 5px; /* רווח בין ה-V לטקסט */
     margin-right: 0;
     align-self: auto;
-}
-
-/* הכפתור בכרטיס 2 - מרכוז סופי */
-.secondary-section-cta {
-    display: block; /* הופך לבלוק כדי שיוכל להיות ממורכז */
-    margin: 10px auto 0 auto; /* ממקם את הבלוק במרכז */
 }
 
 
@@ -274,7 +266,22 @@ section {
 
 .how-to-content {
     width: 50%;
-    padding: 60px 5%; /* מחזיר ריווח רק לתוכן הטקסט */
+    /* שינוי CSS לכרטיס 3: מרכוז הטקסט והוספת רווח פנימי */
+    padding: 60px 7%; /* תיקון 2: ריווח לרוחב ב-7% */
+    text-align: center; /* תיקון 2: מרכוז הטקסט */
+    display: flex; /* חובה למרכוז אנכי ואופקי של הטקסט שמעל הריבוע */
+    flex-direction: column;
+    justify-content: center; /* מרכוז אנכי */
+    align-items: center; /* מרכוז אופקי */
+}
+
+/* מרכוז סופי של כותרת ופסקה בתוך HOW-TO-CONTENT */
+.how-to-content h2,
+.how-to-content p {
+    text-align: center;
+    max-width: 400px; /* מונע מהטקסט הארוך למתוח את המרכוז */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .album-open-mockup {
