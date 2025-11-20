@@ -139,13 +139,13 @@ section {
     background-color: #8D5D25;
 }
 
-/* תיקון 2: הקטנת גודל הכפתור בכרטיס 2 והמרכזתו (רוחב טקסט) */
+/* תיקון קריטי: הקטנת גודל הכפתור בכרטיס 2 והמרכזתו (רוחב טקסט) */
 .secondary-section-cta {
-    display: inline-block; /* *תיקון קריטי: הופך ל-inline-block כדי שיתאים לרוחב הטקסט* */
+    display: inline-block; /* הופך ל-inline-block כדי שיתאים לרוחב הטקסט */
     margin-top: 10px; 
     margin-bottom: 0; 
-    margin-right: auto; /* מאפשר מרכוז על ידי האלמנט ההורה */
-    margin-left: auto; /* מאפשר מרכוז על ידי האלמנט ההורה */
+    margin-right: auto; 
+    margin-left: auto; 
     font-size: 1em; /* הקטנה לגודל טקסט רגיל */
     padding: 10px 25px; /* הקטנת הריווח הפנימי */
 }
@@ -279,7 +279,10 @@ section {
     padding: 60px 5%; 
     text-align: center; /* מרכוז הטקסט והכפתורים שבתוך הבלוק */
     
-    display: block; 
+    /* הופך לפלקס כדי למרכז אנכית */
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* מרכוז סופי של כל הטקסט בתוך HOW-TO-CONTENT */
