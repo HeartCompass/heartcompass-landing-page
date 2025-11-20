@@ -139,12 +139,12 @@ section {
     background-color: #8D5D25;
 }
 
-/* תיקון 2: הקטנת גודל הכפתור בכרטיס 2 */
+/* תיקון: הקטנת גודל הכפתור בכרטיס 2 והמרכזתו */
 .secondary-section-cta {
-    display: block; 
-    margin: 10px auto 0 auto; 
-    font-size: 1em; /* מקטין את הגופן לגודל טקסט רגיל */
-    padding: 10px 25px; /* מקטין את הריווח הפנימי */
+    display: block; /* חובה למרכוז */
+    margin: 10px auto 0 auto; /* ממקם את הבלוק במרכז */
+    font-size: 1em; /* הקטנה לגודל טקסט רגיל */
+    padding: 10px 25px; /* הקטנת הריווח הפנימי */
 }
 
 
@@ -220,12 +220,11 @@ section {
 .check-list li {
     /* הופך את הפריט לבסיס המיקום */
     position: relative;
-    /* מזיז את כל הטקסט פנימה (כולל שורות העיטוף) כדי לפנות מקום לבולט */
+    /* תיקון: רווח עבור ה-V ופותר בעיית עטיפת הטקסט */
     padding-right: 20px; 
     padding-left: 0; 
     
     margin-bottom: 12px;
-    /* ביטול כללים הקשורים ל-Flex שהיו קיימים */
     display: block; 
     text-align: right;
     font-size: 1em; 
@@ -237,10 +236,6 @@ section {
     display: inline; 
 }
 
-/* מנטרל כללי בולטים ישנים */
-.general-text-section li::before {
-    content: none;
-}
 /* כלל הבולטים הסופי */
 .general-text-section li::before,
 .check-list li::before {
@@ -253,7 +248,7 @@ section {
     right: 0;
     top: 0;
     
-    /* תיקון 1: מוסיף רווח קטן בין ה-V לטקסט */
+    /* תיקון רווח: מוסיף רווח קטן בין ה-V לטקסט */
     margin-left: 5px; 
     
     margin-right: 0;
@@ -276,7 +271,7 @@ section {
 
 .how-to-content {
     width: 50%;
-    /* תיקון 3: רוחב והגדרות מרכוז */
+    /* תיקון: רוחב והגדרות מרכוז */
     padding: 60px 7%; /* ריווח לרוחב 7% */
     text-align: center; 
     display: flex; 
