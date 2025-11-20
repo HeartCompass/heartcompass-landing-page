@@ -12,7 +12,7 @@ body {
     line-height: 1.7; 
     background-color: #ffffff;
     direction: rtl;
-    padding-top: 65px; /* רווח לתפריט הקבוע */
+    padding-top: 0; /* תיקון: הסרת הפס הלבן */
 }
 
 /* --- HEADER & NAVIGATION (תפריט עליון קבוע) --- */
@@ -75,6 +75,8 @@ section {
 }
 
 .hero-section.focus-hero {
+    /* הוספת שוליים עליונים כדי להתחיל מתחת להדר הקבוע */
+    margin-top: 65px; 
     background-image: url('images/diary_1200x400.png');
     background-size: cover;
     background-position: center center;
@@ -139,9 +141,9 @@ section {
     background-color: #8D5D25;
 }
 
-/* תיקון קריטי: הקטנת גודל הכפתור בכרטיס 2 והמרכזתו (רוחב טקסט) */
+/* תיקון: הקטנת גודל הכפתור בכרטיס 2 והמרכזתו (רוחב טקסט) */
 .secondary-section-cta {
-    display: inline-block; /* *תיקון 2: הופך ל-inline-block כדי שיתאים לרוחב הטקסט* */
+    display: inline-block; /* *תיקון: הופך ל-inline-block כדי שיתאים לרוחב הטקסט* */
     margin-top: 10px; 
     margin-bottom: 0; 
     margin-right: auto; 
@@ -151,7 +153,7 @@ section {
 }
 
 
-/* --- GENERAL TEXT SECTION (כרטיס 2 - Pricing) --- */
+/* --- GENERAL TEXT SECTION (כרטיס 2 - הפרוטוקול) --- */
 
 .general-text-section {
     padding: 60px 5%;
@@ -159,7 +161,7 @@ section {
 }
 
 .general-text-section .text-block {
-    text-align: center; /* ריכוז כל התוכן בבלוק */
+    text-align: right; 
     max-width: 950px;
     margin: 0 auto;
     padding: 0; 
@@ -168,7 +170,7 @@ section {
 .general-text-section h2, 
 .general-text-section h3, 
 .general-text-section p {
-    text-align: center; /* ודא שכל הפסקאות והכותרות ממורכזות */
+    text-align: right; 
     margin-right: auto;
     margin-left: auto;
 }
@@ -192,8 +194,8 @@ section {
     border-radius: 10px;
     padding: 30px;
     max-width: 400px;
-    margin: 30px auto; /* מרכוז הריבוע בתוך הבלוק המרכזי */
-    text-align: center; /* חיוני למרכוז הכפתור (inline-block) */
+    margin: 30px auto; 
+    text-align: center; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -241,8 +243,8 @@ section {
 /* כלל הבולטים הסופי */
 .general-text-section li::before,
 .check-list li::before {
-    /* תיקון קריטי: הוספת תו רווח (unicode) לאחר ה-V */
-    content: "✔️\0020"; /* תיקון 1: הוספת רווח לאחר ה-V */
+    /* תיקון קריטי V: הוספת תו רווח (unicode) לאחר ה-V */
+    content: "✔️\0020"; 
     color: #A3712E;
     font-weight: bold;
     
