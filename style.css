@@ -139,15 +139,15 @@ section {
     background-color: #8D5D25;
 }
 
-/* תיקון: הקטנת גודל הכפתור בכרטיס 2 והמרכזתו (רוחב טקסט) */
+/* תיקון 2: הקטנת גודל הכפתור בכרטיס 2 והמרכזתו (רוחב טקסט) */
 .secondary-section-cta {
-    display: inline-block; 
+    display: inline-block; /* *תיקון קריטי: הופך ל-inline-block כדי שיתאים לרוחב הטקסט* */
     margin-top: 10px; 
     margin-bottom: 0; 
-    margin-right: auto; 
-    margin-left: auto; 
-    font-size: 1em; 
-    padding: 10px 25px; 
+    margin-right: auto; /* מאפשר מרכוז על ידי האלמנט ההורה */
+    margin-left: auto; /* מאפשר מרכוז על ידי האלמנט ההורה */
+    font-size: 1em; /* הקטנה לגודל טקסט רגיל */
+    padding: 10px 25px; /* הקטנת הריווח הפנימי */
 }
 
 
@@ -274,12 +274,10 @@ section {
 
 .how-to-content {
     width: 50%;
-    /* תיקון: מרכוז הטקסט והוספת רווח פנימי והזזה שמאלה */
+    /* תיקון פריסה ומרכוז: מאפס את הרוחב למצב יציב ומזיז שמאלה */
+    margin-left: 10%; /* הזזה שמאלה (3 טאבים) */
     padding: 60px 5%; 
     text-align: center; /* מרכוז הטקסט והכפתורים שבתוך הבלוק */
-    
-    /* תיקון הזזה: דוחף את הבלוק שמאלה (מ-right) */
-    margin-left: 10%; 
     
     display: block; 
 }
@@ -290,7 +288,7 @@ section {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    max-width: 400px; 
+    max-width: 400px; /* מונע שבירת שורה בטקסט הארוך */
 }
 .how-to-content .pricing-box {
     margin-left: auto; 
