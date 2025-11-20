@@ -174,7 +174,7 @@ section {
     font-size: 1em;
 }
 
-/* רשימות (בולטים) - תיקון סופי לעיטוף שורה והצמדה לטקסט */
+/* רשימות (בולטים) - תיקון היישור הסופי והאמין (שיטת Position/Padding) */
 .general-text-section ul {
     list-style: none;
     padding-right: 0;
@@ -186,17 +186,16 @@ section {
 }
 
 .general-text-section li {
-    /* הופך את הפריט למיכל Flex */
-    display: flex;
-    /* יישור מימין לשמאל */
-    direction: rtl; 
-    
+    /* הופך את הפריט לבסיס המיקום */
+    position: relative;
+    /* מזיז את כל הטקסט פנימה (כולל שורות העיטוף) כדי לפנות מקום לבולט */
+    padding-right: 20px; 
     padding-left: 0; 
-    padding-right: 0;
-    margin-bottom: 12px;
     
-    /* מונע מהטקסט הראשי להשפיע על היישור */
-    text-align: initial;
+    margin-bottom: 12px;
+    /* ביטול כללים הקשורים ל-Flex שהיו קיימים */
+    display: block; 
+    text-align: right;
 }
 
 .general-text-section li strong {
@@ -208,13 +207,14 @@ section {
     content: "✔️";
     color: #A3712E;
     font-weight: bold;
-    /* ביטול Position: absolute והפיכה לפריט Flex */
-    flex-shrink: 0; /* מונע מה-V להתכווץ */
-    margin-left: 5px; /* רווח קבוע בין ה-V לטקסט */
-    margin-right: 0; 
     
-    /* מוודא שה-V נשאר בראש הטור */
-    align-self: flex-start; 
+    /* מוציאים את הבולט מהזרימה וממקמים אותו בדיוק ב-right: 0 */
+    position: absolute; 
+    right: 0;
+    top: 0;
+    margin-left: 0; 
+    margin-right: 0;
+    align-self: auto;
 }
 
 /* הכפתור בכרטיס 2 - יישור אוטומטי למרכז */
