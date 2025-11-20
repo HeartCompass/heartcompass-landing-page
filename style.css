@@ -220,7 +220,7 @@ section {
 .check-list li {
     /* הופך את הפריט לבסיס המיקום */
     position: relative;
-    /* תיקון: רווח עבור ה-V ופותר בעיית עטיפת הטקסט */
+    /* מזיז את כל הטקסט פנימה (כולל שורות העיטוף) כדי לפנות מקום לבולט */
     padding-right: 20px; 
     padding-left: 0; 
     
@@ -248,7 +248,7 @@ section {
     right: 0;
     top: 0;
     
-    /* תיקון רווח: מוסיף רווח קטן בין ה-V לטקסט */
+    /* תיקון: מוסיף רווח קטן בין ה-V לטקסט */
     margin-left: 5px; 
     
     margin-right: 0;
@@ -271,22 +271,31 @@ section {
 
 .how-to-content {
     width: 50%;
-    /* תיקון: רוחב והגדרות מרכוז */
-    padding: 60px 7%; /* ריווח לרוחב 7% */
-    text-align: center; 
-    display: flex; 
-    flex-direction: column;
-    justify-content: center; /* מרכוז אנכי */
-    align-items: center; /* מרכוז אופקי */
+    /* מחזירים ל-padding מקורי + תיקון רוחב הריבוע */
+    padding: 60px 5%; 
+    text-align: right; /* מחזירים ליישור ימין */
+    
+    /* מבטלים את ה-Flexbox שהרס את היישור */
+    display: block; 
+    flex-direction: initial;
+    justify-content: initial; 
+    align-items: initial;
 }
 
-/* מרכוז סופי של כותרת ופסקה בתוך HOW-TO-CONTENT */
+/* הוספת כללי מרכוז לריבוע התמחור בכרטיס 3 */
+.how-to-content .pricing-box {
+    margin-left: 0; /* מבטל מרכוז אוטומטי בתוך ה-50% */
+    margin-right: 0;
+    max-width: 100%; /* מוודא שמשתלב ב-50% רוחב */
+    text-align: right; /* יישור הטקסט בתוך הריבוע לימין */
+}
+/* מרכוז הטקסט מעל הריבוע בכרטיס 3 */
 .how-to-content h2,
 .how-to-content p {
-    text-align: center;
-    max-width: 400px; /* מונע מהטקסט הארוך למתוח את המרכוז */
-    margin-left: auto;
-    margin-right: auto;
+    text-align: right; /* מחזירים ליישור ימין */
+    margin-left: 0;
+    margin-right: 0;
+    max-width: none;
 }
 
 .album-open-mockup {
