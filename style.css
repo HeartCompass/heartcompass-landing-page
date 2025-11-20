@@ -12,7 +12,7 @@ body {
     line-height: 1.7; 
     background-color: #ffffff;
     direction: rtl;
-    padding-top: 0; /* תיקון: הסרת הפס הלבן */
+    padding-top: 65px; /* רווח לתפריט הקבוע */
 }
 
 /* --- HEADER & NAVIGATION (תפריט עליון קבוע) --- */
@@ -75,8 +75,6 @@ section {
 }
 
 .hero-section.focus-hero {
-    /* הוספת שוליים עליונים כדי להתחיל מתחת להדר הקבוע */
-    margin-top: 65px; 
     background-image: url('images/diary_1200x400.png');
     background-size: cover;
     background-position: center center;
@@ -141,7 +139,7 @@ section {
     background-color: #8D5D25;
 }
 
-/* תיקון: הקטנת גודל הכפתור בכרטיס 2 והמרכזתו (רוחב טקסט) */
+/* תיקון קריטי: הקטנת גודל הכפתור בכרטיס 2 והמרכזתו (רוחב טקסט) */
 .secondary-section-cta {
     display: inline-block; /* *תיקון: הופך ל-inline-block כדי שיתאים לרוחב הטקסט* */
     margin-top: 10px; 
@@ -161,7 +159,7 @@ section {
 }
 
 .general-text-section .text-block {
-    text-align: right; 
+    text-align: center; /* תיקון: מרכוז כללי לטקסט ולכפתור */
     max-width: 950px;
     margin: 0 auto;
     padding: 0; 
@@ -170,7 +168,7 @@ section {
 .general-text-section h2, 
 .general-text-section h3, 
 .general-text-section p {
-    text-align: right; 
+    text-align: center; /* תיקון: ודא שכל הפסקאות והכותרות ממורכזות */
     margin-right: auto;
     margin-left: auto;
 }
@@ -194,8 +192,8 @@ section {
     border-radius: 10px;
     padding: 30px;
     max-width: 400px;
-    margin: 30px auto; 
-    text-align: center; 
+    margin: 30px auto; /* מרכוז הריבוע בתוך הבלוק המרכזי */
+    text-align: center; /* חיוני למרכוז הכפתור (inline-block) */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -274,7 +272,7 @@ section {
 
 .how-to-content {
     width: 50%;
-    /* תיקון 3: הזזה שמאלה (10%) ומרכוז הטקסט בתוך הבלוק */
+    /* תיקון פריסה ומרכוז: הזזה שמאלה (10%) ומרכוז הטקסט בתוך הבלוק */
     margin-left: 10%; /* הזזה שמאלה (3 טאבים) */
     padding: 60px 5%; 
     text-align: center; /* מרכוז הטקסט והכפתורים שבתוך הבלוק */
