@@ -139,12 +139,15 @@ section {
     background-color: #8D5D25;
 }
 
-/* הקטנת גודל הכפתור בכרטיס 2 */
+/* תיקון קריטי: הקטנת גודל הכפתור בכרטיס 2 והמרכזתו (רוחב טקסט) */
 .secondary-section-cta {
-    display: block; /* הופך לבלוק כדי שיוכל להיות ממורכז */
-    margin: 10px auto 0 auto; /* ממקם את הבלוק במרכז */
-    font-size: 1em; /* תיקון: הקטנה לגודל הטקסט הרגיל */
-    padding: 10px 25px; /* תיקון: הקטנת ה-padding ליצירת כפתור קטן יותר */
+    display: inline-block; /* *תיקון קריטי: הופך ל-inline-block כדי שיתאים לרוחב הטקסט* */
+    margin-top: 10px; 
+    margin-bottom: 0; 
+    margin-right: auto; /* מאפשר מרכוז על ידי האלמנט ההורה */
+    margin-left: auto; /* מאפשר מרכוז על ידי האלמנט ההורה */
+    font-size: 1em; /* הקטנה לגודל טקסט רגיל */
+    padding: 10px 25px; /* הקטנת הריווח הפנימי */
 }
 
 
@@ -190,7 +193,7 @@ section {
     padding: 30px;
     max-width: 400px;
     margin: 30px auto; /* מרכוז הריבוע בתוך הבלוק המרכזי */
-    text-align: center;
+    text-align: center; /* חיוני למרכוז הכפתור (inline-block) */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -220,12 +223,11 @@ section {
 .check-list li {
     /* הופך את הפריט לבסיס המיקום */
     position: relative;
-    /* מזיז את כל הטקסט פנימה (כולל שורות העיטוף) כדי לפנות מקום לבולט */
-    padding-right: 20px; 
+    /* תיקון V סופי: מזיז את הטקסט לימין כדי לפנות מקום ל-V */
+    padding-right: 18px; 
     padding-left: 0; 
     
     margin-bottom: 12px;
-    /* ביטול כללים הקשורים ל-Flex שהיו קיימים */
     display: block; 
     text-align: right;
     font-size: 1em; 
@@ -233,14 +235,9 @@ section {
 }
 
 .general-text-section li strong {
-    /* מוודא שהכותרת של הפריט מתיישרת נכון */
     display: inline; 
 }
 
-/* מנטרל כללי בולטים ישנים */
-.general-text-section li::before {
-    content: none;
-}
 /* כלל הבולטים הסופי */
 .general-text-section li::before,
 .check-list li::before {
@@ -253,8 +250,8 @@ section {
     right: 0;
     top: 0;
     
-    /* התיקון הנדרש: מוסיף רווח קטן בצד שמאל של ה-V */
-    margin-left: 5px; 
+    /* תיקון קריטי: מוחקים את margin-left כדי למנוע רווח נוסף אחרי ה-V */
+    margin-left: 0; 
     
     margin-right: 0;
     align-self: auto;
@@ -276,22 +273,25 @@ section {
 
 .how-to-content {
     width: 50%;
-    /* תיקון: מרכוז הטקסט והוספת רווח פנימי */
-    padding: 60px 7%; 
-    text-align: center; 
-    display: flex; 
-    flex-direction: column;
-    justify-content: center; /* מרכוז אנכי */
-    align-items: center; /* מרכוז אופקי */
+    /* הגדרות כרטיס 3 המקוריות (יישור ימין) */
+    padding: 60px 5%; 
+    text-align: right; 
+    display: block; 
 }
 
-/* מרכוז סופי של כותרת ופסקה בתוך HOW-TO-CONTENT */
+/* מרכוז הטקסט והוספת רוחב לריבוע התמחור בכרטיס 3 */
+.how-to-content .pricing-box {
+    margin-left: auto; 
+    margin-right: auto;
+    max-width: 90%; 
+    text-align: center; 
+}
 .how-to-content h2,
 .how-to-content p {
-    text-align: center;
-    max-width: 400px; /* מונע מהטקסט הארוך למתוח את המרכוז */
-    margin-left: auto;
-    margin-right: auto;
+    text-align: right; /* יישור ימין מקורי */
+    margin-left: 0;
+    margin-right: 0;
+    max-width: none;
 }
 
 .album-open-mockup {
@@ -327,7 +327,6 @@ footer {
     
     max-width: 1200px;
     margin: 0 auto;
-    /* יש לבטל את הכלל הישן: display: block; */
 }
 
 .footer-links {
