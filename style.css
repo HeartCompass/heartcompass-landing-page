@@ -139,12 +139,12 @@ section {
     background-color: #8D5D25;
 }
 
-/* הקטנת גודל הכפתור בכרטיס 2 */
+/* תיקון 2: הקטנת גודל הכפתור בכרטיס 2 */
 .secondary-section-cta {
-    display: block; /* הופך לבלוק כדי שיוכל להיות ממורכז */
-    margin: 10px auto 0 auto; /* ממקם את הבלוק במרכז */
-    font-size: 1em; /* תיקון: הקטנה לגודל הטקסט הרגיל */
-    padding: 10px 25px; /* תיקון: הקטנת ה-padding ליצירת כפתור קטן יותר */
+    display: block; 
+    margin: 10px auto 0 auto; 
+    font-size: 1em; /* מקטין את הגופן לגודל טקסט רגיל */
+    padding: 10px 25px; /* מקטין את הריווח הפנימי */
 }
 
 
@@ -253,7 +253,7 @@ section {
     right: 0;
     top: 0;
     
-    /* התיקון הנדרש: מוסיף רווח קטן בצד שמאל של ה-V */
+    /* תיקון 1: מוסיף רווח קטן בין ה-V לטקסט */
     margin-left: 5px; 
     
     margin-right: 0;
@@ -276,8 +276,8 @@ section {
 
 .how-to-content {
     width: 50%;
-    /* תיקון: מרכוז הטקסט והוספת רווח פנימי */
-    padding: 60px 7%; 
+    /* תיקון 3: רוחב והגדרות מרכוז */
+    padding: 60px 7%; /* ריווח לרוחב 7% */
     text-align: center; 
     display: flex; 
     flex-direction: column;
