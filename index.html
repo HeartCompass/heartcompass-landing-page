@@ -1,105 +1,385 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="מצפן הלב: הכלי האנלוגי לבהירות וקבלת החלטות מובילות.">
-    <title>מצפן הלב</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-</head>
-<body>
+/* הגדרות בסיסיות ואיפוס */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    color: #333; 
+    line-height: 1.7; 
+    background-color: #ffffff;
+    direction: rtl;
+    padding-top: 65px; /* רווח לתפריט הקבוע */
+}
+
+/* --- HEADER & NAVIGATION (תפריט עליון קבוע) --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 5%;
+    background-color: #5A3B33;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 65px; 
+}
+
+.logo, .header-right-side {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.logo a, .lupa-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #D4AF37 !important; /* צבע הלוגו - זהב */
+}
+
+.nav-links {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 0;
+    padding-right: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #F0F0F0;
+    margin-right: 20px;
+    margin-left: 0;
+    font-weight: 500;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #FFC04D;
+}
+
+
+/* --- HERO SECTION (כרטיס 1) וכללי סקשנים --- */
+section {
+    padding: 60px 5%; /* ריווח ברירת מחדל */
+}
+
+.hero-section.focus-hero {
+    background-image: url('images/diary_1200x400.png');
+    background-size: cover;
+    background-position: center center;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-section.focus-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(90, 59, 51, 0.35);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    text-align: right;
+    margin-right: 0;
+    width: auto;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.hero-title {
+    font-size: 2.5em;
+    font-weight: 900;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.hero-subtitle {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* כפתור CTA ראשי */
+.primary-cta {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: #A3712E;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+    margin-top: 1.5em;
+}
+
+.primary-cta:hover {
+    background-color: #8D5D25;
+}
+
+/* תיקון קריטי: הקטנת גודל הכפתור בכרטיס 2 והמרכזתו (רוחב טקסט) */
+.secondary-section-cta {
+    display: inline-block; /* *תיקון: הופך ל-inline-block כדי שיתאים לרוחב הטקסט* */
+    margin-top: 10px; 
+    margin-bottom: 0; 
+    margin-right: auto; 
+    margin-left: auto; 
+    font-size: 1em; /* הקטנה לגודל טקסט רגיל */
+    padding: 10px 25px; /* הקטנת הריווח הפנימי */
+}
+
+
+/* --- GENERAL TEXT SECTION (כרטיס 2 - הפרוטוקול) --- */
+
+.general-text-section {
+    padding: 60px 5%;
+    min-height: auto;
+}
+
+.general-text-section .text-block {
+    text-align: right; /* היישור המקורי שלכם */
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 0; 
+}
+
+.general-text-section h2, 
+.general-text-section h3, 
+.general-text-section p {
+    text-align: right; 
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.general-text-section h2 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #5A3B33;
+}
+
+.general-text-section p {
+    margin-bottom: 25px;
+    font-size: 1em;
+}
+
+/* הגדרות תיבת התמחור (pricing-box) */
+.pricing-box {
+    background-color: #ffffff;
+    border: 2px solid #A3712E;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 400px;
+    margin: 30px auto; /* מרכוז הריבוע בתוך הבלוק המרכזי */
+    text-align: center; /* חיוני למרכוז הכפתור (inline-block) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-box h3 {
+    font-size: 1.8em;
+    color: #5A3B33;
+    margin-bottom: 15px;
+}
+
+.pricing-details {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* רשימות (בולטים) - תיקון היישור הסופי והאמין (שיטת Position/Padding) */
+.general-text-section ul,
+.check-list { 
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 30px auto; 
+    width: fit-content; 
+    text-align: right;
+}
+
+.general-text-section li,
+.check-list li {
+    /* הופך את הפריט לבסיס המיקום */
+    position: relative;
+    /* תיקון V סופי: מזיז את הטקסט לימין כדי לפנות מקום ל-V */
+    padding-right: 20px; 
+    padding-left: 0; 
     
-    <header>
-        <div class="logo">
-            <a href="#" class="lupa-logo">🧭 מצפן הלב</a>
-        </div>
-        
-        <div class="header-right-side">
-            <nav class="nav-links">
-                <a href="#solution">הפרוטוקול</a>
-                <a href="#how-to-section">איך זה עובד?</a>
-                <a href="#pricing-anchor">תמחור</a>
-                <a href="#about">אודות</a>
-            </nav>
-            
-            <div class="menu-icons">
-                <span class="account-icon" role="img" aria-label="איזור אישי"></span> 
-                <div class="cart-icon" role="img" aria-label="סל קניות">
-                    <div class="bag-icon"></div>
-                </div>
-            </div>
-        </div>
-    </header>
+    margin-bottom: 12px;
+    display: block; 
+    text-align: right;
+    font-size: 1em; 
+    color: #333;
+}
 
-    <main>
-        <section class="hero-section focus-hero">
-            <div class="hero-content">
-                <h1 class="hero-title">עצור את הדימום האנרגטי. הפעל את המצפן המנטלי שלך.</h1>
-                <p class="hero-subtitle">מצפן הלב: ויסות רגשי מדויק ב-120 שניות. הכלי האנלוגי שמעניק לך את הבהירות שאתה צריך לקבל החלטות מובילות.</p>
-                
-                <a href="#pricing-anchor" class="primary-cta large-cta">אני משקיע ברעיון שלי: הזמן ערכת התחלה ב-149 ש"ח</a>
-            </div>
-        </section>
+.general-text-section li strong {
+    display: inline; 
+}
 
-        <section class="general-text-section" id="solution">
-            <div class="text-block">
-                <h2>חוסר פוקוס עולה לכם כסף. כמה עולה לכם הרעש המנטלי?</h2>
-                <p>אתה מנהלים חיים הישגיים, אבל ה-IQ התפעולי שלכם יורד בגלל רעש קוגניטיבי. <br>הגיע הזמן להפסיק לנסות אפליקציות שנכשלות ולעבור לעוגן פיזי, בר מדידה.</p>
-
-                <h3 id="protocol-details">מצפן הלב: פרוטוקול 2 דקות. אפס דחיינות.</h3>
-
-                <p>זו לא תרפיה, זו אופטימיזציית ביצועים. במקום לשבת שעה ביום, <br>אתם מקבלים מנגנון אכיפה פשוט שמעביר את הסטרס מהמוח – ישירות ליד המרגיעה:</p>
-
-            <ul>
-                <li><strong>רצועת ההצלחה (הפטנט שלנו):</strong> 7 משימות מיקרו-כתיבה, מכווננות במדויק. <br>אנחנו מבטיחים שהמשימה היא הכי קצרה שאפשר כדי שתמיד תצליח.</li>
-                <li><strong>חותם "העבודה בוצעה":</strong> הגמול הפיזי המיידי. <br>אתה סוג את המעגל הרגשי ומחזיר את הפוקוס למקום שבו הוא אמור להיות.</li>
-            </ul>
-            <br>
-            <a href="#pricing-anchor" class="primary-cta secondary-section-cta">לפרטי התמחור המלאים</a>
-            </div>
-        </section>
-
-      <section class="how-to-section" id="how-to-section">
-            <div class="how-to-content">
-                <h2 class="how-to-title">איך זה עובד? השקיעו בעצמכם: ערכת "העוגן היומי"</h2>
-                <p>הפסיקו לדחות את הדבר החשוב באמת. זו ההשקעה הרגשית היחידה שאתם יכולים להתמיד בה.</p>
-                
-                <div class="pricing-box" id="pricing-anchor-in-how-to">
-                    <h3>ערכת התחלה מלאה: 149 ₪</h3>
-                    <p class="pricing-details">המחיר כולל את יומן הפרימיום הפיזי, חותם "העבודה בוצעה", ו-4 רצועות שבועיות.</p>
-                    <ul class="check-list">
-                        <li>יומן הפרימיום הפיזי (עיצוב מוקפד)</li>
-                        <li>חותם "העבודה בוצעה" (כלי ההתמדה שלנו)</li>
-                        <li>4 רצועות התחלה (28 משימות ויסות רגשי מדויקות)</li>
-                    </ul>
-                    <a href="#" class="primary-cta large-cta pricing-cta">הזמן ערכת התחלה ב-149 ש"ח</a>
-                </div>
-            </div>
-
-            <div class="album-open-mockup">
-                <img src="images/diary_open.jpg" alt="מצפן הלב יומן פתוח">
-            </div>
-        </section>
-
-        <section id="about" class="general-text-section">
-            <h2>אודות השיטה והחברה</h2>
-            <p>מצפן הלב פותח על ידי יועצים פסיכולוגיים ואנשי ביצועים במטרה לגשר על הפער בין ידע לבין יישום. השיטה מבוססת על מדע ההרגלים ו-Cognitive Behavioral Therapy (CBT).</p>
-        </section>
-
-    </main>
+/* כלל הבולטים הסופי */
+.general-text-section li::before,
+.check-list li::before {
+    /* תיקון קריטי V: הוספת תו רווח (unicode) לאחר ה-V */
+    content: "✔️\0020"; 
+    color: #A3712E;
+    font-weight: bold;
     
-    <footer>
-        <div class="footer-content">
-            <div class="copyright">
-                <p>מצפן הלב | ניתוב רגשי, התבוננות פנימה | © כל הזכויות שמורות</p>
-            </div>
-            <nav class="footer-links">
-                <a href="#">תקנון ומדיניות פרטיות</a>
-                <a href="#">הצהרת נגישות</a>
-                <a href="mailto:heartcompass@gmail.com">צור קשר</a> 
-            </nav>
-        </div>
-    </footer>
-</body>
-</html>
+    /* מוציאים את הבולט מהזרימה וממקמים אותו בדיוק ב-right: 0 */
+    position: absolute; 
+    right: 0;
+    top: 0;
+    
+    margin-left: 0; 
+    margin-right: 0;
+    align-self: auto;
+}
+
+
+/* --- HOW-TO SECTION (כרטיס 3 - תיקון מילוי מלא) --- */
+.how-to-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* מותח את הילדים לגובה אחיד */
+    text-align: right;
+    background-color: #f0f0f0;
+
+    /* התיקונים למילוי קצוות: */
+    padding: 0; 
+    min-height: 400px;
+}
+
+.how-to-content {
+    width: 50%;
+    /* תיקון קריטי: הזזה שמאלה (10%) ומרכוז הטקסט בתוך הבלוק */
+    margin-left: 10%; /* הזזה שמאלה (3 טאבים) */
+    padding: 60px 5%; 
+    text-align: center; /* מרכוז הטקסט והכפתורים שבתוך הבלוק */
+    
+    display: block; 
+}
+
+/* מרכוז סופי של כל הטקסט בתוך HOW-TO-CONTENT */
+.how-to-content h2,
+.how-to-content p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px; /* מונע שבירת שורה בטקסט הארוך */
+}
+.how-to-content .pricing-box {
+    margin-left: auto; 
+    margin-right: auto;
+    max-width: 90%; 
+    text-align: center; 
+}
+
+
+.album-open-mockup {
+    width: 40%;
+    min-height: 100%; /* מוודא שהדיב מותח את עצמו לגובה המקסימלי */
+    overflow: hidden;
+}
+
+.album-open-mockup img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* מילוי מלא ללא שוליים */
+    display: block;
+    border-radius: 0;
+}
+
+
+/* --- FOOTER --- */
+footer {
+    background-color: #333;
+    color: #ccc;
+    padding: 30px 5%;
+    text-align: center;
+}
+
+.footer-content {
+    /* שינוי עיקרי: מפעילים Flexbox */
+    display: flex;
+    /* מיישרים את הילדים לשני הצדדים של הבלוק */
+    justify-content: space-between; 
+    /* ממקמים אנכית במרכז */
+    align-items: center; 
+    
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    margin-bottom: 0; /* מוריד את הריווח התחתון המיותר */
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    margin-right: 15px;
+    margin-left: 0;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #FFC04D;
+}
+
+/* --- התאמה למובייל --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero-content {
+        width: 100%;
+        margin-right: 0;
+        padding: 0 5%;
+        text-align: center;
+        max-width: none;
+    }
+    
+    .hero-title {
+        font-size: 2em;
+    }
+
+    .how-to-section {
+        flex-direction: column;
+    }
+
+    .how-to-content, .album-open-mockup {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* תיקון הפוטר למובייל */
+    .footer-content {
+        flex-direction: column; /* מחזיר אותם לעמודה */
+        align-items: center;
+    }
+    .footer-links {
+        margin-bottom: 15px; /* מחזיר את הרווח בין הקישורים לקופירייט */
+    }
+}
