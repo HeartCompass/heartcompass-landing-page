@@ -139,12 +139,12 @@ section {
     background-color: #8D5D25;
 }
 
-/* תיקון: הקטנת גודל הכפתור בכרטיס 2 והמרכזתו */
+/* הקטנת גודל הכפתור בכרטיס 2 */
 .secondary-section-cta {
-    display: block; /* חובה למרכוז */
+    display: block; /* הופך לבלוק כדי שיוכל להיות ממורכז */
     margin: 10px auto 0 auto; /* ממקם את הבלוק במרכז */
-    font-size: 1em; /* הקטנה לגודל טקסט רגיל */
-    padding: 10px 25px; /* הקטנת הריווח הפנימי */
+    font-size: 1em; /* תיקון: הקטנה לגודל הטקסט הרגיל */
+    padding: 10px 25px; /* תיקון: הקטנת ה-padding ליצירת כפתור קטן יותר */
 }
 
 
@@ -225,6 +225,7 @@ section {
     padding-left: 0; 
     
     margin-bottom: 12px;
+    /* ביטול כללים הקשורים ל-Flex שהיו קיימים */
     display: block; 
     text-align: right;
     font-size: 1em; 
@@ -236,6 +237,10 @@ section {
     display: inline; 
 }
 
+/* מנטרל כללי בולטים ישנים */
+.general-text-section li::before {
+    content: none;
+}
 /* כלל הבולטים הסופי */
 .general-text-section li::before,
 .check-list li::before {
@@ -248,7 +253,7 @@ section {
     right: 0;
     top: 0;
     
-    /* תיקון: מוסיף רווח קטן בין ה-V לטקסט */
+    /* התיקון הנדרש: מוסיף רווח קטן בצד שמאל של ה-V */
     margin-left: 5px; 
     
     margin-right: 0;
@@ -271,31 +276,22 @@ section {
 
 .how-to-content {
     width: 50%;
-    /* מחזירים ל-padding מקורי + תיקון רוחב הריבוע */
-    padding: 60px 5%; 
-    text-align: right; /* מחזירים ליישור ימין */
-    
-    /* מבטלים את ה-Flexbox שהרס את היישור */
-    display: block; 
-    flex-direction: initial;
-    justify-content: initial; 
-    align-items: initial;
+    /* תיקון: מרכוז הטקסט והוספת רווח פנימי */
+    padding: 60px 7%; 
+    text-align: center; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; /* מרכוז אנכי */
+    align-items: center; /* מרכוז אופקי */
 }
 
-/* הוספת כללי מרכוז לריבוע התמחור בכרטיס 3 */
-.how-to-content .pricing-box {
-    margin-left: 0; /* מבטל מרכוז אוטומטי בתוך ה-50% */
-    margin-right: 0;
-    max-width: 100%; /* מוודא שמשתלב ב-50% רוחב */
-    text-align: right; /* יישור הטקסט בתוך הריבוע לימין */
-}
-/* מרכוז הטקסט מעל הריבוע בכרטיס 3 */
+/* מרכוז סופי של כותרת ופסקה בתוך HOW-TO-CONTENT */
 .how-to-content h2,
 .how-to-content p {
-    text-align: right; /* מחזירים ליישור ימין */
-    margin-left: 0;
-    margin-right: 0;
-    max-width: none;
+    text-align: center;
+    max-width: 400px; /* מונע מהטקסט הארוך למתוח את המרכוז */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .album-open-mockup {
