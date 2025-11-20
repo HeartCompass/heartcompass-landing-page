@@ -143,16 +143,23 @@ section {
 /* --- GENERAL TEXT SECTION (כרטיס 2 - פרוטוקול) --- */
 
 .general-text-section {
-    /* מבטל הגדרות Flexbox שהפריעו */
     padding: 60px 5%;
     min-height: auto;
 }
 
 .general-text-section .text-block {
-    text-align: right; /* היישור הנדרש */
-    max-width: 950px; /* רוחב מוגדל */
+    text-align: center; /* ריכוז כל התוכן בבלוק */
+    max-width: 950px;
     margin: 0 auto;
     padding: 0; 
+}
+
+.general-text-section h2, 
+.general-text-section h3, 
+.general-text-section p {
+    text-align: center; /* ודא שכל הפסקאות והכותרות ממורכזות */
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .general-text-section h2 {
@@ -163,36 +170,45 @@ section {
 }
 
 .general-text-section p {
-    margin-bottom: 25px; /* רווח נוסף לפני הכפתור */
+    margin-bottom: 25px;
     font-size: 1em;
-    text-align: right; /* הטקסט מיושר לימין */
 }
 
-/* רשימות (בולטים) */
+/* רשימות (בולטים) - תיקון יישור לריכוז */
 .general-text-section ul {
     list-style: none;
     padding-right: 0;
     margin-bottom: 30px;
+    /* מרכוז הבלוק של ה-UL עצמו */
+    width: fit-content; 
+    margin: 0 auto 30px auto; 
+    text-align: right;
 }
+
 .general-text-section li {
     position: relative;
-    padding-right: 1.5em;
+    /* הוספת רווח פנימי שמאלי במקום ימני ב-RTL */
+    padding-left: 1.5em; 
+    padding-right: 0;
     margin-bottom: 12px;
+    text-align: right; /* שומר על כיוון הטקסט בתוך הפריט */
 }
+
 .general-text-section li::before {
     content: "✔️";
     color: #A3712E;
     font-weight: bold;
     position: absolute;
+    /* מיקום הבולט בצד ימין כשהפריט מיושר ימינה */
     right: 0;
+    left: auto;
     top: 0;
 }
 
-/* הכפתור בכרטיס 2 - מיושר יחד עם הטקסט לימין */
+/* הכפתור בכרטיס 2 - יישור אוטומטי למרכז */
 .secondary-section-cta {
-    margin-top: 10px; /* רווח נכון */
+    margin-top: 10px;
 }
-
 
 /* --- HOW-TO SECTION (כרטיס 3 - תיקון מילוי מלא) --- */
 .how-to-section {
