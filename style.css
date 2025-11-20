@@ -1,572 +1,286 @@
 /* הגדרות בסיסיות ואיפוס */
-
 * {
-
     box-sizing: border-box;
-
     margin: 0;
-
     padding: 0;
-
     font-family: 'Rubik', sans-serif;
-
 }
-
-
 
 body {
-
     font-family: 'Rubik', sans-serif;
-
     color: #333; 
-
     line-height: 1.7; 
-
     background-color: #ffffff;
-
     direction: rtl;
-
     padding-top: 65px; /* רווח לתפריט הקבוע */
-
 }
-
-
 
 /* --- HEADER & NAVIGATION (תפריט עליון קבוע) --- */
-
 header {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     padding: 8px 5%;
-
     background-color: #5A3B33;
-
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-
     position: fixed;
-
     top: 0;
-
     left: 0;
-
     right: 0;
-
     z-index: 1000;
-
     height: 65px; 
-
 }
-
-
 
 .logo, .header-right-side {
-
     display: flex;
-
     align-items: center;
-
     margin: 0;
-
 }
-
-
 
 .logo a, .lupa-logo {
-
     display: flex;
-
     align-items: center;
-
     text-decoration: none;
-
     font-size: 1.5em;
-
     font-weight: 700;
-
     color: #D4AF37 !important; /* צבע הלוגו - זהב */
-
 }
-
-
 
 .nav-links {
-
     display: flex;
-
     justify-content: flex-start;
-
     align-items: center;
-
     margin-right: 0;
-
     padding-right: 15px;
-
 }
-
-
 
 .nav-links a {
-
     text-decoration: none;
-
     color: #F0F0F0;
-
     margin-right: 20px;
-
     margin-left: 0;
-
     font-weight: 500;
-
     font-size: 1em;
-
     transition: color 0.3s;
-
 }
-
-
 
 .nav-links a:hover {
-
     color: #FFC04D;
-
 }
-
-
-
 
 
 /* --- HERO SECTION (כרטיס 1) וכללי סקשנים --- */
-
 section {
-
     padding: 60px 5%; /* ריווח ברירת מחדל */
-
 }
-
-
 
 .hero-section.focus-hero {
-
     background-image: url('images/diary_1200x400.png');
-
     background-size: cover;
-
     background-position: center center;
-
     min-height: 500px;
-
     display: flex;
-
     align-items: center;
-
     position: relative;
-
 }
-
-
 
 .hero-section.focus-hero::before {
-
     content: '';
-
     position: absolute;
-
     top: 0;
-
     left: 0;
-
     width: 100%;
-
     height: 100%;
-
     background-color: rgba(90, 59, 51, 0.35);
-
     z-index: 1;
-
 }
-
-
 
 .hero-content {
-
     position: relative;
-
     z-index: 2;
-
     color: #ffffff;
-
     text-align: right;
-
     margin-right: 0;
-
     width: auto;
-
     max-width: 600px;
-
     padding: 20px;
-
 }
-
-
 
 .hero-title {
-
     font-size: 2.5em;
-
     font-weight: 900;
-
     margin-bottom: 15px;
-
     line-height: 1.1;
-
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-
 }
-
-
 
 .hero-subtitle {
-
     font-size: 1.2em;
-
     font-weight: 400;
-
     margin-bottom: 30px;
-
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-
 }
-
-
 
 /* כפתור CTA ראשי */
-
 .primary-cta {
-
     display: inline-block;
-
     padding: 15px 35px;
-
     background-color: #A3712E;
-
     color: #fff;
-
     text-decoration: none;
-
     border-radius: 50px;
-
     font-weight: 600;
-
     font-size: 1.1em;
-
     transition: background-color 0.3s;
-
     margin-top: 1.5em;
-
 }
-
-
 
 .primary-cta:hover {
-
     background-color: #8D5D25;
-
 }
-
-
-
 
 
 /* --- GENERAL TEXT SECTION (כרטיס 2 - פרוטוקול) --- */
 
-
-
 .general-text-section {
-
     /* מבטל הגדרות Flexbox שהפריעו */
-
     padding: 60px 5%;
-
     min-height: auto;
-
 }
-
-
 
 .general-text-section .text-block {
-
     text-align: right; /* היישור הנדרש */
-
     max-width: 950px; /* רוחב מוגדל */
-
     margin: 0 auto;
-
     padding: 0; 
-
 }
-
-
 
 .general-text-section h2 {
-
     font-size: 2em;
-
     font-weight: 700;
-
     margin-bottom: 25px;
-
     color: #5A3B33;
-
 }
-
-
 
 .general-text-section p {
-
     margin-bottom: 25px; /* רווח נוסף לפני הכפתור */
-
     font-size: 1em;
-
     text-align: right; /* הטקסט מיושר לימין */
-
 }
-
-
 
 /* רשימות (בולטים) */
-
 .general-text-section ul {
-
     list-style: none;
-
     padding-right: 0;
-
     margin-bottom: 30px;
-
 }
-
 .general-text-section li {
-
     position: relative;
-
     padding-right: 1.5em;
-
     margin-bottom: 12px;
-
 }
-
 .general-text-section li::before {
-
     content: "✔️";
-
     color: #A3712E;
-
     font-weight: bold;
-
     position: absolute;
-
     right: 0;
-
     top: 0;
-
 }
-
-
 
 /* הכפתור בכרטיס 2 - מיושר יחד עם הטקסט לימין */
-
 .secondary-section-cta {
-
     margin-top: 10px; /* רווח נכון */
-
 }
-
-
-
 
 
 /* --- HOW-TO SECTION (כרטיס 3 - תיקון מילוי מלא) --- */
-
 .how-to-section {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: stretch; /* מותח את הילדים לגובה אחיד */
-
     text-align: right;
-
     background-color: #f0f0f0;
 
-
-
     /* התיקונים למילוי קצוות: */
-
     padding: 0; /* מוריד שוליים מהסקשן כולו */
-
     min-height: 400px;
-
 }
-
-
 
 .how-to-content {
-
     width: 50%;
-
     padding: 60px 5%; /* מחזיר ריווח רק לתוכן הטקסט */
-
 }
-
-
 
 .album-open-mockup {
-
     width: 40%;
-
     min-height: 100%; /* מוודא שהדיב מותח את עצמו לגובה המקסימלי */
-
     overflow: hidden;
-
 }
-
-
 
 .album-open-mockup img {
-
     width: 100%;
-
     height: 100%;
-
     object-fit: cover; /* מילוי מלא ללא שוליים */
-
     display: block;
-
     border-radius: 0;
-
 }
-
-
-
 
 
 /* --- FOOTER --- */
-
 footer {
-
     background-color: #333;
-
     color: #ccc;
-
     padding: 30px 5%;
-
     text-align: center;
-
 }
-
-
 
 .footer-content {
-
     display: block;
-
     max-width: 1200px;
-
     margin: 0 auto;
-
 }
-
-
 
 .footer-links {
-
     margin-bottom: 15px;
-
 }
-
-
 
 .footer-links a {
-
     color: #ccc;
-
     text-decoration: none;
-
     margin-right: 15px;
-
     margin-left: 0;
-
     transition: color 0.3s;
-
 }
-
-
 
 .footer-links a:hover {
-
     color: #FFC04D;
-
 }
-
-
 
 /* --- התאמה למובייל --- */
-
 @media (max-width: 768px) {
-
     .nav-links {
-
         display: none;
-
     }
-
     
-
     .hero-content {
-
         width: 100%;
-
         margin-right: 0;
-
         padding: 0 5%;
-
         text-align: center;
-
         max-width: none;
-
     }
-
     
-
     .hero-title {
-
         font-size: 2em;
-
     }
-
-
 
     .how-to-section {
-
         flex-direction: column;
-
     }
-
-
 
     .how-to-content, .album-open-mockup {
-
         width: 100%;
-
         margin-bottom: 20px;
-
     }
-
 }
-
