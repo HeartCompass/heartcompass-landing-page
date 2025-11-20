@@ -159,15 +159,10 @@ section {
 }
 
 .general-text-section .text-block {
-    text-align: center; /* תיקון קריטי: מרכוז כללי לטקסט ולכפתור */
+    text-align: center; /* תיקון: מרכוז כללי לטקסט ולכפתור */
     max-width: 950px;
     margin: 0 auto;
     padding: 0; 
-}
-
-/* כלל חדש: צמצום הריווח של הפסקה הספציפית שמעל הכפתור */
-.general-text-section .text-block p:last-of-type {
-    margin-bottom: 5px; /* הקטנת הריווח התחתון של הפסקה האחרונה */
 }
 
 .general-text-section h2, 
@@ -197,8 +192,8 @@ section {
     border-radius: 10px;
     padding: 30px;
     max-width: 400px;
-    margin: 30px auto; 
-    text-align: center; 
+    margin: 30px auto; /* מרכוז הריבוע בתוך הבלוק המרכזי */
+    text-align: center; /* חיוני למרכוז הכפתור (inline-block) */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -277,7 +272,7 @@ section {
 
 .how-to-content {
     width: 50%;
-    /* תיקון פריסה ומרכוז: הזזה שמאלה (10%) ומרכוז הטקסט בתוך הבלוק */
+    /* תיקון קריטי: הזזה שמאלה (10%) ומרכוז הטקסט בתוך הבלוק */
     margin-left: 10%; /* הזזה שמאלה (3 טאבים) */
     padding: 60px 5%; 
     text-align: center; /* מרכוז הטקסט והכפתורים שבתוך הבלוק */
