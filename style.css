@@ -256,14 +256,33 @@ footer {
 }
 
 .footer-content {
-    display: block;
+    /* שינוי עיקרי: מפעילים Flexbox */
+    display: flex;
+    /* מיישרים את הילדים לשני הצדדים של הבלוק */
+    justify-content: space-between; 
+    /* ממקמים אנכית במרכז */
+    align-items: center; 
+    
     max-width: 1200px;
     margin: 0 auto;
+    /* יש לבטל את הכלל הישן: display: block; */
 }
 
 .footer-links {
-    margin-bottom: 15px;
+    margin-bottom: 0; /* מוריד את הריווח התחתון המיותר */
 }
+
+/* מוסיפים כלל כדי להבטיח שבמובייל זה יחזור לשתי שורות */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* מחזיר אותם לעמודה */
+        align-items: center;
+    }
+    .footer-links {
+        margin-bottom: 15px; /* מחזיר את הרווח בין הקישורים לקופירייט */
+    }
+}
+/* כל שאר קוד ה-footer נשאר זהה */
 
 .footer-links a {
     color: #ccc;
