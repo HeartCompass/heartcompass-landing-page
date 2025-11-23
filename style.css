@@ -12,7 +12,7 @@ body {
     line-height: 1.7; 
     background-color: #ffffff;
     direction: rtl;
-    padding-top: 0; /* תיקון קריטי: הסרת הפס הלבן */
+    padding-top: 65px; /* רווח לתפריט הקבוע */
 }
 
 /* --- HEADER & NAVIGATION (תפריט עליון קבוע) --- */
@@ -28,7 +28,7 @@ header {
     left: 0;
     right: 0;
     z-index: 1000;
-    height: 90px; /* תיקון: גובה האדר מוגדל כדי להכיל לוגו גדול יותר */
+    height: 65px; /* חזרה לגובה המקורי */
 }
 
 .logo {
@@ -37,11 +37,11 @@ header {
     margin: 0;
 }
 
-/* הגדרות הלוגו החדש: תמונה */
+/* ביטול הגדרות התמונה הלוגו - חזרה לטקסט המקורי */
 .logo img {
-    height: 75px; /* תיקון: גובה הלוגו מוגדל משמעותית */
-    width: auto; /* רוחב אוטומטי כדי לשמור על יחס תמונה */
-    margin-left: 5px; /* קירוב לטקסט */
+    height: auto; 
+    width: auto; 
+    margin-left: 0; 
 }
 
 .logo a, .lupa-logo {
@@ -82,8 +82,6 @@ section {
 }
 
 .hero-section.focus-hero {
-    /* תיקון קריטי: דחיפת הסקשן מתחת להאדר הקבוע (90px) */
-    margin-top: 90px; 
     background-image: url('images/diary_1200x400.png');
     background-size: cover;
     background-position: center center;
