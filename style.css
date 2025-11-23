@@ -28,7 +28,7 @@ header {
     left: 0;
     right: 0;
     z-index: 1000;
-    height: 65px; 
+    height: 170px; /* תיקון: גובה ההאדר מוגדל */
 }
 
 .logo {
@@ -39,9 +39,9 @@ header {
 
 /* הגדרות הלוגו החדש: תמונה */
 .logo img {
-    height: 50px; /* תיקון: הקטנה ל-50px */
+    height: 150px; /* תיקון: גובה פי 3 (150px) */
     width: auto; /* רוחב אוטומטי כדי לשמור על יחס תמונה */
-    margin-left: 5px; /* תיקון: קירוב לטקסט (2 רווחים ויזואליים) */
+    margin-left: 5px; /* קירוב לטקסט */
 }
 
 .logo a, .lupa-logo {
@@ -82,6 +82,8 @@ section {
 }
 
 .hero-section.focus-hero {
+    /* תיקון: דחיפת הסקשן מתחת להאדר החדש */
+    margin-top: 170px; 
     background-image: url('images/diary_1200x400.png');
     background-size: cover;
     background-position: center center;
@@ -371,9 +373,11 @@ footer {
     .hero-title {
         font-size: 2em;
     }
-
+    
+    /* תיקון: דחיפת הסקשן מתחת להאדר המוגדל במובייל */
     .how-to-section {
         flex-direction: column;
+        margin-top: 170px;
     }
 
     .how-to-content, .album-open-mockup {
