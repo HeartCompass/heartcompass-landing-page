@@ -28,7 +28,7 @@ header {
     left: 0;
     right: 0;
     z-index: 1000;
-    height: 65px; /* חזרה לגובה המקורי */
+    height: 65px; 
 }
 
 .logo {
@@ -37,11 +37,11 @@ header {
     margin: 0;
 }
 
-/* ביטול הגדרות התמונה הלוגו - חזרה לטקסט המקורי */
+/* הגדרות הלוגו (אם הייתם משתמשים בתמונה) */
 .logo img {
-    height: auto; 
+    height: 40px; 
     width: auto; 
-    margin-left: 0; 
+    margin-left: 5px; 
 }
 
 .logo a, .lupa-logo {
