@@ -28,7 +28,7 @@ header {
     left: 0;
     right: 0;
     z-index: 1000;
-    height: 65px; 
+    height: 90px; /* תיקון: גובה האדר מוגדל כדי להכיל לוגו גדול יותר */
 }
 
 .logo {
@@ -39,7 +39,7 @@ header {
 
 /* הגדרות הלוגו החדש: תמונה */
 .logo img {
-    height: 60px; /* גובה מותאם להאדר (60px) */
+    height: 75px; /* תיקון: גובה הלוגו מוגדל משמעותית */
     width: auto; /* רוחב אוטומטי כדי לשמור על יחס תמונה */
     margin-left: 5px; /* קירוב לטקסט */
 }
@@ -82,8 +82,8 @@ section {
 }
 
 .hero-section.focus-hero {
-    /* תיקון קריטי: דחיפת הסקשן מתחת להאדר הקבוע */
-    margin-top: 65px; 
+    /* תיקון קריטי: דחיפת הסקשן מתחת להאדר הקבוע (90px) */
+    margin-top: 90px; 
     background-image: url('images/diary_1200x400.png');
     background-size: cover;
     background-position: center center;
