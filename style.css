@@ -12,7 +12,7 @@ body {
     line-height: 1.7; 
     background-color: #ffffff;
     direction: rtl;
-    padding-top: 65px; /* רווח לתפריט הקבוע */
+    padding-top: 0; /* תיקון קריטי: הסרת הפס הלבן */
 }
 
 /* --- HEADER & NAVIGATION (תפריט עליון קבוע) --- */
@@ -28,7 +28,7 @@ header {
     left: 0;
     right: 0;
     z-index: 1000;
-    height: 85px; /* תיקון: גובה ההאדר מותאם ל-78px */
+    height: 65px; 
 }
 
 .logo {
@@ -39,7 +39,7 @@ header {
 
 /* הגדרות הלוגו החדש: תמונה */
 .logo img {
-    height: 78px; /* תיקון: גובה מוגדל ב-30% (78px) */
+    height: 60px; /* גובה מותאם להאדר (60px) */
     width: auto; /* רוחב אוטומטי כדי לשמור על יחס תמונה */
     margin-left: 5px; /* קירוב לטקסט */
 }
@@ -82,8 +82,8 @@ section {
 }
 
 .hero-section.focus-hero {
-    /* דחיפת הסקשן מתחת להאדר המוגדל */
-    margin-top: 85px; 
+    /* תיקון קריטי: דחיפת הסקשן מתחת להאדר הקבוע */
+    margin-top: 65px; 
     background-image: url('images/diary_1200x400.png');
     background-size: cover;
     background-position: center center;
@@ -281,7 +281,7 @@ section {
 
 .how-to-content {
     width: 50%;
-    /* תיקון פריסה ומרכוז: הזזה שמאלה (10%) ומרכוז הטקסט בתוך הבלוק */
+    /* תיקון קריטי: הזזה שמאלה (10%) ומרכוז הטקסט בתוך הבלוק */
     margin-left: 10%; /* הזזה שמאלה (3 טאבים) */
     padding: 60px 5%; 
     text-align: center; /* מרכוז הטקסט והכפתורים שבתוך הבלוק */
