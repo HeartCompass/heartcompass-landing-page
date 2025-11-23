@@ -141,13 +141,13 @@ section {
 
 /* תיקון קריטי: הקטנת גודל הכפתור בכרטיס 2 והמרכזתו (רוחב טקסט) */
 .secondary-section-cta {
-    display: inline-block; 
+    display: inline-block; /* הופך ל-inline-block כדי שיתאים לרוחב הטקסט */
     margin-top: 10px; 
     margin-bottom: 0; 
     margin-right: auto; 
     margin-left: auto; 
-    font-size: 1em; 
-    padding: 10px 25px; 
+    font-size: 1em; /* הקטנה לגודל טקסט רגיל */
+    padding: 10px 25px; /* הקטנת הריווח הפנימי */
 }
 
 
@@ -192,8 +192,8 @@ section {
     border-radius: 10px;
     padding: 30px;
     max-width: 400px;
-    margin: 30px auto; 
-    text-align: center; 
+    margin: 30px auto; /* מרכוז הריבוע בתוך הבלוק המרכזי */
+    text-align: center; /* חיוני למרכוז הכפתור (inline-block) */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -271,25 +271,27 @@ section {
 }
 
 .how-to-content {
-    /* הגדלת הרוחב והקטנת רוחב התמונה כדי לפנות מקום להזזה */
-    width: 60%;
+    width: 50%;
+    /* תיקון: הזזה שמאלה (10%) ומרכוז הטקסט בתוך הבלוק */
+    margin-left: 10%; /* הזזה שמאלה (3 טאבים) */
+    padding: 60px 5%; 
+    text-align: center; /* מרכוז הטקסט והכפתורים שבתוך הבלוק */
     
-    /* הזזה פנימה: שימוש ב-padding-left כדי לדחוף את התוכן פנימה ב-RTL */
-    padding: 60px 5%; /* ריווח רגיל */
-    padding-left: 10%; /* דוחף פנימה (שמאלה) ב-10% */
-    
-    text-align: center; 
     display: block; 
-    margin-left: 0; /* מבטל את ה-margin הבעייתי */
 }
 
 /* מרכוז סופי של כל הטקסט בתוך HOW-TO-CONTENT */
-.how-to-content h2,
+.how-to-content h2 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 95%; /* שינוי: מאפשר לכותרת להיות רחבה יותר (שורה אחת) */
+}
 .how-to-content p {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    max-width: 400px; 
+    max-width: 400px; /* שומר על רוחב קריאה לפסקאות */
 }
 .how-to-content .pricing-box {
     margin-left: auto; 
@@ -300,16 +302,15 @@ section {
 
 
 .album-open-mockup {
-    /* הקטנת רוחב התמונה כדי לפנות מקום להזזה */
     width: 40%;
-    min-height: 100%; 
+    min-height: 100%; /* מוודא שהדיב מותח את עצמו לגובה המקסימלי */
     overflow: hidden;
 }
 
 .album-open-mockup img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover; /* מילוי מלא ללא שוליים */
     display: block;
     border-radius: 0;
 }
