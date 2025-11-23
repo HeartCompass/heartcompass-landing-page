@@ -28,7 +28,7 @@ header {
     left: 0;
     right: 0;
     z-index: 1000;
-    height: 65px; 
+    height: 65px; /* גובה האדר המקורי */
 }
 
 .logo {
@@ -37,11 +37,13 @@ header {
     margin: 0;
 }
 
-/* הגדרות הלוגו (אם הייתם משתמשים בתמונה) */
+/* הגדרות הלוגו (תמונה) */
 .logo img {
-    height: 40px; 
+    height: 60px; /* גובה מותאם להאדר (60px) */
     width: auto; 
-    margin-left: 5px; 
+    /* אם הלוגו הוא רק תמונה, נוריד את המרווח הצידי */
+    margin-right: 0;
+    margin-left: 0; 
 }
 
 .logo a, .lupa-logo {
