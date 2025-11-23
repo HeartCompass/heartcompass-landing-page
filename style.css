@@ -28,10 +28,10 @@ header {
     left: 0;
     right: 0;
     z-index: 1000;
-    height: 65px; 
+    height: 85px; /* תיקון: גובה ההאדר מותאם ל-78px */
 }
 
-.logo, .header-right-side {
+.logo {
     display: flex;
     align-items: center;
     margin: 0;
@@ -39,7 +39,7 @@ header {
 
 /* הגדרות הלוגו החדש: תמונה */
 .logo img {
-    height: 60px; /* גובה מותאם להאדר (60px) */
+    height: 78px; /* תיקון: גובה מוגדל ב-30% (78px) */
     width: auto; /* רוחב אוטומטי כדי לשמור על יחס תמונה */
     margin-left: 5px; /* קירוב לטקסט */
 }
@@ -82,6 +82,8 @@ section {
 }
 
 .hero-section.focus-hero {
+    /* דחיפת הסקשן מתחת להאדר המוגדל */
+    margin-top: 85px; 
     background-image: url('images/diary_1200x400.png');
     background-size: cover;
     background-position: center center;
@@ -199,8 +201,8 @@ section {
     border-radius: 10px;
     padding: 30px;
     max-width: 400px;
-    margin: 30px auto; /* מרכוז הריבוע בתוך הבלוק המרכזי */
-    text-align: center; /* חיוני למרכוז הכפתור (inline-block) */
+    margin: 30px auto; 
+    text-align: center; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -279,14 +281,11 @@ section {
 
 .how-to-content {
     width: 50%;
-    /* ביטול margin-left הבעייתי והחלפתו ב-padding-left מוגדל (כפיית הזזה) */
-    margin-left: 0; 
-    
-    /* שינוי קריטי: דוחף את התוכן פנימה (שמאלה) בערך מוחלט גדול */
-    padding: 60px 5%; /* ריווח קלאסי */
-    padding-left: 100px; /* דחיפה פנימית שמאלה (טאב) */
-
+    /* תיקון פריסה ומרכוז: הזזה שמאלה (10%) ומרכוז הטקסט בתוך הבלוק */
+    margin-left: 10%; /* הזזה שמאלה (3 טאבים) */
+    padding: 60px 5%; 
     text-align: center; /* מרכוז הטקסט והכפתורים שבתוך הבלוק */
+    
     display: block; 
 }
 
