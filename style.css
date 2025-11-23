@@ -39,7 +39,7 @@ header {
 
 /* הגדרות הלוגו החדש: תמונה */
 .logo img {
-    height: 40px; /* גובה קבוע, מותאם לגובה ההאדר */
+    height: 200px; /* תיקון: גובה פי 5 (200px במקום 40px) */
     width: auto; /* רוחב אוטומטי כדי לשמור על יחס תמונה */
     margin-left: 10px; /* ריווח קטן מהטקסט "Lupa" */
 }
@@ -199,8 +199,8 @@ section {
     border-radius: 10px;
     padding: 30px;
     max-width: 400px;
-    margin: 30px auto; /* מרכוז הריבוע בתוך הבלוק המרכזי */
-    text-align: center; /* חיוני למרכוז הכפתור (inline-block) */
+    margin: 30px auto; 
+    text-align: center; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -278,33 +278,23 @@ section {
 }
 
 .how-to-content {
-    /* חזרה לרוחב 50% */
     width: 50%;
-    
-    /* תיקון קריטי: הזזה שמאלה (10% = טאב) */
-    margin-left: 10%; 
-    
+    /* תיקון: הזזה שמאלה (10%) ומרכוז הטקסט בתוך הבלוק */
+    margin-left: 10%; /* הזזה שמאלה (3 טאבים) */
     padding: 60px 5%; 
     text-align: center; /* מרכוז הטקסט והכפתורים שבתוך הבלוק */
+    
     display: block; 
 }
 
 /* מרכוז סופי של כל הטקסט בתוך HOW-TO-CONTENT */
-.how-to-content h2 {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    /* תיקון שבירת שורה בכותרת */
-    max-width: 95%; 
-}
+.how-to-content h2,
 .how-to-content p {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    /* שמירה על רוחב קריאה לפסקאות */
-    max-width: 400px; 
+    max-width: 400px; /* מונע שבירת שורה בטקסט הארוך */
 }
-
 .how-to-content .pricing-box {
     margin-left: auto; 
     margin-right: auto;
@@ -314,7 +304,6 @@ section {
 
 
 .album-open-mockup {
-    /* חזרה לרוחב 40% */
     width: 40%;
     min-height: 100%; /* מוודא שהדיב מותח את עצמו לגובה המקסימלי */
     overflow: hidden;
