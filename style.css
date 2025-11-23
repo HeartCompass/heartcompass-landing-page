@@ -28,7 +28,8 @@ header {
     left: 0;
     right: 0;
     z-index: 1000;
-    height: 65px; 
+    /* הגדלת גובה ההאדר כדי להכיל את הלוגו המוגדל */
+    height: 220px; 
 }
 
 .logo {
@@ -39,9 +40,9 @@ header {
 
 /* הגדרות הלוגו החדש: תמונה */
 .logo img {
-    height: 50px; /* תיקון: הקטנה ל-50px */
+    height: 200px; /* תיקון: גובה פי 4 (200px במקום 50px) */
     width: auto; /* רוחב אוטומטי כדי לשמור על יחס תמונה */
-    margin-left: 5px; /* תיקון: קירוב לטקסט (2 רווחים ויזואליים) */
+    margin-left: 5px; /* קירוב לטקסט */
 }
 
 .logo a, .lupa-logo {
@@ -82,6 +83,8 @@ section {
 }
 
 .hero-section.focus-hero {
+    /* הוספת שוליים עליונים כדי להתחיל מתחת להדר המוגדל */
+    margin-top: 220px; 
     background-image: url('images/diary_1200x400.png');
     background-size: cover;
     background-position: center center;
