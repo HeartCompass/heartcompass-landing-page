@@ -141,13 +141,13 @@ section {
 
 /* תיקון קריטי: הקטנת גודל הכפתור בכרטיס 2 והמרכזתו (רוחב טקסט) */
 .secondary-section-cta {
-    display: inline-block; 
+    display: inline-block; /* *תיקון: הופך ל-inline-block כדי שיתאים לרוחב הטקסט* */
     margin-top: 10px; 
     margin-bottom: 0; 
     margin-right: auto; 
     margin-left: auto; 
-    font-size: 1em; 
-    padding: 10px 25px; 
+    font-size: 1em; /* הקטנה לגודל טקסט רגיל */
+    padding: 10px 25px; /* הקטנת הריווח הפנימי */
 }
 
 
@@ -192,8 +192,8 @@ section {
     border-radius: 10px;
     padding: 30px;
     max-width: 400px;
-    margin: 30px auto; 
-    text-align: center; 
+    margin: 30px auto; /* מרכוז הריבוע בתוך הבלוק המרכזי */
+    text-align: center; /* חיוני למרכוז הכפתור (inline-block) */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -272,8 +272,8 @@ section {
 
 .how-to-content {
     width: 50%;
-    /* תיקון קריטי: הזזה שמאלה (2% = טאב קטן) ומרכוז הטקסט בתוך הבלוק */
-    margin-left: 2%; /* הזזה שמאלה */
+    /* תיקון קריטי: הזזה שמאלה (10%) ומרכוז הטקסט בתוך הבלוק */
+    margin-left: 10%; /* הזזה שמאלה (3 טאבים) */
     padding: 60px 5%; 
     text-align: center; /* מרכוז הטקסט והכפתורים שבתוך הבלוק */
     
@@ -286,7 +286,7 @@ section {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    max-width: 400px; /* מונע שבירת שורה בטקסט הארוך */
+    max-width: 95%; /* ביטול האילוץ של 400px כדי למנוע שבירת שורה */
 }
 .how-to-content .pricing-box {
     margin-left: auto; 
