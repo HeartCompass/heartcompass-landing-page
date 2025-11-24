@@ -1,392 +1,789 @@
 /* הגדרות בסיסיות ואיפוס */
+
 * {
+
     box-sizing: border-box;
+
     margin: 0;
+
     padding: 0;
+
     font-family: 'Rubik', sans-serif;
+
 }
+
+
 
 body {
+
     font-family: 'Rubik', sans-serif;
+
     color: #333; 
+
     line-height: 1.7; 
+
     background-color: #ffffff;
+
     direction: rtl;
+
     padding-top: 65px; /* רווח לתפריט הקבוע */
+
 }
+
+
 
 /* --- HEADER & NAVIGATION (תפריט עליון קבוע) --- */
+
 header {
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     padding: 8px 5%;
+
     background-color: #5A3B33;
+
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
     position: fixed;
+
     top: 0;
+
     left: 0;
+
     right: 0;
+
     z-index: 1000;
+
     height: 65px; 
+
 }
+
+
 
 .logo {
+
     display: flex;
+
     align-items: center;
+
     margin: 0;
+
 }
+
+
 
 /* הגדרות הלוגו (תמונה) */
+
 .logo img {
+
     height: 40px; 
+
     width: auto; 
+
     margin-left: 5px; 
+
 }
+
+
 
 .logo a, .lupa-logo {
+
     display: flex;
+
     align-items: center;
+
     text-decoration: none;
+
     font-size: 1.5em;
+
     font-weight: 700;
+
     color: #D4AF37 !important; /* צבע הלוגו - זהב */
+
 }
+
+
 
 .nav-links {
+
     display: flex;
+
     justify-content: flex-start;
+
     align-items: center;
+
     margin-right: 0;
+
     padding-right: 15px;
+
 }
+
+
 
 .nav-links a {
+
     text-decoration: none;
+
     color: #F0F0F0;
+
     margin-right: 20px;
+
     margin-left: 0;
+
     font-weight: 500;
+
     font-size: 1em;
+
     transition: color 0.3s;
+
 }
 
+
+
 .nav-links a:hover {
+
     color: #FFC04D;
+
 }
+
+
+
 
 
 /* --- HERO SECTION (כרטיס 1) וכללי סקשנים --- */
+
 section {
+
     padding: 60px 5%; /* ריווח ברירת מחדל */
+
 }
+
+
 
 .hero-section.focus-hero {
+
     background-image: url('images/diary_1200x400.png');
+
     background-size: cover;
+
     background-position: center center;
+
     min-height: 500px;
+
     display: flex;
+
     align-items: center;
+
     position: relative;
+
 }
+
+
 
 .hero-section.focus-hero::before {
+
     content: '';
+
     position: absolute;
+
     top: 0;
+
     left: 0;
+
     width: 100%;
+
     height: 100%;
+
     background-color: rgba(90, 59, 51, 0.35);
+
     z-index: 1;
+
 }
+
+
 
 .hero-content {
+
     position: relative;
+
     z-index: 2;
+
     color: #ffffff;
+
     text-align: right;
+
     margin-right: 0;
+
     width: auto;
+
     max-width: 600px;
+
     padding: 20px;
+
 }
+
+
 
 .hero-title {
+
     font-size: 2.5em;
+
     font-weight: 900;
+
     margin-bottom: 15px;
+
     line-height: 1.1;
+
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+
 }
+
+
 
 .hero-subtitle {
+
     font-size: 1.2em;
+
     font-weight: 400;
+
     margin-bottom: 30px;
+
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+
 }
+
+
 
 /* כפתור CTA ראשי */
+
 .primary-cta {
+
     display: inline-block;
+
     padding: 15px 35px;
+
     background-color: #A3712E;
+
     color: #fff;
+
     text-decoration: none;
+
     border-radius: 50px;
+
     font-weight: 600;
+
     font-size: 1.1em;
+
     transition: background-color 0.3s;
+
     margin-top: 1.5em;
+
 }
+
+
 
 .primary-cta:hover {
+
     background-color: #8D5D25;
+
 }
 
+
+
 /* תיקון קריטי: הקטנת גודל הכפתור בכרטיס 2 והמרכזתו (רוחב טקסט) */
+
 .secondary-section-cta {
+
     display: inline-block; /* הופך ל-inline-block כדי שיתאים לרוחב הטקסט */
+
     margin-top: 10px; 
+
     margin-bottom: 0; 
+
     margin-right: auto; 
+
     margin-left: auto; 
+
     font-size: 1em; /* הקטנה לגודל טקסט רגיל */
+
     padding: 10px 25px; /* הקטנת הריווח הפנימי */
+
 }
+
+
+
 
 
 /* --- GENERAL TEXT SECTION (כרטיס 2 - הפרוטוקול) --- */
 
+
+
 .general-text-section {
+
     padding: 60px 5%;
+
     min-height: auto;
+
 }
+
+
 
 .general-text-section .text-block {
+
     text-align: center; /* תיקון: מרכוז כללי לטקסט ולכפתור */
+
     max-width: 950px;
+
     margin: 0 auto;
+
     padding: 0; 
+
 }
+
+
 
 .general-text-section h2, 
+
 .general-text-section h3, 
+
 .general-text-section p {
+
     text-align: center; /* תיקון: ודא שכל הפסקאות והכותרות ממורכזות */
+
     margin-right: auto;
+
     margin-left: auto;
+
 }
+
+
 
 .general-text-section h2 {
+
     font-size: 2em;
+
     font-weight: 700;
+
     margin-bottom: 25px;
+
     color: #5A3B33;
+
 }
+
+
 
 .general-text-section p {
+
     margin-bottom: 25px;
+
     font-size: 1em;
+
 }
+
+
 
 /* הגדרות תיבת התמחור (pricing-box) */
+
 .pricing-box {
+
     background-color: #ffffff;
+
     border: 2px solid #A3712E;
+
     border-radius: 10px;
+
     padding: 30px;
+
     max-width: 400px;
-    margin: 30px auto; 
-    text-align: center; 
+
+    margin: 30px auto; /* מרכוז הריבוע בתוך הבלוק המרכזי */
+
+    text-align: center; /* חיוני למרכוז הכפתור (inline-block) */
+
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
+
+
 
 .pricing-box h3 {
+
     font-size: 1.8em;
+
     color: #5A3B33;
+
     margin-bottom: 15px;
+
 }
+
+
 
 .pricing-details {
+
     font-size: 1em;
+
     color: #666;
+
     margin-bottom: 20px;
+
 }
+
+
 
 /* רשימות (בולטים) - תיקון היישור הסופי והאמין (שיטת Position/Padding) */
+
 .general-text-section ul,
+
 .check-list { 
+
     list-style: none;
+
     padding: 0;
+
     margin: 0 auto 30px auto; 
+
     width: fit-content; 
+
     text-align: right;
+
 }
+
+
 
 .general-text-section li,
+
 .check-list li {
+
     /* הופך את הפריט לבסיס המיקום */
+
     position: relative;
+
     /* תיקון V סופי: מזיז את הטקסט לימין כדי לפנות מקום ל-V */
+
     padding-right: 20px; 
+
     padding-left: 0; 
+
     
+
     margin-bottom: 12px;
+
     display: block; 
+
     text-align: right;
+
     font-size: 1em; 
+
     color: #333;
+
 }
+
+
 
 .general-text-section li strong {
+
     display: inline; 
+
 }
 
+
+
 /* כלל הבולטים הסופי */
+
 .general-text-section li::before,
+
 .check-list li::before {
+
     /* תיקון קריטי V: הוספת תו רווח (unicode) לאחר ה-V */
+
     content: "✔️\0020"; 
+
     color: #A3712E;
+
     font-weight: bold;
+
     
+
     /* מוציאים את הבולט מהזרימה וממקמים אותו בדיוק ב-right: 0 */
+
     position: absolute; 
+
     right: 0;
+
     top: 0;
+
     
+
     margin-left: 0; 
+
     margin-right: 0;
+
     align-self: auto;
+
 }
+
+
+
 
 
 /* --- HOW-TO SECTION (כרטיס 3 - תיקון מילוי מלא) --- */
+
 .how-to-section {
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: stretch; /* מותח את הילדים לגובה אחיד */
+
     text-align: right;
+
     background-color: #f0f0f0;
 
+
+
     /* התיקונים למילוי קצוות: */
+
     padding: 0; 
+
     min-height: 400px;
+
 }
+
+
 
 .how-to-content {
-    width: 50%;
-    /* תיקון קריטי: הזזה שמאלה (10%) ומרכוז הטקסט בתוך הבלוק */
-    margin-left: 10%; /* הזזה שמאלה (3 טאבים) */
-    padding: 60px 5%; 
-    text-align: center; /* מרכוז הטקסט והכפתורים שבתוך הבלוק */
+
+    /* תיקון: הגדלת רוחב התוכן כדי למנוע שבירת שורה */
+
+    width: 60%;
+
     
+
+    /* תיקון: הזזה שמאלה (טאב) - שימוש ב-margin-left */
+
+    margin-left: 10%; 
+
+    padding: 60px 5%; 
+
+    text-align: center; /* מרכוז הטקסט והכפתורים שבתוך הבלוק */
+
+    
+
     display: block; 
+
 }
 
+
+
 /* מרכוז סופי של כל הטקסט בתוך HOW-TO-CONTENT */
+
 .how-to-content h2,
+
 .how-to-content p {
+
     text-align: center;
+
     margin-left: auto;
+
     margin-right: auto;
-    max-width: 400px; /* מונע שבירת שורה בטקסט הארוך */
+
+    max-width: 95%; /* משאיר רוחב גדול מספיק לכותרת */
+
 }
+
 .how-to-content .pricing-box {
+
     margin-left: auto; 
+
     margin-right: auto;
+
     max-width: 90%; 
+
     text-align: center; 
+
 }
+
+
+
 
 
 .album-open-mockup {
-    width: 40%;
+
+    /* צמצום רוחב התמונה כדי לפנות מקום */
+
+    width: 30%;
+
     min-height: 100%; /* מוודא שהדיב מותח את עצמו לגובה המקסימלי */
+
     overflow: hidden;
+
 }
 
+
+
 .album-open-mockup img {
+
     width: 100%;
+
     height: 100%;
+
     object-fit: cover; /* מילוי מלא ללא שוליים */
+
     display: block;
+
     border-radius: 0;
+
 }
+
+
+
 
 
 /* --- FOOTER --- */
+
 footer {
+
     background-color: #333;
+
     color: #ccc;
+
     padding: 30px 5%;
+
     text-align: center;
+
 }
+
+
 
 .footer-content {
+
     /* שינוי עיקרי: מפעילים Flexbox */
+
     display: flex;
+
     /* מיישרים את הילדים לשני הצדדים של הבלוק */
+
     justify-content: space-between; 
+
     /* ממקמים אנכית במרכז */
+
     align-items: center; 
+
     
+
     max-width: 1200px;
+
     margin: 0 auto;
+
 }
+
+
 
 .footer-links {
+
     margin-bottom: 0; /* מוריד את הריווח התחתון המיותר */
+
 }
+
+
 
 .footer-links a {
+
     color: #ccc;
+
     text-decoration: none;
+
     margin-right: 15px;
+
     margin-left: 0;
+
     transition: color 0.3s;
+
 }
+
+
 
 .footer-links a:hover {
+
     color: #FFC04D;
+
 }
 
+
+
 /* --- התאמה למובייל --- */
+
 @media (max-width: 768px) {
+
     .nav-links {
+
         display: none;
+
     }
+
     
+
     .hero-content {
+
         width: 100%;
+
         margin-right: 0;
+
         padding: 0 5%;
+
         text-align: center;
+
         max-width: none;
+
     }
+
     
+
     .hero-title {
+
         font-size: 2em;
+
     }
+
+
 
     .how-to-section {
+
         flex-direction: column;
+
     }
+
+
 
     .how-to-content, .album-open-mockup {
+
         width: 100%;
+
         margin-bottom: 20px;
+
     }
 
+
+
     /* תיקון הפוטר למובייל */
+
     .footer-content {
+
         flex-direction: column; /* מחזיר אותם לעמודה */
+
         align-items: center;
+
     }
+
     .footer-links {
+
         margin-bottom: 15px; /* מחזיר את הרווח בין הקישורים לקופירייט */
+
     }
+
 }
