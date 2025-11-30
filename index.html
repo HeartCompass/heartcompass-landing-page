@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Rubik:wght@300;400;500;600;700;900&display=swap&subset=hebrew" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         /* --- CSS START --- */
@@ -16,282 +16,194 @@
         :root {
             --primary-color: #5D1822; 
             --dark-burgundy: #3E0C12;
-            --text-color: #333;        
-            --gold-color: #D4AF37;      
+            --text-color: #222;        
+            --gold-color: #C5A028; /* זהב מעט יותר כהה לקריאות */
             --bg-light: #ffffff;       
-            --bg-section: #f9f9f9;      
+            --bg-section: #f4f4f4;      
         }
 
-        /* הגדרת בסיס - הכל רוביק */
         body {
-            font-family: 'Rubik', sans-serif; 
+            font-family: 'Assistant', sans-serif; /* פונט יחיד לכל האתר */
             color: var(--text-color);
-            line-height: 1.6; 
+            line-height: 1.4; /* שורות צפופות יותר */
             background-color: var(--bg-light);
             direction: rtl;
-            padding-top: 60px; 
+            padding-top: 50px; 
         }
 
-        /* --- הגדרת הפונט היוקרתי (Frank Ruhl) --- */
-        h1, h2, h3, h4, 
-        .hero-subtitle,
-        .intro,
-        .emotional-title,
-        .quote-text,
-        .mystery-text,
-        .gold-mystery-text,
-        .feature-card h3 {
-            font-family: 'Frank Ruhl Libre', serif;
+        /* טיפוגרפיה */
+        h1, h2, h3, h4 { 
+            font-family: 'Assistant', sans-serif;
+            font-weight: 800; /* כותרות עבות ומרשימות */
+            color: var(--primary-color); 
+            margin-bottom: 10px; /* רווח קטן מתחת לכותרת */
+            line-height: 1.1;
         }
-
-        /* כרטיס אדום - החלה גורפת של הפונט היוקרתי */
-        .solution-card-dark, 
-        .solution-card-dark h3, 
-        .solution-card-dark p, 
-        .solution-card-dark a {
-            font-family: 'Frank Ruhl Libre', serif;
-        }
-
-        h1, h2, h3 { color: var(--primary-color); margin-bottom: 20px; font-weight: 700; }
-        p { margin-bottom: 15px; }
         
-        /* תיקון לכותרת ראשית ברוביק */
-        .hero-title { font-family: 'Rubik', sans-serif; }
+        p { 
+            margin-bottom: 10px; 
+            font-weight: 400;
+            font-size: 1.05rem;
+        }
 
         /* HEADER */
         header {
             display: flex; justify-content: space-between; align-items: center;
             padding: 0 5%; background-color: var(--primary-color); 
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: 60px; 
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: 50px; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
         .logo a {
-            display: flex; align-items: center; text-decoration: none;
-            font-family: 'Rubik', sans-serif;
-            font-size: 1.4em; font-weight: 700; color: var(--gold-color);
+            text-decoration: none; font-size: 1.3em; font-weight: 700; color: var(--gold-color);
+            display: flex; align-items: center;
         }
-        .logo img { height: 35px; width: auto; margin-left: 8px; }
+        .logo img { height: 25px; width: auto; margin-left: 8px; }
 
         .nav-links a {
-            text-decoration: none; color: #F0F0F0; margin-right: 20px;
-            font-weight: 500; font-size: 0.95em; transition: color 0.3s;
-            font-family: 'Rubik', sans-serif;
+            text-decoration: none; color: #fff; margin-right: 15px; font-size: 0.9em; font-weight: 600;
         }
-        .nav-links a:hover { color: #FFC04D; }
 
-        /* HERO SECTION */
-        section { padding: 40px 5%; }
+        /* HERO SECTION - דחוס */
+        section { padding: 30px 5%; /* ריווח אנכי מינימלי */ }
 
         .hero-section.focus-hero {
-            background-color: #3E2B26; min-height: 500px;
+            background-color: #3E2B26; min-height: 400px; /* גובה מופחת */
             display: flex; align-items: center; position: relative; overflow: hidden;
         }
         .hero-bg-img {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover; z-index: 0;
+            object-fit: cover; z-index: 0; opacity: 0.4;
         }
         .hero-section.focus-hero::before {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(90, 59, 51, 0.35); z-index: 1;
+            background-color: rgba(62, 12, 18, 0.6); z-index: 1; /* כהה יותר לקריאות */
         }
         .hero-content {
             position: relative; z-index: 2; color: #ffffff; 
-            text-align: right; margin-right: 0; width: auto; max-width: 700px; padding: 20px;
+            text-align: right; max-width: 650px; padding: 10px;
         }
         .hero-title {
-            font-size: 3em; font-weight: 900; color: #ffffff; 
-            margin-bottom: 15px; line-height: 1.1; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+            font-size: 2.5em; color: #ffffff; margin-bottom: 8px;
         }
         .hero-subtitle {
-            font-size: 1.4em; font-weight: 400; margin-bottom: 30px; 
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); color: #ffffff;
-            font-style: italic; 
+            font-size: 1.2em; font-weight: 300; margin-bottom: 20px; color: #eee;
         }
-        .hero-subtitle strong { font-weight: 700; color: #fff; }
 
         /* BUTTONS */
         .gold-btn {
             background: transparent; border: 2px solid var(--gold-color);
-            display: inline-block; padding: 12px 40px;
-            text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.1em;
-            transition: all 0.3s ease; cursor: pointer;
-            font-family: 'Rubik', sans-serif;
+            display: inline-block; padding: 8px 30px;
+            text-decoration: none; border-radius: 4px; font-weight: 700; font-size: 1em;
+            transition: all 0.2s; color: var(--gold-color);
         }
-        .gold-btn.hero-btn { color: #ffffff; margin-top: 10px; }
-        .gold-btn:hover { 
-            background: linear-gradient(135deg, #B8860B 0%, #FFD700 50%, #B8860B 100%); 
-            color: #3E2B26; border-color: transparent;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6); transform: translateY(-2px);
-        }
+        .gold-btn.hero-btn { color: #ffffff; border-color: #fff; }
+        .gold-btn:hover { background: var(--gold-color); color: #000; border-color: var(--gold-color); }
+        
         .gold-btn-filled {
-            background: linear-gradient(135deg, #B8860B 0%, #FFD700 50%, #B8860B 100%);
-            color: #2A1A1A; display: inline-block; padding: 10px 30px;
-            text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.1em;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-            transition: all 0.3s ease; border: none; cursor: pointer; margin-top: 20px;
-            font-family: 'Rubik', sans-serif;
+            background: var(--gold-color); color: #000; display: inline-block; 
+            padding: 8px 30px; text-decoration: none; border-radius: 4px; 
+            font-weight: 700; font-size: 1em; margin-top: 15px;
         }
-        .gold-btn-filled:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5); }
 
         /* PROBLEM SECTION */
-        .general-text-section { padding: 50px 5%; background-color: #ffffff; }
-        .general-text-section .text-block { text-align: center; max-width: 900px; margin: 0 auto; }
-        .general-text-section h2 { font-size: 2.2em; margin-bottom: 25px; }
-        .general-text-section p.intro { 
-            font-size: 1.3em; margin-bottom: 40px; color: #333; line-height: 1.5;
-            font-family: 'Frank Ruhl Libre', serif;
-        }
+        .general-text-section { padding: 30px 5%; background-color: #ffffff; }
+        .general-text-section .text-block { text-align: center; max-width: 800px; margin: 0 auto; }
+        .general-text-section h2 { font-size: 1.8em; }
+        .general-text-section p.intro { font-size: 1.15em; color: #444; }
 
-        /* SOLUTION CARD (RED) */
+        /* SOLUTION CARD (RED) - הדוק */
         .solution-card-dark {
-            background: linear-gradient(145deg, var(--primary-color) 0%, var(--dark-burgundy) 100%); 
-            padding: 40px; border-radius: 8px; color: #fff;
-            box-shadow: 0 20px 50px rgba(93, 24, 34, 0.2); 
-            position: relative; margin-top: 30px; border: 1px solid rgba(212, 175, 55, 0.2);
-            text-align: center;
-        }
-        .solution-card-dark::before {
-            content: '✦'; font-size: 2em; color: var(--gold-color);
-            position: absolute; top: -25px; left: 50%; transform: translateX(-50%);
-            background: #fff; border-radius: 50%; padding: 5px 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: var(--primary-color); 
+            padding: 25px; border-radius: 6px; color: #fff;
+            margin-top: 20px; text-align: center;
         }
         .solution-card-dark h3 {
-            font-size: 2.2em; color: var(--gold-color); margin-top: 0; margin-bottom: 20px; letter-spacing: 1px;
+            font-size: 1.6em; color: var(--gold-color); margin-bottom: 10px;
         }
         .solution-card-dark p { 
-            font-size: 1.3em; color: #f0f0f0; margin-bottom: 15px; line-height: 1.6;
-            font-weight: 400;
+            font-size: 1.1em; color: #eee; margin-bottom: 10px;
         }
-        .solution-card-dark .highlight { color: #fff; font-weight: 700; border-bottom: 1px solid var(--gold-color); }
+        .solution-card-dark .highlight { color: #fff; font-weight: 700; border-bottom: 2px solid var(--gold-color); }
 
-        /* FEATURES */
-        .features-section { padding: 50px 5%; text-align: center; background-color: var(--bg-section); }
-        .features-intro h2 { font-size: 2.4em; margin-bottom: 5px; color: var(--primary-color); }
-        .features-intro p { font-size: 1.6em; color: #A3712E; margin-bottom: 40px; font-style: italic; font-family: 'Frank Ruhl Libre', serif; }
+        /* FEATURES - צפוף */
+        .features-section { padding: 30px 5%; background-color: var(--bg-section); text-align: center; }
+        .features-intro h2 { font-size: 2em; margin-bottom: 0; }
+        .features-intro p { font-size: 1.3em; color: #886016; margin-bottom: 25px; font-weight: 600; }
+        
         .features-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px; max-width: 1100px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px; max-width: 1000px; margin: 0 auto;
         }
         .feature-card {
-            background: #ffffff; padding: 30px; border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-top: 3px solid var(--gold-color); text-align: right; 
+            background: #ffffff; padding: 20px; border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: right; border-top: 4px solid var(--gold-color);
         }
-        .feature-card h3 { 
-            font-size: 1.4em; margin-bottom: 10px; color: var(--primary-color); 
-        }
-        .feature-card p { font-size: 1em; color: #555; line-height: 1.5; font-family: 'Rubik', sans-serif !important; }
-        .icon { font-size: 2em; color: var(--gold-color); margin-bottom: 15px; display: block; }
+        .feature-card h3 { font-size: 1.2em; margin-bottom: 5px; }
+        .feature-card p { font-size: 0.95em; line-height: 1.3; color: #555; margin-bottom: 0; }
+        .icon { font-size: 1.5em; color: var(--gold-color); display: block; margin-bottom: 5px; }
 
         /* MYSTERY CARD */
         .mystery-card {
-            background: linear-gradient(145deg, var(--primary-color) 0%, var(--dark-burgundy) 100%);
-            padding: 50px 40px; text-align: center; border-radius: 8px;
-            margin-bottom: 50px; position: relative;
-            box-shadow: 0 15px 40px rgba(93, 24, 34, 0.2);
-            max-width: 900px; margin-left: auto; margin-right: auto;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            background: var(--dark-burgundy);
+            padding: 30px; text-align: center; border-radius: 6px;
+            margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;
+            color: #fff;
         }
-        .mystery-card::after { 
-            content: ''; position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;
-            border: 1px solid rgba(212, 175, 55, 0.4); pointer-events: none;
-        }
-        /* התיקון הקריטי לתמונות הענק */
-        .mystery-icon { width: 40px; height: 40px; fill: var(--gold-color); margin-bottom: 20px; opacity: 0.9; }
-        
-        .mystery-card h2 { 
-            color: var(--gold-color); font-size: 2.4em; margin-bottom: 20px; letter-spacing: 1px;
-        }
-        
-        .mystery-text { 
-            color: #f0f0f0; font-size: 1.4em; line-height: 1.6; font-style: italic; 
-            max-width: 700px; margin: 0 auto;
-            font-weight: 400;
-        }
+        .mystery-icon { width: 30px; height: 30px; fill: var(--gold-color); margin-bottom: 10px; }
+        .mystery-card h2 { color: var(--gold-color); font-size: 1.8em; margin-bottom: 10px; }
+        .mystery-text { color: #ddd; font-size: 1.1em; max-width: 600px; margin: 0 auto; }
 
         /* HOW TO & PRICING */
-        #pricing-anchor { scroll-margin-top: 80px; } 
-        .how-to-section {
-            display: flex; flex-direction: column; align-items: center;
-            background-color: #ffffff; padding: 40px 5%;
-        }
-
+        #pricing-anchor { scroll-margin-top: 60px; } 
+        .how-to-section { padding: 30px 5%; }
         .how-to-split {
-            display: flex; 
-            justify-content: center; 
-            align-items: stretch; 
-            width: 100%; max-width: 1100px; margin: 0 auto; gap: 40px;
+            display: flex; justify-content: center; align-items: stretch; 
+            width: 100%; max-width: 900px; margin: 0 auto; gap: 20px;
         }
 
         .pricing-box {
-            width: 45%; 
-            background-color: #ffffff; border: 2px solid var(--gold-color); border-radius: 10px;
-            padding: 40px; text-align: center; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            display: flex; flex-direction: column; justify-content: center; 
+            width: 50%; background-color: #fff; border: 2px solid var(--gold-color); 
+            border-radius: 6px; padding: 25px; text-align: center;
         }
-        .pricing-box h3 { font-size: 2em; color: var(--primary-color); margin-bottom: 10px; }
+        .pricing-box h3 { font-size: 1.8em; margin-bottom: 10px; }
         
-        .check-list { list-style: none; padding: 0; margin: 20px 0; text-align: right; }
-        .check-list li { position: relative; padding-right: 25px; margin-bottom: 15px; display: block; color: #333; line-height: 1.3; font-family: 'Rubik', sans-serif; }
-        .check-list li strong { display: block; font-size: 1.1em; color: var(--primary-color); }
-        .check-list li span.list-desc { font-size: 0.95em; color: #666; display: block; margin-top: 2px; }
-        .check-list li::before { content: "✦"; color: var(--gold-color); font-weight: bold; font-size: 1.2em; position: absolute; right: 0; top: 0; }
+        .check-list { list-style: none; padding: 0; margin: 15px 0; text-align: right; }
+        .check-list li { padding-right: 20px; margin-bottom: 10px; position: relative; font-size: 0.95em; }
+        .check-list li::before { content: "✔"; color: var(--gold-color); position: absolute; right: 0; font-weight: bold; }
+        .check-list li strong { color: var(--primary-color); }
+        .check-list li .list-desc { display: block; font-size: 0.85em; color: #777; }
 
-        .gold-mystery-text {
-            color: var(--gold-color); font-weight: 700; font-size: 1.5em; margin-top: 20px; letter-spacing: 1px;
-        }
-        
-        .pricing-box .gold-btn { 
-            color: var(--primary-color); margin-top: 30px; 
-            display: block; width: fit-content; margin-left: auto; margin-right: auto;
-        }
+        .gold-mystery-text { color: var(--gold-color); font-weight: 700; font-size: 1.2em; margin-top: 15px; }
 
         .album-open-mockup { 
-            width: 45%; 
-            border-radius: 10px; overflow: hidden; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
-            display: flex; 
+            width: 50%; border-radius: 6px; overflow: hidden; display: flex; 
         }
-        .album-open-mockup img { 
-            width: 100%; height: 100%; object-fit: cover; display: block; 
-        }
+        .album-open-mockup img { width: 100%; height: 100%; object-fit: cover; }
 
         /* QUOTE */
         .quote-section {
-            padding: 60px 5%; text-align: center;
-            background-color: #1a1a1a; color: #fff; margin-top: 40px;
+            padding: 40px 5%; text-align: center; background-color: #222; color: #fff; margin-top: 20px;
         }
-        .jung-icon { width: 50px; height: 50px; fill: var(--gold-color); margin-bottom: 20px; opacity: 0.8; }
-        .quote-text {
-            font-size: 2.2em; color: #f0f0f0; margin-bottom: 20px; font-style: italic; line-height: 1.3;
-            max-width: 800px; margin-left: auto; margin-right: auto;
-        }
-        .quote-author { font-size: 1.1em; color: var(--gold-color); font-weight: 500; letter-spacing: 2px; text-transform: uppercase; font-family: 'Rubik', sans-serif; }
+        .jung-icon { width: 40px; height: 40px; fill: var(--gold-color); margin-bottom: 10px; }
+        .quote-text { font-size: 1.5em; font-weight: 300; margin-bottom: 10px; }
+        .quote-author { font-size: 0.9em; color: var(--gold-color); letter-spacing: 1px; }
 
         /* ABOUT */
-        #about.general-text-section { background-color: #ffffff; border-top: 1px solid #eee; }
-        #about h2 { text-align: center; } 
+        #about.general-text-section { border-top: 1px solid #ddd; padding-bottom: 20px; }
 
         /* FOOTER */
-        footer { background-color: #333; color: #ccc; padding: 30px 5%; text-align: center; font-size: 0.9em; font-family: 'Rubik', sans-serif; }
-        .footer-content { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
-        .footer-links a { color: #ccc; text-decoration: none; margin-right: 15px; white-space: nowrap; }
-        .footer-links a:hover { color: #FFC04D; }
+        footer { background-color: #222; color: #999; padding: 15px 5%; text-align: center; font-size: 0.8em; }
+        .footer-content { display: flex; justify-content: space-between; max-width: 900px; margin: 0 auto; }
 
         /* MOBILE */
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hero-content { width: 100%; padding: 0 5%; text-align: center; }
-            .hero-title { font-size: 2em; }
-            .how-to-split { flex-direction: column-reverse; gap: 30px; } 
-            .pricing-box, .album-open-mockup { width: 100%; max-width: 100%; }
-            .album-open-mockup { height: 300px; margin-bottom: 20px; } 
-            .footer-content { flex-direction: column; gap: 15px; }
-            .footer-links { flex-direction: column; gap: 10px; }
-            .features-grid { grid-template-columns: 1fr; text-align: center; }
-            .feature-card { text-align: center; }
-            .quote-text { font-size: 1.5em; }
-            .mystery-card { padding: 40px 20px; }
+            .hero-title { font-size: 1.8em; }
+            .how-to-split { flex-direction: column-reverse; gap: 20px; } 
+            .pricing-box, .album-open-mockup { width: 100%; }
+            .album-open-mockup { height: 250px; }
+            .footer-content { flex-direction: column; gap: 10px; }
         }
         /* --- CSS END --- */
     </style>
@@ -354,22 +266,22 @@
                 <div class="feature-card">
                     <span class="icon">✎</span>
                     <h3>עוקף את השכל</h3>
-                    <p>הכתיבה הידנית (עט על נייר) הוכחה מדעית כפעולה שעוקפת את המחסומים הלוגיים ומגיעה ישר ללב ולתת-מודע.</p>
+                    <p>הכתיבה הידנית (עט על נייר) עוקפת מחסומים לוגיים ומגיעה ישר לתת-מודע.</p>
                 </div>
                 <div class="feature-card">
                     <span class="icon">☾</span>
                     <h3>אינטימיות טוטאלית</h3>
-                    <p>המרחב היחיד שבו אפשר להיות 100% כנים. בלי שיפוטיות, בלי פילטרים. רק האמת שלך מול הדף.</p>
+                    <p>המרחב היחיד שבו אפשר להיות 100% כנים. בלי שיפוטיות, בלי פילטרים. רק האמת שלך.</p>
                 </div>
                 <div class="feature-card">
                     <span class="icon">∞</span>
                     <h3>בקצב שלך</h3>
-                    <p>אין "שעה שבועית". הכלי זמין לך בדיוק ברגע המשבר, באמצע הלילה או עם הקפה של הערב.</p>
+                    <p>אין "שעה שבועית". הכלי זמין לך ברגע המשבר, באמצע הלילה או עם הקפה של הערב.</p>
                 </div>
                 <div class="feature-card">
                     <span class="icon">💎</span>
                     <h3>נשאר איתך לתמיד</h3>
-                    <p>במחיר של חצי מפגש טיפולי, אתה מקבל ארגז כלים ומסע שלם שנשאר אצלך פיזית לנצח.</p>
+                    <p>במחיר של חצי מפגש טיפולי, אתה מקבל ארגז כלים שנשאר אצלך פיזית לנצח.</p>
                 </div>
             </div>
         </section>
@@ -381,9 +293,7 @@
                 <h2>איך זה עובד?</h2>
                 <p class="mystery-text">
                     בנינו את זה כמסתורין. במקום רשימת מטלות משעממת, כל מעטפה היא הזמנה סודית לפגוש חלק אחר בעצמך.
-                    <br><br>
                     פותחים, קוראים, ונותנים ליד לכתוב לבד.
-                    אתה תגלה שזה הופך מהר מאוד ל-7 הדקות היחידות ביום שבהן אתה באמת נושם.
                 </p>
             </div>
 
@@ -412,7 +322,7 @@
                     
                     <div class="gold-mystery-text">מוכן להתעורר?</div>
                     
-                    <a href="https://wa.me/972506797948?text=היי%20אשמח%20לרכוש%20את%20ערכת%20ההתחלה%20של%20מצפן%20הלב" target="_blank" class="gold-btn">
+                    <a href="https://wa.me/972506797948?text=היי%20אשמח%20לרכוש%20את%20ערכת%20ההתחלה%20של%20מצפן%20הלב" target="_blank" class="gold-btn-filled">
                         הזמן את המצפן שלך
                     </a>
                 </div>
@@ -439,7 +349,7 @@
 
         <section id="about" class="general-text-section">
             <h2>אודות השיטה והחברה</h2>
-            <p style="text-align:center;">מצפן הלב פותח על ידי אנשי מקצוע מתחום הפסיכותרפיה והביבליותרפיה, במטרה לגשר על הפער בין "לדעת מה צריך לעשות" לבין לעשות את זה בפועל. השיטה מבוססת על פרוטוקולים של כתיבה אינטואיטיבית וכלים מתחום ה-CBT, המותאמים לאנשים בעלי עומס מנטלי גבוה.</p>
+            <p style="text-align:center;">מצפן הלב פותח על ידי אנשי מקצוע מתחום הפסיכותרפיה והביבליותרפיה, במטרה לגשר על הפער בין "לדעת מה צריך לעשות" לבין לעשות את זה בפועל.</p>
         </section>
 
     </main>
@@ -447,10 +357,10 @@
     <footer>
         <div class="footer-content">
             <div class="copyright">
-                <p>מצפן הלב | ניתוב רגשי, התבוננות פנימה - לך בעקבות המצפן המנטלי שלך | © כל הזכויות שמורות</p>
+                <p>מצפן הלב © 2025</p>
             </div>
             <nav class="footer-links">
-                <a href="#">תקנון ומדיניות פרטיות</a>
+                <a href="#">תקנון</a>
                 <a href="mailto:heartcompass@gmail.com">צור קשר</a>
             </nav>
         </div>
