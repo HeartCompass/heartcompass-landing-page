@@ -17,26 +17,26 @@
             --primary-color: #5D1822; 
             --dark-burgundy: #3E0C12;
             --text-color: #222;        
-            --gold-color: #C5A028; /* זהב מעט יותר כהה לקריאות */
+            --gold-color: #C5A028;
             --bg-light: #ffffff;       
             --bg-section: #f4f4f4;      
         }
 
         body {
-            font-family: 'Assistant', sans-serif; /* פונט יחיד לכל האתר */
+            font-family: 'Assistant', sans-serif; /* שמירת הפונט שעובד */
             color: var(--text-color);
-            line-height: 1.4; /* שורות צפופות יותר */
+            line-height: 1.4;
             background-color: var(--bg-light);
             direction: rtl;
-            padding-top: 50px; 
+            padding-top: 100px; /* הגדלתי כי הלוגו גדל */
         }
 
         /* טיפוגרפיה */
         h1, h2, h3, h4 { 
             font-family: 'Assistant', sans-serif;
-            font-weight: 800; /* כותרות עבות ומרשימות */
+            font-weight: 800;
             color: var(--primary-color); 
-            margin-bottom: 10px; /* רווח קטן מתחת לכותרת */
+            margin-bottom: 10px;
             line-height: 1.1;
         }
         
@@ -50,52 +50,60 @@
         header {
             display: flex; justify-content: space-between; align-items: center;
             padding: 0 5%; background-color: var(--primary-color); 
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: 50px; 
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000; 
+            height: 90px; /* הגדלת הגובה בשביל הלוגו */
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
+        /* לוגו מוגדל פי 3 */
         .logo a {
-            text-decoration: none; font-size: 1.3em; font-weight: 700; color: var(--gold-color);
+            text-decoration: none; font-size: 2em; font-weight: 700; color: var(--gold-color);
             display: flex; align-items: center;
         }
-        .logo img { height: 25px; width: auto; margin-left: 8px; }
+        .logo img { height: 75px; width: auto; margin-left: 15px; }
 
         .nav-links a {
-            text-decoration: none; color: #fff; margin-right: 15px; font-size: 0.9em; font-weight: 600;
+            text-decoration: none; color: #fff; margin-right: 20px; font-size: 1.1em; font-weight: 600;
         }
 
-        /* HERO SECTION - דחוס */
-        section { padding: 30px 5%; /* ריווח אנכי מינימלי */ }
+        /* HERO SECTION */
+        section { padding: 30px 5%; }
 
         .hero-section.focus-hero {
-            background-color: #3E2B26; min-height: 400px; /* גובה מופחת */
+            background-color: #3E2B26; min-height: 400px;
             display: flex; align-items: center; position: relative; overflow: hidden;
         }
         .hero-bg-img {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover; z-index: 0; opacity: 0.4;
+            object-fit: cover; z-index: 0; 
+            /* בוטלה שקיפות/אופסיטי לבקשתך - התמונה חדה */
+            opacity: 1; 
         }
+        /* בוטלה שכבת הצבע הכהה מעל התמונה */
         .hero-section.focus-hero::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(62, 12, 18, 0.6); z-index: 1; /* כהה יותר לקריאות */
+            display: none; 
         }
+        
         .hero-content {
             position: relative; z-index: 2; color: #ffffff; 
             text-align: right; max-width: 650px; padding: 10px;
+            /* הוספתי צל עדין לטקסט כדי שיהיה קריא על התמונה המקורית */
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
         }
         .hero-title {
             font-size: 2.5em; color: #ffffff; margin-bottom: 8px;
         }
         .hero-subtitle {
-            font-size: 1.2em; font-weight: 300; margin-bottom: 20px; color: #eee;
+            font-size: 1.2em; font-weight: 600; margin-bottom: 20px; color: #fff;
         }
 
         /* BUTTONS */
         .gold-btn {
-            background: transparent; border: 2px solid var(--gold-color);
+            background: rgba(0,0,0,0.5); border: 2px solid var(--gold-color);
             display: inline-block; padding: 8px 30px;
             text-decoration: none; border-radius: 4px; font-weight: 700; font-size: 1em;
             transition: all 0.2s; color: var(--gold-color);
+            text-shadow: none;
         }
         .gold-btn.hero-btn { color: #ffffff; border-color: #fff; }
         .gold-btn:hover { background: var(--gold-color); color: #000; border-color: var(--gold-color); }
@@ -112,7 +120,7 @@
         .general-text-section h2 { font-size: 1.8em; }
         .general-text-section p.intro { font-size: 1.15em; color: #444; }
 
-        /* SOLUTION CARD (RED) - הדוק */
+        /* SOLUTION CARD */
         .solution-card-dark {
             background: var(--primary-color); 
             padding: 25px; border-radius: 6px; color: #fff;
@@ -126,7 +134,7 @@
         }
         .solution-card-dark .highlight { color: #fff; font-weight: 700; border-bottom: 2px solid var(--gold-color); }
 
-        /* FEATURES - צפוף */
+        /* FEATURES */
         .features-section { padding: 30px 5%; background-color: var(--bg-section); text-align: center; }
         .features-intro h2 { font-size: 2em; margin-bottom: 0; }
         .features-intro p { font-size: 1.3em; color: #886016; margin-bottom: 25px; font-weight: 600; }
@@ -150,12 +158,12 @@
             margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;
             color: #fff;
         }
-        .mystery-icon { width: 30px; height: 30px; fill: var(--gold-color); margin-bottom: 10px; }
-        .mystery-card h2 { color: var(--gold-color); font-size: 1.8em; margin-bottom: 10px; }
+        .mystery-icon { width: 30px; height: 30px; fill: var(--gold-color); margin-top: 15px; /* הזזה למטה */ }
+        .mystery-card h2 { color: var(--gold-color); font-size: 1.8em; margin-bottom: 5px; }
         .mystery-text { color: #ddd; font-size: 1.1em; max-width: 600px; margin: 0 auto; }
 
         /* HOW TO & PRICING */
-        #pricing-anchor { scroll-margin-top: 60px; } 
+        #pricing-anchor { scroll-margin-top: 100px; } 
         .how-to-section { padding: 30px 5%; }
         .how-to-split {
             display: flex; justify-content: center; align-items: stretch; 
@@ -164,17 +172,31 @@
 
         .pricing-box {
             width: 50%; background-color: #fff; border: 2px solid var(--gold-color); 
-            border-radius: 6px; padding: 25px; text-align: center;
+            border-radius: 6px; padding: 20px; /* הקטנת פדינג פנימי */
+            text-align: center;
         }
-        .pricing-box h3 { font-size: 1.8em; margin-bottom: 10px; }
+        .pricing-box h3 { font-size: 1.8em; margin-bottom: 15px; }
         
-        .check-list { list-style: none; padding: 0; margin: 15px 0; text-align: right; }
-        .check-list li { padding-right: 20px; margin-bottom: 10px; position: relative; font-size: 0.95em; }
+        /* תיקון צפיפות הרשימה */
+        .check-list { list-style: none; padding: 0; margin: 10px 0; text-align: right; }
+        .check-list li { 
+            padding-right: 20px; 
+            margin-bottom: 8px; /* הקטנת המרווח בין שורות */
+            position: relative; 
+            font-size: 1em; 
+        }
         .check-list li::before { content: "✔"; color: var(--gold-color); position: absolute; right: 0; font-weight: bold; }
-        .check-list li strong { color: var(--primary-color); }
-        .check-list li .list-desc { display: block; font-size: 0.85em; color: #777; }
+        .check-list li strong { color: var(--primary-color); font-weight: 700; }
+        
+        /* הקטנת הטקסט המשני בתוך הריבוע כדי לפתור את בעיית הריווח */
+        .check-list li .list-desc { 
+            display: block; 
+            font-size: 0.8em; /* הקטנה */
+            color: #777; 
+            margin-top: 0px; 
+        }
 
-        .gold-mystery-text { color: var(--gold-color); font-weight: 700; font-size: 1.2em; margin-top: 15px; }
+        .gold-mystery-text { color: var(--gold-color); font-weight: 700; font-size: 1.2em; margin-top: 10px; }
 
         .album-open-mockup { 
             width: 50%; border-radius: 6px; overflow: hidden; display: flex; 
@@ -193,17 +215,43 @@
         #about.general-text-section { border-top: 1px solid #ddd; padding-bottom: 20px; }
 
         /* FOOTER */
-        footer { background-color: #222; color: #999; padding: 15px 5%; text-align: center; font-size: 0.8em; }
-        .footer-content { display: flex; justify-content: space-between; max-width: 900px; margin: 0 auto; }
+        footer { background-color: #222; color: #999; padding: 20px 5%; text-align: center; font-size: 0.9em; }
+        .footer-content { 
+            display: flex; justify-content: space-between; align-items: center;
+            max-width: 900px; margin: 0 auto; 
+        }
+        
+        /* תיקון הכפתורים בתחתית - מראה של כפתורים */
+        .footer-links a {
+            display: inline-block;
+            text-decoration: none; 
+            color: #ddd; 
+            margin-left: 10px;
+            padding: 6px 14px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            transition: all 0.3s;
+            background-color: rgba(255,255,255,0.05);
+        }
+        .footer-links a:hover { 
+            color: var(--gold-color); 
+            border-color: var(--gold-color);
+            background-color: rgba(197, 160, 40, 0.1);
+        }
 
         /* MOBILE */
         @media (max-width: 768px) {
+            header { height: 70px; }
+            body { padding-top: 70px; }
+            .logo img { height: 50px; }
+            .logo a { font-size: 1.5em; }
+            
             .nav-links { display: none; }
             .hero-title { font-size: 1.8em; }
             .how-to-split { flex-direction: column-reverse; gap: 20px; } 
             .pricing-box, .album-open-mockup { width: 100%; }
             .album-open-mockup { height: 250px; }
-            .footer-content { flex-direction: column; gap: 10px; }
+            .footer-content { flex-direction: column; gap: 15px; }
         }
         /* --- CSS END --- */
     </style>
@@ -266,7 +314,7 @@
                 <div class="feature-card">
                     <span class="icon">✎</span>
                     <h3>עוקף את השכל</h3>
-                    <p>הכתיבה הידנית (עט על נייר) עוקפת מחסומים לוגיים ומגיעה ישר לתת-מודע.</p>
+                    <p>הכתיבה הידנית (עט על נייר) עוקפת מחסומים לוגיים ומגיעה ישר ללא-מודע.</p>
                 </div>
                 <div class="feature-card">
                     <span class="icon">☾</span>
@@ -289,8 +337,8 @@
         <section class="how-to-section" id="how-to-section">
             
             <div class="mystery-card">
-                <svg class="mystery-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 14C5.9 14 5 13.1 5 12C5 10.9 5.9 10 7 10C8.1 10 9 10.9 9 12C9 13.1 8.1 14 7 14ZM12.6 10C11.8 7.67 9.6 6 7 6C3.69 6 1 8.69 1 12C1 15.31 3.69 18 7 18C9.6 18 11.8 16.33 12.6 14H16V18H20V14H23V10H12.6Z"/></svg>
                 <h2>איך זה עובד?</h2>
+                <svg class="mystery-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 14C5.9 14 5 13.1 5 12C5 10.9 5.9 10 7 10C8.1 10 9 10.9 9 12C9 13.1 8.1 14 7 14ZM12.6 10C11.8 7.67 9.6 6 7 6C3.69 6 1 8.69 1 12C1 15.31 3.69 18 7 18C9.6 18 11.8 16.33 12.6 14H16V18H20V14H23V10H12.6Z"/></svg>
                 <p class="mystery-text">
                     בנינו את זה כמסתורין. במקום רשימת מטלות משעממת, כל מעטפה היא הזמנה סודית לפגוש חלק אחר בעצמך.
                     פותחים, קוראים, ונותנים ליד לכתוב לבד.
@@ -349,7 +397,7 @@
 
         <section id="about" class="general-text-section">
             <h2>אודות השיטה והחברה</h2>
-            <p style="text-align:center;">מצפן הלב פותח על ידי אנשי מקצוע מתחום הפסיכותרפיה והביבליותרפיה, במטרה לגשר על הפער בין "לדעת מה צריך לעשות" לבין לעשות את זה בפועל.</p>
+            <p style="text-align:center;">מצפן הלב פותח על ידי מטפלים מתחום הפסיכותרפיה ובפרט ענף הביבליותרפיה על מנת לגשר על הפער בין כוונה, ידע ויישום כלים לשיפור החיבור הפנימי. השיטה מבוססת על שיטות טיפול בכתיבה ומשלבות כלים מתחום ה-Cognitive Behavioral Therapy (CBT).</p>
         </section>
 
     </main>
