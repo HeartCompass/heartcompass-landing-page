@@ -23,12 +23,12 @@
         }
 
         body {
-            font-family: 'Assistant', sans-serif; /* שמירת הפונט שעובד */
+            font-family: 'Assistant', sans-serif;
             color: var(--text-color);
             line-height: 1.4;
             background-color: var(--bg-light);
             direction: rtl;
-            padding-top: 100px; /* הגדלתי כי הלוגו גדל */
+            padding-top: 90px; 
         }
 
         /* טיפוגרפיה */
@@ -51,7 +51,7 @@
             display: flex; justify-content: space-between; align-items: center;
             padding: 0 5%; background-color: var(--primary-color); 
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000; 
-            height: 90px; /* הגדלת הגובה בשביל הלוגו */
+            height: 90px; 
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
@@ -76,10 +76,8 @@
         .hero-bg-img {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             object-fit: cover; z-index: 0; 
-            /* בוטלה שקיפות/אופסיטי לבקשתך - התמונה חדה */
             opacity: 1; 
         }
-        /* בוטלה שכבת הצבע הכהה מעל התמונה */
         .hero-section.focus-hero::before {
             display: none; 
         }
@@ -87,7 +85,6 @@
         .hero-content {
             position: relative; z-index: 2; color: #ffffff; 
             text-align: right; max-width: 650px; padding: 10px;
-            /* הוספתי צל עדין לטקסט כדי שיהיה קריא על התמונה המקורית */
             text-shadow: 0 2px 4px rgba(0,0,0,0.6);
         }
         .hero-title {
@@ -158,7 +155,7 @@
             margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;
             color: #fff;
         }
-        .mystery-icon { width: 30px; height: 30px; fill: var(--gold-color); margin-top: 15px; /* הזזה למטה */ }
+        .mystery-icon { width: 30px; height: 30px; fill: var(--gold-color); margin-top: 15px; }
         .mystery-card h2 { color: var(--gold-color); font-size: 1.8em; margin-bottom: 5px; }
         .mystery-text { color: #ddd; font-size: 1.1em; max-width: 600px; margin: 0 auto; }
 
@@ -172,26 +169,24 @@
 
         .pricing-box {
             width: 50%; background-color: #fff; border: 2px solid var(--gold-color); 
-            border-radius: 6px; padding: 20px; /* הקטנת פדינג פנימי */
+            border-radius: 6px; padding: 20px; 
             text-align: center;
         }
         .pricing-box h3 { font-size: 1.8em; margin-bottom: 15px; }
         
-        /* תיקון צפיפות הרשימה */
         .check-list { list-style: none; padding: 0; margin: 10px 0; text-align: right; }
         .check-list li { 
             padding-right: 20px; 
-            margin-bottom: 8px; /* הקטנת המרווח בין שורות */
+            margin-bottom: 8px; 
             position: relative; 
             font-size: 1em; 
         }
         .check-list li::before { content: "✔"; color: var(--gold-color); position: absolute; right: 0; font-weight: bold; }
         .check-list li strong { color: var(--primary-color); font-weight: 700; }
         
-        /* הקטנת הטקסט המשני בתוך הריבוע כדי לפתור את בעיית הריווח */
         .check-list li .list-desc { 
             display: block; 
-            font-size: 0.8em; /* הקטנה */
+            font-size: 0.8em; 
             color: #777; 
             margin-top: 0px; 
         }
@@ -213,6 +208,9 @@
 
         /* ABOUT */
         #about.general-text-section { border-top: 1px solid #ddd; padding-bottom: 20px; }
+        
+        /* תיקון מרכוז הכותרת באודות */
+        #about h2 { text-align: center; }
 
         /* FOOTER */
         footer { background-color: #222; color: #999; padding: 20px 5%; text-align: center; font-size: 0.9em; }
@@ -221,7 +219,6 @@
             max-width: 900px; margin: 0 auto; 
         }
         
-        /* תיקון הכפתורים בתחתית - מראה של כפתורים */
         .footer-links a {
             display: inline-block;
             text-decoration: none; 
@@ -349,6 +346,8 @@
                 <div class="pricing-box" id="pricing-anchor">
                     <h3>מצפן הלב: 149 ₪</h3>
                     
+                    <br><br>
+
                     <ul class="check-list">
                         <li>
                             <strong>יומן פרימיום</strong>
