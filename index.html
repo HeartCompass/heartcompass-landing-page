@@ -18,9 +18,10 @@
             --dark-burgundy: #3E0C12;
             --text-color: #222;        
             --gold-color: #C5A028;
-            --gold-light: #E6C250; /* גוון בהיר לגרדיאנט */
+            --gold-light: #E6C250; 
             --bg-light: #ffffff;       
             --bg-section: #f4f4f4;      
+            --urgent-color: #C62828; /* אדום לדחיפות */
         }
 
         body {
@@ -64,7 +65,7 @@
         }
         .logo img { 
             height: 75px; width: auto; 
-            margin-left: 6px; /* צמצום הרווח */
+            margin-left: 6px; 
         }
 
         .nav-links a {
@@ -97,9 +98,7 @@
             font-size: 1.2em; font-weight: 600; margin-bottom: 20px; color: #fff;
         }
 
-        /* --- BUTTONS CONVERSION OPTIMIZATION --- */
-        
-        /* 1. כפתור שקוף (Hero) - עם אפקט זוהר */
+        /* BUTTONS */
         .gold-btn {
             background: rgba(0,0,0,0.5); border: 2px solid var(--gold-color);
             display: inline-block; padding: 10px 35px;
@@ -113,40 +112,33 @@
             background: var(--gold-color); 
             color: #3E0C12; 
             border-color: var(--gold-color);
-            /* אפקט הזוהר */
             box-shadow: 0 0 20px rgba(197, 160, 40, 0.7);
             transform: translateY(-2px);
         }
         
-        /* 2. כפתור CTA מלא (רכישה) - גרדיאנט יוקרתי */
         .gold-btn-filled {
-            /* גרדיאנט זהב */
             background: linear-gradient(135deg, var(--gold-color) 0%, var(--gold-light) 50%, var(--gold-color) 100%);
             color: #3E0C12; display: inline-block; 
             padding: 12px 40px; text-decoration: none; border-radius: 50px; 
             font-weight: 800; font-size: 1.1em; margin-top: 15px;
             border: none;
-            /* צל עדין שנותן תחושת "לחיצות" */
             box-shadow: 0 4px 15px rgba(197, 160, 40, 0.4);
             transition: all 0.3s ease;
         }
 
         .gold-btn-filled:hover { 
-            transform: translateY(-3px); /* עולה למעלה */
-            box-shadow: 0 6px 25px rgba(197, 160, 40, 0.6); /* הצל גדל */
-            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-color) 100%); /* היפוך עדין של הצבע */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(197, 160, 40, 0.6);
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-color) 100%);
         }
 
-        /* PROBLEM SECTION + ANCHOR FIX */
+        /* PROBLEM SECTION & ANCHOR FIX */
         .general-text-section { padding: 30px 5%; background-color: #ffffff; }
         .general-text-section .text-block { text-align: center; max-width: 800px; margin: 0 auto; }
         .general-text-section h2 { font-size: 1.8em; }
         .general-text-section p.intro { font-size: 1.15em; color: #444; }
 
-        /* תיקון הקפיצה - מוודא שהכותרת לא מוסתרת */
-        #solution {
-            scroll-margin-top: 110px; /* קצת יותר מגובה ההדר */
-        }
+        #solution { scroll-margin-top: 110px; }
 
         /* SOLUTION CARD */
         .solution-card-dark {
@@ -203,7 +195,23 @@
             border-radius: 6px; padding: 20px; 
             text-align: center;
         }
-        .pricing-box h3 { font-size: 1.8em; margin-bottom: 15px; }
+        .pricing-box h3 { font-size: 1.8em; margin-bottom: 10px; margin-top: 5px; }
+        
+        /* עיצוב טקסט דחיפות */
+        .scarcity-text {
+            color: var(--urgent-color);
+            font-weight: 700;
+            font-size: 0.95em;
+            margin-bottom: 5px;
+        }
+
+        /* עיצוב טקסט הסרת סיכון */
+        .risk-text {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 10px;
+            font-weight: 600;
+        }
         
         .check-list { list-style: none; padding: 0; margin: 10px 0; text-align: right; }
         .check-list li { 
@@ -332,8 +340,8 @@
 
         <section class="features-section">
             <div class="features-intro">
-                <h2 class="emotional-title">.לא עוד משימה ביומן>
-                <p class="emotional-title">אי של שקט בתוך הרעש</</p>
+                <h2 class="emotional-title">לא עוד מטלה ביומן</h2>
+                <p class="emotional-title">זה המקלט שלך</p>
             </div>
             
             <div class="features-grid">
@@ -366,9 +374,9 @@
                 <h2>איך זה עובד?</h2>
                 <svg class="mystery-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 14C5.9 14 5 13.1 5 12C5 10.9 5.9 10 7 10C8.1 10 9 10.9 9 12C9 13.1 8.1 14 7 14ZM12.6 10C11.8 7.67 9.6 6 7 6C3.69 6 1 8.69 1 12C1 15.31 3.69 18 7 18C9.6 18 11.8 16.33 12.6 14H16V18H20V14H23V10H12.6Z"/></svg>
                 <p class="mystery-text">
-                    כל מעטפה היא הזמנה סודית ומסתורית לפגוש חלק אחר בעצמך.<br>
-                    פותחים, קוראים, ונותנים ליד לכתוב לבד ולחווט את המוח מחדש.<br>
-                    המסע הזה הוא המקום היחיד שבו אתה לא צריך - לא להסביר או ולא להתנצל.<br>
+                    כל מעטפה היא הזמנה סודית ומסתורית לפגוש חלק אחר בעצמך.
+                    פותחים, קוראים, ונותנים ליד לכתוב לבד ולחווט את המוח מחדש.
+                    המסע הזה הוא המקום היחיד שבו אתה לא צריך - לא להסביר או ולא להתנצל.
                     רק אתה, הדיו, והאמת.
                     <br><br>
                     אתה תגלה מהר מאוד שאלו יהיו 5 הדקות היחידות ביום שבהן אתה באמת נושם.
@@ -377,6 +385,9 @@
 
             <div class="how-to-split">
                 <div class="pricing-box" id="pricing-anchor">
+                    
+                    <div class="scarcity-text">● מהדורת השקה מוגבלת: נותרו 50 יחידות במלאי</div>
+                    
                     <h3>מצפן הלב: 149 ₪</h3>
                     
                     <br><br>
@@ -384,19 +395,19 @@
                     <ul class="check-list">
                         <li>
                             <strong>יומן פרימיום</strong>
-                            <span class="list-desc">לכתיבה זורמת היוצרת את המרחב הבטוח שלך.</span>
+                            <span class="list-desc">נייר איכותי לכתיבה זורמת</span>
                         </li>
                         <li>
-                            <strong>7 המפתחות</strong>
-                            <span class="list-desc">משימות ויסות רגשי מדויקות שמנחות אותך בדיוק לאן שאתה צריך להגיע.</span>
+                            <strong>7 המגילות</strong>
+                            <span class="list-desc">משימות ויסות רגשי מדויקות</span>
                         </li>
                         <li>
                             <strong>שעון חול</strong>
-                            <span class="list-desc">מסגרת זמן ברורה וידועה להרגשת רוגע ובטחון.</span>
+                            <span class="list-desc">מסגרת זמן ברורה המעניקה עוגן וביטחון</span>
                         </li>
                         <li>
                             <strong>חותם "בוצע"</strong>
-                            <span class="list-desc">לסגירת המעגל הרגשי ושחרור המחשבות.</span>
+                            <span class="list-desc">לסגירת המעגל הרגשי</span>
                         </li>
                     </ul>
                     
@@ -405,6 +416,8 @@
                     <a href="https://wa.me/972506797948?text=היי%20אשמח%20לרכוש%20את%20ערכת%20ההתחלה%20של%20מצפן%20הלב" target="_blank" class="gold-btn-filled">
                         הזמן את המצפן שלך
                     </a>
+                    
+                    <div class="risk-text">ניסיון ללא סיכון: לא התחברת? החזר כספי מלא תוך 30 יום</div>
                 </div>
 
                 <div class="album-open-mockup">
