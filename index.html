@@ -18,6 +18,7 @@
             --dark-burgundy: #3E0C12;
             --text-color: #222;        
             --gold-color: #C5A028;
+            --gold-light: #E6C250; /* גוון בהיר לגרדיאנט */
             --bg-light: #ffffff;       
             --bg-section: #f4f4f4;      
         }
@@ -29,6 +30,7 @@
             background-color: var(--bg-light);
             direction: rtl;
             padding-top: 90px; 
+            scroll-behavior: smooth;
         }
 
         /* טיפוגרפיה */
@@ -55,12 +57,15 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
-        /* לוגו מוגדל פי 3 */
+        /* לוגו */
         .logo a {
             text-decoration: none; font-size: 2em; font-weight: 700; color: var(--gold-color);
             display: flex; align-items: center;
         }
-        .logo img { height: 75px; width: auto; margin-left: 15px; }
+        .logo img { 
+            height: 75px; width: auto; 
+            margin-left: 6px; /* צמצום הרווח */
+        }
 
         .nav-links a {
             text-decoration: none; color: #fff; margin-right: 20px; font-size: 1.1em; font-weight: 600;
@@ -78,9 +83,7 @@
             object-fit: cover; z-index: 0; 
             opacity: 1; 
         }
-        .hero-section.focus-hero::before {
-            display: none; 
-        }
+        .hero-section.focus-hero::before { display: none; }
         
         .hero-content {
             position: relative; z-index: 2; color: #ffffff; 
@@ -94,28 +97,56 @@
             font-size: 1.2em; font-weight: 600; margin-bottom: 20px; color: #fff;
         }
 
-        /* BUTTONS */
+        /* --- BUTTONS CONVERSION OPTIMIZATION --- */
+        
+        /* 1. כפתור שקוף (Hero) - עם אפקט זוהר */
         .gold-btn {
             background: rgba(0,0,0,0.5); border: 2px solid var(--gold-color);
-            display: inline-block; padding: 8px 30px;
-            text-decoration: none; border-radius: 4px; font-weight: 700; font-size: 1em;
-            transition: all 0.2s; color: var(--gold-color);
+            display: inline-block; padding: 10px 35px;
+            text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.05em;
+            transition: all 0.3s ease; color: var(--gold-color);
             text-shadow: none;
         }
         .gold-btn.hero-btn { color: #ffffff; border-color: #fff; }
-        .gold-btn:hover { background: var(--gold-color); color: #000; border-color: var(--gold-color); }
         
+        .gold-btn:hover { 
+            background: var(--gold-color); 
+            color: #3E0C12; 
+            border-color: var(--gold-color);
+            /* אפקט הזוהר */
+            box-shadow: 0 0 20px rgba(197, 160, 40, 0.7);
+            transform: translateY(-2px);
+        }
+        
+        /* 2. כפתור CTA מלא (רכישה) - גרדיאנט יוקרתי */
         .gold-btn-filled {
-            background: var(--gold-color); color: #000; display: inline-block; 
-            padding: 8px 30px; text-decoration: none; border-radius: 4px; 
-            font-weight: 700; font-size: 1em; margin-top: 15px;
+            /* גרדיאנט זהב */
+            background: linear-gradient(135deg, var(--gold-color) 0%, var(--gold-light) 50%, var(--gold-color) 100%);
+            color: #3E0C12; display: inline-block; 
+            padding: 12px 40px; text-decoration: none; border-radius: 50px; 
+            font-weight: 800; font-size: 1.1em; margin-top: 15px;
+            border: none;
+            /* צל עדין שנותן תחושת "לחיצות" */
+            box-shadow: 0 4px 15px rgba(197, 160, 40, 0.4);
+            transition: all 0.3s ease;
         }
 
-        /* PROBLEM SECTION */
+        .gold-btn-filled:hover { 
+            transform: translateY(-3px); /* עולה למעלה */
+            box-shadow: 0 6px 25px rgba(197, 160, 40, 0.6); /* הצל גדל */
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-color) 100%); /* היפוך עדין של הצבע */
+        }
+
+        /* PROBLEM SECTION + ANCHOR FIX */
         .general-text-section { padding: 30px 5%; background-color: #ffffff; }
         .general-text-section .text-block { text-align: center; max-width: 800px; margin: 0 auto; }
         .general-text-section h2 { font-size: 1.8em; }
         .general-text-section p.intro { font-size: 1.15em; color: #444; }
+
+        /* תיקון הקפיצה - מוודא שהכותרת לא מוסתרת */
+        #solution {
+            scroll-margin-top: 110px; /* קצת יותר מגובה ההדר */
+        }
 
         /* SOLUTION CARD */
         .solution-card-dark {
@@ -208,8 +239,6 @@
 
         /* ABOUT */
         #about.general-text-section { border-top: 1px solid #ddd; padding-bottom: 20px; }
-        
-        /* תיקון מרכוז הכותרת באודות */
         #about h2 { text-align: center; }
 
         /* FOOTER */
