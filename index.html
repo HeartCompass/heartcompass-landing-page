@@ -76,7 +76,7 @@
         section { padding: 30px 5%; }
 
         .hero-section.focus-hero {
-            background-color: #3E2B26; min-height: 450px;
+            background-color: #3E2B26; min-height: 400px;
             display: flex; align-items: center; position: relative; overflow: hidden;
         }
         .hero-bg-img {
@@ -88,15 +88,14 @@
         
         .hero-content {
             position: relative; z-index: 2; color: #ffffff; 
-            text-align: right; max-width: 700px; padding: 10px;
+            text-align: right; max-width: 650px; padding: 10px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.6);
         }
         .hero-title {
-            font-size: 3em; 
-            color: #ffffff; margin-bottom: 15px;
+            font-size: 2.5em; color: #ffffff; margin-bottom: 8px;
         }
         .hero-subtitle {
-            font-size: 1.3em; font-weight: 600; margin-bottom: 25px; color: #fff;
+            font-size: 1.2em; font-weight: 600; margin-bottom: 20px; color: #fff;
         }
 
         /* BUTTONS */
@@ -155,7 +154,7 @@
         }
         .solution-card-dark .highlight { color: #fff; font-weight: 700; border-bottom: 2px solid var(--gold-color); }
 
-        /* FEATURES */
+        /* FEATURES - כאן התיקון לאינטראקטיביות */
         .features-section { padding: 30px 5%; background-color: var(--bg-section); text-align: center; }
         .features-intro h2 { font-size: 2em; margin-bottom: 0; }
         .features-intro p { font-size: 1.3em; color: #886016; margin-bottom: 25px; font-weight: 600; }
@@ -164,13 +163,29 @@
             display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 15px; max-width: 1000px; margin: 0 auto;
         }
+        
         .feature-card {
             background: #ffffff; padding: 20px; border-radius: 6px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: right; border-top: 4px solid var(--gold-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: right; 
+            border-top: 4px solid var(--gold-color);
+            /* אנימציה חלקה */
+            transition: all 0.3s ease;
+            cursor: default;
         }
+
+        /* מצב ריחוף (Hover) לכרטיסים */
+        .feature-card:hover {
+            transform: translateY(-7px); /* עולה למעלה */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1); /* צל עמוק יותר */
+            border-top-color: var(--primary-color); /* הפס הופך לבורדו */
+        }
+
         .feature-card h3 { font-size: 1.2em; margin-bottom: 5px; }
         .feature-card p { font-size: 0.95em; line-height: 1.3; color: #555; margin-bottom: 0; }
-        .icon { font-size: 1.5em; color: var(--gold-color); display: block; margin-bottom: 5px; }
+        
+        /* גם האייקון זז קצת בריחוף */
+        .feature-card:hover .icon { transform: scale(1.1); transition: 0.3s; }
+        .icon { font-size: 1.5em; color: var(--gold-color); display: block; margin-bottom: 5px; transition: 0.3s; }
 
         /* MYSTERY CARD */
         .mystery-card {
@@ -311,14 +326,8 @@
         <section class="hero-section focus-hero">
             <img src="images/diary_1200x400.png" class="hero-bg-img" alt="רקע">
             <div class="hero-content">
-                
-                <h1 class="hero-title">סיימת להציל את העולם להיום.</h1>
-                
-                <p class="hero-subtitle">
-                    עשית את שלך. עכשיו הזמן לנקות את הראש, להוריד הילוך ולנוח.
-                    <br><strong>בלי מסכים. רק אתה והדף.</strong>
-                </p>
-                
+                <h1 class="hero-title">לנקות את ה"רעש הלבן" בראש לפני שהיום נגמר.</h1>
+                <p class="hero-subtitle">פרוטוקול ערב של 7 דקות להורדת עומס, שיפור השינה ומעבר חד ממצב "עבודה" למצב "שקט". <br><strong>בלי מסכים. רק אתה והדף.</strong></p>
                 <a href="#pricing-anchor" class="gold-btn hero-btn">
                     הזמן את המצפן שלך
                 </a>
@@ -345,8 +354,8 @@
 
         <section class="features-section">
             <div class="features-intro">
-                <h2 class="emotional-title">לא עוד משימה ביומן</h2>
-                <p class="emotional-title">אי של שקט בתוך הרעש</p>
+                <h2 class="emotional-title">לא עוד מטלה ביומן</h2>
+                <p class="emotional-title">זה המקלט שלך</p>
             </div>
             
             <div class="features-grid">
@@ -368,7 +377,7 @@
                 <div class="feature-card">
                     <span class="icon">💎</span>
                     <h3>נשאר איתך לתמיד</h3>
-                    <p>במחיר של חצי מפגש טיפולי, אתה מקבל ארגז כלים שנשאר אצלך פיזית ומנטלית לתמיד</p>
+                    <p>במחיר של חצי מפגש טיפולי, אתה מקבל ארגז כלים שנשאר אצלך פיזית לנצח.</p>
                 </div>
             </div>
         </section>
@@ -391,7 +400,7 @@
             <div class="how-to-split">
                 <div class="pricing-box" id="pricing-anchor">
                     
-                    <div class="scarcity-text">⏳ מהדורת השקה מוגבלת: נותרו 25 יחידות במלאי</div>
+                    <div class="scarcity-text">● מהדורת השקה מוגבלת: נותרו 50 יחידות במלאי</div>
                     
                     <h3>מצפן הלב: 149 ₪</h3>
                     
@@ -400,11 +409,11 @@
                     <ul class="check-list">
                         <li>
                             <strong>יומן פרימיום</strong>
-                            <span class="list-desc">לכתיבה זורמת ויצירת המרחב הבטוח שלך</span>
+                            <span class="list-desc">נייר איכותי לכתיבה זורמת</span>
                         </li>
                         <li>
-                            <strong>7 המפתחות</strong>
-                            <span class="list-desc">משימות ויסות רגשי מדויקות שמנחות אותך בדיוק לאן שאתה צריך להגיע.</span>
+                            <strong>7 המגילות</strong>
+                            <span class="list-desc">משימות ויסות רגשי מדויקות</span>
                         </li>
                         <li>
                             <strong>שעון חול</strong>
@@ -412,7 +421,7 @@
                         </li>
                         <li>
                             <strong>חותם "בוצע"</strong>
-                            <span class="list-desc">לסגירת המעגל הרגשי ושחרור המחשבות.</span>
+                            <span class="list-desc">לסגירת המעגל הרגשי</span>
                         </li>
                     </ul>
                     
@@ -422,7 +431,7 @@
                         הזמן את המצפן שלך
                     </a>
                     
-                    <div class="risk-text">התנסות ללא התחייבות: לא התחברת? החזר כספי מלא תוך 30 יום.</div>
+                    <div class="risk-text">ניסיון ללא סיכון: לא התחברת? החזר כספי מלא תוך 30 יום</div>
                 </div>
 
                 <div class="album-open-mockup">
