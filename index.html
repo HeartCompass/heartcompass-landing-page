@@ -21,7 +21,6 @@
             --gold-light: #E6C250; 
             --bg-light: #ffffff;       
             --bg-section: #f4f4f4;      
-            --urgent-color: #C62828; 
         }
 
         body {
@@ -88,7 +87,7 @@
         
         .hero-content {
             position: relative; z-index: 2; color: #ffffff; 
-            text-align: right; max-width: 650px; padding: 10px;
+            text-align: right; max-width: 700px; padding: 10px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.6);
         }
         .hero-title {
@@ -138,7 +137,9 @@
         .general-text-section h2 { font-size: 1.8em; }
         .general-text-section p.intro { font-size: 1.15em; color: #444; }
 
+        /* תיקון הקפיצה - הוגדל ל-150 כדי לראות את כל הקופסה */
         #solution { scroll-margin-top: 110px; }
+        #pricing-anchor { scroll-margin-top: 150px; } 
 
         /* SOLUTION CARD */
         .solution-card-dark {
@@ -154,7 +155,7 @@
         }
         .solution-card-dark .highlight { color: #fff; font-weight: 700; border-bottom: 2px solid var(--gold-color); }
 
-        /* FEATURES - כאן התיקון לאינטראקטיביות */
+        /* FEATURES */
         .features-section { padding: 30px 5%; background-color: var(--bg-section); text-align: center; }
         .features-intro h2 { font-size: 2em; margin-bottom: 0; }
         .features-intro p { font-size: 1.3em; color: #886016; margin-bottom: 25px; font-weight: 600; }
@@ -168,24 +169,22 @@
             background: #ffffff; padding: 20px; border-radius: 6px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: right; 
             border-top: 4px solid var(--gold-color);
-            /* אנימציה חלקה */
             transition: all 0.3s ease;
             cursor: default;
         }
 
-        /* מצב ריחוף (Hover) לכרטיסים */
         .feature-card:hover {
-            transform: translateY(-7px); /* עולה למעלה */
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1); /* צל עמוק יותר */
-            border-top-color: var(--primary-color); /* הפס הופך לבורדו */
+            transform: translateY(-7px); 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+            border-top-color: var(--primary-color); 
         }
+
+        .feature-card .icon { font-size: 1.5em; color: var(--gold-color); display: block; margin-bottom: 5px; transition: transform 0.3s; }
+        .feature-card:hover .icon { transform: scale(1.1); }
 
         .feature-card h3 { font-size: 1.2em; margin-bottom: 5px; }
         .feature-card p { font-size: 0.95em; line-height: 1.3; color: #555; margin-bottom: 0; }
         
-        /* גם האייקון זז קצת בריחוף */
-        .feature-card:hover .icon { transform: scale(1.1); transition: 0.3s; }
-        .icon { font-size: 1.5em; color: var(--gold-color); display: block; margin-bottom: 5px; transition: 0.3s; }
 
         /* MYSTERY CARD */
         .mystery-card {
@@ -199,7 +198,6 @@
         .mystery-text { color: #ddd; font-size: 1.1em; max-width: 600px; margin: 0 auto; }
 
         /* HOW TO & PRICING */
-        #pricing-anchor { scroll-margin-top: 100px; } 
         .how-to-section { padding: 30px 5%; }
         .how-to-split {
             display: flex; justify-content: center; align-items: stretch; 
@@ -213,11 +211,17 @@
         }
         .pricing-box h3 { font-size: 1.8em; margin-bottom: 10px; margin-top: 5px; }
         
+        /* עיצוב חדש ועדין לטקסט הדחיפות (Badge) */
         .scarcity-text {
-            color: var(--urgent-color);
+            background-color: #FDF6E3; /* רקע בז' עדין */
+            color: #8A6D3B; /* צבע חום-זהוב יוקרתי */
+            border: 1px solid #F2E3C6;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
             font-weight: 700;
-            font-size: 0.95em;
-            margin-bottom: 5px;
+            font-size: 0.9em;
+            margin-bottom: 10px;
         }
 
         .risk-text {
@@ -326,8 +330,8 @@
         <section class="hero-section focus-hero">
             <img src="images/diary_1200x400.png" class="hero-bg-img" alt="רקע">
             <div class="hero-content">
-                <h1 class="hero-title">סיימת להציל את העולם. איך עכשיו מנקים את ה"רעש הלבן" בראש לפני שהיום נגמר?</h1>
-                <p class="hero-subtitle">פרוטוקול ערב של 7 דקות להורדת עומס, שיפור השינה ומעבר חד ממצב "עבודה" למצב "שקט". <br><strong>בלי מסכים. רק אתה והדף.</strong></p>
+                <h1 class="hero-title">סיימת להציל את העולם להיום.</h1>
+                <p class="hero-subtitle">עשית את שלך. עכשיו הזמן לנקות את הראש, להוריד הילוך ולנוח. <br><strong>בלי מסכים. רק אתה והדף.</strong></p>
                 <a href="#pricing-anchor" class="gold-btn hero-btn">
                     הזמן את המצפן שלך
                 </a>
@@ -354,15 +358,15 @@
 
         <section class="features-section">
             <div class="features-intro">
-                <h2 class="emotional-title">לא עוד מטלה ביומן</h2>
-                <p class="emotional-title">זה המקלט שלך</p>
+                <h2 class="emotional-title">לא עוד משימה ביומן</h2>
+                <p class="emotional-title">אי של שקט בתוך הרעש</p>
             </div>
             
             <div class="features-grid">
                 <div class="feature-card">
                     <span class="icon">✎</span>
                     <h3>עוקף את השכל</h3>
-                    <p>הכתיבה הידנית (עט על נייר) הוכחה כפעולה שעוקפת את המחסומים הלוגיים ומגיעה ישירות אל הלא-מודע.</p>
+                    <p>הכתיבה הידנית (עט על נייר) עוקפת מחסומים לוגיים ומגיעה ישר ללא-מודע.</p>
                 </div>
                 <div class="feature-card">
                     <span class="icon">☾</span>
@@ -377,7 +381,7 @@
                 <div class="feature-card">
                     <span class="icon">💎</span>
                     <h3>נשאר איתך לתמיד</h3>
-                    <p>במחיר של חצי מפגש טיפולי, אתה מקבל ארגז כלים שנשאר אצלך פיזית ומנטלית לתמיד</p>
+                    <p>במחיר של חצי מפגש טיפולי, אתה מקבל ארגז כלים שנשאר אצלך פיזית לנצח.</p>
                 </div>
             </div>
         </section>
@@ -400,7 +404,7 @@
             <div class="how-to-split">
                 <div class="pricing-box" id="pricing-anchor">
                     
-                    <div class="scarcity-text">💎 מהדורת השקה מוגבלת: נותרו 25 יחידות במלאי</div>
+                    <div class="scarcity-text">⏳ מהדורת השקה מוגבלת: נותרו 25 יחידות במלאי</div>
                     
                     <h3>מצפן הלב: 149 ₪</h3>
                     
